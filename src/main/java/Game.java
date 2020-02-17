@@ -1,4 +1,3 @@
-import com.googlecode.lanterna.TextCharacter;
 import com.googlecode.lanterna.input.KeyStroke;
 import com.googlecode.lanterna.input.KeyType;
 import com.googlecode.lanterna.screen.Screen;
@@ -10,8 +9,7 @@ import java.io.IOException;
 
 public class Game {
     private Screen screen;
-    private int x = 10;
-    private int y = 10;
+    private Hero hero;
 
     public Game() {
         try {
@@ -21,6 +19,8 @@ public class Game {
             screen.setCursorPosition(null);   // we don't need a cursor
             screen.startScreen();             // screens must be started
             screen.doResizeIfNecessary();     // resize screen if necessary
+
+            hero = new Hero(10, 10);
         }
 
         catch (IOException e) {
@@ -28,17 +28,10 @@ public class Game {
         }
     }
 
-    private void draw() {
+    private void draw() throws IOException {
         screen.clear();
-        screen.setCharacter(x, y, new TextCharacter('X'));
-
-        try {
-            screen.refresh();
-        }
-
-        catch (IOException e) {
-            e.printStackTrace();
-        }
+        hero.draw(screen);
+        screen.refresh();
     }
 
     private void processKey(KeyStroke key) {
@@ -46,16 +39,16 @@ public class Game {
 
         // Convert to switch case
         if (key.getKeyType() == KeyType.ArrowLeft)
-            x--;
+            hero.moveLeft();
 
-        else if (key.getKeyType() == KeyType.ArrowRight)
-            x++;
+        if (key.getKeyType() == KeyType.ArrowRight)
+            hero.moveRight();
 
-        else if (key.getKeyType() == KeyType.ArrowUp)
-            y--;
+        if (key.getKeyType() == KeyType.ArrowUp)
+            hero.moveUp();
 
-        else if (key.getKeyType() == KeyType.ArrowDown)
-            y++;
+        if (key.getKeyType() == KeyType.ArrowDown)
+            hero.moveDown();
     }
 
     public void run() throws IOException {
