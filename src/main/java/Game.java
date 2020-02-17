@@ -9,7 +9,7 @@ import java.io.IOException;
 
 public class Game {
     private Screen screen;
-    private Hero hero;
+    private Arena arena;
 
     public Game() {
         try {
@@ -20,6 +20,7 @@ public class Game {
             screen.startScreen();             // screens must be started
             screen.doResizeIfNecessary();     // resize screen if necessary
 
+            arena = new Arena()
             hero = new Hero(10, 10);
         }
 
@@ -34,21 +35,8 @@ public class Game {
         screen.refresh();
     }
 
-    private void processKey(KeyStroke key) {
-        // System.out.println(key);
-
-        // Convert to switch case
-        if (key.getKeyType() == KeyType.ArrowLeft)
-            hero.moveLeft();
-
-        if (key.getKeyType() == KeyType.ArrowRight)
-            hero.moveRight();
-
-        if (key.getKeyType() == KeyType.ArrowUp)
-            hero.moveUp();
-
-        if (key.getKeyType() == KeyType.ArrowDown)
-            hero.moveDown();
+    private void moveHero(Position position) {
+        hero.setPosition(position);
     }
 
     public void run() throws IOException {
