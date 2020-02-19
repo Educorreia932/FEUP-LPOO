@@ -20,8 +20,7 @@ public class Game {
             screen.startScreen();             // screens must be started
             screen.doResizeIfNecessary();     // resize screen if necessary
 
-            arena = new Arena()
-            hero = new Hero(10, 10);
+            arena = new Arena(30, 20, new Hero(10, 10));
         }
 
         catch (IOException e) {
@@ -31,12 +30,16 @@ public class Game {
 
     private void draw() throws IOException {
         screen.clear();
-        hero.draw(screen);
+        arena.draw(screen);
         screen.refresh();
     }
 
+    private void processKey(KeyStroke key) {
+        arena.processKey(key);
+    }
+
     private void moveHero(Position position) {
-        hero.setPosition(position);
+        arena.moveHero(position);
     }
 
     public void run() throws IOException {
