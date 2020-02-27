@@ -44,6 +44,8 @@ public class Game {
 
     private void draw() throws IOException {
         screen.clear();
+        arena.verifyMonsterCollisions();
+        arena.moveMonsters();
         arena.retrieveCoins();
         arena.draw(graphics);
         screen.refresh();
