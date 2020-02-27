@@ -44,7 +44,6 @@ public class Game {
 
     private void draw() throws IOException {
         screen.clear();
-        arena.verifyMonsterCollisions();
         arena.moveMonsters();
         arena.retrieveCoins();
         arena.draw(graphics);
@@ -67,7 +66,7 @@ public class Game {
 
             processKey(key);
 
-            if (key.getKeyType() == KeyType.Character && key.getCharacter() == 'q')
+            if (key.getKeyType() == KeyType.Character && key.getCharacter() == 'q' || arena.verifyMonsterCollisions())
                 screen.close();
 
             if (key.getKeyType() == KeyType.EOF)

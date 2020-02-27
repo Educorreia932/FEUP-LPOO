@@ -4,8 +4,11 @@ import com.googlecode.lanterna.TextColor;
 import com.googlecode.lanterna.graphics.TextGraphics;
 
 public class Hero extends Element {
+    private float health;
+
     Hero(int x, int y) {
         super(x, y);
+        health = 100;
     }
 
     public Position moveLeft() {

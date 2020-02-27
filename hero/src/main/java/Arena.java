@@ -10,6 +10,7 @@ import java.util.List;
 import java.util.Random;
 
 public class Arena {
+    public static boolean verifyMonsterCollisions;
     private int width;
     private int height;
     private Hero hero;
@@ -82,11 +83,12 @@ public class Arena {
             monster.move();
     }
 
-    public void verifyMonsterCollisions() {
+    public boolean verifyMonsterCollisions() {
         for (Monster monster : monsters)
-            if (monster.getPosition().equals(hero.getPosition())) {
-                break;
-            }
+            if (monster.getPosition().equals(hero.getPosition()))
+                return true;
+
+        return false;
     }
 
     public void processKey(KeyStroke key) {

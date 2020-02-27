@@ -3,8 +3,11 @@ import com.googlecode.lanterna.TextColor;
 import com.googlecode.lanterna.graphics.TextGraphics;
 
 public class Monster extends Element {
-    Monster(int x, int y) {
+    private float health;
+
+    Monster(int x, int y, float health) {
         super(x, y);
+        this.health = health;
     }
 
     @Override
