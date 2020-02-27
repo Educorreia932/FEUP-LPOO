@@ -14,6 +14,7 @@ import java.io.IOException;
 public class Game {
     private Screen screen;
     private Arena arena;
+    TextGraphics graphics;
 
     public Game() {
         try {
@@ -28,7 +29,7 @@ public class Game {
             screen.startScreen();             // screens must be started
             screen.doResizeIfNecessary();     // resize screen if necessary
 
-            TextGraphics graphics = screen.newTextGraphics();
+            graphics = screen.newTextGraphics();
 
             graphics.setBackgroundColor(TextColor.Factory.fromString("#336699"));
             graphics.fillRectangle(new TerminalPosition(0, 0), new TerminalSize(width, height), ' ');
@@ -43,7 +44,7 @@ public class Game {
 
     private void draw() throws IOException {
         screen.clear();
-        arena.draw(screen.newTextGraphics());
+        arena.draw(graphics);
         screen.refresh();
     }
 
