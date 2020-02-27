@@ -44,10 +44,24 @@ public class Arena {
         Random random = new Random();
         ArrayList<Coin> coins = new ArrayList<>();
 
+        // TODO: Make it impossible to a coin to spawn in the same position as the hero
         for (int i = 0; i < 5; i++)
             coins.add(new Coin(random.nextInt(width - 2) + 1, random.nextInt(height - 2) + 1));
 
         return coins;
+    }
+
+    public void retrieveCoins() {
+        Coin toRemove = null;
+
+        for (Coin coin : coins)
+            if (coin.getPosition().equals(hero.getPosition())) {
+                toRemove = coin;
+                break;
+            }
+
+        if (toRemove != null)
+            coins.remove(toRemove);
     }
 
     public void processKey(KeyStroke key) {
@@ -69,13 +83,13 @@ public class Arena {
         graphics.setBackgroundColor(TextColor.Factory.fromString("#DEB887"));
         graphics.fillRectangle(new TerminalPosition(0, 0), new TerminalSize(width, height), ' ');
 
-        hero.draw(graphics);
-
         for (Wall wall : walls)
             wall.draw(graphics);
 
         for (Coin coin : coins)
             coin.draw(graphics);
+
+        hero.draw(graphics);
     }
 
     private boolean canHeroMove(Position position) {
