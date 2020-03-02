@@ -60,7 +60,7 @@ public class Arena {
 
         // TODO: Make it impossible to a monster to spawn in the same position as the hero
         for (int i = 0; i < 5; i++)
-            monsters.add(new Monster(random.nextInt(width - 2) + 1, random.nextInt(height - 2) + 1));
+            monsters.add(new Monster(random.nextInt(width - 2) + 1, random.nextInt(height - 2) + 1, 1));
 
         return monsters;
     }
