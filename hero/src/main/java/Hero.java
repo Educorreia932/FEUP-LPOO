@@ -5,13 +5,11 @@ import com.googlecode.lanterna.graphics.TextGraphics;
 
 import java.util.ArrayList;
 
-public class Hero extends Element {
-    private int health;
+public class Hero extends Creature {
     private ArrayList<Item> items;
 
-    Hero(int x, int y) {
-        super(x, y);
-        health = 100;
+    Hero(int x, int y, int health) {
+        super(x, y, health);
     }
 
     public Position moveLeft() {
@@ -30,9 +28,7 @@ public class Hero extends Element {
         return new Position(getPosition().getX(), getPosition().getY() + 1);
     }
 
-    public void takeDamage(int damage) {
-        health -= damage;
-    }
+
 
     @Override
     public void draw(TextGraphics graphics) {

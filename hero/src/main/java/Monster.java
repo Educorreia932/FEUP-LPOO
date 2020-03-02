@@ -2,12 +2,9 @@ import com.googlecode.lanterna.TerminalPosition;
 import com.googlecode.lanterna.TextColor;
 import com.googlecode.lanterna.graphics.TextGraphics;
 
-public class Monster extends Element {
-    private float health;
-
-    Monster(int x, int y, float health) {
-        super(x, y);
-        this.health = health;
+public class Monster extends Creature {
+    Monster(int x, int y, int health) {
+        super(x, y, health);
     }
 
     @Override
