@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.aor.numbers.ListDeduplicatorTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-03-09T16:56:49" hostname="LAPTOP-HTLC59OA" time="0.001">
+  <properties/>
+  <testcase name="deduplicate" classname="com.aor.numbers.ListDeduplicatorTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -13,7 +13,7 @@ public class Monster extends Element {
         graphics.putString(new TerminalPosition(getPosition().getX(), getPosition().getY()), "m");
     }
 
-    public Position move() {
-        return getPosition(); // TODO: Change
+    public Position move(Position target) {
+        return getPosition();
     }
 }

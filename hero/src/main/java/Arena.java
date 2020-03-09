@@ -79,7 +79,7 @@ public class Arena {
 
     public void moveMonsters() {
         for (Monster monster : monsters)
-            monster.move();
+            monster.move(hero.getPosition());
     }
 
     public void verifyMonsterCollisions() {
