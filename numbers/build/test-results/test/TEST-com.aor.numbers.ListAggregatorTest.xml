@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.aor.numbers.ListAggregatorTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2020-03-09T16:56:49" hostname="LAPTOP-HTLC59OA" time="0.002">
+<testsuite name="com.aor.numbers.ListAggregatorTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2020-03-09T18:11:41" hostname="LAPTOP-HTLC59OA" time="0.335">
   <properties/>
   <testcase name="max" classname="com.aor.numbers.ListAggregatorTest" time="0.001"/>
   <testcase name="min" classname="com.aor.numbers.ListAggregatorTest" time="0.0"/>
   <testcase name="sum" classname="com.aor.numbers.ListAggregatorTest" time="0.0"/>
-  <testcase name="distinct" classname="com.aor.numbers.ListAggregatorTest" time="0.0"/>
+  <testcase name="bug_1" classname="com.aor.numbers.ListAggregatorTest" time="0.0"/>
+  <testcase name="bug_2" classname="com.aor.numbers.ListAggregatorTest" time="0.331"/>
+  <testcase name="distinct" classname="com.aor.numbers.ListAggregatorTest" time="0.001"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

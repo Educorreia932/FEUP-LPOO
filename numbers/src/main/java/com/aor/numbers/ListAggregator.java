@@ -31,7 +31,7 @@ public class ListAggregator {
      * @return The maximum value in the list.
      */
     public Integer max() {
-        int max = 0;
+        int max = Integer.MIN_VALUE;
 
         for (Integer number : list)
             if (number > max)
@@ -58,8 +58,8 @@ public class ListAggregator {
      * Counts the number of distinct numbers in a list.
      * @return The number of distinct numbers.
      */
-    public int distinct() {
-        ListDeduplicator deduplicator = new ListDeduplicator(list);
+    public int distinct(IListDeduplicator deduplicator) {
+//        ListDeduplicator deduplicator = new ListDeduplicator(list);
         List<Integer> distinct = deduplicator.deduplicate();
 
         return distinct.size();

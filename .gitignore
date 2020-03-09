@@ -37,3 +37,9 @@ numbers/build/reports/tests/test/js/
 numbers/build/test-results/test/binary/
 
 *.gradle
+
+*.iml
+
+*.iws
+
+*.ipr
