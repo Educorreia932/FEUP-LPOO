@@ -10,6 +10,7 @@ import java.util.List;
 import java.util.Random;
 
 public class Arena {
+    public static boolean verifyMonsterCollisions;
     private int width;
     private int height;
     private Hero hero;
@@ -59,7 +60,7 @@ public class Arena {
 
         // TODO: Make it impossible to a monster to spawn in the same position as the hero
         for (int i = 0; i < 5; i++)
-            monsters.add(new Monster(random.nextInt(width - 2) + 1, random.nextInt(height - 2) + 1));
+            monsters.add(new Monster(random.nextInt(width - 2) + 1, random.nextInt(height - 2) + 1, 20));
 
         return monsters;
     }
@@ -82,31 +83,47 @@ public class Arena {
             monster.move(hero.getPosition());
     }
 
-    public void verifyMonsterCollisions() {
+    public void killMonsters() {
+        Monster toRemove = null;
+
         for (Monster monster : monsters)
-            if (monster.getPosition().equals(hero.getPosition())) {
+            if (monster.getHealth() == 0) {
+                toRemove = monster;
                 break;
             }
+
+        if (toRemove != null)
+            monsters.remove(toRemove);
+    }
+
+    public boolean verifyMonsterCollisions() {
+        for (Monster monster : monsters)
+            if (monster.getPosition().equals(hero.getPosition()))
+                return true;
+
+        return false;
     }
 
     public void processKey(KeyStroke key) {
-        // Convert to switch case
-        if (key.getKeyType() == KeyType.ArrowLeft)
-            moveHero(hero.moveLeft());
-
-        if (key.getKeyType() == KeyType.ArrowRight)
-            moveHero(hero.moveRight());
-
-        if (key.getKeyType() == KeyType.ArrowUp)
-            moveHero(hero.moveUp());
-
-        if (key.getKeyType() == KeyType.ArrowDown)
-            moveHero(hero.moveDown());
+        switch (key.getKeyType()) {
+            case ArrowUp:
+                moveHero(hero.moveUp());
+                break;
+            case ArrowDown:
+                moveHero(hero.moveDown());
+                break;
+            case ArrowLeft:
+                moveHero(hero.moveLeft());
+                break;
+            case ArrowRight:
+                moveHero(hero.moveRight());
+                break;
+        }
     }
 
     public void draw(TextGraphics graphics) {
-        graphics.setBackgroundColor(TextColor.Factory.fromString("#DEB887"));
-        graphics.fillRectangle(new TerminalPosition(0, 0), new TerminalSize(width, height), ' ');
+        graphics.setBackgroundColor(TextColor.Factory.fromString("#000000"));
+        graphics.fillRectangle(new TerminalPosition(0, 0), new TerminalSize(width, height), '.');
 
         for (Wall wall : walls)
             wall.draw(graphics);
@@ -124,6 +141,13 @@ public class Arena {
         for (Wall wall : walls)
             if (position.equals(wall.getPosition()))
                 return false;
+
+        for (Monster monster : monsters)
+            if (position.equals(monster.getPosition())) {
+                monster.takeDamage(hero.getEquippedWeapon().getDamage());
+
+                return false;
+            }
 
         return position.getX() <= width && position.getY() <= height;
     }

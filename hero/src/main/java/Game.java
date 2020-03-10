@@ -34,7 +34,7 @@ public class Game {
             graphics.setBackgroundColor(TextColor.Factory.fromString("#336699"));
             graphics.fillRectangle(new TerminalPosition(0, 0), new TerminalSize(width, height), ' ');
 
-            arena = new Arena(30, 20, new Hero(10, 10));
+            arena = new Arena(30, 20, new Hero(10, 10, 10));
         }
 
         catch (IOException e) {
@@ -44,9 +44,7 @@ public class Game {
 
     private void draw() throws IOException {
         screen.clear();
-        arena.verifyMonsterCollisions();
         arena.moveMonsters();
-        arena.retrieveCoins();
         arena.draw(graphics);
         screen.refresh();
     }
@@ -55,19 +53,18 @@ public class Game {
         arena.processKey(key);
     }
 
-    private void moveHero(Position position) {
-        arena.moveHero(position);
-    }
-
     public void run() throws IOException {
         while (true) {
+            arena.retrieveCoins();
+            arena.killMonsters();
+
             draw();
 
             KeyStroke key = screen.readInput();
 
             processKey(key);
 
-            if (key.getKeyType() == KeyType.Character && key.getCharacter() == 'q')
+            if (key.getKeyType() == KeyType.Character && key.getCharacter() == 'q' || arena.verifyMonsterCollisions())
                 screen.close();
 
             if (key.getKeyType() == KeyType.EOF)
