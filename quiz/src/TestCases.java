@@ -28,81 +28,6 @@ public class TestCases {
         assertTrue(Modifier.isAbstract(c.getModifiers()));
     }
 
-    abstract class Act{
-        private String name;
-        private String country;
-
-        Act(String name, String country) {
-            this.name = name;
-            this.country = country;
-        }
-
-        public String getName() {
-            return name;
-        }
-
-        public void setName(String name) {
-            this.name = name;
-        }
-
-        public String getCountry() {
-            return country;
-        }
-
-        public void setCountry(String country) {
-            this.country = country;
-        }
-    }
-
-    class Band extends Act {
-        Band(String name, String country) {
-            super(name, country);
-        }
-    }
-
-    class Artist extends Act{
-        Artist(String name, String country) {
-            super(name, country);
-        }
-    }
-
-    class Concert {
-        private String country;
-        private String city;
-        private String date;
-        private List<Act> acts = new ArrayList<>();
-
-        Concert(String city, String country, String date) {
-            this.city = city;
-            this.country = country;
-            this.date = date;
-        }
-
-        public String getDate() {
-            return date;
-        }
-
-        public String getCountry() {
-            return country;
-        }
-
-        public String getCity() {
-            return city;
-        }
-
-        public void addAct(Act act) {
-            acts.add(act);
-        }
-
-        public List<Act> getActs() {
-            return acts;
-        }
-
-        public boolean equals(Concert concert) {
-            return city.equals(concert.getCity()) && country.equals(concert.getCountry()) && date.equals(concert.getDate());
-        }
-    }
-
     @Test
     public void testActs() {
         Act radiohead = new Band("Radiohead", "UK");
@@ -157,7 +82,6 @@ public class TestCases {
         assertEquals(concert4, concert5);
     }
 
-/*
     @Test
     public void testSet() {
         Concert concert1 = new Concert("Paris", "France", "2019/10/10");
@@ -175,9 +99,7 @@ public class TestCases {
 
         assertEquals(4, tour.size());
     }
-*/
 
-/*
     @Test
     public void testTicket() throws InvalidTicket {
         Concert concert = new Concert("London", "UK", "2019/10/10");
@@ -194,18 +116,13 @@ public class TestCases {
         fieldsArentPublic(Ticket.class);
     }
 
-*/
-
-/*
     // This test expects the code to throw an InvalidTicket exception
     @Test(expected = InvalidTicket.class)
     public void testInvalidTicket() throws InvalidTicket {
         Concert concert = new Concert("London", "UK", "2019/10/10");
         Ticket ticket = new Ticket(-1, concert);
     }
-*/
 
-/*
     @Test
     public void testBandArtists() {
         Band radiohead = new Band("Radiohead", "UK");
@@ -231,9 +148,7 @@ public class TestCases {
         
         assertEquals(5, artists.size());
     }
-*/
 
-/*
     @Test
     public void testContains() {
         Band radiohead = new Band("Radiohead", "UK");
@@ -256,9 +171,7 @@ public class TestCases {
         assertFalse(radiohead.containsArtist(new Artist("Thom Yorke", "USA")));
         assertFalse(radiohead.containsArtist(new Artist("Tom Yorke", "UK")));
     }
-*/
 
-/*
     @Test
     public void testParticipates() {
         Concert concert = new Concert("London", "UK", "2019/10/10");
@@ -291,9 +204,7 @@ public class TestCases {
         assertFalse(concert.participates(new Artist("Bob the Builder", "USA")));
         assertFalse(concert.participates(new Artist("Tom Tom", "UK")));
     }
-*/
 
-/*
     @Test
     public void testBoxOffice() throws InvalidTicket {
         Act bob = new Artist("Bob Dylan", "USA");
@@ -325,6 +236,4 @@ public class TestCases {
         assertEquals(tickets2.get(0).getConcert(), concertParis);
         assertEquals(tickets3.get(0).getConcert(), concertLondon);
     }
-*/
-
 }
