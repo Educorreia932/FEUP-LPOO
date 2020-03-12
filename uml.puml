@@ -2,5 +2,10 @@
 
 class Application 
 
+class Arena
+
+class Game
+
+Application *-- Game
 
 @enduml
