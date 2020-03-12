@@ -6,7 +6,10 @@ class World
 
 class Game
 
-class Element 
+class Element {
+    name
+    character
+}
 
 class Player
 
@@ -14,9 +17,13 @@ class Creature {
     hitpoints
 }
 
+class Item
+
 Application *-- Game
 
 Game *-- World
+
+World *-- Player
 
 Element <-- Creature
 Element <-- Item
