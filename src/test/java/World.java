@@ -1,6 +1,6 @@
 import com.googlecode.lanterna.graphics.TextGraphics;
 
-public class Arena {
+public class World {
     public void draw(TextGraphics graphics) {
 
     }

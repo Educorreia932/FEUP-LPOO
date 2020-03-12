@@ -2,10 +2,30 @@
 
 class Application 
 
-class Arena
+class World
 
 class Game
 
+class Element 
+
+class Player
+
+class Creature {
+    hitpoints
+}
+
 Application *-- Game
+
+Game *-- World
+
+Element <-- Creature
+Element <-- Item
+Element *-- Position
+
+Creature <-- Player
+
+Player *-- Item
+
+Weapon <-- Item
 
 @enduml

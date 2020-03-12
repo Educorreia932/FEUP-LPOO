@@ -14,7 +14,7 @@ import java.io.IOException;
 public class Game {
     private Terminal terminal;
     private Screen screen;
-    private Arena arena;
+    private World world;
     private TextGraphics graphics;
 
     private int x = 10;
@@ -37,7 +37,7 @@ public class Game {
             graphics.setBackgroundColor(TextColor.Factory.fromString("#336699"));
             graphics.fillRectangle(new TerminalPosition(0, 0), new TerminalSize(width, height), ' ');
 
-            arena = new Arena();
+            world = new World();
         }
 
         catch (IOException e) {
@@ -51,7 +51,7 @@ public class Game {
 
     private void draw() throws IOException {
         screen.clear();
-        arena.draw(graphics);
+        world.draw(graphics);
         screen.refresh();
     }
 
