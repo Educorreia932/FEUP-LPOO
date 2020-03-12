@@ -1,0 +1,6 @@
+@startuml hero
+
+class Application 
+
+
+@enduml
