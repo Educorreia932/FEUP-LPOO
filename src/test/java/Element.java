@@ -1,5 +1,4 @@
 import com.googlecode.lanterna.graphics.TextGraphics;
-import javafx.geometry.Pos;
 
 // Represents an element present in the world
 abstract public class Element {
