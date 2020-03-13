@@ -5,8 +5,7 @@ public class Wall extends Element {
         super(x, y, character);
     }
 
-    @Override
-    public void draw(TextGraphics graphics) {
-
+    public Wall(int x, int y) {
+        super(x, y, "\u2588");
     }
 }

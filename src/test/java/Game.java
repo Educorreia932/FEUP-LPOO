@@ -34,7 +34,7 @@ public class Game {
 
             graphics = screen.newTextGraphics();
 
-            graphics.setBackgroundColor(TextColor.Factory.fromString("#336699"));
+            graphics.setBackgroundColor(TextColor.Factory.fromString("#000000"));
             graphics.fillRectangle(new TerminalPosition(0, 0), new TerminalSize(width, height), ' ');
 
             world = new World();
@@ -43,10 +43,6 @@ public class Game {
         catch (IOException e) {
             e.printStackTrace();
         }
-    }
-
-    private void processKey(KeyStroke key) {
-
     }
 
     private void draw() throws IOException {

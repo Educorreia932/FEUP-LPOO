@@ -1,23 +1,29 @@
 @startuml hero
 
-class Application 
+class World {
+    draw()
+    processKey()
+}
 
-class World
-
-class Game
+class Position {
+    x
+    y
+}
 
 class Element {
     name
     character
-}
 
-class Player
+    draw()
+}
 
 class Creature {
-    hitpoints
+    hp
 }
 
-class Item
+class Weapon {
+    damage
+}
 
 Application *-- Game
 
@@ -30,8 +36,11 @@ Element <-- Item
 Element *-- Position
 
 Creature <-- Player
+Creature <-- Monster
 
-Player *-- Item
+Player *-- Inventory
+
+Inventory *-- Item
 
 Weapon <-- Item
 
