@@ -18,11 +18,17 @@ class Element {
 }
 
 class Creature {
-    hp
+    hp 
+    
+    move()
 }
 
 class Weapon {
     damage
+}
+
+class Item {
+    name
 }
 
 Application *-- Game
@@ -33,6 +39,8 @@ World *-- Player
 
 Element <-- Creature
 Element <-- Item
+Element <-- Wall
+Element <-- Tile
 Element *-- Position
 
 Creature <-- Player

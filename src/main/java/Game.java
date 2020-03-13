@@ -2,12 +2,14 @@ import com.googlecode.lanterna.TerminalPosition;
 import com.googlecode.lanterna.TerminalSize;
 import com.googlecode.lanterna.TextColor;
 import com.googlecode.lanterna.graphics.TextGraphics;
+import com.googlecode.lanterna.gui2.Panel;
 import com.googlecode.lanterna.input.KeyStroke;
 import com.googlecode.lanterna.input.KeyType;
 import com.googlecode.lanterna.screen.Screen;
 import com.googlecode.lanterna.screen.TerminalScreen;
 import com.googlecode.lanterna.terminal.DefaultTerminalFactory;
 import com.googlecode.lanterna.terminal.Terminal;
+import javafx.scene.layout.Pane;
 
 import java.io.IOException;
 
@@ -17,9 +19,6 @@ public class Game {
     private World world;
     private TextGraphics graphics;
 
-    private int x = 10;
-    private int y = 10;
-
     public Game() {
         try {
             int width = 30;
@@ -28,13 +27,13 @@ public class Game {
             terminal = new DefaultTerminalFactory().createTerminal();
             screen = new TerminalScreen(terminal);
 
-            screen.setCursorPosition(null);   // we don't need a cursor
-            screen.startScreen();             // screens must be started
-            screen.doResizeIfNecessary();     // resize screen if necessary
+            screen.setCursorPosition(null);   // We don't need a cursor
+            screen.startScreen();             // Screens must be started
+            screen.doResizeIfNecessary();     // Resize screen if necessary
 
             graphics = screen.newTextGraphics();
 
-            graphics.setBackgroundColor(TextColor.Factory.fromString("#000000"));
+            graphics.setBackgroundColor(TextColor.ANSI.BLACK);
             graphics.fillRectangle(new TerminalPosition(0, 0), new TerminalSize(width, height), ' ');
 
             world = new World();

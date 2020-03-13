@@ -6,6 +6,7 @@ import java.util.List;
 
 public class World {
     List<Wall> walls;
+    List<Item> items = new ArrayList<>();
     Player player;
 
     private List<Wall> createWalls() {
@@ -30,13 +31,17 @@ public class World {
     public World() {
         player = new Player(10, 10);
         walls = createWalls();
+        items.add(new Item(15, 15, "w"));
     }
 
     public void draw(TextGraphics graphics) {
-        player.draw(graphics);
-
         for (Wall wall : walls)
             wall.draw(graphics);
+
+        for (Item item : items)
+            item.draw(graphics);
+
+        player.draw(graphics);
     }
 
     public void processKey(KeyStroke key) {
