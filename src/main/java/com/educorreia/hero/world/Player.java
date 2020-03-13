@@ -1,3 +1,5 @@
+package com.educorreia.hero.world;
+
 public class Player extends Creature {
     Inventory inventory;
 

@@ -1,3 +1,4 @@
+package com.educorreia.hero.world;
 
 public class Creature extends Element {
     private float hp;

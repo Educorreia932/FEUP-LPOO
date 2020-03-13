@@ -1,3 +1,5 @@
+package com.educorreia.hero.world;
+
 public class Wall extends Element {
     Wall(int x, int y, String character) {
         super(x, y, character);

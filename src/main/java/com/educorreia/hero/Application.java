@@ -1,3 +1,5 @@
+package com.educorreia.hero;
+
 import java.io.IOException;
 
 public class Application {

@@ -1,3 +1,5 @@
+package com.educorreia.hero.world;
+
 public class Item extends Element {
     String name;
 

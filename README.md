@@ -1,4 +1,4 @@
-# Player
+# com.educorreia.hero.world.Player
 
 A small roguelikish game that was initially being developed in University's classes and which I decided to turn into a standalone project.
 

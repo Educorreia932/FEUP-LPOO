@@ -1,3 +1,5 @@
+package com.educorreia.hero.world;
+
 public class Position {
     int x, y;
 
