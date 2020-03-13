@@ -7,9 +7,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class World {
-    List<Wall> walls;
-    List<Item> items = new ArrayList<>();
-    Player player;
+    private List<Wall> walls;
+    private List<Item> items = new ArrayList<>();
+    private Player player;
+
+    private int width, height;
 
     private List<Wall> createWalls() {
         int width = 20;
@@ -30,10 +32,12 @@ public class World {
         return walls;
     }
 
-    public World() {
+    public World(int width, int height) {
         player = new Player(10, 10);
         walls = createWalls();
         items.add(new Item(15, 15, "w"));
+        this.width = width;
+        this.height = height;
     }
 
     public void draw(TextGraphics graphics) {
@@ -61,5 +65,23 @@ public class World {
                 player.move(player.getPosition().getX() + 1, player.getPosition().getY());
                 break;
         }
+    }
+
+    public int getWidth() {
+        return width;
+    }
+
+    public int getHeight() {
+        return height;
+    }
+
+    public List<Element> getAllElements() {
+        List<Element> elements = new ArrayList<>();
+
+        elements.add(player);
+        elements.addAll(walls);
+        elements.addAll(items);
+
+        return elements;
     }
 }
