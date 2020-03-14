@@ -6,9 +6,9 @@ import com.googlecode.lanterna.graphics.TextGraphics;
 
 // Represents an element present in the world
 abstract public class Element {
-    Position position;
-    String character;
-    String color = "#FFFFFF";
+    private Position position;
+    private String character;
+    private String color = "#FFFFFF";
 
     Element(int x, int y, String character, String color) {
         position = new Position(x, y);
@@ -28,5 +28,10 @@ abstract public class Element {
 
     public Position getPosition() {
         return position;
+    }
+
+    public void setPosition(Position position) {
+        this.position.setX(position.getX());
+        this.position.setY(position.getY());
     }
 }

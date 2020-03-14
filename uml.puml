@@ -1,55 +1,70 @@
 @startuml hero
 
-class com.educorreia.hero.world.World {
-    draw()
-    processKey()
+class Game {
+    run()
 }
 
-class com.educorreia.hero.world.Position {
-    x
-    y
+abstract class Input {
+    getPressedKey()
 }
 
-class com.educorreia.hero.world.Element {
-    name
-    character
+package com.educorreia.hero.world {
+    class World {
+        draw()
+        step()
+    }
 
-    draw()
+    class Position {
+        x
+        y
+    }
+
+    abstract class Element {
+        name
+        character
+
+        draw()
+    }
+
+    class Creature {
+        health
+        
+        move()
+    }
+
+    class Weapon {
+        damage
+    }
+
+    class Item {
+        name
+    }
+
+    Creature <-- Player
+    Creature <-- Monster
+    Creature *-- Position : nextPosition
+
+    World *-- Player
+
+    Element <-- Creature
+    Element <-- Item
+    Element <-- Wall
+
+    Element <-- Tile
+    Element *-- Position : position
+
+    Player *-- Inventory
+
+    Inventory *-- Item
+
+    Item <-- Weapon
 }
 
-class com.educorreia.hero.world.Creature {
-    hp 
-    
-    move()
+package com.educorreia.hero.gui {
+    class Gui
 }
 
-class com.educorreia.hero.world.Weapon {
-    damage
-}
-
-class com.educorreia.hero.world.Item {
-    name
-}
-
-com.educorreia.hero.Application *-- com.educorreia.hero.Game
-
-com.educorreia.hero.Game *-- com.educorreia.hero.world.World
-
-com.educorreia.hero.world.World *-- com.educorreia.hero.world.Player
-
-com.educorreia.hero.world.Element <-- com.educorreia.hero.world.Creature
-com.educorreia.hero.world.Element <-- com.educorreia.hero.world.Item
-com.educorreia.hero.world.Element <-- com.educorreia.hero.world.Wall
-com.educorreia.hero.world.Element <-- Tile
-com.educorreia.hero.world.Element *-- com.educorreia.hero.world.Position
-
-com.educorreia.hero.world.Creature <-- com.educorreia.hero.world.Player
-com.educorreia.hero.world.Creature <-- com.educorreia.hero.world.Monster
-
-com.educorreia.hero.world.Player *-- com.educorreia.hero.world.Inventory
-
-com.educorreia.hero.world.Inventory *-- com.educorreia.hero.world.Item
-
-com.educorreia.hero.world.Weapon <-- com.educorreia.hero.world.Item
+Game *-- Gui
+Game *-- World
 
 @enduml

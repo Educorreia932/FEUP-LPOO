@@ -31,7 +31,7 @@ public class Gui {
         graphics.setBackgroundColor(TextColor.ANSI.BLACK);
         graphics.fillRectangle(new TerminalPosition(0, 0), new TerminalSize(world.getWidth(), world.getHeight()), ' ');
 
-        this.world = world;
+        this.world = world; // TODO: Remove, only using widht and height from the world
     }
 
     public void draw() throws IOException {

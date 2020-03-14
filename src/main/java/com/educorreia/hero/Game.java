@@ -9,6 +9,7 @@ import java.io.IOException;
 
 public class Game {
     private Gui gui;
+    private World world;
 
     public static void main(String[] args) throws IOException {
         Game game = new Game();
@@ -17,7 +18,7 @@ public class Game {
     }
 
     public Game() throws IOException {
-        World world = new World(30, 20);
+        world = new World(30, 20);
 
         gui = new Gui(world);
 
@@ -35,6 +36,8 @@ public class Game {
 
             if (pressedKey.getKeyType() == KeyType.EOF)
                 return;
+
+            world.step(pressedKey);
         }
     }
 }

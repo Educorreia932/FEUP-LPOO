@@ -1,6 +1,5 @@
 package com.educorreia.hero.world;
 
-import com.googlecode.lanterna.graphics.TextGraphics;
 import com.googlecode.lanterna.input.KeyStroke;
 
 import java.util.ArrayList;
@@ -40,23 +39,6 @@ public class World {
         this.height = height;
     }
 
-    public void processKey(KeyStroke key) {
-        switch (key.getKeyType()) {
-            case ArrowUp:
-                player.move(player.getPosition().getX(), player.getPosition().getY() - 1);
-                break;
-            case ArrowDown:
-                player.move(player.getPosition().getX(), player.getPosition().getY() + 1);
-                break;
-            case ArrowLeft:
-                player.move(player.getPosition().getX() - 1, player.getPosition().getY());
-                break;
-            case ArrowRight:
-                player.move(player.getPosition().getX() + 1, player.getPosition().getY());
-                break;
-        }
-    }
-
     public int getWidth() {
         return width;
     }
@@ -68,9 +50,9 @@ public class World {
     public List<Element> getAllElements() {
         List<Element> elements = new ArrayList<>();
 
-        elements.add(player);
         elements.addAll(walls);
         elements.addAll(items);
+        elements.add(player);
 
         return elements;
     }
@@ -79,7 +61,33 @@ public class World {
         return player;
     }
 
-    public void step() {
+    public void step(KeyStroke pressedKey) {
+        boolean canMove = true;
 
+        switch (pressedKey.getKeyType()) {
+            case ArrowUp:
+                player.setNextPosition(0, -1);
+                break;
+            case ArrowDown:
+                player.setNextPosition(0, 1);
+                break;
+            case ArrowRight:
+                player.setNextPosition(1, 0);
+                break;
+            case ArrowLeft:
+                player.setNextPosition(-1, 0);
+                break;
+        }
+
+        for (Wall wall : walls)
+            if (wall.getPosition().equals(player.getNextPosition())) {
+                canMove = false;
+                break;
+            }
+
+        if (canMove)
+            player.setPosition(player.getNextPosition());
+
+        player.setNextPosition(player.getPosition());
     }
 }

@@ -5,7 +5,7 @@ import com.googlecode.lanterna.screen.TerminalScreen;
 
 import java.io.IOException;
 
-public class Input {
+public abstract class Input {
     public static KeyStroke getPressedKey(TerminalScreen screen) throws IOException {
         KeyStroke key = screen.readInput();
 

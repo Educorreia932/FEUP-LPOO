@@ -8,6 +8,11 @@ public class Position {
         this.y = y;
     }
 
+    Position(Position position) {
+        x = position.getX();
+        y = position.getY();
+    }
+
     public int getX() {
         return x;
     }
@@ -23,4 +28,20 @@ public class Position {
     public void setY(int y) {
         this.y = y;
     }
+
+    /**
+     * @brief Changes the position by an offset both in x and y
+     */
+    public void changePosition(int x_offset, int y_offset) {
+        x += x_offset;
+        y += y_offset;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        Position position = (Position) o;
+
+        return x == position.x && y == position.y;
+    }
+
 }
