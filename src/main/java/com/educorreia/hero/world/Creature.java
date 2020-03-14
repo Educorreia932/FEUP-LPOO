@@ -1,15 +1,19 @@
 package com.educorreia.hero.world;
 
 public class Creature extends Element {
-    private float hp;
+    private float health;
 
     Creature(int x, int y, String character) {
         super(x, y, character);
-        hp = 100;
+        health = 100;
     }
 
     public void move(int x, int y) {
         position.setX(x);
         position.setY(y);
+    }
+
+    public float getHealth() {
+        return health;
     }
 }

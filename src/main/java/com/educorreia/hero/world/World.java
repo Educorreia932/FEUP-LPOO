@@ -40,16 +40,6 @@ public class World {
         this.height = height;
     }
 
-    public void draw(TextGraphics graphics) {
-        for (Wall wall : walls)
-            wall.draw(graphics);
-
-        for (Item item : items)
-            item.draw(graphics);
-
-        player.draw(graphics);
-    }
-
     public void processKey(KeyStroke key) {
         switch (key.getKeyType()) {
             case ArrowUp:
@@ -83,5 +73,13 @@ public class World {
         elements.addAll(items);
 
         return elements;
+    }
+
+    public Player getPlayer() {
+        return player;
+    }
+
+    public void step() {
+
     }
 }
