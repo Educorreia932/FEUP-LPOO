@@ -39,7 +39,7 @@ public class World {
 
         player = new Player(10, 10, 1);
 
-        setElement(new Item(15, 15, 1, "w", "Weapon"));
+        setElement(new Item(15, 15, 1, "w", "Sword", "sword.txt"));
 
         createWalls();
     }
@@ -82,8 +82,10 @@ public class World {
             case Character:
                 switch (pressedKey.getCharacter()) {
                     case 'g':
-                        if (getElement(player.getPosition()) instanceof Item)
-                            elements.get(1).get(player.getPosition().getY()).remove(player.getPosition().getX());
+                        if (getElement(player.getPosition()) instanceof Item) {
+                            player.pickupItem((Item) getElement(player.getPosition()));
+                            removeElement(player.getPosition());
+                        }
 
                         break;
                 }
@@ -100,6 +102,14 @@ public class World {
 
     public Player getPlayer() {
         return player;
+    }
+
+    private void removeElement(Position position) {
+        int x = position.getX();
+        int y = position.getY();
+        int z = position.getZ();
+
+        elements.get(z).get(y).remove(x);
     }
 
     private void setElement(Element element) {

@@ -58,8 +58,6 @@ package com.educorreia.hero.world {
     Player *-- Inventory
 
     Inventory *-- Item
-
-    Item <-- Weapon
 }
 
 package com.educorreia.hero.gui {

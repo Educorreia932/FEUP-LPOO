@@ -24,7 +24,7 @@ abstract public class Element {
     }
 
     public void draw(TextGraphics graphics) {
-        graphics.setForegroundColor(TextColor.ANSI.WHITE);
+        graphics.setForegroundColor(TextColor.Factory.fromString(color));
         graphics.putString(new TerminalPosition(getPosition().getX(), getPosition().getY()), character);
     }
 

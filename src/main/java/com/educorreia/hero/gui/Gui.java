@@ -1,12 +1,8 @@
 package com.educorreia.hero.gui;
 
-import com.educorreia.hero.world.Element;
-import com.educorreia.hero.world.Item;
-import com.educorreia.hero.world.Position;
-import com.educorreia.hero.world.World;
+import com.educorreia.hero.world.*;
 import com.googlecode.lanterna.TerminalPosition;
 import com.googlecode.lanterna.TerminalSize;
-import com.googlecode.lanterna.TextColor;
 import com.googlecode.lanterna.graphics.TextGraphics;
 import com.googlecode.lanterna.screen.TerminalScreen;
 import com.googlecode.lanterna.terminal.DefaultTerminalFactory;
@@ -29,24 +25,36 @@ public class Gui {
 
         graphics = screen.newTextGraphics();
 
-        graphics.setBackgroundColor(TextColor.ANSI.BLACK);
-        graphics.fillRectangle(new TerminalPosition(0, 0), new TerminalSize(world.getWidth(), world.getHeight()), ' ');
-
         this.world = world;
+    }
+
+    private void displayInventory(Player player) {
+
+    }
+
+    private void drawItem(Item item) {
+        int i = 2;
+
+        graphics.putString(world.getWidth() + 7, 0, item.getName());
+
+        for (String line : item.getAppearance())
+            graphics.putString(world.getWidth() + 7, i++, line);
     }
 
     public void draw() throws IOException {
         screen.clear();
 
+        graphics.fillRectangle(new TerminalPosition(world.getWidth() + 5, 0), new TerminalSize(1, world.getHeight()), '#');
+
         for (Element element : world.getAllElements())
             element.draw(graphics);
 
-        graphics.putString(0, world.getHeight(), "Health: " + world.getPlayer().getHealth());
+        graphics.putString(0, world.getHeight() + 1, "Health: " + world.getPlayer().getHealth());
 
         Position playerPosition = world.getPlayer().getPosition();
 
         if (world.getElement(playerPosition) instanceof Item)
-            graphics.putString(world.getWidth() + 5, 0, ((Item) world.getElement(playerPosition)).getName());
+            drawItem((Item) world.getElement(playerPosition));
 
         screen.refresh();
     }

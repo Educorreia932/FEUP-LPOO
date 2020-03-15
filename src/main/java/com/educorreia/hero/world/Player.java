@@ -7,4 +7,8 @@ public class Player extends Creature {
         super(x, y, z, "@");
         inventory = new Inventory();
     }
+
+    public void pickupItem(Item item) {
+        inventory.addItem(item);
+    }
 }
