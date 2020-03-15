@@ -1,32 +1,18 @@
 package com.educorreia.hero.world;
 
 public class Position {
-    int x, y;
+    int x, y, z;
 
-    Position(int x, int y) {
+    Position(int x, int y, int z) {
         this.x = x;
         this.y = y;
+        this.z = z;
     }
 
     Position(Position position) {
         x = position.getX();
         y = position.getY();
-    }
-
-    public int getX() {
-        return x;
-    }
-
-    public int getY() {
-        return y;
-    }
-
-    public void setX(int x) {
-        this.x = x;
-    }
-
-    public void setY(int y) {
-        this.y = y;
+        z = position.getZ();
     }
 
     /**
@@ -44,4 +30,27 @@ public class Position {
         return x == position.x && y == position.y;
     }
 
+    public int getX() {
+        return x;
+    }
+
+    public int getY() {
+        return y;
+    }
+
+    public int getZ() {
+        return z;
+    }
+
+    public void setX(int x) {
+        this.x = x;
+    }
+
+    public void setY(int y) {
+        this.y = y;
+    }
+
+    public void setZ(int z) {
+        this.z = z;
+    }
 }

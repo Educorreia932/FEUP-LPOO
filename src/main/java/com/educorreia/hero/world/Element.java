@@ -4,20 +4,22 @@ import com.googlecode.lanterna.TerminalPosition;
 import com.googlecode.lanterna.TextColor;
 import com.googlecode.lanterna.graphics.TextGraphics;
 
-// Represents an element present in the world
+/**
+ * @brief Represents an element present in the world
+  */
 abstract public class Element {
     private Position position;
     private String character;
     private String color = "#FFFFFF";
 
-    Element(int x, int y, String character, String color) {
-        position = new Position(x, y);
+    Element(int x, int y, int z, String character, String color) {
+        position = new Position(x, y, z);
         this.character = character;
         this.color = color;
     }
 
-    Element(int x, int y, String character) {
-        position = new Position(x, y);
+    Element(int x, int y, int z, String character) {
+        position = new Position(x, y, z);
         this.character = character;
     }
 

@@ -45,8 +45,8 @@ public class Gui {
 
         Position playerPosition = world.getPlayer().getPosition();
 
-        if (world.getElement(playerPosition, 1) instanceof Item)
-            graphics.putString(0, world.getHeight() + 1, ((Item) world.getElement(playerPosition, 1)).getName());
+        if (world.getElement(playerPosition) instanceof Item)
+            graphics.putString(world.getWidth() + 5, 0, ((Item) world.getElement(playerPosition)).getName());
 
         screen.refresh();
     }

@@ -4,8 +4,8 @@ public class Creature extends Element {
     private float health;
     private Position nextPosition;
 
-    Creature(int x, int y, String character) {
-        super(x, y, character);
+    Creature(int x, int y, int z, String character) {
+        super(x, y, z, character);
         nextPosition = new Position(getPosition());
         health = 100;
     }
