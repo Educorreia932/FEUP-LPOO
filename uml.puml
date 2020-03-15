@@ -10,8 +10,9 @@ abstract class Input {
 
 package com.educorreia.hero.world {
     class World {
-        draw()
         step()
+        createWalls()
+        processInput()
     }
 
     class Position {
@@ -22,6 +23,7 @@ package com.educorreia.hero.world {
     abstract class Element {
         name
         character
+        color
 
         draw()
     }
@@ -49,8 +51,8 @@ package com.educorreia.hero.world {
     Element <-- Creature
     Element <-- Item
     Element <-- Wall
-
     Element <-- Tile
+
     Element *-- Position : position
 
     Player *-- Inventory

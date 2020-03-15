@@ -34,4 +34,10 @@ abstract public class Element {
         this.position.setX(position.getX());
         this.position.setY(position.getY());
     }
+
+    @Override
+    public String toString() {
+        return "position=" + position.getX() + ", " + position.getY() +
+                ", character='" + character + '\'';
+    }
 }

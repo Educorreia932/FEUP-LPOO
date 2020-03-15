@@ -11,10 +11,7 @@ import com.googlecode.lanterna.graphics.TextGraphics;
 import com.googlecode.lanterna.screen.TerminalScreen;
 import com.googlecode.lanterna.terminal.DefaultTerminalFactory;
 import com.googlecode.lanterna.terminal.Terminal;
-import com.googlecode.lanterna.terminal.swing.AWTTerminalFontConfiguration;
-import javafx.geometry.Pos;
 
-import java.awt.*;
 import java.io.IOException;
 
 public class Gui {
@@ -48,8 +45,8 @@ public class Gui {
 
         Position playerPosition = world.getPlayer().getPosition();
 
-        if (world.getElement(playerPosition) instanceof Item)
-            graphics.putString(0, world.getHeight() + 1, ((Item) world.getElement(playerPosition)).getName());
+        if (world.getElement(playerPosition, 1) instanceof Item)
+            graphics.putString(0, world.getHeight() + 1, ((Item) world.getElement(playerPosition, 1)).getName());
 
         screen.refresh();
     }
