@@ -24,8 +24,6 @@ package com.educorreia.hero.world {
         name
         character
         color
-
-        draw()
     }
 
     class Creature {
@@ -34,16 +32,11 @@ package com.educorreia.hero.world {
         move()
     }
 
-    class Weapon {
-        damage
-    }
-
     class Item {
         name
     }
 
     Creature <-- Player
-    Creature <-- Monster
     Creature *-- Position : nextPosition
 
     World *-- Player
@@ -61,7 +54,10 @@ package com.educorreia.hero.world {
 }
 
 package com.educorreia.hero.gui {
-    class Gui
+    class Gui {
+        drawItem()
+        drawElement()
+    }
 }
 
 Game *-- Gui

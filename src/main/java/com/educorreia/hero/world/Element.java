@@ -42,4 +42,12 @@ abstract public class Element {
         return "position=" + position.getX() + ", " + position.getY() +
                 ", character='" + character + '\'';
     }
+
+    public String getColor() {
+        return color;
+    }
+
+    public String getCharacter() {
+        return character;
+    }
 }

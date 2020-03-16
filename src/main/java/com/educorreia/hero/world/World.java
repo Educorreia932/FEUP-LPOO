@@ -40,6 +40,7 @@ public class World {
         player = new Player(10, 10, 1);
 
         setElement(new Item(15, 15, 1, "w", "Sword", "sword.txt"));
+        setElement(new Monster(20, 10, 1, "z"));
 
         createWalls();
     }
@@ -47,8 +48,17 @@ public class World {
     public void step(KeyStroke pressedKey) {
         processInput(pressedKey);
 
-        if (!(getElement(player.getNextPosition()).getPosition().equals(player.getNextPosition()) && getElement(player.getNextPosition()) instanceof Wall))
+        movePlayer();
+    }
+
+    private void movePlayer() {
+        Element e = getElement(player.getNextPosition());
+
+        if (!(e.getPosition().equals(player.getNextPosition()) && (e instanceof Wall || e instanceof Monster)))
             player.setPosition(player.getNextPosition());
+
+        if (e.getPosition().equals(player.getNextPosition()) && e instanceof Monster && player.getEquippedWeapon() != null)
+            ((Monster) e).takeDamage(player.getEquippedWeapon().getDamage());
 
         player.setNextPosition(player.getPosition());
     }
