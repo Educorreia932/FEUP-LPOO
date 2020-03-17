@@ -1,6 +1,6 @@
 package com.educorreia.hero;
 
-import com.educorreia.hero.gui.Gui;
+import com.educorreia.hero.gui.GUI;
 import com.educorreia.hero.world.World;
 import com.googlecode.lanterna.input.KeyStroke;
 import com.googlecode.lanterna.input.KeyType;
@@ -8,7 +8,7 @@ import com.googlecode.lanterna.input.KeyType;
 import java.io.IOException;
 
 public class Game {
-    private Gui gui;
+    private GUI gui;
     private World world;
 
     public static void main(String[] args) throws IOException {
@@ -20,7 +20,7 @@ public class Game {
     public Game() throws IOException {
         world = new World(30, 20);
 
-        gui = new Gui(world);
+        gui = new GUI(world);
 
         run();
     }

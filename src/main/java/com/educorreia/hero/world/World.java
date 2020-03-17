@@ -39,7 +39,7 @@ public class World {
 
         player = new Player(10, 10, 1);
 
-        setElement(new Item(15, 15, 1, "w", "Sword", "sword.txt"));
+        setElement(new Weapon(15, 15, 1, "w", "Sword", 50, "sword.txt"));
         setElement(new Monster(20, 10, 1, "z"));
 
         createWalls();
@@ -57,8 +57,12 @@ public class World {
         if (!(e.getPosition().equals(player.getNextPosition()) && (e instanceof Wall || e instanceof Monster)))
             player.setPosition(player.getNextPosition());
 
-        if (e.getPosition().equals(player.getNextPosition()) && e instanceof Monster && player.getEquippedWeapon() != null)
+        if (e.getPosition().equals(player.getNextPosition()) && e instanceof Monster && player.getEquippedWeapon() != null) {
             ((Monster) e).takeDamage(player.getEquippedWeapon().getDamage());
+
+            if (((Monster) e).getHealth() <= 0)
+                removeElement(e.getPosition());
+        }
 
         player.setNextPosition(player.getPosition());
     }

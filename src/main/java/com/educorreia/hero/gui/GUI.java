@@ -11,12 +11,12 @@ import com.googlecode.lanterna.terminal.Terminal;
 
 import java.io.IOException;
 
-public class Gui {
+public class GUI {
     private World world;
     private TerminalScreen screen;
     private TextGraphics graphics;
 
-    public Gui(World world) throws IOException {
+    public GUI(World world) throws IOException {
         Terminal terminal = new DefaultTerminalFactory().createTerminal();
         screen = new TerminalScreen(terminal);
 
