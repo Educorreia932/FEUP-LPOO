@@ -26,7 +26,8 @@ hs_err_pid*
 
 *.css
 
-numbers/.idea/
+**/.idea/
+**/build/
 
 *.bin
 
