@@ -4,13 +4,9 @@ import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
 
 public class Application {
-    public static void main(String[] args) throws IOException, ParserConfigurationException, SAXException {
-//        Game game = new Game();
-//
-//        game.run();
+    public static void main(String[] args) throws IOException, ParserConfigurationException, SAXException, InterruptedException {
+        Game game = new Game();
 
-        GUI gui = new GUI();
-
-        gui.drawPokemon(25, 0, 0);
+        game.run();
     }
 }

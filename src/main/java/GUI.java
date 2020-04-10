@@ -19,32 +19,20 @@ import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 
-import java.awt.*;
 import java.io.File;
 import java.io.IOException;
 
 public class GUI {
+    private final String CHROMA_GREEN = "5f5";
     private Screen screen;
     private TextGraphics graphics;
 
-    public GUI() throws IOException {
-        Font font = new Font("Fira Code Light", Font.PLAIN, 10);
-        AWTTerminalFontConfiguration cfg = new SwingTerminalFontConfiguration(true, AWTTerminalFontConfiguration.BoldMode.NOTHING, font);
-
-        Terminal terminal = new DefaultTerminalFactory()
-                                .setInitialTerminalSize(new TerminalSize(300, 100))
-                                .setTerminalEmulatorFontConfiguration(cfg)
-                                .createTerminal();
-        screen = new TerminalScreen(terminal);
-
-        screen.setCursorPosition(null);   // we don't need a cursor
-        screen.startScreen();             // screens must be started
-        screen.doResizeIfNecessary();     // resize screen if necessary
-
+    public GUI(Screen screen) {
+        this.screen = screen;
         graphics = screen.newTextGraphics();
     }
 
-    void drawPokemon(Integer pokemonNumber, int x_offset, int y_offset) throws IOException, ParserConfigurationException, SAXException {
+    void drawImage(String filename, int x_offset, int y_offset) throws IOException, ParserConfigurationException, SAXException {
         int x_WIDTH = 6;
         int y_WIDTH = 10;
 
@@ -52,7 +40,7 @@ public class GUI {
         DocumentBuilder builder = factory.newDocumentBuilder();
 
         // Load the input XML document, parse it and return an instance of the Document class.
-        Document document = builder.parse(new File("data\\pokemons\\" + pokemonNumber.toString() + ".svg"));
+        Document document = builder.parse(new File("data\\" + filename + ".svg"));
 
         NodeList nodeList = document.getDocumentElement().getElementsByTagName("g").item(0).getChildNodes();
 
@@ -66,6 +54,10 @@ public class GUI {
                 Integer x = Integer.parseInt(elem.getAttributes().getNamedItem("x").getNodeValue()) / x_WIDTH + x_offset;
                 Integer y = Integer.parseInt(elem.getAttributes().getNamedItem("y").getNodeValue()) / y_WIDTH + y_offset;
                 String color = elem.getAttributes().getNamedItem("style").getNodeValue().substring(6);
+
+                // Background color is transparent
+                if (color.equals(CHROMA_GREEN))
+                    continue;
 
                 color = color.substring(0, 1) + color.substring(0, 1) +
                         color.substring(1, 2) + color.substring(1, 2) +
@@ -93,5 +85,17 @@ public class GUI {
         }
 
         screen.refresh();
+    }
+
+    void draw() throws IOException, ParserConfigurationException, SAXException, InterruptedException {
+        drawImage("overworld", 0, 0);
+        drawImage("pokemons\\7", 50, 0);
+        drawImage("player", 0, 0);
+
+        screen.refresh();
+    }
+
+    Screen getScreen() {
+        return screen;
     }
 }

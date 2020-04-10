@@ -1,56 +1,50 @@
-import com.googlecode.lanterna.graphics.TextGraphics;
+import com.googlecode.lanterna.TerminalSize;
 import com.googlecode.lanterna.input.KeyStroke;
 import com.googlecode.lanterna.input.KeyType;
 import com.googlecode.lanterna.screen.Screen;
 import com.googlecode.lanterna.screen.TerminalScreen;
 import com.googlecode.lanterna.terminal.DefaultTerminalFactory;
 import com.googlecode.lanterna.terminal.Terminal;
+import com.googlecode.lanterna.terminal.swing.AWTTerminalFontConfiguration;
+import com.googlecode.lanterna.terminal.swing.SwingTerminalFontConfiguration;
+import org.xml.sax.SAXException;
 
-import java.io.File;
+import javax.xml.parsers.ParserConfigurationException;
+import java.awt.*;
 import java.io.IOException;
-import java.util.Scanner;
 
 public class Game {
     private Screen screen;
-    private TextGraphics graphics;
+    private GUI gui;
 
-    public Game() throws IOException {
-        Terminal terminal = new DefaultTerminalFactory().createTerminal();
+    public Game() throws IOException, ParserConfigurationException, SAXException {
+        Font font = new Font("Fira Code Light", Font.PLAIN, 6);
+        AWTTerminalFontConfiguration cfg = new SwingTerminalFontConfiguration(true, AWTTerminalFontConfiguration.BoldMode.NOTHING, font);
+
+        Terminal terminal = new DefaultTerminalFactory()
+                .setInitialTerminalSize(new TerminalSize(300, 100))
+                .setTerminalEmulatorFontConfiguration(cfg)
+                .createTerminal();
         screen = new TerminalScreen(terminal);
 
         screen.setCursorPosition(null);   // we don't need a cursor
         screen.startScreen();             // screens must be started
         screen.doResizeIfNecessary();     // resize screen if necessary
 
-        graphics = screen.newTextGraphics();
+        gui = new GUI(screen);
     }
 
-    public void run() throws IOException {
-        while (true) {
-            draw();
+    public void run() throws IOException, ParserConfigurationException, SAXException, InterruptedException {
+        gui.draw();
 
-            KeyStroke pressedKey = screen.readInput();
+        while (true) {
+            KeyStroke pressedKey = Input.getPressedKey(screen);
+
+            if (pressedKey.getKeyType() == KeyType.Character && pressedKey.getCharacter() == 'q')
+                gui.getScreen().close();
 
             if (pressedKey.getKeyType() == KeyType.EOF)
                 return;
         }
-    }
-
-    public void draw() throws IOException {
-        File myObj = new File("data\\temp.txt");
-        Scanner myReader = new Scanner(myObj);
-
-        int i = 5;
-
-        while (myReader.hasNextLine()) {
-            String data = myReader.nextLine();
-            graphics.putString(5, i, data);
-            i++;
-        }
-
-        myReader.close();
-
-
-        screen.refresh();
     }
 }
