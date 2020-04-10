@@ -37,7 +37,7 @@ public class ImageParser {
         // Load the input XML document, parse it and return an instance of the Document class.
         Document document = builder.parse(new File(filename));
 
-        NodeList nodeList = document.getDocumentElement().getChildNodes();
+        NodeList nodeList = document.getDocumentElement().getElementsByTagName("g").item(0).getChildNodes();
 
         // Read the XML document
         for (int i = 0; i < nodeList.getLength(); i++) {
@@ -46,17 +46,32 @@ public class ImageParser {
             if (node.getNodeType() == Node.ELEMENT_NODE) {
                 Element elem = (Element) node;
 
-                Integer x = Integer.parseInt(elem.getAttributes().getNamedItem("x").getNodeValue()) / 6;
-                Integer y = Integer.parseInt(elem.getAttributes().getNamedItem("y").getNodeValue()) / 10;
-                String color = elem.getAttributes().getNamedItem("style").getNodeValue().substring(6);
+                    Integer x = Integer.parseInt(elem.getAttributes().getNamedItem("x").getNodeValue()) / 6;
+                    Integer y = Integer.parseInt(elem.getAttributes().getNamedItem("y").getNodeValue()) / 10;
+                    String color = elem.getAttributes().getNamedItem("style").getNodeValue().substring(6);
 
-                color = color.substring(0, 1) + color.substring(0, 1) +
-                        color.substring(1, 2) + color.substring(1, 2) +
-                        color.substring(2, 3) + color.substring(2, 3);
+                    color = color.substring(0, 1) + color.substring(0, 1) +
+                            color.substring(1, 2) + color.substring(1, 2) +
+                            color.substring(2, 3) + color.substring(2, 3);
 
-                graphics.setForegroundColor(TextColor.Factory.fromString("#" + color));
-                graphics.putString(x, y, "\u2588");
+                    graphics.setForegroundColor(TextColor.Factory.fromString("#" + color));
 
+                    if (node.getNodeName().equals("rect"))
+                        graphics.putString(x, y, "\u2588");
+
+                    else if (node.getNodeName().equals("text")) {
+                        try {
+                            graphics.setBackgroundColor(graphics.getCharacter(x, y).getForegroundColor());
+                        }
+
+                        catch (Exception ignore) {
+
+                        }
+
+                        String character = elem.getTextContent();
+
+                        graphics.putString(x, y, character);
+                    }
             }
         }
 
