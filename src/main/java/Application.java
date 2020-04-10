@@ -11,6 +11,6 @@ public class Application {
 
         GUI gui = new GUI();
 
-        gui.drawPokemon(1);
+        gui.drawPokemon(0);
     }
 }
