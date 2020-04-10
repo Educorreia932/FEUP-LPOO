@@ -9,6 +9,8 @@ public class Application {
 //
 //        game.run();
 
-        ImageParser ip = new ImageParser("data\\temp.svg");
+        GUI gui = new GUI();
+
+        gui.drawPokemon(1);
     }
 }

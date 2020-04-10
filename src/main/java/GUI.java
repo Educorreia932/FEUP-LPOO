@@ -13,15 +13,14 @@ import org.xml.sax.SAXException;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
-
 import java.io.File;
 import java.io.IOException;
 
-public class ImageParser {
+public class GUI {
     private Screen screen;
     private TextGraphics graphics;
 
-    public ImageParser(String filename) throws ParserConfigurationException, IOException, SAXException {
+    public GUI() throws IOException {
         Terminal terminal = new DefaultTerminalFactory().createTerminal();
         screen = new TerminalScreen(terminal);
 
@@ -30,12 +29,14 @@ public class ImageParser {
         screen.doResizeIfNecessary();     // resize screen if necessary
 
         graphics = screen.newTextGraphics();
+    }
 
+    void drawPokemon(Integer pokemonNumber) throws IOException, ParserConfigurationException, SAXException {
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         DocumentBuilder builder = factory.newDocumentBuilder();
 
         // Load the input XML document, parse it and return an instance of the Document class.
-        Document document = builder.parse(new File(filename));
+        Document document = builder.parse(new File("data\\pokemons\\" + pokemonNumber.toString() + ".svg"));
 
         NodeList nodeList = document.getDocumentElement().getElementsByTagName("g").item(0).getChildNodes();
 
@@ -46,32 +47,32 @@ public class ImageParser {
             if (node.getNodeType() == Node.ELEMENT_NODE) {
                 Element elem = (Element) node;
 
-                    Integer x = Integer.parseInt(elem.getAttributes().getNamedItem("x").getNodeValue()) / 6;
-                    Integer y = Integer.parseInt(elem.getAttributes().getNamedItem("y").getNodeValue()) / 10;
-                    String color = elem.getAttributes().getNamedItem("style").getNodeValue().substring(6);
+                Integer x = Integer.parseInt(elem.getAttributes().getNamedItem("x").getNodeValue()) / 6;
+                Integer y = Integer.parseInt(elem.getAttributes().getNamedItem("y").getNodeValue()) / 10;
+                String color = elem.getAttributes().getNamedItem("style").getNodeValue().substring(6);
 
-                    color = color.substring(0, 1) + color.substring(0, 1) +
-                            color.substring(1, 2) + color.substring(1, 2) +
-                            color.substring(2, 3) + color.substring(2, 3);
+                color = color.substring(0, 1) + color.substring(0, 1) +
+                        color.substring(1, 2) + color.substring(1, 2) +
+                        color.substring(2, 3) + color.substring(2, 3);
 
-                    graphics.setForegroundColor(TextColor.Factory.fromString("#" + color));
+                graphics.setForegroundColor(TextColor.Factory.fromString("#" + color));
 
-                    if (node.getNodeName().equals("rect"))
-                        graphics.putString(x, y, "\u2588");
+                if (node.getNodeName().equals("rect"))
+                    graphics.putString(x, y, "\u2588");
 
-                    else if (node.getNodeName().equals("text")) {
-                        try {
-                            graphics.setBackgroundColor(graphics.getCharacter(x, y).getForegroundColor());
-                        }
-
-                        catch (Exception ignore) {
-
-                        }
-
-                        String character = elem.getTextContent();
-
-                        graphics.putString(x, y, character);
+                else if (node.getNodeName().equals("text")) {
+                    try {
+                        graphics.setBackgroundColor(graphics.getCharacter(x, y).getForegroundColor());
                     }
+
+                    catch (Exception ignore) {
+
+                    }
+
+                    String character = elem.getTextContent();
+
+                    graphics.putString(x, y, character);
+                }
             }
         }
 
