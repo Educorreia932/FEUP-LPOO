@@ -1,2 +1,2 @@
 # Pokemon
-Game made in LPOO
+Application made in LPOO
