@@ -4,6 +4,8 @@ import com.googlecode.lanterna.TextColor;
 import com.googlecode.lanterna.graphics.TextGraphics;
 import com.googlecode.lanterna.screen.Screen;
 
+import java.io.IOException;
+
 public class GUI {
     private final String CHROMA_GREEN = "5f5";
     private Screen screen;
@@ -14,7 +16,7 @@ public class GUI {
         graphics = screen.newTextGraphics();
     }
 
-    public void drawImage(Image image, int x_offset, int y_offset) {
+    public void drawImage(Image image, int x_offset, int y_offset) throws IOException {
         String[][] background_colors = image.getBackground_colors();
         String[][] foreground_colors = image.getForeground_colors();
         String[][] characters = image.getCharacters();
@@ -31,6 +33,8 @@ public class GUI {
                 catch (Exception ignore) {
                 }
             }
+
+        screen.refresh();
     }
 
     public void draw(Integer pokemon) {

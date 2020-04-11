@@ -44,8 +44,9 @@ public class Image {
             e.printStackTrace();
         }
 
-        this.width = 90;
-        this.height = 90;
+        Element svg = (Element) document.getDocumentElement();
+        this.width = Integer.parseInt(svg.getAttributes().getNamedItem("width").getNodeValue());
+        this.height = Integer.parseInt(svg.getAttributes().getNamedItem("height").getNodeValue());
 
         Node g = document.getDocumentElement().getElementsByTagName("g").item(0);
         NodeList nodeList = g.getChildNodes();

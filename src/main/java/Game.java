@@ -42,9 +42,8 @@ public class Game {
 
     public void run() throws IOException, ParserConfigurationException, SAXException, InterruptedException {
         int i = 0;
-        Image image = new Image("pokemon_front\\6");
-        gui.drawImage(image, 0,0);
-        screen.refresh();
+        Image image = new Image("pokemon_front\\2");
+        Image image1 = new Image("pokemon_front\\3");
 
         while (true) {
             KeyStroke pressedKey = Input.getPressedKey(screen);
@@ -54,6 +53,16 @@ public class Game {
 
             if (pressedKey.getKeyType() == KeyType.EOF)
                 return;
+
+            if (pressedKey.getKeyType() == KeyType.Character && pressedKey.getCharacter() == 'w') {
+                screen.clear();
+                gui.drawImage(image, 0,0);
+            }
+
+            else if (pressedKey.getKeyType() == KeyType.Character && pressedKey.getCharacter() == 's') {
+                screen.clear();
+                gui.drawImage(image1, 0,0);
+            }
         }
     }
 }
