@@ -7,11 +7,17 @@ import com.googlecode.lanterna.terminal.DefaultTerminalFactory;
 import com.googlecode.lanterna.terminal.Terminal;
 import com.googlecode.lanterna.terminal.swing.AWTTerminalFontConfiguration;
 import com.googlecode.lanterna.terminal.swing.SwingTerminalFontConfiguration;
+
 import org.xml.sax.SAXException;
 
 import javax.xml.parsers.ParserConfigurationException;
-import java.awt.*;
+
+import java.awt.Font;
+
 import java.io.IOException;
+
+import gui.GUI;
+import gui.Image;
 
 public class Game {
     private Screen screen;
@@ -35,7 +41,10 @@ public class Game {
     }
 
     public void run() throws IOException, ParserConfigurationException, SAXException, InterruptedException {
-        gui.draw();
+        int i = 0;
+        Image image = new Image("pokemon_front\\6");
+        gui.drawImage(image, 0,0);
+        screen.refresh();
 
         while (true) {
             KeyStroke pressedKey = Input.getPressedKey(screen);
