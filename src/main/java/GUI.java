@@ -88,9 +88,9 @@ public class GUI {
     }
 
     void draw() throws IOException, ParserConfigurationException, SAXException, InterruptedException {
-        drawImage("overworld", 0, 0);
-        drawImage("pokemons\\7", 50, 0);
-        drawImage("player", 0, 0);
+        drawImage("battle", 0, 0);
+        drawImage("pokemon_front\\3", 170, 0);
+        drawImage("pokemon_back\\6", 20, 33);
 
         screen.refresh();
     }
