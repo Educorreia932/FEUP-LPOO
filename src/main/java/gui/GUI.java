@@ -21,26 +21,21 @@ public class GUI {
         String[][] foreground_colors = image.getForeground_colors();
         String[][] characters = image.getCharacters();
 
-        for (int i = 0; i < image.getWidth(); i++)
+        for (int i = 0; i < image.getWidth(); i++) {
             for (int j = 0; j < image.getHeight(); j++) {
                 graphics.setBackgroundColor(TextColor.Factory.fromString(background_colors[j][i]));
                 graphics.setForegroundColor(TextColor.Factory.fromString(foreground_colors[j][i]));
 
                 try {
-                    graphics.putString(i, j, characters[j][i]);
+                    graphics.putString(i + x_offset, j + y_offset, characters[j][i]);
                 }
 
                 catch (Exception ignore) {
+
                 }
             }
+        }
 
-        screen.refresh();
-    }
-
-    public void draw(Integer pokemon) {
-//        drawImage("battle", 0, 0);
-//        drawImage("pokemon_front\\" + pokemon.toString(), 170, 0);
-//        drawImage("pokemon_back\\" + pokemon.toString(), 20, 33);
     }
 
     public Screen getScreen() {

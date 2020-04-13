@@ -8,6 +8,7 @@ import com.googlecode.lanterna.terminal.Terminal;
 import com.googlecode.lanterna.terminal.swing.AWTTerminalFontConfiguration;
 import com.googlecode.lanterna.terminal.swing.SwingTerminalFontConfiguration;
 
+import gui.Image;
 import org.xml.sax.SAXException;
 
 import javax.xml.parsers.ParserConfigurationException;
@@ -17,7 +18,6 @@ import java.awt.Font;
 import java.io.IOException;
 
 import gui.GUI;
-import gui.Image;
 
 public class Game {
     private Screen screen;
@@ -40,10 +40,11 @@ public class Game {
         gui = new GUI(screen);
     }
 
-    public void run() throws IOException, ParserConfigurationException, SAXException, InterruptedException {
-        int i = 0;
-        Image image = new Image("pokemon_front\\2");
-        Image image1 = new Image("pokemon_front\\3");
+    public void run() throws IOException {
+        Pokemon pikachu = new Pokemon(25);
+        Pokemon onix = new Pokemon(95);
+
+        screen.refresh();
 
         while (true) {
             KeyStroke pressedKey = Input.getPressedKey(screen);
@@ -56,12 +57,14 @@ public class Game {
 
             if (pressedKey.getKeyType() == KeyType.Character && pressedKey.getCharacter() == 'w') {
                 screen.clear();
-                gui.drawImage(image, 0,0);
+                gui.drawImage(onix.getSprite(), 100,0);
+                screen.refresh();
             }
 
-            else if (pressedKey.getKeyType() == KeyType.Character && pressedKey.getCharacter() == 's') {
+            if (pressedKey.getKeyType() == KeyType.Character && pressedKey.getCharacter() == 's') {
                 screen.clear();
-                gui.drawImage(image1, 0,0);
+                gui.drawImage(pikachu.getSprite(), 0,0);
+                screen.refresh();
             }
         }
     }
