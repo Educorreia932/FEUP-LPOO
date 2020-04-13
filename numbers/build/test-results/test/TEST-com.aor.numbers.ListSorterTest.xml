@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.aor.numbers.ListSorterTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2020-03-09T18:11:42" hostname="LAPTOP-HTLC59OA" time="0.0">
-  <properties/>
-  <testcase name="sort" classname="com.aor.numbers.ListSorterTest" time="0.0"/>
-  <testcase name="bug_2" classname="com.aor.numbers.ListSorterTest" time="0.0"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>
