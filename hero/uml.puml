@@ -1,0 +1,66 @@
+@startuml hero
+
+class Game {
+    run()
+}
+
+abstract class Input {
+    getPressedKey()
+}
+
+package com.educorreia.hero.world {
+    class World {
+        step()
+        createWalls()
+        processInput()
+    }
+
+    class Position {
+        x
+        y
+    }
+
+    abstract class Element {
+        name
+        character
+        color
+    }
+
+    class Creature {
+        health
+        
+        move()
+    }
+
+    class Item {
+        name
+    }
+
+    Creature <-- Player
+    Creature *-- Position : nextPosition
+
+    World *-- Player
+
+    Element <-- Creature
+    Element <-- Item
+    Element <-- Wall
+    Element <-- Tile
+
+    Element *-- Position : position
+
+    Player *-- Inventory
+
+    Inventory *-- Item
+}
+
+package com.educorreia.hero.gui {
+    class Gui {
+        drawItem()
+        drawElement()
+    }
+}
+
+Game *-- Gui
+Game *-- World
+
+@enduml
