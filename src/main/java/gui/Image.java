@@ -37,7 +37,7 @@ public class Image {
         Document document = null;
 
         try {
-            document = builder.parse(new File("data\\" + filename + ".svg"));
+            document = builder.parse(new File("images\\" + filename + ".svg"));
         }
 
         catch (SAXException | IOException e) {
