@@ -1,7 +1,41 @@
 @startuml
 
-package gui {
-    class Drawable 
+package lpoo.pokemonascii.commands {
+    interface Command
+    class DoNothingCommand
+    class PlayerMoveDownCommand
+    class PlayerMoveLeftCommand
+    class PlayerMoveRightCommand
+    class PlayerMoveUpCommand
+    class QuitCommand
+}
+
+package lpoo.pokemonascii.game {
+    class Application {
+        main()
+    }
+
+    class Game {
+        run()
+    }
+
+    abstract class Input {
+        getPressedKey()
+        getNextCommand()
+    }
+
+    class Map
+    class Player
+    class Pokemon
+}
+
+package lpoo.pokemonascii.geometry {
+    class Position
+    class Rect
+}
+
+package lpoo.pokemonascii.gui {
+    class Drawable
 
     class GUI {
         drawImage()
@@ -10,31 +44,21 @@ package gui {
     class Image
 }
 
-class game.Application {
-    main()
-}
+Command <-- DoNothingCommand
+Command <-- PlayerMoveDownCommand
+Command <-- PlayerMoveLeftCommand
+Command <-- PlayerMoveRightCommand
+Command <-- PlayerMoveUpCommand
+Command <-- QuitCommand
 
-class game.Game {
-    run()
-}
-
-abstract class game.Input {
-    getPressedKey()
-}
-
-class game.Pokemon {
-    hp
-    attack
-    defense
-    sp_atk
-    sp_def
-    speed
-}
-
-class geometry.Rect
- 
 Drawable *-- Image
-Drawable *-- geometry.Rect
-Drawable <-- game.Pokemon
+Drawable *-- Rect
+Drawable *-- Position
+Drawable <-- Pokemon
+
+Game *-- GUI
+Game *-- Map
+
+Map *-- Player
 
 @enduml
