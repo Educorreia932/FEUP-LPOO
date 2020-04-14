@@ -16,18 +16,18 @@ public class GUI {
         graphics = screen.newTextGraphics();
     }
 
-    public void drawImage(Image image, int x_offset, int y_offset) throws IOException {
-        String[][] background_colors = image.getBackground_colors();
-        String[][] foreground_colors = image.getForeground_colors();
-        String[][] characters = image.getCharacters();
+    public void drawSprite(Drawable d) throws IOException {
+        String[][] background_colors = d.getSprite().getBackground_colors();
+        String[][] foreground_colors = d.getSprite().getForeground_colors();
+        String[][] characters = d.getSprite().getCharacters();
 
-        for (int i = 0; i < image.getWidth(); i++) {
-            for (int j = 0; j < image.getHeight(); j++) {
+        for (int i = 0; i < d.getSprite().getWidth(); i++) {
+            for (int j = 0; j < d.getSprite().getHeight(); j++) {
                 graphics.setBackgroundColor(TextColor.Factory.fromString(background_colors[j][i]));
                 graphics.setForegroundColor(TextColor.Factory.fromString(foreground_colors[j][i]));
 
                 try {
-                    graphics.putString(i + x_offset, j + y_offset, characters[j][i]);
+                    graphics.putString(i + d.getPosition().getX(), j + d.getPosition().getY(), characters[j][i]);
                 }
 
                 catch (Exception ignore) {

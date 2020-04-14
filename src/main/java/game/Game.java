@@ -1,3 +1,5 @@
+package game;
+
 import com.googlecode.lanterna.TerminalSize;
 import com.googlecode.lanterna.input.KeyStroke;
 import com.googlecode.lanterna.input.KeyType;
@@ -43,10 +45,16 @@ public class Game {
     public void run() throws IOException {
         Pokemon pikachu = new Pokemon(25);
         Pokemon onix = new Pokemon(95);
+        Player player = new Player(new Image("player\\red_front"));
 
         screen.refresh();
 
         while (true) {
+            screen.clear();
+            gui.drawSprite(player);
+            player.moveRight();
+            screen.refresh();
+
             KeyStroke pressedKey = Input.getPressedKey(screen);
 
             if (pressedKey.getKeyType() == KeyType.Character && pressedKey.getCharacter() == 'q')
@@ -54,18 +62,6 @@ public class Game {
 
             if (pressedKey.getKeyType() == KeyType.EOF)
                 return;
-
-            if (pressedKey.getKeyType() == KeyType.Character && pressedKey.getCharacter() == 'w') {
-                screen.clear();
-                gui.drawImage(onix.getSprite(), 100,0);
-                screen.refresh();
-            }
-
-            if (pressedKey.getKeyType() == KeyType.Character && pressedKey.getCharacter() == 's') {
-                screen.clear();
-                gui.drawImage(pikachu.getSprite(), 0,0);
-                screen.refresh();
-            }
         }
     }
 }

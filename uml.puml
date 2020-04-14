@@ -1,0 +1,40 @@
+@startuml
+
+package gui {
+    class Drawable 
+
+    class GUI {
+        drawImage()
+    }
+
+    class Image
+}
+
+class game.Application {
+    main()
+}
+
+class game.Game {
+    run()
+}
+
+abstract class game.Input {
+    getPressedKey()
+}
+
+class game.Pokemon {
+    hp
+    attack
+    defense
+    sp_atk
+    sp_def
+    speed
+}
+
+class game.Rect
+ 
+Drawable *-- Image
+Drawable *-- game.Rect
+Drawable <-- game.Pokemon
+
+@enduml
