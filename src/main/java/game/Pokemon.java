@@ -1,3 +1,5 @@
+package game;
+
 import gui.Image;
 
 public class Pokemon {

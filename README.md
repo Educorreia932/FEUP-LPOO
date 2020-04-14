@@ -1,24 +1,25 @@
-# Pokemon: A Sequel Coming In Inevitably
+# LPOO_40 - *game.Pokemon: A Sequel Coming In Inevitably*
 
-Project made in Java for LPOO class inspired by Pokemon Fire Red/Leaf Green games from Gameboy Advance.
+Our game consists, as the title states, in a clone version of the Pokémon series, more specific, the Fire Red/Leaf Green games from Gameboy Advance.  
+In it, the player will be able to go search for pokémons in tall grass, try to catch them or even battle them.
 
-Made in colaboration with [Ana Inês](https://github.com/anaines14)  
+This project was developed by [*Eduardo Correia*](https://github.com/educorreia932) (up201806433@fe.up.pt) and [*Ana Inês Barros*](https://github.com/anaines14) for LPOO 2019/2020.
 
-## Development
+## Implemented Features
+
+## Planned Features
+
+- [ ] Make the main character appear in-game and be controllable (with arrow keys).  
+- [ ] Implement three pokémons (starters) with fixed moves and abilities (but without leveling up).
+- [ ] Make it possible to catch pokémon or battle against it.
 
 ### Graphics
 
 We initially convert a .png image to text, using `img2txt`, a program from [libcaca](http://caca.zoy.org/wiki/libcaca). That program generates a .svg that we parse and then draw using Lanterna.
 
-## Game Art
+## game.Game Art
 
-Pokemon Fire Red/Leaf Green Sprites https://veekun.com/dex/downloads
-
-## Features to Implement
-
-- [ ] Make the main character appear in-game and be controllable (with arrow keys).  
-- [ ] Implement three pokémons (starters) with fixed moves and abilities (but without leveling up).
-- [ ] Make it possible to catch pokémon or battle against it.
+game.Pokemon Fire Red/Leaf Green Sprites https://veekun.com/dex/downloads
 
 ## Notes
 
