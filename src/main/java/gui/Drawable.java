@@ -30,4 +30,11 @@ public class Drawable {
         position.setX(x);
         position.setY(y);
     }
+
+    public void setPositionByOffset(int x_offset, int y_offset) {
+        int x = position.getX();
+        int y = position.getY();
+
+        setPosition(x + x_offset, y + y_offset);
+    }
 }

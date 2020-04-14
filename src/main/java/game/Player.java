@@ -8,10 +8,19 @@ public class Player extends Drawable {
         super(sprite, sprite.getWidth(), sprite.getHeight(), 10, 10);
     }
 
-    public void moveRight() {
-        int x = getPosition().getX();
-        int y = getPosition().getY();
+    public void moveUp() {
+        this.setPositionByOffset(0, -5);
+    }
 
-        this.setPosition(x + 5, y);
+    public void moveDown() {
+        this.setPositionByOffset(0, 5);
+    }
+
+    public void moveRight() {
+        this.setPositionByOffset(5, 0);
+    }
+
+    public void moveLeft() {
+        this.setPositionByOffset(-5, 0);
     }
 }

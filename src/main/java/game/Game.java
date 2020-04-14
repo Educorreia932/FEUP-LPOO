@@ -50,11 +50,6 @@ public class Game {
         screen.refresh();
 
         while (true) {
-            screen.clear();
-            gui.drawSprite(player);
-            player.moveRight();
-            screen.refresh();
-
             KeyStroke pressedKey = Input.getPressedKey(screen);
 
             if (pressedKey.getKeyType() == KeyType.Character && pressedKey.getCharacter() == 'q')
@@ -62,6 +57,25 @@ public class Game {
 
             if (pressedKey.getKeyType() == KeyType.EOF)
                 return;
+
+            switch (pressedKey.getKeyType()) {
+                case ArrowUp:
+                    player.moveUp();
+                    break;
+                case ArrowDown:
+                    player.moveDown();
+                    break;
+                case ArrowRight:
+                    player.moveRight();
+                    break;
+                case ArrowLeft:
+                    player.moveLeft();
+                    break;
+            }
+
+            screen.clear();
+            gui.drawSprite(player);
+            screen.refresh();
         }
     }
 }

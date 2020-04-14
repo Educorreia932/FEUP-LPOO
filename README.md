@@ -1,4 +1,4 @@
-# LPOO_40 - *game.Pokemon: A Sequel Coming In Inevitably*
+# LPOO_40 - *Pokemon: A Sequel Coming In Inevitably*
 
 Our game consists, as the title states, in a clone version of the Pokémon series, more specific, the Fire Red/Leaf Green games from Gameboy Advance.  
 In it, the player will be able to go search for pokémons in tall grass, try to catch them or even battle them.
@@ -17,9 +17,9 @@ This project was developed by [*Eduardo Correia*](https://github.com/educorreia9
 
 We initially convert a .png image to text, using `img2txt`, a program from [libcaca](http://caca.zoy.org/wiki/libcaca). That program generates a .svg that we parse and then draw using Lanterna.
 
-## game.Game Art
+## Game Art
 
-game.Pokemon Fire Red/Leaf Green Sprites https://veekun.com/dex/downloads
+Pokemon Fire Red/Leaf Green Sprites https://veekun.com/dex/downloads
 
 ## Notes
 
