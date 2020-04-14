@@ -10,6 +10,7 @@ import com.googlecode.lanterna.terminal.Terminal;
 import com.googlecode.lanterna.terminal.swing.AWTTerminalFontConfiguration;
 import com.googlecode.lanterna.terminal.swing.SwingTerminalFontConfiguration;
 
+import gui.Drawable;
 import gui.Image;
 import org.xml.sax.SAXException;
 
@@ -43,13 +44,15 @@ public class Game {
     }
 
     public void run() throws IOException {
-        Pokemon pikachu = new Pokemon(25);
-        Pokemon onix = new Pokemon(95);
-        Player player = new Player(new Image("player\\red_front"));
+        Player player = new Player("player\\red_front");
+        Drawable background = new Drawable("room", 0, 0, 0,  0);
 
+        gui.drawSprite(background);
         screen.refresh();
 
         while (true) {
+            gui.drawSprite(background, player.getPosition(), player.getBox());
+
             KeyStroke pressedKey = Input.getPressedKey(screen);
 
             if (pressedKey.getKeyType() == KeyType.Character && pressedKey.getCharacter() == 'q')
@@ -73,7 +76,6 @@ public class Game {
                     break;
             }
 
-            screen.clear();
             gui.drawSprite(player);
             screen.refresh();
         }

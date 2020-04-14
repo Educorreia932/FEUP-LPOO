@@ -8,8 +8,8 @@ public class Drawable {
     private Image sprite;
     private Position position;
 
-    public Drawable(Image sprite, int width, int height, int x, int y) {
-        this.sprite = sprite;
+    public Drawable(String sprite_name, int width, int height, int x, int y) {
+        this.sprite = new Image(sprite_name);
         box = new Rect(width, height);
         position = new Position(x, y);
     }

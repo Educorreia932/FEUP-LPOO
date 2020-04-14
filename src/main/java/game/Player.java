@@ -1,11 +1,10 @@
 package game;
 
 import gui.Drawable;
-import gui.Image;
 
 public class Player extends Drawable {
-    Player(Image sprite) {
-        super(sprite, sprite.getWidth(), sprite.getHeight(), 10, 10);
+    Player(String sprite_name) {
+        super(sprite_name, 300, 300, 10, 10);
     }
 
     public void moveUp() {
