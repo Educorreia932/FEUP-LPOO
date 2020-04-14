@@ -44,7 +44,7 @@ public class Image {
             e.printStackTrace();
         }
 
-        Element svg = (Element) document.getDocumentElement();
+        Element svg = document.getDocumentElement();
         this.width = Integer.parseInt(svg.getAttributes().getNamedItem("width").getNodeValue());
         this.height = Integer.parseInt(svg.getAttributes().getNamedItem("height").getNodeValue());
 
@@ -62,11 +62,12 @@ public class Image {
             if (node.getNodeType() == Node.ELEMENT_NODE) {
                 Element elem = (Element) node;
 
-                Integer x = Integer.parseInt(elem.getAttributes().getNamedItem("x").getNodeValue()) / X_WIDTH;
-                Integer y = Integer.parseInt(elem.getAttributes().getNamedItem("y").getNodeValue()) / Y_WIDTH;
+                int x = Integer.parseInt(elem.getAttributes().getNamedItem("x").getNodeValue()) / X_WIDTH;
+                int y = Integer.parseInt(elem.getAttributes().getNamedItem("y").getNodeValue()) / Y_WIDTH;
                 String color = elem.getAttributes().getNamedItem("style").getNodeValue().substring(6);
 
                 color = "#" + shortToLongHex(color);
+                characters[y][x] = " ";
 
                 if (node.getNodeName().equals("rect"))
                     background_colors[y][x] = color;

@@ -1,7 +1,7 @@
 package gui;
 
-import game.Position;
-import game.Rect;
+import geometry.Position;
+import geometry.Rect;
 
 public class Drawable {
     private Rect box;

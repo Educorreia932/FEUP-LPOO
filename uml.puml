@@ -31,10 +31,10 @@ class game.Pokemon {
     speed
 }
 
-class game.Rect
+class geometry.Rect
  
 Drawable *-- Image
-Drawable *-- game.Rect
+Drawable *-- geometry.Rect
 Drawable <-- game.Pokemon
 
 @enduml
