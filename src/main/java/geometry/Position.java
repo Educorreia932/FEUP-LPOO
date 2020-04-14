@@ -12,15 +12,23 @@ public class Position {
         return x;
     }
 
-    public void setX(int x) {
-        this.x = x;
-    }
-
     public int getY() {
         return y;
     }
 
-    public void setY(int y) {
-        this.y = y;
+    public Position up() {
+        return new Position(x, y - 4);
+    }
+
+    public Position down() {
+        return new Position(x, y + 4);
+    }
+
+    public Position right() {
+        return new Position(x + 4, y);
+    }
+
+    public Position left() {
+        return new Position(x - 4, y);
     }
 }

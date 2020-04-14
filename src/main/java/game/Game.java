@@ -1,8 +1,6 @@
 package game;
 
 import com.googlecode.lanterna.TerminalSize;
-import com.googlecode.lanterna.input.KeyStroke;
-import com.googlecode.lanterna.input.KeyType;
 import com.googlecode.lanterna.screen.Screen;
 import com.googlecode.lanterna.screen.TerminalScreen;
 import com.googlecode.lanterna.terminal.DefaultTerminalFactory;
@@ -10,8 +8,6 @@ import com.googlecode.lanterna.terminal.Terminal;
 import com.googlecode.lanterna.terminal.swing.AWTTerminalFontConfiguration;
 import com.googlecode.lanterna.terminal.swing.SwingTerminalFontConfiguration;
 
-import gui.Drawable;
-import gui.Image;
 import org.xml.sax.SAXException;
 
 import javax.xml.parsers.ParserConfigurationException;
@@ -25,6 +21,7 @@ import gui.GUI;
 public class Game {
     private Screen screen;
     private GUI gui;
+    private Map map;
 
     public Game() throws IOException, ParserConfigurationException, SAXException {
         Font font = new Font("Fira Code Light", Font.PLAIN, 6);
@@ -41,42 +38,19 @@ public class Game {
         screen.doResizeIfNecessary();     // resize screen if necessary
 
         gui = new GUI(screen);
+        map = new Map();
     }
 
     public void run() throws IOException {
-        Player player = new Player("player\\red_front");
-        Drawable background = new Drawable("room", 0, 0, 0,  0);
-
-        gui.drawSprite(background);
-        screen.refresh();
+        gui.drawSprite(map.getBackground());
+        gui.drawSprite(map.getPlayer());
 
         while (true) {
-            gui.drawSprite(background, player.getPosition(), player.getBox());
+            gui.drawSprite(map.getBackground(), map.getPlayer().getPosition(), map.getPlayer().getBox());
 
-            KeyStroke pressedKey = Input.getPressedKey(screen);
+            Input.getNextCommand(map, screen).execute();
 
-            if (pressedKey.getKeyType() == KeyType.Character && pressedKey.getCharacter() == 'q')
-                gui.getScreen().close();
-
-            if (pressedKey.getKeyType() == KeyType.EOF)
-                return;
-
-            switch (pressedKey.getKeyType()) {
-                case ArrowUp:
-                    player.moveUp();
-                    break;
-                case ArrowDown:
-                    player.moveDown();
-                    break;
-                case ArrowRight:
-                    player.moveRight();
-                    break;
-                case ArrowLeft:
-                    player.moveLeft();
-                    break;
-            }
-
-            gui.drawSprite(player);
+            gui.drawSprite(map.getPlayer());
             screen.refresh();
         }
     }
