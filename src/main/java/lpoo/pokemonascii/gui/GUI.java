@@ -3,6 +3,7 @@ package lpoo.pokemonascii.gui;
 import com.googlecode.lanterna.TextColor;
 import com.googlecode.lanterna.graphics.TextGraphics;
 import com.googlecode.lanterna.screen.Screen;
+import lpoo.pokemonascii.elements.DrawableElement;
 import lpoo.pokemonascii.geometry.Position;
 import lpoo.pokemonascii.geometry.Rect;
 
@@ -16,36 +17,32 @@ public class GUI {
         graphics = screen.newTextGraphics();
     }
 
-    public void drawSprite(Sprite d) {
-        String[][] background_colors = d.getImage().getBackground_colors();
-        String[][] foreground_colors = d.getImage().getForeground_colors();
-        String[][] characters = d.getImage().getCharacters();
+    public void draw(Image image, Position location, Position position, Rect rect) {
+        String[][] background_colors = image.getBackground_colors();
+        String[][] foreground_colors = image.getForeground_colors();
+        String[][] characters = image.getCharacters();
 
-        for (int i = 0; i < d.getImage().getWidth(); i++) {
-            for (int j = 0; j < d.getImage().getHeight(); j++) {
+        for (int i = position.getX(); i < position.getX() + rect.getWidth(); i++) {
+            for (int j = position.getY(); j < position.getY() + rect.getHeight(); j++) {
                 // Transparency
                 graphics.setBackgroundColor(TextColor.Factory.fromString(background_colors[j][i]));
                 graphics.setForegroundColor(TextColor.Factory.fromString(foreground_colors[j][i]));
 
                 if (characters[j][i] != null && !background_colors[j][i].equals(CHROMA_GREEN))
-                    graphics.putString(i + d.getPosition().getX(), j + d.getPosition().getY(), characters[j][i]);
+                    graphics.putString(i + location.getX(), j + location.getY(), characters[j][i]);
             }
         }
     }
 
-    public void drawSprite(Sprite d, Position position, Rect rect) {
-        String[][] background_colors = d.getImage().getBackground_colors();
-        String[][] foreground_colors = d.getImage().getForeground_colors();
-        String[][] characters = d.getImage().getCharacters();
+    public void drawElement(DrawableElement d) {
+        draw(d.getImage(), d.getPosition(), new Position(0, 0), new Rect(d.getImage()));
+    }
 
-        for (int i = position.getX(); i < position.getX() + rect.getWidth(); i++) {
-            for (int j = position.getY(); j < position.getY() + rect.getHeight(); j++) {
-                graphics.setBackgroundColor(TextColor.Factory.fromString(background_colors[j][i]));
-                graphics.setForegroundColor(TextColor.Factory.fromString(foreground_colors[j][i]));
+    public void drawImage(Image image) {
+        draw(image, new Position(0, 0),  new Position(0, 0), new Rect(image));
+    }
 
-                if (characters[j][i] != null && !background_colors[j][i].equals(CHROMA_GREEN))
-                    graphics.putString(i + d.getPosition().getX(), j + d.getPosition().getY(), characters[j][i]);
-            }
-        }
+    public void drawImagePortion(Image image, Position position, Rect rect) {
+        draw(image, new Position(0, 0), position, rect);
     }
 }

@@ -45,8 +45,8 @@ public class Image {
         }
 
         Element svg = document.getDocumentElement();
-        this.width = Integer.parseInt(svg.getAttributes().getNamedItem("width").getNodeValue());
-        this.height = Integer.parseInt(svg.getAttributes().getNamedItem("height").getNodeValue());
+        this.width = Integer.parseInt(svg.getAttributes().getNamedItem("width").getNodeValue()) / X_WIDTH;
+        this.height = Integer.parseInt(svg.getAttributes().getNamedItem("height").getNodeValue()) / Y_WIDTH;
 
         Node g = document.getDocumentElement().getElementsByTagName("g").item(0);
         NodeList nodeList = g.getChildNodes();

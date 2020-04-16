@@ -1,15 +1,16 @@
 package lpoo.pokemonascii.game;
 
+import lpoo.pokemonascii.elements.DrawableElement;
 import lpoo.pokemonascii.geometry.Position;
-import lpoo.pokemonascii.gui.Sprite;
+import lpoo.pokemonascii.gui.Image;
 
 public class Map {
-    private Sprite background;
     private Player player;
+    private Image background;
 
     Map() {
-        this.background = new Sprite("background\\room", 0, 0, 0,  0);
-        player = new Player("player\\red_front");
+        this.background = new Image("background\\room");
+        player = new Player();
     }
 
     public void movePlayer(Position position) {
@@ -20,7 +21,7 @@ public class Map {
         return player;
     }
 
-    public Sprite getBackground() {
+    public Image getBackground() {
         return background;
     }
 }

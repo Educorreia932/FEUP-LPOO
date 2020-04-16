@@ -3,7 +3,7 @@ package lpoo.pokemonascii.game;
 import lpoo.pokemonascii.gui.Image;
 
 public class Pokemon {
-    private Image sprite;
+    private Image image;
     private int hp,
                 attack,
                 defense,
@@ -13,10 +13,6 @@ public class Pokemon {
 //    String gender;
 
     Pokemon(Integer pokedex_number) {
-        sprite = new Image("pokemon_back\\" + pokedex_number.toString());
-    }
-
-    public Image getSprite() {
-        return sprite;
+        image = new Image("pokemon_back\\" + pokedex_number.toString());
     }
 }

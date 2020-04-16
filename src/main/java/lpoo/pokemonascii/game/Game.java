@@ -10,6 +10,7 @@ import com.googlecode.lanterna.terminal.swing.SwingTerminalFontConfiguration;
 
 import lpoo.pokemonascii.commands.Command;
 import lpoo.pokemonascii.commands.QuitCommand;
+import lpoo.pokemonascii.geometry.Position;
 import lpoo.pokemonascii.geometry.Rect;
 import org.xml.sax.SAXException;
 
@@ -45,11 +46,11 @@ public class Game {
     }
 
     public void run() throws IOException {
-        gui.drawSprite(map.getBackground());
-        gui.drawSprite(map.getPlayer());
+        gui.drawImage(map.getBackground());
+        gui.drawElement(map.getPlayer());
 
         while (true) {
-            gui.drawSprite(map.getBackground(), map.getPlayer().getPosition(), new Rect(map.getPlayer().getImage()));
+            gui.drawImagePortion(map.getBackground(), map.getPlayer().getPosition(), new Rect(map.getPlayer().getImage()));
 
             Command command = Input.getNextCommand(map, screen);
 
@@ -58,7 +59,7 @@ public class Game {
             if (command instanceof QuitCommand) // Is there a better way to do it?
                 break;
 
-            gui.drawSprite(map.getPlayer());
+            gui.drawElement(map.getPlayer());
             screen.refresh();
         }
     }
