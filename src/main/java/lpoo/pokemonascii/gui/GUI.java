@@ -38,11 +38,7 @@ public class GUI {
         draw(d.getImage(), d.getPosition(), new Position(0, 0), new Rect(d.getImage()));
     }
 
-    public void drawImage(Image image) {
-        draw(image, new Position(0, 0),  new Position(0, 0), new Rect(image));
-    }
-
-    public void drawImagePortion(Image image, Position position, Rect rect) {
-        draw(image, new Position(0, 0), position, rect);
+    public void drawElementPortion(DrawableElement d, Position position, Rect rect) {
+        draw(d.getImage(), new Position(0, 0), position, rect);
     }
 }

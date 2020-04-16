@@ -10,7 +10,6 @@ import com.googlecode.lanterna.terminal.swing.SwingTerminalFontConfiguration;
 
 import lpoo.pokemonascii.commands.Command;
 import lpoo.pokemonascii.commands.QuitCommand;
-import lpoo.pokemonascii.geometry.Position;
 import lpoo.pokemonascii.geometry.Rect;
 import org.xml.sax.SAXException;
 
@@ -46,11 +45,11 @@ public class Game {
     }
 
     public void run() throws IOException {
-        gui.drawImage(map.getBackground());
+        gui.drawElement(map.getBackground());
         gui.drawElement(map.getPlayer());
 
         while (true) {
-            gui.drawImagePortion(map.getBackground(), map.getPlayer().getPosition(), new Rect(map.getPlayer().getImage()));
+            gui.drawElementPortion(map.getBackground(), map.getPlayer().getPosition(), new Rect(map.getPlayer().getImage()));
 
             Command command = Input.getNextCommand(map, screen);
 

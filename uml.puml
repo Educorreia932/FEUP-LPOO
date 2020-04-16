@@ -1,16 +1,15 @@
 @startuml
 
-package lpoo.pokemonascii.commands {
-    interface Command
-    class DoNothingCommand
-    class PlayerMoveDownCommand
-    class PlayerMoveLeftCommand
-    class PlayerMoveRightCommand
-    class PlayerMoveUpCommand
-    class QuitCommand
+package elements {
+    interface CollidingElement
+    interface DrawableElement
+    interface Element
+    abstract class Drawable
+    abstract class Collider
+    abstract class DrawableCollider
 }
 
-package lpoo.pokemonascii.game {
+package game {
     class Application {
         main()
     }
@@ -27,38 +26,43 @@ package lpoo.pokemonascii.game {
     class Map
     class Player
     class Pokemon
+    class Obstacle
 }
 
-package lpoo.pokemonascii.geometry {
+package geometry {
     class Position
-    class Rect
+
+    class Rect {
+        collides()
+    }
 }
 
-package lpoo.pokemonascii.gui {
-    class Drawable
-
-    class GUI {
-        drawImage()
-    }
-
+package gui {
     class Image
 }
-
-Command <-- DoNothingCommand
-Command <-- PlayerMoveDownCommand
-Command <-- PlayerMoveLeftCommand
-Command <-- PlayerMoveRightCommand
-Command <-- PlayerMoveUpCommand
-Command <-- QuitCommand
-
-Drawable *-- Image
-Drawable *-- Rect
-Drawable *-- Position
-Drawable <-- Pokemon
 
 Game *-- GUI
 Game *-- Map
 
 Map *-- Player
+
+Element <|-- CollidingElement
+Element <|-- DrawableElement
+
+DrawableCollider *-- Position
+DrawableCollider *-- Image
+DrawableCollider *-- Rect
+
+CollidingElement <|-- Collider
+CollidingElement <|-- DrawableCollider
+
+DrawableElement <|-- Drawable
+DrawableElement <|-- DrawableCollider
+
+DrawableCollider <|-- Player
+
+Drawable <|-- Pokemon
+
+Collider <|-- Obstacle
 
 @enduml
