@@ -5,3 +5,5 @@ import lpoo.pokemonascii.geometry.Rect;
 public interface CollidingElement extends Element {
     Rect getHitbox();
 }
+
+

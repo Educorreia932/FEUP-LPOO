@@ -8,14 +8,6 @@ public class Position {
         this.y = y;
     }
 
-    public int getX() {
-        return x;
-    }
-
-    public int getY() {
-        return y;
-    }
-
     public Position up() {
         return new Position(x, y - 4);
     }
@@ -30,5 +22,13 @@ public class Position {
 
     public Position left() {
         return new Position(x - 4, y);
+    }
+
+    public int getX() {
+        return x;
+    }
+
+    public int getY() {
+        return y;
     }
 }
