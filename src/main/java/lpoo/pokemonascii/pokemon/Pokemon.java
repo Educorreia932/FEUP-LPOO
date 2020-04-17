@@ -1,11 +1,11 @@
 package lpoo.pokemonascii.pokemon;
 
-import lpoo.pokemonascii.elements.Drawable;
 import lpoo.pokemonascii.gui.Image;
 
 import java.util.List;
 
-public class Pokemon extends Drawable {
+public class Pokemon {
+    private String name;
     private Image image;
     private int hp,
                 attack,
@@ -19,6 +19,6 @@ public class Pokemon extends Drawable {
 //    String gender;
 
     Pokemon(Integer pokedex_number, int x, int y) {
-        super("pokemon_back\\" + pokedex_number.toString(), x, y);
+
     }
 }

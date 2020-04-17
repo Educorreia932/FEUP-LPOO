@@ -1,7 +1,6 @@
 package lpoo.pokemonascii.game;
 
 import lpoo.pokemonascii.elements.CollidingElement;
-import lpoo.pokemonascii.elements.Drawable;
 import lpoo.pokemonascii.geometry.Position;
 import lpoo.pokemonascii.geometry.Rect;
 import lpoo.pokemonascii.gui.Image;
@@ -11,11 +10,11 @@ import java.util.List;
 
 public class Map {
     private Player player;
-    private Drawable background;
+    private Image background;
     private List<CollidingElement> elements;
 
     Map() {
-        this.background = new Drawable("background\\room", 0,0);
+        this.background = new Image("background\\room");
         player = new Player();
 
         elements = new ArrayList<>();
@@ -39,7 +38,7 @@ public class Map {
 
     private CollidingElement getCollidingElement(Position position, List<CollidingElement> elements) {
         for (CollidingElement c : elements)
-            if (Rect.collides(position, player.getHitbox(), c.getPosition(), c.getHitbox()))
+            if (Collider.collides(position, player.getCollider(), c.getPosition(), c.getCollider()))
                 return c;
 
         return null;
@@ -49,7 +48,7 @@ public class Map {
         return player;
     }
 
-    public Drawable getBackground() {
+    public Image getBackground() {
         return background;
     }
 }

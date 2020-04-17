@@ -25,8 +25,8 @@ package game {
 
     class Map
     class Player
-    class Pokemon
     class Obstacle
+    class Battle
 }
 
 package geometry {
@@ -40,6 +40,20 @@ package geometry {
 package gui {
     class Image
 }
+
+package pokemon {
+    class Pokemon
+    class PokemonMove
+    class PokemonSpecies
+    class PokemonType
+}
+
+package gui {
+    class GUI
+    class Image
+}
+
+Application *-- Game
 
 Game *-- GUI
 Game *-- Map
@@ -64,5 +78,16 @@ DrawableCollider <|-- Player
 Drawable <|-- Pokemon
 
 Collider <|-- Obstacle
+
+Player *-- Pokemon
+
+Battle *-- Pokemon
+
+Pokemon *-- PokemonMove
+Pokemon *-- PokemonSpecies
+
+PokemonSpecies *-- PokemonType
+
+PokemonMove *-- PokemonType
 
 @enduml

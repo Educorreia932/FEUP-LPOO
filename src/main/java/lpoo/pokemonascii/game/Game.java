@@ -45,11 +45,11 @@ public class Game {
     }
 
     public void run() throws IOException {
-        gui.drawElement(map.getBackground());
+        gui.drawImage(map.getBackground());
         gui.drawElement(map.getPlayer());
 
         while (true) {
-            gui.drawElementPortion(map.getBackground(), map.getPlayer().getPosition(), new Rect(map.getPlayer().getImage()));
+            gui.drawImagePortion(map.getBackground(), map.getPlayer().getPosition(), new Rect(map.getPlayer().getImage()));
 
             Command command = Input.getNextCommand(map, screen);
 

@@ -17,13 +17,13 @@ public class GUI {
         graphics = screen.newTextGraphics();
     }
 
-    public void draw(Image image, Position location, Position position, Rect rect) {
+    public void draw(Image image, Position location, Position portion_position, Rect rect) {
         String[][] background_colors = image.getBackground_colors();
         String[][] foreground_colors = image.getForeground_colors();
         String[][] characters = image.getCharacters();
 
-        for (int i = position.getX(); i < position.getX() + rect.getWidth(); i++) {
-            for (int j = position.getY(); j < position.getY() + rect.getHeight(); j++) {
+        for (int i = portion_position.getX(); i < portion_position.getX() + rect.getWidth(); i++) {
+            for (int j = portion_position.getY(); j < portion_position.getY() + rect.getHeight(); j++) {
                 // Transparency
                 graphics.setBackgroundColor(TextColor.Factory.fromString(background_colors[j][i]));
                 graphics.setForegroundColor(TextColor.Factory.fromString(foreground_colors[j][i]));
@@ -38,7 +38,11 @@ public class GUI {
         draw(d.getImage(), d.getPosition(), new Position(0, 0), new Rect(d.getImage()));
     }
 
-    public void drawElementPortion(DrawableElement d, Position position, Rect rect) {
-        draw(d.getImage(), new Position(0, 0), position, rect);
+    public void drawImage(Image image) {
+        draw(image, new Position(0, 0), new Position(0, 0), new Rect(image));
+    }
+
+    public void drawImagePortion(Image image, Position position, Rect rect) {
+        draw(image, new Position(0, 0), position, rect);
     }
 }

@@ -1,9 +1,9 @@
 package lpoo.pokemonascii.elements;
 
-import lpoo.pokemonascii.geometry.Rect;
+import lpoo.pokemonascii.game.Collider;
 
 public interface CollidingElement extends Element {
-    Rect getHitbox();
+    Collider getCollider();
 }
 
 

@@ -20,6 +20,8 @@ We initially convert a .png image to text, using `img2txt`, a program from [libc
 
 Pokemon Fire Red/Leaf Green Sprites https://veekun.com/dex/downloads
 
+Pokemon Data https://github.com/veekun/pokedex/tree/master/pokedex/data/csv
+
 ## Notes
 
 - Our game would have only one level, that would consist in a open field with grass in which pokémon would appear
