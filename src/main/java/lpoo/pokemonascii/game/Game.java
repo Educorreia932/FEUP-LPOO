@@ -54,6 +54,7 @@ public class Game {
             Command command = Input.getNextCommand(map, screen);
 
             command.execute();
+            map.getPlayer().updateImage(command);
 
             if (command instanceof QuitCommand) // Is there a better way to do it?
                 break;

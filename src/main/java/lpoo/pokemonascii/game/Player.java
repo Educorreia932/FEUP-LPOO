@@ -1,5 +1,6 @@
 package lpoo.pokemonascii.game;
 
+import lpoo.pokemonascii.commands.Command;
 import lpoo.pokemonascii.elements.CollidingElement;
 import lpoo.pokemonascii.elements.DrawableElement;
 import lpoo.pokemonascii.geometry.Position;
@@ -50,6 +51,10 @@ public class Player implements CollidingElement, DrawableElement {
     }
 
     public Image getCurrentImage() {
-        return sprite.getCurrent();
+        return sprite.getCurrentImage();
+    }
+
+    public void updateImage(Command command){
+        sprite.updateImage(command);
     }
 }
