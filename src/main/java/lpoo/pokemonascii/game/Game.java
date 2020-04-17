@@ -49,7 +49,7 @@ public class Game {
         gui.drawElement(map.getPlayer());
 
         while (true) {
-            gui.drawImagePortion(map.getBackground(), map.getPlayer().getPosition(), new Rect(map.getPlayer().getImage()));
+            gui.drawImagePortion(map.getBackground(), map.getPlayer().getPosition(), new Rect(map.getPlayer().getCurrentImage()));
 
             Command command = Input.getNextCommand(map, screen);
 

@@ -4,8 +4,11 @@ import lpoo.pokemonascii.elements.CollidingElement;
 import lpoo.pokemonascii.elements.DrawableElement;
 import lpoo.pokemonascii.geometry.Position;
 import lpoo.pokemonascii.gui.Image;
+import lpoo.pokemonascii.gui.Sprite;
 import lpoo.pokemonascii.pokemon.Pokemon;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class Player implements CollidingElement, DrawableElement {
@@ -13,12 +16,17 @@ public class Player implements CollidingElement, DrawableElement {
     private String name;
     private List<Pokemon> pokemons;
     private Collider collider;
-    private Image image;
+    private Sprite sprite;
 
     Player() {
-        image = new Image("player\\red_front");
         position = new Position(100, 50);
-        collider = new Collider(image);
+        Image front= new Image("player\\red_front");
+        Image back= new Image("player\\red_back");
+        Image left= new Image("player\\red_left");
+        Image right= new Image("player\\red_right");
+
+        sprite = new Sprite(new ArrayList<>(Arrays.asList(front, back, left, right)));
+        collider = new Collider(front);
     }
 
     @Override
@@ -27,8 +35,8 @@ public class Player implements CollidingElement, DrawableElement {
     }
 
     @Override
-    public Image getImage() {
-        return image;
+    public Sprite getSprite() {
+        return sprite;
     }
 
     @Override
@@ -39,5 +47,9 @@ public class Player implements CollidingElement, DrawableElement {
     @Override
     public void setPosition(Position position) {
         this.position = position;
+    }
+
+    public Image getCurrentImage() {
+        return sprite.getCurrent();
     }
 }

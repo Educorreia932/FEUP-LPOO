@@ -35,7 +35,7 @@ public class GUI {
     }
 
     public void drawElement(DrawableElement d) {
-        draw(d.getImage(), d.getPosition(), new Position(0, 0), new Rect(d.getImage()));
+        draw(d.getSprite().getCurrent(), d.getPosition(), new Position(0, 0), new Rect(d.getSprite().getCurrent()));
     }
 
     public void drawImage(Image image) {
