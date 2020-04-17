@@ -13,24 +13,24 @@ public abstract class Input {
         return key;
     }
 
-    public static Command getNextCommand(Map map, Screen screen) throws IOException {
+    public static Command getNextCommand(Game game, Screen screen) throws IOException {
         KeyStroke pressedKey = getPressedKey(screen);
 
         switch (pressedKey.getKeyType()) {
             case ArrowUp:
-                return new PlayerMoveUpCommand(map);
+                return new PlayerMoveUpCommand(game);
             case ArrowDown:
-                return new PlayerMoveDownCommand(map);
+                return new PlayerMoveDownCommand(game);
             case ArrowRight:
-                return new PlayerMoveRightCommand(map);
+                return new PlayerMoveRightCommand(game);
             case ArrowLeft:
-                return new PlayerMoveLeftCommand(map);
+                return new PlayerMoveLeftCommand(game);
             case EOF:
-                return new QuitCommand(map, screen);
+                return new QuitCommand(game, screen);
             case Character:
                 switch (pressedKey.getCharacter()) {
                     case 'q':
-                        return new QuitCommand(map, screen);
+                        return new QuitCommand(game, screen);
                 }
         }
 

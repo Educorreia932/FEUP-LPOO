@@ -1,16 +1,16 @@
 package lpoo.pokemonascii.commands;
+import lpoo.pokemonascii.game.Game;
 
 import com.googlecode.lanterna.screen.Screen;
-import lpoo.pokemonascii.game.Map;
 
 import java.io.IOException;
 
 public class QuitCommand implements Command {
-    private Map map;
+    private Game game;
     private Screen screen;
 
-    public QuitCommand(Map map, Screen screen) {
-        this.map = map;
+    public QuitCommand(Game game, Screen screen) {
+        this.game = game;
         this.screen = screen;
     }
 
@@ -18,6 +18,7 @@ public class QuitCommand implements Command {
     public void execute() {
         try {
             screen.close();
+            game.stopRunning();
         }
 
         catch (IOException e) {
