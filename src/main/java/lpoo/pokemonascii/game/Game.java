@@ -49,11 +49,12 @@ public class Game {
         gui.drawElement(map.getPlayer());
 
         while (true) {
-            gui.drawImagePortion(map.getBackground(), map.getPlayer().getPosition(), new Rect(map.getPlayer().getImage()));
+            gui.drawImagePortion(map.getBackground(), map.getPlayer().getPosition(), new Rect(map.getPlayer().getCurrentImage()));
 
             Command command = Input.getNextCommand(map, screen);
 
             command.execute();
+            map.getPlayer().updateImage(command);
 
             if (command instanceof QuitCommand) // Is there a better way to do it?
                 break;
