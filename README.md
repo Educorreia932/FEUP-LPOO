@@ -1,4 +1,5 @@
-# Laboratório de Progamação Orientada a Objetos
+# Laboratory of Object-Oriented Programming
+
 MIEIC 2019/2020 - 2º ano / 2º semestre ☕🔦
 
 ## Exercises
