@@ -1,0 +1,280 @@
+<pokedex>
+    <pokemon id="140">
+        <name>KABUTO</name>
+        <type>Rock</type>
+        <type>Water</type>
+        <ability>Battle</ability>
+        <exp>1000000</exp>
+        <stats>
+            <HP>30</HP>
+            <ATK>80</ATK>
+            <DEF>90</DEF>
+            <SPD>55</SPD>
+            <SAT>55</SAT>
+            <SDF>45</SDF>
+        </stats>
+        <evolutions>
+            <evolution id="140">
+                <name>Kabuto</name>
+            </evolution>
+            <evolution id="141">
+                <name>Kabutops</name>
+                <lvl>40</lvl>
+            </evolution>
+        </evolutions>
+        <ratio>
+            <male>87.5</male>
+            <female>12.5</female>
+        </ratio>
+        <egg-group>Water</egg-group>
+        <species>Shellfish Pokemon</species>
+        <height>0.5</height>
+        <weight>11.5</weight>
+        <description>It is thought to have inhabited beaches 300 million years ago. It is protected by a stiff shell.</description>
+        <moves>
+            <move type="level-up">
+                <name>Scratch</name>
+                <lvl>1</lvl>
+            </move>
+            <move type="level-up">
+                <name>Harden</name>
+                <lvl>1</lvl>
+            </move>
+            <move type="level-up">
+                <name>Absorb</name>
+                <lvl>6</lvl>
+            </move>
+            <move type="level-up">
+                <name>Leer</name>
+                <lvl>11</lvl>
+            </move>
+            <move type="level-up">
+                <name>Mud Shot</name>
+                <lvl>16</lvl>
+            </move>
+            <move type="level-up">
+                <name>Sand-Attack</name>
+                <lvl>21</lvl>
+            </move>
+            <move type="level-up">
+                <name>Endure</name>
+                <lvl>26</lvl>
+            </move>
+            <move type="level-up">
+                <name>Aqua Jet</name>
+                <lvl>31</lvl>
+            </move>
+            <move type="level-up">
+                <name>Mega Drain</name>
+                <lvl>36</lvl>
+            </move>
+            <move type="level-up">
+                <name>Metal Sound</name>
+                <lvl>41</lvl>
+            </move>
+            <move type="level-up">
+                <name>Ancientpower</name>
+                <lvl>46</lvl>
+            </move>
+            <move type="level-up">
+                <name>Wring Out</name>
+                <lvl>51</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Water Pulse</name>
+                <lvl>03</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Toxic</name>
+                <lvl>06</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Hail</name>
+                <lvl>07</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Hidden Power</name>
+                <lvl>10</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Ice Beam</name>
+                <lvl>13</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Blizzard</name>
+                <lvl>14</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Protect</name>
+                <lvl>17</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Rain Dance</name>
+                <lvl>18</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Giga Drain</name>
+                <lvl>19</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Frustration</name>
+                <lvl>21</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Return</name>
+                <lvl>27</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Dig</name>
+                <lvl>28</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Double Team</name>
+                <lvl>32</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Sandstorm</name>
+                <lvl>37</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Rock Tomb</name>
+                <lvl>39</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Facade</name>
+                <lvl>42</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Secret Power</name>
+                <lvl>43</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Rest</name>
+                <lvl>44</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Attract</name>
+                <lvl>45</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Thief</name>
+                <lvl>46</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Brine</name>
+                <lvl>55</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Endure</name>
+                <lvl>58</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Rock Polish</name>
+                <lvl>69</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Stealth Rock</name>
+                <lvl>76</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Captivate</name>
+                <lvl>78</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Rock Slide</name>
+                <lvl>80</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Sleep Talk</name>
+                <lvl>82</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Natural Gift</name>
+                <lvl>83</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Swagger</name>
+                <lvl>87</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Substitute</name>
+                <lvl>90</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>HM</machine>
+                <name>Surf</name>
+                <lvl>3</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>HM</machine>
+                <name>Rock Smash</name>
+                <lvl>6</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>HM</machine>
+                <name>Waterfall</name>
+                <lvl>7</lvl>
+            </move>
+            <move type="egg">
+                <name>Aurora Beam</name>
+            </move>
+            <move type="egg">
+                <name>Bubblebeam</name>
+            </move>
+            <move type="egg">
+                <name>Confuse Ray</name>
+            </move>
+            <move type="egg">
+                <name>Dig</name>
+            </move>
+            <move type="egg">
+                <name>Flail</name>
+            </move>
+            <move type="egg">
+                <name>Icy Wind</name>
+            </move>
+            <move type="egg">
+                <name>Knock Off</name>
+            </move>
+            <move type="egg">
+                <name>Mud Shot</name>
+            </move>
+            <move type="egg">
+                <name>Rapid Spin</name>
+            </move>
+            <move type="egg">
+                <name>Screech</name>
+            </move>
+        </moves>
+    </pokemon>
+    </pokedex>

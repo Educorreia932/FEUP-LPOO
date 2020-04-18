@@ -1,0 +1,32 @@
+<pokedex>
+    <pokemon id="132">
+        <name>DITTO</name>
+        <type>Normal</type>
+        <ability>Limber</ability>
+        <exp>1000000</exp>
+        <stats>
+            <HP>48</HP>
+            <ATK>48</ATK>
+            <DEF>48</DEF>
+            <SPD>48</SPD>
+            <SAT>48</SAT>
+            <SDF>48</SDF>
+        </stats>
+        <evolutions>
+            <evolution id="132">
+                <name>Ditto</name>
+            </evolution>
+        </evolutions>
+        <egg-group>Ditto</egg-group>
+        <species>Transform Pokemon</species>
+        <height>0.3</height>
+        <weight>4</weight>
+        <description>It has the ability to reconstitute its entire cellular structure to transform into whatever it sees.</description>
+        <moves>
+            <move type="level-up">
+                <name>Transform</name>
+                <lvl>1</lvl>
+            </move>
+        </moves>
+    </pokemon>
+    </pokedex>

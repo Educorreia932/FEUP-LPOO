@@ -1,0 +1,254 @@
+<pokedex>
+    <pokemon id="144">
+        <name>ARTICUNO</name>
+        <type>Ice</type>
+        <type>Flying</type>
+        <ability>Pressure</ability>
+        <exp>1250000</exp>
+        <stats>
+            <HP>90</HP>
+            <ATK>85</ATK>
+            <DEF>100</DEF>
+            <SPD>85</SPD>
+            <SAT>95</SAT>
+            <SDF>125</SDF>
+        </stats>
+        <evolutions>
+            <evolution id="144">
+                <name>Articuno</name>
+            </evolution>
+        </evolutions>
+        <species>Freeze Pokemon</species>
+        <height>1.7</height>
+        <weight>55.4</weight>
+        <description>A legendary bird Pokemon. It can create blizzards by freezing moisture in the air.</description>
+        <moves>
+            <move type="level-up">
+                <name>Gust</name>
+                <lvl>1</lvl>
+            </move>
+            <move type="level-up">
+                <name>Powder Snow</name>
+                <lvl>1</lvl>
+            </move>
+            <move type="level-up">
+                <name>Mist</name>
+                <lvl>8</lvl>
+            </move>
+            <move type="level-up">
+                <name>Ice Shard</name>
+                <lvl>15</lvl>
+            </move>
+            <move type="level-up">
+                <name>Mind Reader</name>
+                <lvl>22</lvl>
+            </move>
+            <move type="level-up">
+                <name>Ancientpower</name>
+                <lvl>29</lvl>
+            </move>
+            <move type="level-up">
+                <name>Agility</name>
+                <lvl>36</lvl>
+            </move>
+            <move type="level-up">
+                <name>Ice Beam</name>
+                <lvl>43</lvl>
+            </move>
+            <move type="level-up">
+                <name>Reflect</name>
+                <lvl>50</lvl>
+            </move>
+            <move type="level-up">
+                <name>Roost</name>
+                <lvl>57</lvl>
+            </move>
+            <move type="level-up">
+                <name>Tailwind</name>
+                <lvl>64</lvl>
+            </move>
+            <move type="level-up">
+                <name>Blizzard</name>
+                <lvl>71</lvl>
+            </move>
+            <move type="level-up">
+                <name>Sheer Cold</name>
+                <lvl>78</lvl>
+            </move>
+            <move type="level-up">
+                <name>Hail</name>
+                <lvl>85</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Water Pulse</name>
+                <lvl>03</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Roar</name>
+                <lvl>05</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Toxic</name>
+                <lvl>06</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Hail</name>
+                <lvl>07</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Hidden Power</name>
+                <lvl>10</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Sunny Day</name>
+                <lvl>11</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Ice Beam</name>
+                <lvl>13</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Blizzard</name>
+                <lvl>14</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Hyper Beam</name>
+                <lvl>15</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Protect</name>
+                <lvl>17</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Rain Dance</name>
+                <lvl>18</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Frustration</name>
+                <lvl>21</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Return</name>
+                <lvl>27</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Double Team</name>
+                <lvl>32</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Reflect</name>
+                <lvl>33</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Sandstorm</name>
+                <lvl>37</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Aerial Ace</name>
+                <lvl>40</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Facade</name>
+                <lvl>42</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Secret Power</name>
+                <lvl>43</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Rest</name>
+                <lvl>44</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Steel Wing</name>
+                <lvl>47</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Roost</name>
+                <lvl>51</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Endure</name>
+                <lvl>58</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Giga Impact</name>
+                <lvl>68</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Avalanche</name>
+                <lvl>72</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Sleep Talk</name>
+                <lvl>82</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Natural Gift</name>
+                <lvl>83</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Swagger</name>
+                <lvl>87</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Pluck</name>
+                <lvl>88</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>U-turn</name>
+                <lvl>89</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Substitute</name>
+                <lvl>90</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>HM</machine>
+                <name>Fly</name>
+                <lvl>2</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>HM</machine>
+                <name>Defog</name>
+                <lvl>5</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>HM</machine>
+                <name>Rock Smash</name>
+                <lvl>6</lvl>
+            </move>
+        </moves>
+    </pokemon>
+    </pokedex>

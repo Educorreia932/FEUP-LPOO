@@ -1,0 +1,276 @@
+<pokedex>
+    <pokemon id="41">
+        <name>ZUBAT</name>
+        <type>Poison</type>
+        <type>Flying</type>
+        <ability>Inner</ability>
+        <exp>1000000</exp>
+        <stats>
+            <HP>40</HP>
+            <ATK>45</ATK>
+            <DEF>35</DEF>
+            <SPD>55</SPD>
+            <SAT>30</SAT>
+            <SDF>40</SDF>
+        </stats>
+        <evolutions>
+            <evolution id="41">
+                <name>Zubat</name>
+            </evolution>
+            <evolution id="42">
+                <name>Golbat</name>
+                <lvl>22</lvl>
+            </evolution>
+            <evolution id="169">
+                <name>Crobat</name>
+                <condition>Happiness</condition>
+            </evolution>
+        </evolutions>
+        <egg-group>Flying</egg-group>
+        <species>Bat Pokemon</species>
+        <height>0.8</height>
+        <weight>7.5</weight>
+        <description>Even though it has no eyes, it can sense obstacles using ultrasonic waves it emits from its mouth.</description>
+        <moves>
+            <move type="level-up">
+                <name>Leech Life</name>
+                <lvl>1</lvl>
+            </move>
+            <move type="level-up">
+                <name>Supersonic</name>
+                <lvl>5</lvl>
+            </move>
+            <move type="level-up">
+                <name>Astonish</name>
+                <lvl>9</lvl>
+            </move>
+            <move type="level-up">
+                <name>Bite</name>
+                <lvl>13</lvl>
+            </move>
+            <move type="level-up">
+                <name>Wing Attack</name>
+                <lvl>17</lvl>
+            </move>
+            <move type="level-up">
+                <name>Confuse Ray</name>
+                <lvl>21</lvl>
+            </move>
+            <move type="level-up">
+                <name>Air Cutter</name>
+                <lvl>25</lvl>
+            </move>
+            <move type="level-up">
+                <name>Mean Look</name>
+                <lvl>29</lvl>
+            </move>
+            <move type="level-up">
+                <name>Poison Fang</name>
+                <lvl>33</lvl>
+            </move>
+            <move type="level-up">
+                <name>Haze</name>
+                <lvl>37</lvl>
+            </move>
+            <move type="level-up">
+                <name>Air Slash</name>
+                <lvl>41</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Toxic</name>
+                <lvl>06</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Hidden Power</name>
+                <lvl>10</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Sunny Day</name>
+                <lvl>11</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Taunt</name>
+                <lvl>12</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Protect</name>
+                <lvl>17</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Rain Dance</name>
+                <lvl>18</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Giga Drain</name>
+                <lvl>19</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Frustration</name>
+                <lvl>21</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Return</name>
+                <lvl>27</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Shadow Ball</name>
+                <lvl>30</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Double Team</name>
+                <lvl>32</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Sludge Bomb</name>
+                <lvl>36</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Aerial Ace</name>
+                <lvl>40</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Torment</name>
+                <lvl>41</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Facade</name>
+                <lvl>42</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Secret Power</name>
+                <lvl>43</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Rest</name>
+                <lvl>44</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Attract</name>
+                <lvl>45</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Thief</name>
+                <lvl>46</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Steel Wing</name>
+                <lvl>47</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Snatch</name>
+                <lvl>49</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Roost</name>
+                <lvl>51</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Endure</name>
+                <lvl>58</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Payback</name>
+                <lvl>66</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Captivate</name>
+                <lvl>78</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Sleep Talk</name>
+                <lvl>82</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Natural Gift</name>
+                <lvl>83</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Swagger</name>
+                <lvl>87</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Pluck</name>
+                <lvl>88</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>U-turn</name>
+                <lvl>89</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Substitute</name>
+                <lvl>90</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>HM</machine>
+                <name>Fly</name>
+                <lvl>2</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>HM</machine>
+                <name>Defog</name>
+                <lvl>5</lvl>
+            </move>
+            <move type="egg">
+                <name>Brave Bird</name>
+            </move>
+            <move type="egg">
+                <name>Curse</name>
+            </move>
+            <move type="egg">
+                <name>Faint Attack</name>
+            </move>
+            <move type="egg">
+                <name>Gust</name>
+            </move>
+            <move type="egg">
+                <name>Hypnosis</name>
+            </move>
+            <move type="egg">
+                <name>Nasty Plot</name>
+            </move>
+            <move type="egg">
+                <name>Pursuit</name>
+            </move>
+            <move type="egg">
+                <name>Quick Attack</name>
+            </move>
+            <move type="egg">
+                <name>Whirlwind</name>
+            </move>
+            <move type="egg">
+                <name>Zen Headbutt</name>
+            </move>
+        </moves>
+    </pokemon>
+    </pokedex>

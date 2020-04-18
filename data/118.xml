@@ -1,0 +1,225 @@
+<pokedex>
+    <pokemon id="118">
+        <name>GOLDEEN</name>
+        <type>Water</type>
+        <ability>Swift</ability>
+        <exp>1000000</exp>
+        <stats>
+            <HP>45</HP>
+            <ATK>67</ATK>
+            <DEF>60</DEF>
+            <SPD>63</SPD>
+            <SAT>35</SAT>
+            <SDF>50</SDF>
+        </stats>
+        <evolutions>
+            <evolution id="118">
+                <name>Goldeen</name>
+            </evolution>
+            <evolution id="119">
+                <name>Seaking</name>
+                <lvl>33</lvl>
+            </evolution>
+        </evolutions>
+        <egg-group>Water</egg-group>
+        <species>Goldfish Pokemon</species>
+        <height>0.6</height>
+        <weight>15</weight>
+        <description>It swims elegantly by flittering its tail fin as if it were a dress. It has the look of a queen.</description>
+        <moves>
+            <move type="level-up">
+                <name>Peck</name>
+                <lvl>1</lvl>
+            </move>
+            <move type="level-up">
+                <name>Tail Whip</name>
+                <lvl>1</lvl>
+            </move>
+            <move type="level-up">
+                <name>Water Sport</name>
+                <lvl>1</lvl>
+            </move>
+            <move type="level-up">
+                <name>Supersonic</name>
+                <lvl>7</lvl>
+            </move>
+            <move type="level-up">
+                <name>Horn Attack</name>
+                <lvl>11</lvl>
+            </move>
+            <move type="level-up">
+                <name>Water Pulse</name>
+                <lvl>17</lvl>
+            </move>
+            <move type="level-up">
+                <name>Flail</name>
+                <lvl>21</lvl>
+            </move>
+            <move type="level-up">
+                <name>Aqua Ring</name>
+                <lvl>27</lvl>
+            </move>
+            <move type="level-up">
+                <name>Fury Attack</name>
+                <lvl>31</lvl>
+            </move>
+            <move type="level-up">
+                <name>Waterfall</name>
+                <lvl>37</lvl>
+            </move>
+            <move type="level-up">
+                <name>Horn Drill</name>
+                <lvl>41</lvl>
+            </move>
+            <move type="level-up">
+                <name>Agility</name>
+                <lvl>47</lvl>
+            </move>
+            <move type="level-up">
+                <name>Megahorn</name>
+                <lvl>51</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Water Pulse</name>
+                <lvl>03</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Toxic</name>
+                <lvl>06</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Hail</name>
+                <lvl>07</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Hidden Power</name>
+                <lvl>10</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Ice Beam</name>
+                <lvl>13</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Blizzard</name>
+                <lvl>14</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Protect</name>
+                <lvl>17</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Rain Dance</name>
+                <lvl>18</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Frustration</name>
+                <lvl>21</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Return</name>
+                <lvl>27</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Double Team</name>
+                <lvl>32</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Facade</name>
+                <lvl>42</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Secret Power</name>
+                <lvl>43</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Rest</name>
+                <lvl>44</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Attract</name>
+                <lvl>45</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Endure</name>
+                <lvl>58</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Captivate</name>
+                <lvl>78</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Sleep Talk</name>
+                <lvl>82</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Natural Gift</name>
+                <lvl>83</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Poison Jab</name>
+                <lvl>84</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Swagger</name>
+                <lvl>87</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Substitute</name>
+                <lvl>90</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>HM</machine>
+                <name>Surf</name>
+                <lvl>3</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>HM</machine>
+                <name>Waterfall</name>
+                <lvl>7</lvl>
+            </move>
+            <move type="egg">
+                <name>Aqua Tail</name>
+            </move>
+            <move type="egg">
+                <name>Haze</name>
+            </move>
+            <move type="egg">
+                <name>Hydro Pump</name>
+            </move>
+            <move type="egg">
+                <name>Mud Sport</name>
+            </move>
+            <move type="egg">
+                <name>Mud-Slap</name>
+            </move>
+            <move type="egg">
+                <name>Psybeam</name>
+            </move>
+            <move type="egg">
+                <name>Sleep Talk</name>
+            </move>
+        </moves>
+    </pokemon>
+    </pokedex>

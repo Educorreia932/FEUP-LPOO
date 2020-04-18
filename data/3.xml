@@ -1,0 +1,279 @@
+<pokedex>
+    <pokemon id="3">
+        <name>VENUSAUR</name>
+        <type>Grass</type>
+        <type>Poison</type>
+        <ability>Overgrow</ability>
+        <exp>1059860</exp>
+        <stats>
+            <HP>80</HP>
+            <ATK>82</ATK>
+            <DEF>83</DEF>
+            <SPD>80</SPD>
+            <SAT>100</SAT>
+            <SDF>100</SDF>
+        </stats>
+        <evolutions>
+            <evolution id="1">
+                <name>Bulbasaur</name>
+            </evolution>
+            <evolution id="2">
+                <name>Ivysaur</name>
+                <lvl>16</lvl>
+            </evolution>
+            <evolution id="3">
+                <name>Venusaur</name>
+                <lvl>32</lvl>
+            </evolution>
+        </evolutions>
+        <ratio>
+            <male>87.5</male>
+            <female>12.5</female>
+        </ratio>
+        <egg-group>Monster</egg-group>
+        <egg-group>Grass</egg-group>
+        <species>Seed Pokemon</species>
+        <height>2</height>
+        <weight>100</weight>
+        <description>After a rainy day, the flower on its back smells stronger. The scent attracts other Pokemon.</description>
+        <moves>
+            <move type="level-up">
+                <name>Tackle</name>
+                <lvl>1</lvl>
+            </move>
+            <move type="level-up">
+                <name>Growl</name>
+                <lvl>1</lvl>
+            </move>
+            <move type="level-up">
+                <name>Leech Seed</name>
+                <lvl>1</lvl>
+            </move>
+            <move type="level-up">
+                <name>Vine Whip</name>
+                <lvl>1</lvl>
+            </move>
+            <move type="level-up">
+                <name>Growl</name>
+                <lvl>3</lvl>
+            </move>
+            <move type="level-up">
+                <name>Leech Seed</name>
+                <lvl>7</lvl>
+            </move>
+            <move type="level-up">
+                <name>Vine Whip</name>
+                <lvl>9</lvl>
+            </move>
+            <move type="level-up">
+                <name>Poisonpowder</name>
+                <lvl>13</lvl>
+            </move>
+            <move type="level-up">
+                <name>Sleep Powder</name>
+                <lvl>13</lvl>
+            </move>
+            <move type="level-up">
+                <name>Take Down</name>
+                <lvl>15</lvl>
+            </move>
+            <move type="level-up">
+                <name>Razor Leaf</name>
+                <lvl>20</lvl>
+            </move>
+            <move type="level-up">
+                <name>Sweet Scent</name>
+                <lvl>23</lvl>
+            </move>
+            <move type="level-up">
+                <name>Growth</name>
+                <lvl>28</lvl>
+            </move>
+            <move type="level-up">
+                <name>Double-edge</name>
+                <lvl>31</lvl>
+            </move>
+            <move type="level-up">
+                <name>Petal Dance</name>
+                <lvl>32</lvl>
+            </move>
+            <move type="level-up">
+                <name>Worry Seed</name>
+                <lvl>39</lvl>
+            </move>
+            <move type="level-up">
+                <name>Synthesis</name>
+                <lvl>45</lvl>
+            </move>
+            <move type="level-up">
+                <name>Solarbeam</name>
+                <lvl>53</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Roar</name>
+                <lvl>05</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Toxic</name>
+                <lvl>06</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Bullet Seed</name>
+                <lvl>09</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Hidden Power</name>
+                <lvl>10</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Sunny Day</name>
+                <lvl>11</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Hyper Beam</name>
+                <lvl>15</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Protect</name>
+                <lvl>17</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Giga Drain</name>
+                <lvl>19</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Frustration</name>
+                <lvl>21</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Solarbeam</name>
+                <lvl>22</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Earthquake</name>
+                <lvl>26</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Return</name>
+                <lvl>27</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Double Team</name>
+                <lvl>32</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Sludge Bomb</name>
+                <lvl>36</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Facade</name>
+                <lvl>42</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Secret Power</name>
+                <lvl>43</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Rest</name>
+                <lvl>44</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Attract</name>
+                <lvl>45</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Energy Ball</name>
+                <lvl>53</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Endure</name>
+                <lvl>58</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Giga Impact</name>
+                <lvl>68</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Flash</name>
+                <lvl>70</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Swords Dance</name>
+                <lvl>75</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Captivate</name>
+                <lvl>78</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Sleep Talk</name>
+                <lvl>82</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Natural Gift</name>
+                <lvl>83</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Grass Knot</name>
+                <lvl>86</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Swagger</name>
+                <lvl>87</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Substitute</name>
+                <lvl>90</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>HM</machine>
+                <name>Cut</name>
+                <lvl>1</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>HM</machine>
+                <name>Strength</name>
+                <lvl>4</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>HM</machine>
+                <name>Rock Smash</name>
+                <lvl>6</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>HM</machine>
+                <name>Rock Climb</name>
+                <lvl>8</lvl>
+            </move>
+        </moves>
+    </pokemon>
+    </pokedex>
