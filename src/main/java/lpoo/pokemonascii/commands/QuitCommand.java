@@ -6,11 +6,9 @@ import com.googlecode.lanterna.screen.Screen;
 import java.io.IOException;
 
 public class QuitCommand implements Command {
-    private Game game;
     private Screen screen;
 
-    public QuitCommand(Game game, Screen screen) {
-        this.game = game;
+    public QuitCommand(Screen screen) {
         this.screen = screen;
     }
 
@@ -18,7 +16,6 @@ public class QuitCommand implements Command {
     public void execute() {
         try {
             screen.close();
-            game.stopRunning();
         }
 
         catch (IOException e) {

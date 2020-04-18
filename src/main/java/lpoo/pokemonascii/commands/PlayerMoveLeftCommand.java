@@ -1,18 +1,18 @@
 package lpoo.pokemonascii.commands;
 
-import lpoo.pokemonascii.game.Game;
+import lpoo.pokemonascii.game.Map;
 import lpoo.pokemonascii.geometry.Position;
 
 public class PlayerMoveLeftCommand implements Command {
-    private Game game;
+    private Map map;
 
-    public PlayerMoveLeftCommand(Game game) {
-        this.game = game;
+    public PlayerMoveLeftCommand(Map map) {
+        this.map = map;
     }
 
     @Override
     public void execute() {
-        Position position = game.getMap().getPlayer().getPosition().left();
-        game.getMap().movePlayer(position);
+        Position position = map.getPlayer().getPosition().left();
+        map.movePlayer(position);
     }
 }

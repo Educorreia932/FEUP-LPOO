@@ -1,18 +1,18 @@
 package lpoo.pokemonascii.commands;
 
-import lpoo.pokemonascii.game.Game;
+import lpoo.pokemonascii.game.Map;
 import lpoo.pokemonascii.geometry.Position;
 
 public class PlayerMoveUpCommand implements Command {
-    private Game game;
+    private Map map;
 
-    public PlayerMoveUpCommand(Game game) {
-        this.game = game;
+    public PlayerMoveUpCommand(Map map) {
+        this.map = map;
     }
 
     @Override
     public void execute() {
-        Position position = game.getMap().getPlayer().getPosition().up();
-        game.getMap().movePlayer(position);
+        Position position = map.getPlayer().getPosition().up();
+        map.movePlayer(position);
     }
 }

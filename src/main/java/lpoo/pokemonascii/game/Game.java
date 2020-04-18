@@ -14,6 +14,7 @@ import java.awt.Font;
 
 import java.io.IOException;
 
+import lpoo.pokemonascii.commands.QuitCommand;
 import lpoo.pokemonascii.gui.GUI;
 
 public class Game {
@@ -21,7 +22,6 @@ public class Game {
     private GUI gui;
     private Map map;
     private Battle battle;
-    private boolean running = true;
 
     public Game() throws IOException {
         Font font = new Font("Fira Code Light", Font.PLAIN, 6);
@@ -43,26 +43,17 @@ public class Game {
     }
 
     public void run() throws IOException {
-        while (running) {
+        while (true) {
             gui.drawImage(battle.getBackground());
             gui.drawElement(battle.getTrainerPokemon());
-
-        while (true) {
-            gui.drawImagePortion(map.getBackground(), map.getPlayer().getPosition(), new Rect(map.getPlayer().getCurrentImage()));
-            Command command = Input.getNextCommand(this, screen);
+            Command command = Input.getNextCommand(map, screen);
 
             command.execute();
-            map.getPlayer().updateImage(command);
+
+            if (command instanceof QuitCommand)
+                break;
 
             screen.refresh();
         }
-    }
-
-    public void stopRunning() {
-        running = false;
-    }
-
-    public Map getMap() {
-        return map;
     }
 }
