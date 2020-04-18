@@ -8,12 +8,12 @@ import lpoo.pokemonascii.gui.Image;
 import java.util.ArrayList;
 import java.util.List;
 
-public class World {
+public class Map {
     private Player player;
     private Image background;
     private List<CollidingElement> elements;
 
-    public World() {
+    public Map() {
         this.background = new Image("background\\room");
         player = new Player();
 
@@ -52,11 +52,7 @@ public class World {
         return background;
     }
 
-    public void changePlayerImage(Player.direction direction) {
-        player.getSprite().setCurrentImage(direction.ordinal());
-    }
-
-    public void removeObstacles() {
+    public void removeObstacles(){
         elements.clear();
     }
 }
