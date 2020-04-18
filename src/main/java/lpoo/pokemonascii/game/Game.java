@@ -47,9 +47,12 @@ public class Game {
             gui.drawImage(battle.getBackground());
             gui.drawElement(battle.getTrainerPokemon());
 
+        while (true) {
+            gui.drawImagePortion(map.getBackground(), map.getPlayer().getPosition(), new Rect(map.getPlayer().getCurrentImage()));
             Command command = Input.getNextCommand(this, screen);
 
             command.execute();
+            map.getPlayer().updateImage(command);
 
             screen.refresh();
         }
