@@ -9,24 +9,21 @@ import com.googlecode.lanterna.terminal.swing.AWTTerminalFontConfiguration;
 import com.googlecode.lanterna.terminal.swing.SwingTerminalFontConfiguration;
 
 import lpoo.pokemonascii.commands.Command;
-import lpoo.pokemonascii.commands.QuitCommand;
-import lpoo.pokemonascii.geometry.Rect;
-import org.xml.sax.SAXException;
-
-import javax.xml.parsers.ParserConfigurationException;
 
 import java.awt.Font;
 
 import java.io.IOException;
 
+import lpoo.pokemonascii.commands.QuitCommand;
 import lpoo.pokemonascii.gui.GUI;
 
 public class Game {
     private Screen screen;
     private GUI gui;
     private Map map;
+    private Battle battle;
 
-    public Game() throws IOException, ParserConfigurationException, SAXException {
+    public Game() throws IOException {
         Font font = new Font("Fira Code Light", Font.PLAIN, 6);
         AWTTerminalFontConfiguration cfg = new SwingTerminalFontConfiguration(true, AWTTerminalFontConfiguration.BoldMode.NOTHING, font);
 
@@ -42,24 +39,20 @@ public class Game {
 
         gui = new GUI(screen);
         map = new Map();
+        battle = new Battle(1);
     }
 
     public void run() throws IOException {
-        gui.drawImage(map.getBackground());
-        gui.drawElement(map.getPlayer());
-
         while (true) {
-            gui.drawImagePortion(map.getBackground(), map.getPlayer().getPosition(), new Rect(map.getPlayer().getCurrentImage()));
-
+            gui.drawImage(battle.getBackground());
+            gui.drawElement(battle.getTrainerPokemon());
             Command command = Input.getNextCommand(map, screen);
 
             command.execute();
-            map.getPlayer().updateImage(command);
 
-            if (command instanceof QuitCommand) // Is there a better way to do it?
+            if (command instanceof QuitCommand)
                 break;
 
-            gui.drawElement(map.getPlayer());
             screen.refresh();
         }
     }

@@ -26,11 +26,11 @@ public abstract class Input {
             case ArrowLeft:
                 return new PlayerMoveLeftCommand(map);
             case EOF:
-                return new QuitCommand(map, screen);
+                return new QuitCommand(screen);
             case Character:
                 switch (pressedKey.getCharacter()) {
                     case 'q':
-                        return new QuitCommand(map, screen);
+                        return new QuitCommand(screen);
                 }
         }
 

@@ -9,8 +9,16 @@ This project was developed by [*Eduardo Correia*](https://github.com/educorreia9
 
 - [x] Make the main character appear in-game and be controllable (with arrow keys). 
 - [x] Implement collisions. 
+- [x] Make player's image change according to the direction he's facing.
+- [ ] Read data file about pokémons. 
+- [ ] Render text. 
+- [ ] Make a battle menu.
+- [ ] Implement multi-threading (for drawing and for user input).
+- [ ] Make pokémon appear when walking on grass.
 - [ ] Include three pokémons (starters) with fixed moves and abilities (but without leveling up).
 - [ ] Make it possible to catch pokémon or battle against it.
+- [ ] Implements items.
+- [ ] Include music and sound effects.
 
 ### Graphics
 

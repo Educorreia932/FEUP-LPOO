@@ -1,22 +1,16 @@
 package lpoo.pokemonascii.pokemon;
 
-import java.io.File;
+import lpoo.pokemonascii.gui.Image;
+
 import java.io.FileNotFoundException;
-import java.util.Scanner;
 
 public class PokemonSpecies {
     private int pokedex_number;
     private PokemonType primary_type;
     private PokemonType secondary_type;
+    private PokemonStats base_stats;
 
     public PokemonSpecies(int pokedex_number) throws FileNotFoundException {
-        // Parsing a CSV file into Scanner class constructor
-        Scanner sc = new Scanner(new File("data"));
-        sc.useDelimiter(","); // We're reading from a CSV
-        while (sc.hasNext()) {
-            System.out.print(sc.next());  //find and returns the next complete token from this scanner
-        }
 
-        sc.close();  //closes the scanner
     }
 }
