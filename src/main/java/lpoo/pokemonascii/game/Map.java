@@ -13,7 +13,7 @@ public class Map {
     private Image background;
     private List<CollidingElement> elements;
 
-    Map() {
+    public Map() {
         this.background = new Image("background\\room");
         player = new Player();
 
@@ -50,5 +50,9 @@ public class Map {
 
     public Image getBackground() {
         return background;
+    }
+
+    public void removeObstacles(){
+        elements.clear();
     }
 }
