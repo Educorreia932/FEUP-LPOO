@@ -3,7 +3,9 @@ package lpoo.pokemonascii.gui;
 import com.googlecode.lanterna.TextColor;
 import com.googlecode.lanterna.graphics.TextGraphics;
 import com.googlecode.lanterna.screen.Screen;
+import lpoo.pokemonascii.elements.CollidingElement;
 import lpoo.pokemonascii.elements.DrawableElement;
+import lpoo.pokemonascii.elements.Element;
 import lpoo.pokemonascii.geometry.Position;
 import lpoo.pokemonascii.geometry.Rect;
 
