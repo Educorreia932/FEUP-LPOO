@@ -25,3 +25,13 @@ hs_err_pid*
 # Folders
 .idea/
 .gradle/
+
+*.html
+
+build/reports/tests/test/css/
+
+build/test-results/test/binary/
+
+build/test-results/test/TEST-lpoo.pokemonascii.commands.CommandsTest.xml
+
+build/reports/tests/test/js/

@@ -20,7 +20,7 @@ import lpoo.pokemonascii.gui.GUI;
 public class Game {
     private Screen screen;
     private GUI gui;
-    private Map map;
+    private World world;
     private Battle battle;
 
     public Game() throws IOException {
@@ -38,20 +38,25 @@ public class Game {
         screen.doResizeIfNecessary();     // resize screen if necessary
 
         gui = new GUI(screen);
-        map = new Map();
+        world = new World();
         battle = new Battle(1);
     }
 
     public void run() throws IOException {
+        gui.drawImage(world.getBackground());
+
         while (true) {
-            gui.drawImage(battle.getBackground());
-            gui.drawElement(battle.getTrainerPokemon());
-            Command command = Input.getNextCommand(map, screen);
+//            gui.drawImage(battle.getBackground());
+//            gui.drawElement(battle.getTrainerPokemon());
+            gui.drawImagePortion(world.getBackground(), world.getPlayer().getPosition(), world.getPlayer().getCollider().getHitbox());
+            Command command = Input.getNextCommand(world, screen);
 
             command.execute();
 
             if (command instanceof QuitCommand)
                 break;
+
+            gui.drawElement(world.getPlayer());
 
             screen.refresh();
         }

@@ -19,6 +19,10 @@ public class Player implements CollidingElement, DrawableElement {
     private Collider collider;
     private Sprite sprite;
 
+    public enum direction {
+        FRONT, BACK, LEFT, RIGHT
+    }
+
     Player() {
         position = new Position(100, 50);
         Image front= new Image("player\\red_front");
@@ -52,9 +56,5 @@ public class Player implements CollidingElement, DrawableElement {
 
     public Image getCurrentImage() {
         return sprite.getCurrentImage();
-    }
-
-    public void updateImage(Command command){
-        sprite.updateImage(command);
     }
 }
