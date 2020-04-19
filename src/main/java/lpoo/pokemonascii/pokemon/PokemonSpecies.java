@@ -1,6 +1,5 @@
 package lpoo.pokemonascii.pokemon;
 
-import lpoo.pokemonascii.gui.Image;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
@@ -11,16 +10,16 @@ import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 
 public class PokemonSpecies {
     private int pokedex_number;
+    private String name;
     private PokemonType primary_type;
     private PokemonType secondary_type;
     private PokemonStats base_stats;
 
-    public PokemonSpecies(int pokedex_number) throws FileNotFoundException {
+    public PokemonSpecies(int pokedex_number) {
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         DocumentBuilder builder = null;
 
@@ -51,7 +50,7 @@ public class PokemonSpecies {
 
             if (node.getNodeType() == Node.ELEMENT_NODE) {
                 Element elem = (Element) node;
-
+                String name = elem.getElementsByTagName("name").item(0).getTextContent();
             }
         }
     }
