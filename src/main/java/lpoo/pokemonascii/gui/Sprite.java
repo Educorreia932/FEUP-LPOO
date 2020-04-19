@@ -1,7 +1,5 @@
 package lpoo.pokemonascii.gui;
 
-import lpoo.pokemonascii.commands.*;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;

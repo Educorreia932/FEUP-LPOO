@@ -39,7 +39,7 @@ public class Game {
 
         gui = new GUI(screen);
         world = new World();
-        battle = new Battle(1);
+        battle = new Battle(25);
     }
 
     public void run() throws IOException {
