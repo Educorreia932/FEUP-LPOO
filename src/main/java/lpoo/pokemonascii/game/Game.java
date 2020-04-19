@@ -39,16 +39,16 @@ public class Game {
 
         gui = new GUI(screen);
         world = new World();
-        battle = new Battle(1);
+        battle = new Battle(25);
     }
 
     public void run() throws IOException {
         gui.drawImage(world.getBackground());
 
         while (true) {
-//            gui.drawImage(battle.getBackground());
-//            gui.drawElement(battle.getTrainerPokemon());
-            gui.drawImagePortion(world.getBackground(), world.getPlayer().getPosition(), world.getPlayer().getCollider().getHitbox());
+            gui.drawImage(battle.getBackground());
+            gui.drawElement(battle.getTrainerPokemon());
+//            gui.drawImagePortion(world.getBackground(), world.getPlayer().getPosition(), world.getPlayer().getCollider().getHitbox());
             Command command = Input.getNextCommand(world, screen);
 
             command.execute();
@@ -56,7 +56,7 @@ public class Game {
             if (command instanceof QuitCommand)
                 break;
 
-            gui.drawElement(world.getPlayer());
+//            gui.drawElement(world.getPlayer());
 
             screen.refresh();
         }

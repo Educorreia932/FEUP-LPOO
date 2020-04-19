@@ -1,0 +1,393 @@
+<pokedex>
+    <pokemon id="122">
+        <name>MR</name>
+        <type>Psychic</type>
+        <ability>Soundproof</ability>
+        <exp>1000000</exp>
+        <stats>
+            <HP>40</HP>
+            <ATK>45</ATK>
+            <DEF>65</DEF>
+            <SPD>90</SPD>
+            <SAT>100</SAT>
+            <SDF>120</SDF>
+        </stats>
+        <evolutions>
+            <evolution id="439">
+                <name>Mime</name>
+            </evolution>
+            <evolution id="122">
+                <name>Mr</name>
+            </evolution>
+        </evolutions>
+        <egg-group>Human</egg-group>
+        <species>Barrier Pokemon</species>
+        <height>1.3</height>
+        <weight>54.5</weight>
+        <description>It is a pantomime expert that can create invisible but solid walls using miming gestures.</description>
+        <moves>
+            <move type="level-up">
+                <name>Magical Leaf</name>
+                <lvl>1</lvl>
+            </move>
+            <move type="level-up">
+                <name>Power Swap</name>
+                <lvl>1</lvl>
+            </move>
+            <move type="level-up">
+                <name>Guard Swap</name>
+                <lvl>1</lvl>
+            </move>
+            <move type="level-up">
+                <name>Barrier</name>
+                <lvl>1</lvl>
+            </move>
+            <move type="level-up">
+                <name>Confusion</name>
+                <lvl>1</lvl>
+            </move>
+            <move type="level-up">
+                <name>Copycat</name>
+                <lvl>4</lvl>
+            </move>
+            <move type="level-up">
+                <name>Meditate</name>
+                <lvl>8</lvl>
+            </move>
+            <move type="level-up">
+                <name>Encore</name>
+                <lvl>11</lvl>
+            </move>
+            <move type="level-up">
+                <name>Doubleslap</name>
+                <lvl>15</lvl>
+            </move>
+            <move type="level-up">
+                <name>Mimic</name>
+                <lvl>18</lvl>
+            </move>
+            <move type="level-up">
+                <name>Reflect</name>
+                <lvl>22</lvl>
+            </move>
+            <move type="level-up">
+                <name>Light Screen</name>
+                <lvl>22</lvl>
+            </move>
+            <move type="level-up">
+                <name>Psybeam</name>
+                <lvl>25</lvl>
+            </move>
+            <move type="level-up">
+                <name>Substitute</name>
+                <lvl>29</lvl>
+            </move>
+            <move type="level-up">
+                <name>Recycle</name>
+                <lvl>32</lvl>
+            </move>
+            <move type="level-up">
+                <name>Trick</name>
+                <lvl>36</lvl>
+            </move>
+            <move type="level-up">
+                <name>Psychic</name>
+                <lvl>39</lvl>
+            </move>
+            <move type="level-up">
+                <name>Role Play</name>
+                <lvl>43</lvl>
+            </move>
+            <move type="level-up">
+                <name>Baton Pass</name>
+                <lvl>46</lvl>
+            </move>
+            <move type="level-up">
+                <name>Safeguard</name>
+                <lvl>50</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Focus Punch</name>
+                <lvl>01</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Calm Mind</name>
+                <lvl>04</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Toxic</name>
+                <lvl>06</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Hidden Power</name>
+                <lvl>10</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Sunny Day</name>
+                <lvl>11</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Taunt</name>
+                <lvl>12</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Hyper Beam</name>
+                <lvl>15</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Light Screen</name>
+                <lvl>16</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Protect</name>
+                <lvl>17</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Rain Dance</name>
+                <lvl>18</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Safeguard</name>
+                <lvl>20</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Frustration</name>
+                <lvl>21</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Solarbeam</name>
+                <lvl>22</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Thunderbolt</name>
+                <lvl>24</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Thunder</name>
+                <lvl>25</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Return</name>
+                <lvl>27</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Psychic</name>
+                <lvl>29</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Shadow Ball</name>
+                <lvl>30</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Brick Break</name>
+                <lvl>31</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Double Team</name>
+                <lvl>32</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Reflect</name>
+                <lvl>33</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Shock Wave</name>
+                <lvl>34</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Aerial Ace</name>
+                <lvl>40</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Torment</name>
+                <lvl>41</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Facade</name>
+                <lvl>42</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Secret Power</name>
+                <lvl>43</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Rest</name>
+                <lvl>44</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Attract</name>
+                <lvl>45</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Thief</name>
+                <lvl>46</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Skill Swap</name>
+                <lvl>48</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Snatch</name>
+                <lvl>49</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Focus Blast</name>
+                <lvl>52</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Energy Ball</name>
+                <lvl>53</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Fling</name>
+                <lvl>56</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Charge Beam</name>
+                <lvl>57</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Endure</name>
+                <lvl>58</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Drain Punch</name>
+                <lvl>60</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Payback</name>
+                <lvl>66</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Recycle</name>
+                <lvl>67</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Giga Impact</name>
+                <lvl>68</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Flash</name>
+                <lvl>70</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Thunder Wave</name>
+                <lvl>73</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Psych Up</name>
+                <lvl>77</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Captivate</name>
+                <lvl>78</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Sleep Talk</name>
+                <lvl>82</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Natural Gift</name>
+                <lvl>83</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Dream Eater</name>
+                <lvl>85</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Grass Knot</name>
+                <lvl>86</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Swagger</name>
+                <lvl>87</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Substitute</name>
+                <lvl>90</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Trick Room</name>
+                <lvl>92</lvl>
+            </move>
+            <move type="egg">
+                <name>Confuse Ray</name>
+            </move>
+            <move type="egg">
+                <name>Fake Out</name>
+            </move>
+            <move type="egg">
+                <name>Future Sight</name>
+            </move>
+            <move type="egg">
+                <name>Hypnosis</name>
+            </move>
+            <move type="egg">
+                <name>Mimic</name>
+            </move>
+            <move type="egg">
+                <name>Psych Up</name>
+            </move>
+            <move type="egg">
+                <name>Teeter Dance</name>
+            </move>
+            <move type="egg">
+                <name>Trick</name>
+            </move>
+            <move type="egg">
+                <name>Wake-up Slap</name>
+            </move>
+        </moves>
+    </pokemon>
+    </pokedex>

@@ -1,0 +1,383 @@
+<pokedex>
+    <pokemon id="149">
+        <name>DRAGONITE</name>
+        <type>Dragon</type>
+        <type>Flying</type>
+        <ability>Inner</ability>
+        <exp>1250000</exp>
+        <stats>
+            <HP>91</HP>
+            <ATK>134</ATK>
+            <DEF>95</DEF>
+            <SPD>80</SPD>
+            <SAT>100</SAT>
+            <SDF>100</SDF>
+        </stats>
+        <evolutions>
+            <evolution id="147">
+                <name>Dratini</name>
+            </evolution>
+            <evolution id="148">
+                <name>Dragonair</name>
+                <lvl>30</lvl>
+            </evolution>
+            <evolution id="149">
+                <name>Dragonite</name>
+                <lvl>55</lvl>
+            </evolution>
+        </evolutions>
+        <egg-group>Water</egg-group>
+        <species>Dragon Pokemon</species>
+        <height>2.2</height>
+        <weight>210</weight>
+        <description>It is said to make its home somewhere in the sea. It guides crews of shipwrecks to shore.</description>
+        <moves>
+            <move type="level-up">
+                <name>Fire Punch</name>
+                <lvl>1</lvl>
+            </move>
+            <move type="level-up">
+                <name>Thunderpunch</name>
+                <lvl>1</lvl>
+            </move>
+            <move type="level-up">
+                <name>Roost</name>
+                <lvl>1</lvl>
+            </move>
+            <move type="level-up">
+                <name>Wrap</name>
+                <lvl>1</lvl>
+            </move>
+            <move type="level-up">
+                <name>Leer</name>
+                <lvl>1</lvl>
+            </move>
+            <move type="level-up">
+                <name>Thunder Wave</name>
+                <lvl>1</lvl>
+            </move>
+            <move type="level-up">
+                <name>Twister</name>
+                <lvl>1</lvl>
+            </move>
+            <move type="level-up">
+                <name>Thunder Wave</name>
+                <lvl>5</lvl>
+            </move>
+            <move type="level-up">
+                <name>Twister</name>
+                <lvl>11</lvl>
+            </move>
+            <move type="level-up">
+                <name>Dragon Rage</name>
+                <lvl>15</lvl>
+            </move>
+            <move type="level-up">
+                <name>Slam</name>
+                <lvl>21</lvl>
+            </move>
+            <move type="level-up">
+                <name>Agility</name>
+                <lvl>25</lvl>
+            </move>
+            <move type="level-up">
+                <name>Aqua Tail</name>
+                <lvl>33</lvl>
+            </move>
+            <move type="level-up">
+                <name>Dragon Rush</name>
+                <lvl>39</lvl>
+            </move>
+            <move type="level-up">
+                <name>Safeguard</name>
+                <lvl>47</lvl>
+            </move>
+            <move type="level-up">
+                <name>Dragon Dance</name>
+                <lvl>53</lvl>
+            </move>
+            <move type="level-up">
+                <name>Wing Attack</name>
+                <lvl>55</lvl>
+            </move>
+            <move type="level-up">
+                <name>Outrage</name>
+                <lvl>64</lvl>
+            </move>
+            <move type="level-up">
+                <name>Hyper Beam</name>
+                <lvl>73</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Focus Punch</name>
+                <lvl>01</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Dragon Claw</name>
+                <lvl>02</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Water Pulse</name>
+                <lvl>03</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Roar</name>
+                <lvl>05</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Toxic</name>
+                <lvl>06</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Hail</name>
+                <lvl>07</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Hidden Power</name>
+                <lvl>10</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Sunny Day</name>
+                <lvl>11</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Ice Beam</name>
+                <lvl>13</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Blizzard</name>
+                <lvl>14</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Hyper Beam</name>
+                <lvl>15</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Protect</name>
+                <lvl>17</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Rain Dance</name>
+                <lvl>18</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Safeguard</name>
+                <lvl>20</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Frustration</name>
+                <lvl>21</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Iron Tail</name>
+                <lvl>23</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Thunderbolt</name>
+                <lvl>24</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Thunder</name>
+                <lvl>25</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Earthquake</name>
+                <lvl>26</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Return</name>
+                <lvl>27</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Brick Break</name>
+                <lvl>31</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Double Team</name>
+                <lvl>32</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Shock Wave</name>
+                <lvl>34</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Flamethrower</name>
+                <lvl>35</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Sandstorm</name>
+                <lvl>37</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Fire Blast</name>
+                <lvl>38</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Rock Tomb</name>
+                <lvl>39</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Aerial Ace</name>
+                <lvl>40</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Facade</name>
+                <lvl>42</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Secret Power</name>
+                <lvl>43</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Rest</name>
+                <lvl>44</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Attract</name>
+                <lvl>45</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Steel Wing</name>
+                <lvl>47</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Roost</name>
+                <lvl>51</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Focus Blast</name>
+                <lvl>52</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Fling</name>
+                <lvl>56</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Endure</name>
+                <lvl>58</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Dragon Pulse</name>
+                <lvl>59</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Giga Impact</name>
+                <lvl>68</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Stone Edge</name>
+                <lvl>71</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Thunder Wave</name>
+                <lvl>73</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Captivate</name>
+                <lvl>78</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Rock Slide</name>
+                <lvl>80</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Sleep Talk</name>
+                <lvl>82</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Natural Gift</name>
+                <lvl>83</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Swagger</name>
+                <lvl>87</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Substitute</name>
+                <lvl>90</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>HM</machine>
+                <name>Cut</name>
+                <lvl>1</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>HM</machine>
+                <name>Fly</name>
+                <lvl>2</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>HM</machine>
+                <name>Surf</name>
+                <lvl>3</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>HM</machine>
+                <name>Strength</name>
+                <lvl>4</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>HM</machine>
+                <name>Defog</name>
+                <lvl>5</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>HM</machine>
+                <name>Rock Smash</name>
+                <lvl>6</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>HM</machine>
+                <name>Waterfall</name>
+                <lvl>7</lvl>
+            </move>
+        </moves>
+    </pokemon>
+    </pokedex>

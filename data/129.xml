@@ -1,0 +1,44 @@
+<pokedex>
+    <pokemon id="129">
+        <name>MAGIKARP</name>
+        <type>Water</type>
+        <ability>Swift</ability>
+        <exp>1250000</exp>
+        <stats>
+            <HP>20</HP>
+            <ATK>10</ATK>
+            <DEF>55</DEF>
+            <SPD>80</SPD>
+            <SAT>15</SAT>
+            <SDF>20</SDF>
+        </stats>
+        <evolutions>
+            <evolution id="129">
+                <name>Magikarp</name>
+            </evolution>
+            <evolution id="130">
+                <name>Gyarados</name>
+                <lvl>20</lvl>
+            </evolution>
+        </evolutions>
+        <egg-group>Water</egg-group>
+        <species>Fish Pokemon</species>
+        <height>0.9</height>
+        <weight>10</weight>
+        <description>It is said to be the world's weakest Pokemon. No one knows why it has managed to survive.</description>
+        <moves>
+            <move type="level-up">
+                <name>Splash</name>
+                <lvl>1</lvl>
+            </move>
+            <move type="level-up">
+                <name>Tackle</name>
+                <lvl>15</lvl>
+            </move>
+            <move type="level-up">
+                <name>Flail</name>
+                <lvl>30</lvl>
+            </move>
+        </moves>
+    </pokemon>
+    </pokedex>
