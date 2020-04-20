@@ -11,6 +11,7 @@ This project was developed by [*Eduardo Correia*](https://github.com/educorreia9
 - [x] Implement collisions. 
 - [x] Make player's image change according to the direction he's facing.
 - [ ] Read data file about pokémons. 
+- [ ] Implement MVC. 
 - [ ] Render text. 
 - [ ] Make a battle menu.
 - [ ] Implement multi-threading (for drawing and for user input).
