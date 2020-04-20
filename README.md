@@ -18,7 +18,8 @@ This project was developed by [*Eduardo Correia*](https://github.com/educorreia9
 - [ ] Make pokémon appear when walking on grass.
 - [ ] Include three pokémons (starters) with fixed moves and abilities (but without leveling up).
 - [ ] Make it possible to catch pokémon or battle against it.
-- [ ] Implements items.
+- [ ] Implement items.
+- [ ] Implement a `DamageMultiplier` class
 - [ ] Include music and sound effects.
 
 ### Graphics

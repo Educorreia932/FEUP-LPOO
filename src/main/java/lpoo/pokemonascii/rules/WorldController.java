@@ -1,6 +1,7 @@
 package lpoo.pokemonascii.rules;
 
-import lpoo.pokemonascii.data.Direction;
+import lpoo.pokemonascii.data.Player;
+import lpoo.pokemonascii.data.Position;
 import lpoo.pokemonascii.data.WorldModel;
 import lpoo.pokemonascii.gui.WorldView;
 import lpoo.pokemonascii.gui.commands.Command;
@@ -19,7 +20,7 @@ public class WorldController {
 
     public void start() throws IOException {
         while (true) {
-            gui.drawWorld(world);
+            gui.drawWorld();
 
             Command command = gui.getNextCommand(this);
             command.execute();
@@ -29,8 +30,12 @@ public class WorldController {
         }
     }
 
-    public void movePlayer(Direction direction) {
+    public void movePlayer(Position.Direction direction) {
         if (world.canPlayerMove(direction))
             world.setPlayerPosition(direction);
+    }
+
+    public void setPlayerState(Player.State state) {
+        world.getPlayer().setState(state);
     }
 }

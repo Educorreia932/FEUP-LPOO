@@ -9,7 +9,7 @@ import java.io.IOException;
 public class Game {
     public static void main(String[] args) throws IOException {
         WorldModel world = new WorldModel();
-        WorldView gui = new WorldView(300, 110);
+        WorldView gui = new WorldView(300, 110, world);
         WorldController controller = new WorldController(gui, world);
 
         controller.start();

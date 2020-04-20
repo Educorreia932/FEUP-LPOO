@@ -1,6 +1,7 @@
 package lpoo.pokemonascii.gui.commands;
 
-import lpoo.pokemonascii.data.Direction;
+import lpoo.pokemonascii.data.Player;
+import lpoo.pokemonascii.data.Position;
 import lpoo.pokemonascii.rules.WorldController;
 
 public class PlayerMoveUpCommand implements Command {
@@ -12,7 +13,7 @@ public class PlayerMoveUpCommand implements Command {
 
     @Override
     public void execute() {
-        controller.movePlayer(Direction.UP);
-//        world.changePlayerImage(Player.direction.BACK);
+        controller.movePlayer(Position.Direction.UP);
+        controller.setPlayerState(Player.State.BACK);
     }
 }
