@@ -1,6 +1,5 @@
 package lpoo.pokemonascii.data;
 
-import lpoo.pokemonascii.data.elements.Collider;
 import lpoo.pokemonascii.data.elements.CollidingElement;
 
 import java.util.ArrayList;
@@ -36,7 +35,7 @@ public class WorldModel {
 
     public CollidingElement getCollidingElement(Position position) {
         for (CollidingElement c : elements)
-            if (Collider.collides(position, player.getCollider(), c.getPosition(), c.getCollider()))
+            if (c.collides(position, player))
                 return c;
 
         return null;

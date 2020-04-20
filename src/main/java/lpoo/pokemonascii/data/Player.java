@@ -1,15 +1,12 @@
 package lpoo.pokemonascii.data;
 
-import lpoo.pokemonascii.data.elements.Collider;
 import lpoo.pokemonascii.data.elements.CollidingElement;
 
 import java.util.List;
 
-public class Player implements CollidingElement {
-    private Position position;
+public class Player extends CollidingElement {
     private String name;
     private List<Pokemon> pokemons;
-    private Collider collider;
     private State state;
 
     public enum State {
@@ -20,39 +17,23 @@ public class Player implements CollidingElement {
     }
 
     public Player() {
-        position = new Position(100, 50);
+        super(100,100, 0,0);
         state = State.FRONT;
-        collider = new Collider(0, 0); // TODO: This is temporary, only for debug purposes
-    }
-
-    @Override
-    public Collider getCollider() {
-        return collider;
-    }
-
-    @Override
-    public Position getPosition() {
-        return position;
     }
 
     public Position getPosition(Position.Direction direction) {
         switch (direction) {
             case UP:
-                return position.up();
+                return getPosition().up();
             case DOWN:
-                return position.down();
+                return getPosition().down();
             case RIGHT:
-                return position.right();
+                return getPosition().right();
             case LEFT:
-                return position.left();
+                return getPosition().left();
         }
 
-        return position;
-    }
-
-    @Override
-    public void setPosition(Position position) {
-        this.position = position;
+        return getPosition();
     }
 
     public State getState() {
