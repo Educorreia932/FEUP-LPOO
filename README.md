@@ -15,6 +15,7 @@ This project was developed by [*Eduardo Correia*](https://github.com/educorreia9
 - [x] Render text. 
 - [ ] Make a battle menu.
 - [ ] Make pokémon appear when walking on grass.
+- [ ] Add a NPC.
 - [ ] Implement multi-threading (for drawing and for user input).
 - [ ] Implement animations (mainly for playing walking animation).
 - [ ] Include three pokémons (starters) with fixed moves and abilities (but without leveling up).

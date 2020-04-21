@@ -12,6 +12,7 @@ import java.io.IOException;
 public class WorldController {
     private WorldView gui;
     private WorldModel world;
+    boolean inBattle = false;
 
     public WorldController(WorldView gui, WorldModel world) {
         this.gui = gui;
@@ -27,12 +28,17 @@ public class WorldController {
 
             if (command instanceof QuitCommand)
                 return GameController.GameMode.ENDGAME;
+            if (inBattle)
+                return GameController.GameMode.BATTLE;
         }
     }
 
     public void movePlayer(Position.Direction direction) {
         if (world.canPlayerMove(direction))
             world.setPlayerPosition(direction);
+
+        else
+            inBattle = true;
     }
 
     public void setPlayerState(Player.State state) {

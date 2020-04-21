@@ -23,8 +23,7 @@ public class GameController {
     }
 
     public int run(GameMode gamemode) throws IOException, SAXException {
-
-        while (!gamemode.equals(GameMode.ENDGAME)){
+        while (!gamemode.equals(GameMode.ENDGAME)) {
             switch (gamemode) {
                 case WORLD:
                     WorldModel world = new WorldModel();

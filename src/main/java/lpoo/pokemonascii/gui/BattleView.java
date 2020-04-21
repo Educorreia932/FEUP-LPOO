@@ -6,9 +6,7 @@ import com.googlecode.lanterna.screen.Screen;
 
 import lpoo.pokemonascii.data.BattleModel;
 import lpoo.pokemonascii.gui.commands.*;
-import lpoo.pokemonascii.gui.renderers.BackgroundRenderer;
-import lpoo.pokemonascii.gui.renderers.PokemonRenderer;
-import lpoo.pokemonascii.gui.renderers.TextRenderer;
+import lpoo.pokemonascii.gui.renderers.*;
 import lpoo.pokemonascii.rules.BattleController;
 
 import java.io.IOException;
@@ -17,27 +15,37 @@ public class BattleView {
     private Screen screen;
     private TextGraphics graphics;
     private BattleModel battle;
-    private BackgroundRenderer backgroundRenderer;
-    private PokemonRenderer pokemonRenderer;
-    private TextRenderer pokemonName;
+    private BackgroundRenderer background;
+    private PokemonRenderer trainerPokemon;
+    private PokemonRenderer adversaryPokemon;
+    private BattleMenuRenderer battleMenu;
+    private PokemonInfoRenderer trainerPokemonInfo;
+    private PokemonInfoRenderer adversaryPokemonInfo;
 
-    public BattleView(Screen screen, TextGraphics graphics, BattleModel battle) throws IOException {
+    public BattleView(Screen screen, TextGraphics graphics, BattleModel battle) {
         this.screen = screen;
         this.graphics = graphics;
 
         this.battle = battle;
 
-        backgroundRenderer = new BackgroundRenderer("battle");
-        pokemonRenderer = new PokemonRenderer(battle.getTrainerPokemon());
-        pokemonName = new TextRenderer(50, 50, battle.getTrainerPokemon().getName());
+        background = new BackgroundRenderer("battle_background");
+        trainerPokemon = new PokemonRenderer(battle.getTrainerPokemon());
+        adversaryPokemon = new PokemonRenderer(battle.getAdversaryPokemon());
+        trainerPokemonInfo = new PokemonInfoRenderer(battle.getTrainerPokemon());
+        adversaryPokemonInfo = new PokemonInfoRenderer(battle.getAdversaryPokemon());
+        battleMenu = new BattleMenuRenderer();
     }
 
     public void drawBattle() throws IOException {
         screen.clear();
 
-        backgroundRenderer.draw(graphics);
-        pokemonRenderer.draw(graphics);
-        pokemonName.draw(graphics);
+        background.draw(graphics);
+        trainerPokemon.draw(graphics);
+        adversaryPokemon.draw(graphics);
+
+        battleMenu.draw(graphics);
+        trainerPokemonInfo.draw(graphics);
+        adversaryPokemonInfo.draw(graphics);
 
         screen.refresh();
     }

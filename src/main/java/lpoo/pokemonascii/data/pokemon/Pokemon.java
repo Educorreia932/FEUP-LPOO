@@ -23,10 +23,18 @@ public class Pokemon {
 //    String gender;
 
     public Pokemon(Integer pokedex_number, facingDirection direction) throws IOException, SAXException {
-        position = new Position(0, 0);
         species = new PokemonSpecies(pokedex_number);
         name = species.getName();
         this.direction = direction;
+
+        switch (direction) {
+            case FRONT:
+                position = new Position(245, 20);
+                break;
+            case BACK:
+                position = new Position(65, 60);
+                break;
+        }
     }
 
     public Position getPosition() {
