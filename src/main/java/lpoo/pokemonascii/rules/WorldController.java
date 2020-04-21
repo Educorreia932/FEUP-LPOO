@@ -18,7 +18,7 @@ public class WorldController {
         this.world = world;
     }
 
-    public int start() throws IOException {
+    public GameController.GameMode start() throws IOException {
         while (true) {
             gui.drawWorld();
 
@@ -26,7 +26,7 @@ public class WorldController {
             command.execute();
 
             if (command instanceof QuitCommand)
-                return -1;
+                return GameController.GameMode.ENDGAME;
         }
     }
 

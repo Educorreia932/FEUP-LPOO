@@ -16,7 +16,7 @@ public class BattleController {
         this.battle = battle;
     }
 
-    public int start() throws IOException {
+    public GameController.GameMode start() throws IOException {
         while (true) {
             gui.drawBattle();
 
@@ -24,7 +24,7 @@ public class BattleController {
             command.execute();
 
             if (command instanceof QuitCommand)
-                return -1;
+                return GameController.GameMode.ENDGAME;
         }
     }
 }

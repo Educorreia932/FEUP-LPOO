@@ -12,21 +12,28 @@ import java.io.IOException;
 public class GameController {
     private GameView gui;
 
+    public enum GameMode {
+        WORLD,
+        BATTLE,
+        ENDGAME
+    }
+
     public GameController(GameView gui) {
         this.gui = gui;
     }
 
-    public int run(int gamemode) throws IOException, SAXException {
-        while (gamemode > -1){
+    public int run(GameMode gamemode) throws IOException, SAXException {
+
+        while (!gamemode.equals(GameMode.ENDGAME)){
             switch (gamemode) {
-                case 0:
+                case WORLD:
                     WorldModel world = new WorldModel();
                     WorldView worldGui = new WorldView(gui.getScreen(), gui.getGraphics(), world);
                     WorldController worldController = new WorldController(worldGui, world);
 
                     gamemode = worldController.start();
                     break;
-                case 1:
+                case BATTLE:
                     BattleModel battle = new BattleModel(20);
                     BattleView battleGui = new BattleView(gui.getScreen(), gui.getGraphics(), battle);
                     BattleController battleController = new BattleController(battleGui, battle);

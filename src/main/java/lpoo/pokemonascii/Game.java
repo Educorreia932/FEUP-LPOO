@@ -8,10 +8,10 @@ import java.io.IOException;
 
 public class Game {
     public static void main(String[] args) throws IOException, SAXException {
-        int gamemode = 1;
+        GameController.GameMode gameMode = GameController.GameMode.WORLD;
         GameView gameGui = new GameView(300, 110);
         GameController gameController = new GameController(gameGui);
 
-        gameController.run(gamemode);
+        gameController.run(gameMode);
     }
 }
