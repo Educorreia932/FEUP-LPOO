@@ -29,10 +29,10 @@ public class Pokemon {
 
         switch (direction) {
             case FRONT:
-                position = new Position(245, 20);
+                position = new Position(245, 15);
                 break;
             case BACK:
-                position = new Position(65, 60);
+                position = new Position(67, 61);
                 break;
         }
     }

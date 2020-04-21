@@ -29,21 +29,24 @@ public class BattleView {
         this.battle = battle;
 
         background = new BackgroundRenderer("battle_background");
+        battleMenu = new BattleMenuRenderer();
+
         trainerPokemon = new PokemonRenderer(battle.getTrainerPokemon());
         adversaryPokemon = new PokemonRenderer(battle.getAdversaryPokemon());
+
         trainerPokemonInfo = new PokemonInfoRenderer(battle.getTrainerPokemon());
         adversaryPokemonInfo = new PokemonInfoRenderer(battle.getAdversaryPokemon());
-        battleMenu = new BattleMenuRenderer();
     }
 
     public void drawBattle() throws IOException {
         screen.clear();
 
         background.draw(graphics);
+        battleMenu.draw(graphics);
+
         trainerPokemon.draw(graphics);
         adversaryPokemon.draw(graphics);
 
-        battleMenu.draw(graphics);
         trainerPokemonInfo.draw(graphics);
         adversaryPokemonInfo.draw(graphics);
 
