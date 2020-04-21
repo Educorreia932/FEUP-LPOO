@@ -1,4 +1,4 @@
-package lpoo.pokemonascii.data;
+package lpoo.pokemonascii.data.pokemon;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;

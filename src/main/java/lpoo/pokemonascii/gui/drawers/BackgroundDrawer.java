@@ -1,28 +1,17 @@
-package lpoo.pokemonascii.gui;
+package lpoo.pokemonascii.gui.drawers;
 
 import com.googlecode.lanterna.TextColor;
 import com.googlecode.lanterna.graphics.TextGraphics;
-import lpoo.pokemonascii.data.Player;
+import lpoo.pokemonascii.gui.Image;
+import lpoo.pokemonascii.gui.Sprite;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-
-public class PlayerDrawer extends Drawer {
-    private Player player;
-
-    public PlayerDrawer(Player player) {
-        this.player = player;
-
-        Image playerFront = new Image("player\\red_front");
-        Image playerBack = new Image("player\\red_back");
-        Image playerRight = new Image("player\\red_right");
-        Image playerLeft = new Image("player\\red_left");
-
-        sprite = new Sprite(new ArrayList<>(Arrays.asList(playerFront, playerBack, playerRight, playerLeft)));
+public class BackgroundDrawer extends Drawer {
+    public BackgroundDrawer() {
+        this.sprite = new Sprite("background\\room");
     }
 
+    @Override
     public void draw(TextGraphics graphics) {
-        sprite.setCurrentImage(player.getState().ordinal());
         Image image = sprite.getCurrentImage();
 
         String[][] background_colors = image.getBackground_colors();
@@ -36,7 +25,7 @@ public class PlayerDrawer extends Drawer {
                 graphics.setForegroundColor(TextColor.Factory.fromString(foreground_colors[j][i]));
 
                 if (characters[j][i] != null && !background_colors[j][i].equals(CHROMA_GREEN))
-                    graphics.putString(i + player.getPosition().getX(), j + player.getPosition().getY(), characters[j][i]);
+                    graphics.putString(i, j, characters[j][i]);
             }
         }
     }

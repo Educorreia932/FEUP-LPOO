@@ -14,8 +14,9 @@ This project was developed by [*Eduardo Correia*](https://github.com/educorreia9
 - [ ] Implement MVC. 
 - [ ] Render text. 
 - [ ] Make a battle menu.
-- [ ] Implement multi-threading (for drawing and for user input).
 - [ ] Make pokémon appear when walking on grass.
+- [ ] Implement multi-threading (for drawing and for user input).
+- [ ] Implement animations (mainly for playing walking animation).
 - [ ] Include three pokémons (starters) with fixed moves and abilities (but without leveling up).
 - [ ] Make it possible to catch pokémon or battle against it.
 - [ ] Implement items.

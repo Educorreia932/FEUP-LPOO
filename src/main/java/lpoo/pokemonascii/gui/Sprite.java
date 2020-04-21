@@ -8,6 +8,7 @@ public class Sprite {
     private List<Image> images;
     private int current = 0;
 
+    // TODO: Replace for a variadic function
     public Sprite(List<Image> images) {
         this.images = images;
     }

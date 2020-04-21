@@ -1,4 +1,4 @@
-package lpoo.pokemonascii.data;
+package lpoo.pokemonascii.data.pokemon;
 
 public class PokemonMove {
     private String name;

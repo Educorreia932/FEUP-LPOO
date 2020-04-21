@@ -1,93 +1,79 @@
-@startuml
+@startuml Pokemon
 
-package elements {
-    interface CollidingElement
-    interface DrawableElement
-    interface Element
-    abstract class Drawable
-    abstract class Collider
-    abstract class DrawableCollider
-}
+package data {
+    enum Direction
+    enum State
 
-package game {
-    class Application {
-        main()
-    }
-
-    class Game {
-        run()
-    }
-
-    abstract class Input {
-        getPressedKey()
-        getNextCommand()
-    }
-
-    class Map
-    class Player
     class Obstacle
-    class Battle
-}
-
-package geometry {
+    class Player 
     class Position
+    class Rect
+    class WorldModel
+    class Element
+    class CollidingElement
+}
 
-    class Rect {
-        collides()
+package gui { 
+    package commands {
+        interface Command {
+            execute
+        }
+
+        class DoNothingCommand
+        class PlayerMoveDownCommand
+        class PlayerMoveLeftCommand
+        class PlayerMoveRightCommand
+        class PlayerMoveUpCommand
     }
-}
 
-package gui {
+    class Drawer
     class Image
+    class PlayerDrawer
+    class Sprite
+    class WorldView
 }
 
-package pokemon {
-    class Pokemon
-    class PokemonMove
-    class PokemonSpecies
-    class PokemonType
+package rules {
+    class WorldController
 }
 
-package gui {
-    class GUI
-    class Image
-}
+class Game
 
-Application *-- Game
+Game *-- WorldModel
+Game *-- WorldView
+Game *-- WorldController
 
-Game *-- GUI
-Game *-- Map
+WorldModel *-- Player
 
-Map *-- Player
+WorldController *-- Command
+WorldController *-- WorldView   
+WorldController *-- WorldModel  
+
+WorldView *-- PlayerDrawer
+WorldView *-- WorldModel
 
 Element <|-- CollidingElement
-Element <|-- DrawableElement
 
-DrawableCollider *-- Position
-DrawableCollider *-- Image
-DrawableCollider *-- Rect
+CollidingElement <|-- Player
+CollidingElement <|-- Obstacle
+CollidingElement *-- Rect
 
-CollidingElement <|-- Collider
-CollidingElement <|-- DrawableCollider
+Player *-- Position
+Player *-- State
 
-DrawableElement <|-- Drawable
-DrawableElement <|-- DrawableCollider
+Sprite *-- Image
 
-DrawableCollider <|-- Player
+Drawer <|-- PlayerDrawer
+Drawer *-- Sprite
 
-Drawable <|-- Pokemon
+PlayerDrawer *-- Player
 
-Collider <|-- Obstacle
+Command <|-- DoNothingCommand
+Command <|-- PlayerMoveDownCommand
+Command <|-- PlayerMoveLeftCommand
+Command <|-- PlayerMoveRightCommand
+Command <|-- PlayerMoveUpCommand
 
-Player *-- Pokemon
-
-Battle *-- Pokemon
-
-Pokemon *-- PokemonMove
-Pokemon *-- PokemonSpecies
-
-PokemonSpecies *-- PokemonType
-
-PokemonMove *-- PokemonType
+hide commands
 
 @enduml

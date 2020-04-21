@@ -1,6 +1,7 @@
 package lpoo.pokemonascii.data;
 
 import lpoo.pokemonascii.data.elements.CollidingElement;
+import lpoo.pokemonascii.data.pokemon.Pokemon;
 
 import java.util.List;
 
@@ -17,7 +18,7 @@ public class Player extends CollidingElement {
     }
 
     public Player() {
-        super(100,100, 0,0);
+        super(100,50, 0,0);
         state = State.FRONT;
     }
 
