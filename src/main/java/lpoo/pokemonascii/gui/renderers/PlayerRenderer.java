@@ -33,10 +33,10 @@ public class PlayerRenderer extends Renderer {
 
         for (int i = 0; i < image.getWidth(); i++) {
             for (int j = 0; j < image.getHeight(); j++) {
-                // Transparency
                 graphics.setBackgroundColor(TextColor.Factory.fromString(background_colors[j][i]));
                 graphics.setForegroundColor(TextColor.Factory.fromString(foreground_colors[j][i]));
 
+                // Transparency
                 if (characters[j][i] != null && !background_colors[j][i].equals(CHROMA_GREEN))
                     graphics.putString(i + player.getPosition().getX(), j + player.getPosition().getY(), characters[j][i]);
             }

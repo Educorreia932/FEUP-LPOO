@@ -16,8 +16,8 @@ public class PokemonRenderer extends Renderer {
         this.pokemon = pokemon;
 
         List<Image> images = new ArrayList<>();
-        images.add(new Image("pokemon\\back\\" + pokemon.getPokedexNumber()));
         images.add(new Image("pokemon\\front\\" + pokemon.getPokedexNumber()));
+        images.add(new Image("pokemon\\back\\" + pokemon.getPokedexNumber()));
 
         sprite = new Sprite(images);
     }

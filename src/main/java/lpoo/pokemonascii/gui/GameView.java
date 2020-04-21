@@ -9,7 +9,7 @@ import com.googlecode.lanterna.terminal.Terminal;
 import com.googlecode.lanterna.terminal.swing.AWTTerminalFontConfiguration;
 import com.googlecode.lanterna.terminal.swing.SwingTerminalFontConfiguration;
 
-import java.awt.*;
+import java.awt.Font;
 import java.io.IOException;
 
 public class GameView {
@@ -17,13 +17,14 @@ public class GameView {
     private TextGraphics graphics;
 
     public GameView(int width, int height) throws IOException {
-        Font font = new Font("Fira Code Light", Font.PLAIN, 6);
+        Font font = new Font("Fira Code Light", Font.PLAIN, 4);
         AWTTerminalFontConfiguration cfg = new SwingTerminalFontConfiguration(true, AWTTerminalFontConfiguration.BoldMode.NOTHING, font);
 
         Terminal terminal = new DefaultTerminalFactory()
                 .setInitialTerminalSize(new TerminalSize(width, height))
                 .setTerminalEmulatorFontConfiguration(cfg)
                 .createTerminal();
+
         screen = new TerminalScreen(terminal);
 
         screen.setCursorPosition(null);   // We don't need a cursor
