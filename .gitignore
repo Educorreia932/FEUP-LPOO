@@ -32,10 +32,10 @@ build/reports/tests/test/css/
 
 build/test-results/test/binary/
 
-build/test-results/test/TEST-lpoo.pokemonascii.commands.CommandsTest.xml
+build/test-results/test/TEST-lpoo.pokemonascii.CommandsTest.xml
 
 build/reports/tests/test/js/
 
-build/test-results/test/TEST-lpoo.pokemonascii.pokemon.PokemonTypeTest.xml
+build/test-results/test/TEST-lpoo.pokemonascii.PokemonTypeTest.xml
 
-build/test-results/test/TEST-lpoo.pokemonascii.pokemon.PokemonSpeciesTest.xml
+build/test-results/test/TEST-lpoo.pokemonascii.PokemonSpeciesTest.xml
