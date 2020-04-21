@@ -6,10 +6,7 @@ import com.googlecode.lanterna.screen.Screen;
 
 import lpoo.pokemonascii.data.BattleModel;
 import lpoo.pokemonascii.gui.commands.*;
-import lpoo.pokemonascii.gui.renderers.BackgroundRenderer;
-import lpoo.pokemonascii.gui.renderers.BattleMenuRenderer;
-import lpoo.pokemonascii.gui.renderers.PokemonRenderer;
-import lpoo.pokemonascii.gui.renderers.TextRenderer;
+import lpoo.pokemonascii.gui.renderers.*;
 import lpoo.pokemonascii.rules.BattleController;
 
 import java.io.IOException;
@@ -20,10 +17,10 @@ public class BattleView {
     private BattleModel battle;
     private BackgroundRenderer background;
     private PokemonRenderer trainerPokemon;
-    private TextRenderer adversaryPokemonName;
+    private PokemonRenderer adversaryPokemon;
     private BattleMenuRenderer battleMenu;
-    private BattleMenuRenderer adversaryPokemonBar;
-    private BattleMenuRenderer trainerPokemonBar;
+    private PokemonInfoRenderer trainerPokemonInfo;
+    private PokemonInfoRenderer adversaryPokemonInfo;
 
     public BattleView(Screen screen, TextGraphics graphics, BattleModel battle) {
         this.screen = screen;
@@ -33,10 +30,10 @@ public class BattleView {
 
         background = new BackgroundRenderer("battle_background");
         trainerPokemon = new PokemonRenderer(battle.getTrainerPokemon());
-        adversaryPokemonBar = new BattleMenuRenderer(20, 10, "adversary_pokemon_bar");
-        trainerPokemonBar = new BattleMenuRenderer(215, 74, "trainer_pokemon_bar");
-        battleMenu = new BattleMenuRenderer(0, 112, "battle_menu");
-        adversaryPokemonName = new TextRenderer(26, 14, battle.getTrainerPokemon().getName());
+        adversaryPokemon = new PokemonRenderer(battle.getAdversaryPokemon());
+        trainerPokemonInfo = new PokemonInfoRenderer(battle.getTrainerPokemon());
+        adversaryPokemonInfo = new PokemonInfoRenderer(battle.getAdversaryPokemon());
+        battleMenu = new BattleMenuRenderer();
     }
 
     public void drawBattle() throws IOException {
@@ -44,10 +41,11 @@ public class BattleView {
 
         background.draw(graphics);
         trainerPokemon.draw(graphics);
-        trainerPokemonBar.draw(graphics);
-        adversaryPokemonBar.draw(graphics);
+        adversaryPokemon.draw(graphics);
+
         battleMenu.draw(graphics);
-        adversaryPokemonName.draw(graphics);
+        trainerPokemonInfo.draw(graphics);
+        adversaryPokemonInfo.draw(graphics);
 
         screen.refresh();
     }

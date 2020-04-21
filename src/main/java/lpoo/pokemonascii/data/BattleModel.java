@@ -11,9 +11,14 @@ public class BattleModel {
 
     public BattleModel(int trainer_pokemon_number) throws IOException, SAXException {
         trainerPokemon = new Pokemon(trainer_pokemon_number, Pokemon.facingDirection.BACK);
+        adversaryPokemon = new Pokemon(trainer_pokemon_number, Pokemon.facingDirection.FRONT);
     }
 
     public Pokemon getTrainerPokemon() {
         return trainerPokemon;
+    }
+
+    public Pokemon getAdversaryPokemon() {
+        return adversaryPokemon;
     }
 }
