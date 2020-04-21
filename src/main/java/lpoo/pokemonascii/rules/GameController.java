@@ -5,6 +5,7 @@ import lpoo.pokemonascii.data.WorldModel;
 import lpoo.pokemonascii.gui.BattleView;
 import lpoo.pokemonascii.gui.GameView;
 import lpoo.pokemonascii.gui.WorldView;
+import org.xml.sax.SAXException;
 
 import java.io.IOException;
 
@@ -15,9 +16,8 @@ public class GameController {
         this.gui = gui;
     }
 
-    public int run(int gamemode) throws IOException {
-
-        while(gamemode > 0){
+    public int run(int gamemode) throws IOException, SAXException {
+        while (gamemode > -1){
             switch (gamemode) {
                 case 0:
                     WorldModel world = new WorldModel();

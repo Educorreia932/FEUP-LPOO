@@ -1,17 +1,30 @@
-package lpoo.pokemonascii.gui.drawers;
+package lpoo.pokemonascii.gui.renderers;
 
 import com.googlecode.lanterna.TextColor;
 import com.googlecode.lanterna.graphics.TextGraphics;
+import lpoo.pokemonascii.data.pokemon.Pokemon;
 import lpoo.pokemonascii.gui.Image;
 import lpoo.pokemonascii.gui.Sprite;
 
-public class BackgroundDrawer extends Drawer {
-    public BackgroundDrawer(String filename) {
-        this.sprite = new Sprite("background\\" + filename);
+import java.util.ArrayList;
+import java.util.List;
+
+public class PokemonRenderer extends Renderer {
+    private Pokemon pokemon;
+
+    public PokemonRenderer(Pokemon pokemon) {
+        this.pokemon = pokemon;
+
+        List<Image> images = new ArrayList<>();
+        images.add(new Image("pokemon\\back\\" + pokemon.getPokedexNumber()));
+        images.add(new Image("pokemon\\front\\" + pokemon.getPokedexNumber()));
+
+        sprite = new Sprite(images);
     }
 
     @Override
     public void draw(TextGraphics graphics) {
+        sprite.setCurrentImage(pokemon.getFacingDirection().ordinal());
         Image image = sprite.getCurrentImage();
 
         String[][] background_colors = image.getBackground_colors();
@@ -25,7 +38,7 @@ public class BackgroundDrawer extends Drawer {
                 graphics.setForegroundColor(TextColor.Factory.fromString(foreground_colors[j][i]));
 
                 if (characters[j][i] != null && !background_colors[j][i].equals(CHROMA_GREEN))
-                    graphics.putString(i, j, characters[j][i]);
+                    graphics.putString(i + pokemon.getPosition().getX(), j + pokemon.getPosition().getY(), characters[j][i]);
             }
         }
     }

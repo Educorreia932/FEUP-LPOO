@@ -11,8 +11,8 @@ import com.googlecode.lanterna.terminal.swing.AWTTerminalFontConfiguration;
 import com.googlecode.lanterna.terminal.swing.SwingTerminalFontConfiguration;
 import lpoo.pokemonascii.data.WorldModel;
 import lpoo.pokemonascii.gui.commands.*;
-import lpoo.pokemonascii.gui.drawers.BackgroundDrawer;
-import lpoo.pokemonascii.gui.drawers.PlayerDrawer;
+import lpoo.pokemonascii.gui.renderers.BackgroundRenderer;
+import lpoo.pokemonascii.gui.renderers.PlayerRenderer;
 import lpoo.pokemonascii.rules.WorldController;
 
 import java.awt.*;
@@ -22,23 +22,23 @@ public class WorldView {
     private Screen screen;
     private TextGraphics graphics;
     private WorldModel world;
-    private BackgroundDrawer backgroundDrawer;
-    private PlayerDrawer playerDrawer;
+    private BackgroundRenderer backgroundRenderer;
+    private PlayerRenderer playerRenderer;
 
     public WorldView(Screen screen, TextGraphics graphics, WorldModel world) throws IOException {
         this.screen = screen;
         this.graphics = graphics;
         this.world = world;
 
-        backgroundDrawer = new BackgroundDrawer("room");
-        playerDrawer = new PlayerDrawer(world.getPlayer());
+        backgroundRenderer = new BackgroundRenderer("room");
+        playerRenderer = new PlayerRenderer(world.getPlayer());
     }
 
     public void drawWorld() throws IOException {
         screen.clear();
 
-        backgroundDrawer.draw(graphics);
-        playerDrawer.draw(graphics);
+        backgroundRenderer.draw(graphics);
+        playerRenderer.draw(graphics);
 
         screen.refresh();
     }

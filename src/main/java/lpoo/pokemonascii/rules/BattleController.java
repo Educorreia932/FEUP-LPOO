@@ -19,6 +19,12 @@ public class BattleController {
     public int start() throws IOException {
         while (true) {
             gui.drawBattle();
+
+            Command command = gui.getNextCommand(this);
+            command.execute();
+
+            if (command instanceof QuitCommand)
+                return -1;
         }
     }
 }

@@ -11,6 +11,14 @@ package data {
     class WorldModel
     class Element
     class CollidingElement
+
+    package pokemon {
+        class Pokemon
+        class PokemonStats
+        class PokemonSpecies
+        class PokemonType
+        class PokemonMove
+    }
 }
 
 package gui { 
@@ -26,9 +34,13 @@ package gui {
         class PlayerMoveUpCommand
     }
 
-    class Drawer
+    package drawers {
+        class Drawer
+        class PlayerDrawer
+        class PokemonDrawer
+    }
+
     class Image
-    class PlayerDrawer
     class Sprite
     class WorldView
 }
@@ -53,13 +65,20 @@ WorldView *-- PlayerDrawer
 WorldView *-- WorldModel
 
 Element <|-- CollidingElement
+Element *-- Position
 
 CollidingElement <|-- Player
 CollidingElement <|-- Obstacle
 CollidingElement *-- Rect
 
-Player *-- Position
+Player *-- Pokemon 
 Player *-- State
+
+Pokemon *-- PokemonSpecies
+Pokemon *-- PokemonStats
+Pokemon *-- PokemonMove
+
+PokemonSpecies *-- PokemonType
 
 Sprite *-- Image
 
@@ -67,6 +86,7 @@ Drawer <|-- PlayerDrawer
 Drawer *-- Sprite
 
 PlayerDrawer *-- Player
+PokemonDrawer *-- Pokemon
 
 Command <|-- DoNothingCommand
 Command <|-- PlayerMoveDownCommand
