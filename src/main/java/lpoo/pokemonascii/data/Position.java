@@ -15,20 +15,20 @@ public class Position {
         this.y = y;
     }
 
-    public Position up() {
-        return new Position(x, y - 4);
+    public Position up(int offset) {
+        return new Position(x, y - offset);
     }
 
-    public Position down() {
-        return new Position(x, y + 4);
+    public Position down(int offset) {
+        return new Position(x, y + offset);
     }
 
-    public Position right() {
-        return new Position(x + 4, y);
+    public Position right(int offset) {
+        return new Position(x + offset, y);
     }
 
-    public Position left() {
-        return new Position(x - 4, y);
+    public Position left(int offset) {
+        return new Position(x - offset, y);
     }
 
     public int getX() {

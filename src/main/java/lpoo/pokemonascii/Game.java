@@ -6,13 +6,12 @@ import lpoo.pokemonascii.rules.BattleController;
 import lpoo.pokemonascii.rules.WorldController;
 import lpoo.pokemonascii.data.WorldModel;
 import lpoo.pokemonascii.gui.WorldView;
+import org.xml.sax.SAXException;
 
 import java.io.IOException;
 
 public class Game {
-    public static void main(String[] args) throws IOException {
-
-
+    public static void main(String[] args) throws IOException, SAXException {
         int gamemode = 1;
 
         switch (gamemode) {

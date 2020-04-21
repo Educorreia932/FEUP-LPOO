@@ -10,12 +10,11 @@ import com.googlecode.lanterna.terminal.Terminal;
 import com.googlecode.lanterna.terminal.swing.AWTTerminalFontConfiguration;
 import com.googlecode.lanterna.terminal.swing.SwingTerminalFontConfiguration;
 import lpoo.pokemonascii.data.BattleModel;
-import lpoo.pokemonascii.data.WorldModel;
 import lpoo.pokemonascii.gui.commands.*;
-import lpoo.pokemonascii.gui.drawers.BackgroundDrawer;
-import lpoo.pokemonascii.gui.drawers.PlayerDrawer;
-import lpoo.pokemonascii.gui.drawers.PokemonDrawer;
-import lpoo.pokemonascii.rules.WorldController;
+import lpoo.pokemonascii.gui.renderers.BackgroundRenderer;
+import lpoo.pokemonascii.gui.renderers.PokemonRenderer;
+import lpoo.pokemonascii.gui.renderers.TextRenderer;
+import lpoo.pokemonascii.rules.BattleController;
 
 import java.awt.*;
 import java.io.IOException;
@@ -24,8 +23,9 @@ public class BattleView {
     private Screen screen;
     private TextGraphics graphics;
     private BattleModel battle;
-    private BackgroundDrawer backgroundDrawer;
-    private PokemonDrawer pokemonDrawer;
+    private BackgroundRenderer backgroundRenderer;
+    private PokemonRenderer pokemonRenderer;
+    private TextRenderer pokemonName;
 
     public BattleView(int width, int height, BattleModel battle) throws IOException {
         Font font = new Font("Fira Code Light", Font.PLAIN, 6);
@@ -45,14 +45,17 @@ public class BattleView {
 
         this.battle = battle;
 
-        backgroundDrawer = new BackgroundDrawer("battle");
-        pokemonDrawer = new PokemonDrawer(battle.getTrainerPokemon());
+        backgroundRenderer = new BackgroundRenderer("battle");
+        pokemonRenderer = new PokemonRenderer(battle.getTrainerPokemon());
+        pokemonName = new TextRenderer(50, 50, battle.getTrainerPokemon().getName());
     }
 
     public void drawBattle() throws IOException {
         screen.clear();
 
-        backgroundDrawer.draw(graphics);
+        backgroundRenderer.draw(graphics);
+        pokemonRenderer.draw(graphics);
+        pokemonName.draw(graphics);
 
         screen.refresh();
     }
@@ -63,18 +66,10 @@ public class BattleView {
         return key;
     }
 
-    public Command getNextCommand(WorldController world) throws IOException {
+    public Command getNextCommand(BattleController battle) throws IOException {
         KeyStroke pressedKey = getPressedKey(screen);
 
         switch (pressedKey.getKeyType()) {
-            case ArrowUp:
-                return new PlayerMoveUpCommand(world);
-            case ArrowDown:
-                return new PlayerMoveDownCommand(world);
-            case ArrowRight:
-                return new PlayerMoveRightCommand(world);
-            case ArrowLeft:
-                return new PlayerMoveLeftCommand(world);
             case EOF:
                 return new QuitCommand(screen);
             case Character:

@@ -15,13 +15,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PokemonSpecies {
-    private int pokedex_number;
+    private int pokedexNumber;
     private String name;
     private PokemonType primary_type;
     private PokemonType secondary_type;
     private PokemonStats base_stats;
 
-    public PokemonSpecies(int pokedex_number) {
+    public PokemonSpecies(int pokedexNumber) throws IOException, SAXException {
+        this.pokedexNumber = pokedexNumber;
+
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         DocumentBuilder builder = null;
 
@@ -36,13 +38,7 @@ public class PokemonSpecies {
         // Load the input XML document, parse it and return an instance of the Document class.
         Document document = null;
 
-        try {
-            document = builder.parse(new File("data\\" + pokedex_number + ".xml"));
-        }
-
-        catch (SAXException | IOException e) {
-            e.printStackTrace();
-        }
+        document = builder.parse(new File("data\\" + pokedexNumber + ".xml"));
 
         NodeList nodeList = document.getChildNodes();
 
@@ -88,5 +84,9 @@ public class PokemonSpecies {
 
     public PokemonType getSecondaryType() {
         return secondary_type;
+    }
+
+    public int getPokedexNumber() {
+        return pokedexNumber;
     }
 }

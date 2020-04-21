@@ -25,13 +25,13 @@ public class Player extends CollidingElement {
     public Position getPosition(Position.Direction direction) {
         switch (direction) {
             case UP:
-                return getPosition().up();
+                return getPosition().up(4);
             case DOWN:
-                return getPosition().down();
+                return getPosition().down(4);
             case RIGHT:
-                return getPosition().right();
+                return getPosition().right(4);
             case LEFT:
-                return getPosition().left();
+                return getPosition().left(4);
         }
 
         return getPosition();
