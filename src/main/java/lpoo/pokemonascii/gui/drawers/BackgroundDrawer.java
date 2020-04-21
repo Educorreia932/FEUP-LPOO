@@ -6,8 +6,8 @@ import lpoo.pokemonascii.gui.Image;
 import lpoo.pokemonascii.gui.Sprite;
 
 public class BackgroundDrawer extends Drawer {
-    public BackgroundDrawer() {
-        this.sprite = new Sprite("background\\room");
+    public BackgroundDrawer(String filename) {
+        this.sprite = new Sprite("background\\" + filename);
     }
 
     @Override

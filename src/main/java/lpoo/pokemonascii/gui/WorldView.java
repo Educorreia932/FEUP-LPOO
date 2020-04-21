@@ -43,7 +43,7 @@ public class WorldView {
 
         this.world = world;
 
-        backgroundDrawer = new BackgroundDrawer();
+        backgroundDrawer = new BackgroundDrawer("room");
         playerDrawer = new PlayerDrawer(world.getPlayer());
     }
 
