@@ -27,21 +27,9 @@ public class BattleView {
     private BackgroundDrawer backgroundDrawer;
     private PokemonDrawer pokemonDrawer;
 
-    public BattleView(int width, int height, BattleModel battle) throws IOException {
-        Font font = new Font("Fira Code Light", Font.PLAIN, 6);
-        AWTTerminalFontConfiguration cfg = new SwingTerminalFontConfiguration(true, AWTTerminalFontConfiguration.BoldMode.NOTHING, font);
-
-        Terminal terminal = new DefaultTerminalFactory()
-                .setInitialTerminalSize(new TerminalSize(width, height))
-                .setTerminalEmulatorFontConfiguration(cfg)
-                .createTerminal();
-        screen = new TerminalScreen(terminal);
-
-        screen.setCursorPosition(null);   // We don't need a cursor
-        screen.startScreen();             // Screens must be started
-        screen.doResizeIfNecessary();     // Resize screen if necessary
-
-        graphics = screen.newTextGraphics();
+    public BattleView(Screen screen, TextGraphics graphics, BattleModel battle) throws IOException {
+        this.screen = screen;
+        this.graphics = graphics;
 
         this.battle = battle;
 

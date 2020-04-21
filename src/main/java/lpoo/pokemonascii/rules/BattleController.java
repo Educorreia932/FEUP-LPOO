@@ -16,7 +16,7 @@ public class BattleController {
         this.battle = battle;
     }
 
-    public void start() throws IOException {
+    public int start() throws IOException {
         while (true) {
             gui.drawBattle();
         }
