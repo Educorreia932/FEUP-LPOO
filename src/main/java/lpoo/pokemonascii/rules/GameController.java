@@ -33,7 +33,7 @@ public class GameController {
                     gamemode = worldController.start();
                     break;
                 case BATTLE:
-                    BattleModel battle = new BattleModel(20);
+                    BattleModel battle = new BattleModel(6);
                     BattleView battleGui = new BattleView(gui.getScreen(), gui.getGraphics(), battle);
                     BattleController battleController = new BattleController(battleGui, battle);
 

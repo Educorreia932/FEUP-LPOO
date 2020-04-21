@@ -31,6 +31,11 @@ public abstract class Renderer {
         }
     }
 
+    public static void drawSprite(Sprite sprite, int x, int y, TextGraphics graphics) {
+        Position position = new Position(x, y);
+        drawSprite(sprite, position, graphics, false);
+    }
+
     public static void drawSprite(Sprite sprite, TextGraphics graphics) {
         Position position = new Position(0, 0);
         drawSprite(sprite, position, graphics, false);
