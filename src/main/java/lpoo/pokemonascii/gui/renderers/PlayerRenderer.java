@@ -24,22 +24,6 @@ public class PlayerRenderer extends Renderer {
     }
 
     public void draw(TextGraphics graphics) {
-        sprite.setCurrentImage(player.getState().ordinal());
-        Image image = sprite.getCurrentImage();
-
-        String[][] background_colors = image.getBackground_colors();
-        String[][] foreground_colors = image.getForeground_colors();
-        String[][] characters = image.getCharacters();
-
-        for (int i = 0; i < image.getWidth(); i++) {
-            for (int j = 0; j < image.getHeight(); j++) {
-                graphics.setBackgroundColor(TextColor.Factory.fromString(background_colors[j][i]));
-                graphics.setForegroundColor(TextColor.Factory.fromString(foreground_colors[j][i]));
-
-                // Transparency
-                if (characters[j][i] != null && !background_colors[j][i].equals(CHROMA_GREEN))
-                    graphics.putString(i + player.getPosition().getX(), j + player.getPosition().getY(), characters[j][i]);
-            }
-        }
+        drawSprite(sprite, player.getPosition(), graphics, true);
     }
 }
