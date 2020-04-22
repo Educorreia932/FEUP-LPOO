@@ -3,7 +3,6 @@ package lpoo.pokemonascii.data.pokemon;
 import lpoo.pokemonascii.data.Position;
 import org.xml.sax.SAXException;
 
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.List;
 
@@ -14,17 +13,20 @@ public class Pokemon {
     }
 
     private Position position;
+    private PokemonSpecies species;
     private String name;
     private PokemonStats stats;
+    private float currentHealth;
     private int experience;
-    private PokemonSpecies species;
     private List<PokemonMove> moves;
     private facingDirection direction;
-//    String gender;
 
     public Pokemon(Integer pokedex_number, facingDirection direction) throws IOException, SAXException {
         species = new PokemonSpecies(pokedex_number);
         name = species.getName();
+        stats = species.getBaseStats();
+        currentHealth = stats.getHP();
+        experience = 0;
         this.direction = direction;
 
         switch (direction) {
@@ -55,5 +57,13 @@ public class Pokemon {
 
     public String getName() {
         return name;
+    }
+
+    public float getCurrentHealth() {
+        return currentHealth;
+    }
+
+    public float getCurrentHealthPercentage() {
+        return currentHealth / stats.getHP();
     }
 }
