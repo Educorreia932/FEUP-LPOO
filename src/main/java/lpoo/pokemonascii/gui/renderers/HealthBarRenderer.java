@@ -43,9 +43,18 @@ public class HealthBarRenderer extends Renderer {
         for (int i = 0; i < BAR_WIDTH; i++)
             drawSprite(sprite, position.getX() + i, position.getY(), graphics);
 
-        sprite.setCurrentImage(Health.HIGH.ordinal());
+        float healthPercentage = pokemon.getCurrentHealthPercentage();
 
-        for (int i = 0; i < BAR_WIDTH; i++)
+        if (healthPercentage <= 0.2)
+            sprite.setCurrentImage(Health.LOW.ordinal());
+
+        else if (healthPercentage <= 0.5)
+            sprite.setCurrentImage(Health.MEDIUM.ordinal());
+
+        else
+            sprite.setCurrentImage(Health.HIGH.ordinal());
+
+        for (int i = 0; i < BAR_WIDTH * healthPercentage; i++)
             drawSprite(sprite, position.getX() + i, position.getY(), graphics);
     }
 }

@@ -89,4 +89,8 @@ public class PokemonSpecies {
     public int getPokedexNumber() {
         return pokedexNumber;
     }
+
+    public PokemonStats getBaseStats() {
+        return base_stats;
+    }
 }
