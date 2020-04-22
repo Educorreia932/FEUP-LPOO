@@ -8,11 +8,14 @@ import java.util.List;
 public class WorldModel {
     private Player player;
     private List<CollidingElement> elements;
+    private List<Tile> tiles;
 
     public WorldModel() {
         player = new Player();
-
+        tiles = new ArrayList<>();
         elements = new ArrayList<>();
+
+        tiles.add(new Tile(90, 40));
         elements.add(new Obstacle(0, 0, 300, 19));
     }
 
@@ -43,5 +46,9 @@ public class WorldModel {
 
     public Player getPlayer() {
         return player;
+    }
+
+    public List<Tile> getTiles() {
+        return tiles;
     }
 }
