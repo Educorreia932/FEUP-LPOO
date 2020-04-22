@@ -1,27 +1,34 @@
 package lpoo.pokemonascii.gui.renderers;
 
-import com.googlecode.lanterna.TextColor;
 import com.googlecode.lanterna.graphics.TextGraphics;
 import lpoo.pokemonascii.data.Position;
 import lpoo.pokemonascii.data.pokemon.Pokemon;
-import lpoo.pokemonascii.gui.Image;
 import lpoo.pokemonascii.gui.Sprite;
 
 public class PokemonInfoRenderer extends Renderer {
     private Position position;
     private TextRenderer pokemonName;
+    private TextRenderer pokemonLevel;
+    private HealthBarRenderer health;
+    private ExperienceBarRenderer experience;
 
     public PokemonInfoRenderer(Pokemon pokemon) {
         switch (pokemon.getFacingDirection()) {
-            case FRONT:
-                sprite = new Sprite("adversary_pokemon_bar");
+            case FRONT: // TODO: Strategy Pattern ?
+                sprite = new Sprite("adversary_pokemon_info");
                 position = new Position(20, 10);
-                pokemonName = new TextRenderer(26, 14, pokemon.getName());
+                pokemonName = new TextRenderer(position.getX() + 11, position.getY() + 5, pokemon.getName());
+                pokemonLevel = new TextRenderer(position.getX() + 103, position.getY() + 5, "Lv" + pokemon.getLevel());
+                health = new HealthBarRenderer(position.getX() + 65, position.getY() + 17, pokemon);
+                experience = null; // TODO: Introduce Null object
                 break;
             case BACK:
-                sprite = new Sprite("trainer_pokemon_bar");
+                sprite = new Sprite("trainer_pokemon_info");
                 position = new Position(215, 74);
-                pokemonName = new TextRenderer(234, 78, pokemon.getName());
+                pokemonName = new TextRenderer(position.getX() + 26, position.getY() + 5, pokemon.getName());
+                pokemonLevel = new TextRenderer(position.getX() + 119, position.getY() + 5, "Lv" + pokemon.getLevel());
+                health = new HealthBarRenderer(position.getX() + 80, position.getY() + 17, pokemon);
+                experience = new ExperienceBarRenderer(position.getX() + 54, position.getY() + 33, pokemon);
                 break;
         }
     }
@@ -30,5 +37,10 @@ public class PokemonInfoRenderer extends Renderer {
     public void draw(TextGraphics graphics) {
         drawSprite(sprite, position, graphics, true);
         pokemonName.draw(graphics);
+        pokemonLevel.draw(graphics);
+        health.draw(graphics);
+
+        if (experience != null)
+            experience.draw(graphics);
     }
 }

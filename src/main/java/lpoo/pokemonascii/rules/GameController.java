@@ -1,10 +1,10 @@
 package lpoo.pokemonascii.rules;
-
 import lpoo.pokemonascii.data.BattleModel;
 import lpoo.pokemonascii.data.WorldModel;
 import lpoo.pokemonascii.gui.BattleView;
 import lpoo.pokemonascii.gui.GameView;
 import lpoo.pokemonascii.gui.WorldView;
+
 import org.xml.sax.SAXException;
 
 import java.io.IOException;
@@ -22,7 +22,7 @@ public class GameController {
         this.gui = gui;
     }
 
-    public int run(GameMode gamemode) throws IOException, SAXException {
+    public void run(GameMode gamemode) throws IOException, SAXException {
         while (!gamemode.equals(GameMode.ENDGAME)) {
             switch (gamemode) {
                 case WORLD:
@@ -33,7 +33,7 @@ public class GameController {
                     gamemode = worldController.start();
                     break;
                 case BATTLE:
-                    BattleModel battle = new BattleModel(20);
+                    BattleModel battle = new BattleModel(6);
                     BattleView battleGui = new BattleView(gui.getScreen(), gui.getGraphics(), battle);
                     BattleController battleController = new BattleController(battleGui, battle);
 
@@ -41,7 +41,5 @@ public class GameController {
                     break;
             }
         }
-
-        return 0;
     }
 }

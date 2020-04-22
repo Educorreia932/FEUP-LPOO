@@ -24,6 +24,7 @@ public class PlayerRenderer extends Renderer {
     }
 
     public void draw(TextGraphics graphics) {
+        sprite.setCurrentImage(player.getState().ordinal());
         drawSprite(sprite, player.getPosition(), graphics, true);
     }
 }
