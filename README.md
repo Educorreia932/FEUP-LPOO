@@ -13,7 +13,7 @@ This project was developed by [*Eduardo Correia*](https://github.com/educorreia9
 - [x] Read data file about pokémons. 
 - [x] Implement MVC. 
 - [x] Render text. 
-- [ ] Make a battle menu.
+- [x] Make a battle menu.
 - [ ] Make pokémon appear when walking on grass.
 - [ ] Add a NPC.
 - [ ] Implement multi-threading (for drawing and for user input).

@@ -16,8 +16,8 @@ public class TextRenderer extends Renderer {
 
         for (int i = 0; i < s.length(); i++) {
             char c = s.charAt(i);
-            position = position.right(10);
             chars.add(new CharRenderer(c, position));
+            position = position.right(chars.get(i).sprite.getCurrentImage().getWidth() + 1);
         }
     }
 

@@ -9,7 +9,15 @@ public class CharRenderer extends Renderer {
 
     public CharRenderer(char c, Position position) {
         this.position = position;
-        sprite = new Sprite("font\\" + c);
+
+        if (Character.isLowerCase(c))
+            sprite = new Sprite("font\\lower_case\\" + c);
+
+        else if (Character.isUpperCase(c))
+            sprite = new Sprite("font\\upper_case\\" + c);
+
+        else if (Character.isDigit(c))
+            sprite = new Sprite("font\\numbers\\" + c);
     }
 
     @Override

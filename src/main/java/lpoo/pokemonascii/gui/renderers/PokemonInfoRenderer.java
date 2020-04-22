@@ -8,21 +8,24 @@ import lpoo.pokemonascii.gui.Sprite;
 public class PokemonInfoRenderer extends Renderer {
     private Position position;
     private TextRenderer pokemonName;
+    private TextRenderer pokemonLevel;
     private HealthBarRenderer health;
 
     public PokemonInfoRenderer(Pokemon pokemon) {
         switch (pokemon.getFacingDirection()) {
             case FRONT: // TODO: Strategy Pattern ?
-                sprite = new Sprite("adversary_pokemon_bar");
+                sprite = new Sprite("adversary_pokemon_info");
                 position = new Position(20, 10);
-                pokemonName = new TextRenderer(26, 14, pokemon.getName());
-                health = new HealthBarRenderer(85, 27, pokemon);
+                pokemonName = new TextRenderer(position.getX() + 11, position.getY() + 5, pokemon.getName());
+                pokemonLevel = new TextRenderer(position.getX() + 103, position.getY() + 5, "Lv100");
+                health = new HealthBarRenderer(position.getX() + 65, position.getY() + 17, pokemon);
                 break;
             case BACK:
-                sprite = new Sprite("trainer_pokemon_bar");
+                sprite = new Sprite("trainer_pokemon_info");
                 position = new Position(215, 74);
-                pokemonName = new TextRenderer(234, 78, pokemon.getName());
-                health = new HealthBarRenderer(295, 91, pokemon);
+                pokemonName = new TextRenderer(position.getX() + 26, position.getY() + 5, pokemon.getName());
+                pokemonLevel = new TextRenderer(position.getX() + 118, position.getY() + 5, "Lv100");
+                health = new HealthBarRenderer(position.getX() + 80, position.getY() + 17, pokemon);
                 break;
         }
     }
@@ -31,6 +34,7 @@ public class PokemonInfoRenderer extends Renderer {
     public void draw(TextGraphics graphics) {
         drawSprite(sprite, position, graphics, true);
         pokemonName.draw(graphics);
+        pokemonLevel.draw(graphics);
         health.draw(graphics);
     }
 }
