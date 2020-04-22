@@ -1,7 +1,6 @@
 package lpoo.pokemonascii.gui.renderers;
 
 import com.googlecode.lanterna.graphics.TextGraphics;
-import lpoo.pokemonascii.data.Position;
 import lpoo.pokemonascii.data.pokemon.Pokemon;
 import lpoo.pokemonascii.gui.Image;
 import lpoo.pokemonascii.gui.Sprite;
@@ -9,7 +8,7 @@ import lpoo.pokemonascii.gui.Sprite;
 import java.util.ArrayList;
 import java.util.List;
 
-public class HealthBarRenderer extends Renderer {
+public class HealthBarRenderer extends BarRenderer {
     enum Health {
         HIGH,
         MEDIUM,
@@ -17,13 +16,11 @@ public class HealthBarRenderer extends Renderer {
     }
 
     private Pokemon pokemon;
-    private Position position;
-    private static int BAR_WIDTH = 80;
-    private float percentage;
 
     HealthBarRenderer(int x, int y, Pokemon pokemon) {
-        this.position = new Position(x, y);
+        super(x, y);
         this.pokemon = pokemon;
+        barWidth = 80;
 
         List<Image> images = new ArrayList<>();
 
@@ -34,7 +31,6 @@ public class HealthBarRenderer extends Renderer {
         sprite = new Sprite(images);
     }
 
-    @Override
     public void draw(TextGraphics graphics) {
         float percentage = pokemon.getCurrentHealthPercentage();
 
@@ -47,7 +43,7 @@ public class HealthBarRenderer extends Renderer {
         else
             sprite.setCurrentImage(Health.HIGH.ordinal());
 
-        for (int i = 0; i < BAR_WIDTH * percentage; i++)
+        for (int i = 0; i < barWidth * percentage; i++)
             drawSprite(sprite, position.getX() + i, position.getY(), graphics);
     }
 }
