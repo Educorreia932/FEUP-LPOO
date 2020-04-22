@@ -25,4 +25,12 @@ public class Sprite {
     public void setCurrentImage(int current) {
         this.current = current;
     }
+
+    public int getWidth() {
+        return getCurrentImage().getWidth();
+    }
+
+    public int getHeight() {
+        return getCurrentImage().getHeight();
+    }
 }

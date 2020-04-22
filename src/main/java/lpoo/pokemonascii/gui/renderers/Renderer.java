@@ -40,4 +40,6 @@ public abstract class Renderer {
         Position position = new Position(0, 0);
         drawSprite(sprite, position, graphics, false);
     }
+
+
 }

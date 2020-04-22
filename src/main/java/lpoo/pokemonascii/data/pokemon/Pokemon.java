@@ -17,6 +17,7 @@ public class Pokemon {
     private String name;
     private PokemonStats stats;
     private float currentHealth;
+    private int level;
     private int experience;
     private List<PokemonMove> moves;
     private facingDirection direction;
@@ -26,7 +27,8 @@ public class Pokemon {
         name = species.getName();
         stats = species.getBaseStats();
         currentHealth = stats.getHP();
-        experience = 0;
+        level = 56;
+        experience = PokemonExperience.getLevelExperience(species.getTotalExperience(), level) + 5000;
         this.direction = direction;
 
         switch (direction) {
@@ -69,5 +71,17 @@ public class Pokemon {
 
     public void takeDamage(int damage) {
         currentHealth -= damage;
+    }
+
+    public int getLevel() {
+        return level;
+    }
+
+    public PokemonSpecies getSpecies() {
+        return species;
+    }
+
+    public int getExperience() {
+        return experience;
     }
 }
