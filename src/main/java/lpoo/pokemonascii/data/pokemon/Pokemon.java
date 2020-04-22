@@ -66,4 +66,8 @@ public class Pokemon {
     public float getCurrentHealthPercentage() {
         return currentHealth / stats.getHP();
     }
+
+    public void takeDamage(int damage) {
+        currentHealth -= damage;
+    }
 }
