@@ -17,9 +17,10 @@ import java.util.List;
 public class PokemonSpecies {
     private int pokedexNumber;
     private String name;
-    private PokemonType primary_type;
-    private PokemonType secondary_type;
-    private PokemonStats base_stats;
+    private PokemonType primaryType;
+    private PokemonType secondaryType;
+    private PokemonStats baseStats;
+    private int totalExperience;
 
     public PokemonSpecies(int pokedexNumber) throws IOException, SAXException {
         this.pokedexNumber = pokedexNumber;
@@ -36,7 +37,7 @@ public class PokemonSpecies {
         }
 
         // Load the input XML document, parse it and return an instance of the Document class.
-        Document document = null;
+        Document document;
 
         document = builder.parse(new File("data\\" + pokedexNumber + ".xml"));
 
@@ -51,11 +52,15 @@ public class PokemonSpecies {
             // Name
             name = elem.getElementsByTagName("name").item(0).getTextContent();
 
-            // Primary type and secondary, if the pokémon as one
-            primary_type = new PokemonType(elem.getElementsByTagName("type").item(0).getTextContent().toUpperCase());
+            // Primary type
+            primaryType = new PokemonType(elem.getElementsByTagName("type").item(0).getTextContent().toUpperCase());
 
+            // Secondary type, if the pokémon has one
             if (elem.getElementsByTagName("type").item(1) != null) // TODO: Introduce NULL object
-                secondary_type = new PokemonType(elem.getElementsByTagName("type").item(1).getTextContent().toUpperCase());
+                secondaryType = new PokemonType(elem.getElementsByTagName("type").item(1).getTextContent().toUpperCase());
+
+            // Total Experience
+            totalExperience = Integer.parseInt(elem.getElementsByTagName("exp").item(0).getTextContent());
 
             // Stats
             NodeList statsNodes = elem.getElementsByTagName("stats").item(0).getChildNodes();
@@ -70,7 +75,7 @@ public class PokemonSpecies {
                 }
             }
 
-            base_stats = new PokemonStats(stats);
+            baseStats = new PokemonStats(stats);
         }
     }
 
@@ -79,11 +84,11 @@ public class PokemonSpecies {
     }
 
     public PokemonType getPrimaryType() {
-        return primary_type;
+        return primaryType;
     }
 
     public PokemonType getSecondaryType() {
-        return secondary_type;
+        return secondaryType;
     }
 
     public int getPokedexNumber() {
@@ -91,6 +96,10 @@ public class PokemonSpecies {
     }
 
     public PokemonStats getBaseStats() {
-        return base_stats;
+        return baseStats;
+    }
+
+    public int getTotalExperience() {
+        return totalExperience;
     }
 }

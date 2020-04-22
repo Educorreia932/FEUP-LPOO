@@ -26,14 +26,16 @@ This project was developed by [*Eduardo Correia*](https://github.com/educorreia9
 
 ### Graphics
 
-We initially convert a .png image to text, using `img2txt`, a program from [libcaca](http://caca.zoy.org/wiki/libcaca). That program generates a .svg that we parse and then draw using Lanterna.
+We initially convert a .png image to text characters, using `img2txt`, a program from [libcaca](http://caca.zoy.org/wiki/libcaca). That program generates a .svg that we parse and then draw using Lanterna.
 
-## Game Art
+## Game Resources
 
-Pokemon Fire Red/Leaf Green Sprites https://veekun.com/dex/downloads
+### Images
 
-Pokemon Data https://github.com/veekun/pokedex/tree/master/pokedex/data/csv
+- [Pokémon - Battle](https://veekun.com/dex/downloads), veekrun
+- [HP Bars & In-Battle Menu](https://www.spriters-resource.com/game_boy_advance/pokemonfireredleafgreen/sheet/33690/), redblueyellow
+- [Battle Backgrounds](https://www.spriters-resource.com/game_boy_advance/pokemonfireredleafgreen/sheet/3866/), Desgardes
 
-## Notes
+### Data Files
 
-- Our game would have only one level, that would consist in a open field with grass in which pokémon would appear
+- [Pokémons](https://github.com/r4vi/zipper-demo/blob/master/resources/pokemon.xml), r4v1

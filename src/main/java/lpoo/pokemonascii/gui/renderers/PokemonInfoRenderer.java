@@ -10,6 +10,7 @@ public class PokemonInfoRenderer extends Renderer {
     private TextRenderer pokemonName;
     private TextRenderer pokemonLevel;
     private HealthBarRenderer health;
+    private ExperienceBarRenderer experience;
 
     public PokemonInfoRenderer(Pokemon pokemon) {
         switch (pokemon.getFacingDirection()) {
@@ -17,15 +18,17 @@ public class PokemonInfoRenderer extends Renderer {
                 sprite = new Sprite("adversary_pokemon_info");
                 position = new Position(20, 10);
                 pokemonName = new TextRenderer(position.getX() + 11, position.getY() + 5, pokemon.getName());
-                pokemonLevel = new TextRenderer(position.getX() + 103, position.getY() + 5, "Lv100");
+                pokemonLevel = new TextRenderer(position.getX() + 103, position.getY() + 5, "Lv" + pokemon.getLevel());
                 health = new HealthBarRenderer(position.getX() + 65, position.getY() + 17, pokemon);
+                experience = null; // TODO: Introduce Null object
                 break;
             case BACK:
                 sprite = new Sprite("trainer_pokemon_info");
                 position = new Position(215, 74);
                 pokemonName = new TextRenderer(position.getX() + 26, position.getY() + 5, pokemon.getName());
-                pokemonLevel = new TextRenderer(position.getX() + 118, position.getY() + 5, "Lv100");
+                pokemonLevel = new TextRenderer(position.getX() + 119, position.getY() + 5, "Lv" + pokemon.getLevel());
                 health = new HealthBarRenderer(position.getX() + 80, position.getY() + 17, pokemon);
+                experience = new ExperienceBarRenderer(position.getX() + 54, position.getY() + 33, pokemon);
                 break;
         }
     }
@@ -36,5 +39,8 @@ public class PokemonInfoRenderer extends Renderer {
         pokemonName.draw(graphics);
         pokemonLevel.draw(graphics);
         health.draw(graphics);
+
+        if (experience != null)
+            experience.draw(graphics);
     }
 }

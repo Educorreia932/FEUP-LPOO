@@ -28,6 +28,7 @@ public class WorldController {
 
             if (command instanceof QuitCommand)
                 return GameController.GameMode.ENDGAME;
+
             if (inBattle)
                 return GameController.GameMode.BATTLE;
         }

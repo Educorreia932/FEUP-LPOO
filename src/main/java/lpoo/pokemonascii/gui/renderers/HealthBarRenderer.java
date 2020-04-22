@@ -14,12 +14,12 @@ public class HealthBarRenderer extends Renderer {
         HIGH,
         MEDIUM,
         LOW,
-        BACKGROUND
     }
 
     private Pokemon pokemon;
     private Position position;
     private static int BAR_WIDTH = 80;
+    private float percentage;
 
     HealthBarRenderer(int x, int y, Pokemon pokemon) {
         this.position = new Position(x, y);
@@ -27,34 +27,27 @@ public class HealthBarRenderer extends Renderer {
 
         List<Image> images = new ArrayList<>();
 
-        images.add(new Image("health_bar\\green_life_bar"));
-        images.add(new Image("health_bar\\yellow_life_bar"));
-        images.add(new Image("health_bar\\red_life_bar"));
-        images.add(new Image("health_bar\\life_bar_background"));
+        images.add(new Image("bar\\green_life_bar"));
+        images.add(new Image("bar\\yellow_life_bar"));
+        images.add(new Image("bar\\red_life_bar"));
 
         sprite = new Sprite(images);
     }
 
     @Override
     public void draw(TextGraphics graphics) {
-        //TODO: Maybe have two sprites
-        sprite.setCurrentImage(Health.BACKGROUND.ordinal());
+        float percentage = pokemon.getCurrentHealthPercentage();
 
-        for (int i = 0; i < BAR_WIDTH; i++)
-            drawSprite(sprite, position.getX() + i, position.getY(), graphics);
-
-        float healthPercentage = pokemon.getCurrentHealthPercentage();
-
-        if (healthPercentage <= 0.2)
+        if (percentage <= 0.2)
             sprite.setCurrentImage(Health.LOW.ordinal());
 
-        else if (healthPercentage <= 0.5)
+        else if (percentage <= 0.5)
             sprite.setCurrentImage(Health.MEDIUM.ordinal());
 
         else
             sprite.setCurrentImage(Health.HIGH.ordinal());
 
-        for (int i = 0; i < BAR_WIDTH * healthPercentage; i++)
+        for (int i = 0; i < BAR_WIDTH * percentage; i++)
             drawSprite(sprite, position.getX() + i, position.getY(), graphics);
     }
 }
