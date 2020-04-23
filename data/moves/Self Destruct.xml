@@ -1,0 +1,15 @@
+<pokedex>
+  <move>
+    <id>120</id>
+    <identifier>self-destruct</identifier>
+    <type>NORMAL</type>
+    <power>200</power>
+    <pp>5</pp>
+    <accuracy>100</accuracy>
+    <priority>0</priority>
+    <target_id>9</target_id>
+    <damage_class_id>2</damage_class_id>
+    <effect_id>8</effect_id>
+    <effect_chance />
+  </move>
+  </pokedex>

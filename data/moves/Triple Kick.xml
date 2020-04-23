@@ -1,0 +1,15 @@
+<pokedex>
+  <move>
+    <id>167</id>
+    <identifier>triple-kick</identifier>
+    <type>FIGHTING</type>
+    <power>10</power>
+    <pp>10</pp>
+    <accuracy>90</accuracy>
+    <priority>0</priority>
+    <target_id>10</target_id>
+    <damage_class_id>2</damage_class_id>
+    <effect_id>105</effect_id>
+    <effect_chance />
+  </move>
+  </pokedex>

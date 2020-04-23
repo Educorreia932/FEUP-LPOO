@@ -1,6 +1,7 @@
 package lpoo.pokemonascii.rules;
 
 import lpoo.pokemonascii.data.BattleModel;
+import lpoo.pokemonascii.data.pokemon.PokemonMove;
 import lpoo.pokemonascii.gui.BattleView;
 import lpoo.pokemonascii.gui.commands.Command;
 import lpoo.pokemonascii.gui.commands.QuitCommand;
@@ -25,8 +26,10 @@ public class BattleController {
 
             if (command instanceof QuitCommand)
                 return GameController.GameMode.ENDGAME;
-
-            battle.getAdversaryPokemon().takeDamage(1);
         }
+    }
+
+    public void usePokemonMove(PokemonMove move) {
+        move.execute(battle.getAdversaryPokemon());
     }
 }

@@ -1,0 +1,15 @@
+<pokedex>
+  <move>
+    <id>161</id>
+    <identifier>tri-attack</identifier>
+    <type>NORMAL</type>
+    <power>80</power>
+    <pp>10</pp>
+    <accuracy>100</accuracy>
+    <priority>0</priority>
+    <target_id>10</target_id>
+    <damage_class_id>3</damage_class_id>
+    <effect_id>37</effect_id>
+    <effect_chance>20</effect_chance>
+  </move>
+  </pokedex>

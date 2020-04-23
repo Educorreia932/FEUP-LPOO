@@ -5,6 +5,7 @@ import com.googlecode.lanterna.input.KeyStroke;
 import com.googlecode.lanterna.screen.Screen;
 
 import lpoo.pokemonascii.data.BattleModel;
+import lpoo.pokemonascii.data.pokemon.PokemonMove;
 import lpoo.pokemonascii.gui.commands.*;
 import lpoo.pokemonascii.gui.renderers.*;
 import lpoo.pokemonascii.rules.BattleController;
@@ -65,6 +66,8 @@ public class BattleView {
         switch (pressedKey.getKeyType()) {
             case EOF:
                 return new QuitCommand(screen);
+            case Enter:
+                return new UsePokemonMoveCommand(battle, new PokemonMove());
             case Character:
                 switch (pressedKey.getCharacter()) {
                     case 'q':

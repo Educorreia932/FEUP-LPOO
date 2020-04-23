@@ -1,0 +1,15 @@
+<pokedex>
+  <move>
+    <id>277</id>
+    <identifier>magic-coat</identifier>
+    <type>PSYCHIC</type>
+    <power />
+    <pp>15</pp>
+    <accuracy />
+    <priority>4</priority>
+    <target_id>7</target_id>
+    <damage_class_id>1</damage_class_id>
+    <effect_id>184</effect_id>
+    <effect_chance />
+  </move>
+  </pokedex>

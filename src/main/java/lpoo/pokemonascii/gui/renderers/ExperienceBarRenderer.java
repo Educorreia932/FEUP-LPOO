@@ -21,7 +21,6 @@ public class ExperienceBarRenderer extends BarRenderer {
     public void draw(TextGraphics graphics) {
         percentage = PokemonExperience.getExperiencePercentage(pokemon);
 
-        for (int i = 0; i < barWidth * percentage; i++)
-            drawSprite(sprite, position.getX() + i, position.getY(), graphics);
+        super.draw(graphics);
     }
 }

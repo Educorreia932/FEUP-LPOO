@@ -1,0 +1,15 @@
+<pokedex>
+  <move>
+    <id>90</id>
+    <identifier>fissure</identifier>
+    <type>GROUND</type>
+    <power />
+    <pp>5</pp>
+    <accuracy>30</accuracy>
+    <priority>0</priority>
+    <target_id>10</target_id>
+    <damage_class_id>2</damage_class_id>
+    <effect_id>39</effect_id>
+    <effect_chance />
+  </move>
+  </pokedex>

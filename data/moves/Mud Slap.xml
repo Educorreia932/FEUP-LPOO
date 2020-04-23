@@ -1,0 +1,15 @@
+<pokedex>
+  <move>
+    <id>189</id>
+    <identifier>mud-slap</identifier>
+    <type>GROUND</type>
+    <power>20</power>
+    <pp>10</pp>
+    <accuracy>100</accuracy>
+    <priority>0</priority>
+    <target_id>10</target_id>
+    <damage_class_id>3</damage_class_id>
+    <effect_id>74</effect_id>
+    <effect_chance>100</effect_chance>
+  </move>
+  </pokedex>

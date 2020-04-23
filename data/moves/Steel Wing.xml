@@ -1,0 +1,15 @@
+<pokedex>
+  <move>
+    <id>211</id>
+    <identifier>steel-wing</identifier>
+    <type>STEEL</type>
+    <power>70</power>
+    <pp>25</pp>
+    <accuracy>90</accuracy>
+    <priority>0</priority>
+    <target_id>10</target_id>
+    <damage_class_id>2</damage_class_id>
+    <effect_id>139</effect_id>
+    <effect_chance>10</effect_chance>
+  </move>
+  </pokedex>

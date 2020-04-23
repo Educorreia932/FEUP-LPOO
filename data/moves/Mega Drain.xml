@@ -1,0 +1,15 @@
+<pokedex>
+  <move>
+    <id>72</id>
+    <identifier>mega-drain</identifier>
+    <type>GRASS</type>
+    <power>40</power>
+    <pp>15</pp>
+    <accuracy>100</accuracy>
+    <priority>0</priority>
+    <target_id>10</target_id>
+    <damage_class_id>3</damage_class_id>
+    <effect_id>4</effect_id>
+    <effect_chance />
+  </move>
+  </pokedex>

@@ -1,0 +1,15 @@
+<pokedex>
+  <move>
+    <id>145</id>
+    <identifier>bubble</identifier>
+    <type>WATER</type>
+    <power>40</power>
+    <pp>30</pp>
+    <accuracy>100</accuracy>
+    <priority>0</priority>
+    <target_id>11</target_id>
+    <damage_class_id>3</damage_class_id>
+    <effect_id>71</effect_id>
+    <effect_chance>10</effect_chance>
+  </move>
+  </pokedex>
