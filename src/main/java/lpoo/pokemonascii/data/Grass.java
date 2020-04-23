@@ -1,5 +1,7 @@
 package lpoo.pokemonascii.data;
 
+import java.util.Random;
+
 public class Grass extends Tile{
     private State state;
 
@@ -8,11 +10,12 @@ public class Grass extends Tile{
     }
 
     public Grass(int x, int y) {
-        super(x, y);
+        super(x, y, 26, 16);
         state = State.STILL;
     }
 
     public State getState() {
         return state;
     }
+
 }

@@ -18,7 +18,7 @@ public class Player extends CollidingElement {
     }
 
     public Player() {
-        super(100,50, 0,0);
+        super(100,50, 23,19);
         state = State.FRONT;
     }
 
