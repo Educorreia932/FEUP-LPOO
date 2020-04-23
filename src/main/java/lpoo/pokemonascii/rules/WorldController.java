@@ -31,8 +31,11 @@ public class WorldController {
             if (command instanceof QuitCommand)
                 return GameController.GameMode.ENDGAME;
 
-            if (inBattle)
+            if (inBattle){
+                gui.drawWorld();
+                inBattle = false;
                 return GameController.GameMode.BATTLE;
+            }
         }
     }
 
