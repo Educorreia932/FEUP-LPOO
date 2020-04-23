@@ -15,7 +15,7 @@ public class WorldModel {
         tiles = new ArrayList<>();
         elements = new ArrayList<>();
 
-        tiles.add(new Tile(90, 40));
+        tiles.add(new Grass(90, 40));
         elements.add(new Obstacle(0, 0, 300, 19));
     }
 
