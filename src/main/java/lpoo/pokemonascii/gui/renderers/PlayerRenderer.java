@@ -1,6 +1,5 @@
 package lpoo.pokemonascii.gui.renderers;
 
-import com.googlecode.lanterna.TextColor;
 import com.googlecode.lanterna.graphics.TextGraphics;
 import lpoo.pokemonascii.data.Player;
 import lpoo.pokemonascii.gui.Image;

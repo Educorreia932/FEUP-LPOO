@@ -7,6 +7,7 @@ import lpoo.pokemonascii.data.WorldModel;
 import lpoo.pokemonascii.gui.commands.*;
 import lpoo.pokemonascii.gui.renderers.BackgroundRenderer;
 import lpoo.pokemonascii.gui.renderers.PlayerRenderer;
+import lpoo.pokemonascii.gui.renderers.TileRenderer;
 import lpoo.pokemonascii.rules.WorldController;
 
 import java.io.IOException;
@@ -16,6 +17,7 @@ public class WorldView {
     private TextGraphics graphics;
     private BackgroundRenderer backgroundRenderer;
     private PlayerRenderer playerRenderer;
+    private TileRenderer tileRenderer;
 
     public WorldView(Screen screen, TextGraphics graphics, WorldModel world) {
         this.screen = screen;
@@ -23,12 +25,14 @@ public class WorldView {
 
         backgroundRenderer = new BackgroundRenderer("room");
         playerRenderer = new PlayerRenderer(world.getPlayer());
+        tileRenderer = new TileRenderer(world.getTiles());
     }
 
     public void drawWorld() throws IOException {
         screen.clear();
 
         backgroundRenderer.draw(graphics);
+        tileRenderer.draw(graphics);
         playerRenderer.draw(graphics);
 
         screen.refresh();

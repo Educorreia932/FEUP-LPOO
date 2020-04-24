@@ -11,9 +11,9 @@ public abstract class CollidingElement extends Element {
         hitbox = new Rect(width, height);
     }
 
-    public boolean collides(Position position, CollidingElement c) {
-        Position l1 = this.position; // Upper left corner of this colliding element
-        Position l2 = position; // Upper left corner of c
+    public boolean collides(Position pos, CollidingElement c) {
+        Position l1 = position; // Upper left corner of this colliding element
+        Position l2 = pos; // Upper left corner of c
         Position r1 = new Position(l1.getX() + hitbox.getWidth(), l1.getY() + hitbox.getHeight()); // Lower right corner of this colliding element
         Position r2 = new Position(l2.getX() + c.getHitbox().getWidth(), l2.getY() + c.getHitbox().getHeight()); // Lower right corner of c
 
