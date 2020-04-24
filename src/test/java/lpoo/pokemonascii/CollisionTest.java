@@ -1,26 +1,14 @@
 package lpoo.pokemonascii;
 
 import lpoo.pokemonascii.data.Obstacle;
-import lpoo.pokemonascii.data.Player;
 import lpoo.pokemonascii.data.Position;
 import lpoo.pokemonascii.data.Rect;
 import lpoo.pokemonascii.data.elements.CollidingElement;
-import lpoo.pokemonascii.data.elements.Element;
-import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
 
 public class CollisionTest {
-    Player player;
-    Obstacle obstacle;
-
-    @Before
-    public void init(){
-        obstacle = new Obstacle(0, 0, 10, 10);
-        player = new Player();
-    }
-
     @Test
     public void testGetHitbox(){
         CollidingElement subject = new Obstacle(0, 0, 10, 10);
