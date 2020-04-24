@@ -2,6 +2,8 @@ package lpoo.pokemonascii.data;
 
 import lpoo.pokemonascii.gui.Image;
 
+import java.util.Objects;
+
 public class Rect {
     private int width, height;
 
@@ -22,4 +24,14 @@ public class Rect {
     public int getHeight() {
         return height;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Rect rect = (Rect) o;
+        return width == rect.width &&
+                height == rect.height;
+    }
+
 }
