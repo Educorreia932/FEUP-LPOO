@@ -1,0 +1,15 @@
+<pokedex>
+  <move>
+    <id>313</id>
+    <identifier>fake-tears</identifier>
+    <type>DARK</type>
+    <power />
+    <pp>20</pp>
+    <accuracy>100</accuracy>
+    <priority>0</priority>
+    <target_id>10</target_id>
+    <damage_class_id>1</damage_class_id>
+    <effect_id>63</effect_id>
+    <effect_chance />
+  </move>
+  </pokedex>

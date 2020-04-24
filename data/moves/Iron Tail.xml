@@ -1,0 +1,15 @@
+<pokedex>
+  <move>
+    <id>231</id>
+    <identifier>iron-tail</identifier>
+    <type>STEEL</type>
+    <power>100</power>
+    <pp>15</pp>
+    <accuracy>75</accuracy>
+    <priority>0</priority>
+    <target_id>10</target_id>
+    <damage_class_id>2</damage_class_id>
+    <effect_id>70</effect_id>
+    <effect_chance>30</effect_chance>
+  </move>
+  </pokedex>

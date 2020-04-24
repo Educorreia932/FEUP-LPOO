@@ -1,0 +1,15 @@
+<pokedex>
+  <move>
+    <id>75</id>
+    <identifier>razor-leaf</identifier>
+    <type>GRASS</type>
+    <power>55</power>
+    <pp>25</pp>
+    <accuracy>95</accuracy>
+    <priority>0</priority>
+    <target_id>11</target_id>
+    <damage_class_id>2</damage_class_id>
+    <effect_id>44</effect_id>
+    <effect_chance />
+  </move>
+  </pokedex>

@@ -1,0 +1,15 @@
+<pokedex>
+  <move>
+    <id>157</id>
+    <identifier>rock-slide</identifier>
+    <type>ROCK</type>
+    <power>75</power>
+    <pp>10</pp>
+    <accuracy>90</accuracy>
+    <priority>0</priority>
+    <target_id>11</target_id>
+    <damage_class_id>2</damage_class_id>
+    <effect_id>32</effect_id>
+    <effect_chance>30</effect_chance>
+  </move>
+  </pokedex>

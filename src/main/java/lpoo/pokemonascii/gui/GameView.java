@@ -13,8 +13,8 @@ import java.awt.Font;
 import java.io.IOException;
 
 public class GameView {
-    private Screen screen;
-    private TextGraphics graphics;
+    private final Screen screen;
+    private final TextGraphics graphics;
 
     public GameView(int width, int height) throws IOException {
         Font font = new Font("Fira Code Light", Font.PLAIN, 4);

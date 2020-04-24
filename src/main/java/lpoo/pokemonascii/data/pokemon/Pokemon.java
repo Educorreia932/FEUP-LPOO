@@ -3,7 +3,9 @@ package lpoo.pokemonascii.data.pokemon;
 import lpoo.pokemonascii.data.Position;
 import org.xml.sax.SAXException;
 
+import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Pokemon {
@@ -22,7 +24,7 @@ public class Pokemon {
     private List<PokemonMove> moves;
     private facingDirection direction;
 
-    public Pokemon(Integer pokedex_number, facingDirection direction) throws IOException, SAXException {
+    public Pokemon(Integer pokedex_number, facingDirection direction) throws IOException, SAXException, ParserConfigurationException {
         species = new PokemonSpecies(pokedex_number);
         name = species.getName();
         stats = species.getBaseStats();
@@ -30,6 +32,8 @@ public class Pokemon {
         level = 56;
         experience = PokemonExperience.getLevelExperience(species.getTotalExperience(), level) + 5000;
         this.direction = direction;
+        moves = new ArrayList<>();
+        moves.add(new PokemonMove("Tackle"));
 
         switch (direction) {
             case FRONT:

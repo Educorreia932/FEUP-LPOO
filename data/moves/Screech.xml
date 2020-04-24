@@ -1,0 +1,15 @@
+<pokedex>
+  <move>
+    <id>103</id>
+    <identifier>screech</identifier>
+    <type>NORMAL</type>
+    <power />
+    <pp>40</pp>
+    <accuracy>85</accuracy>
+    <priority>0</priority>
+    <target_id>10</target_id>
+    <damage_class_id>1</damage_class_id>
+    <effect_id>60</effect_id>
+    <effect_chance />
+  </move>
+  </pokedex>

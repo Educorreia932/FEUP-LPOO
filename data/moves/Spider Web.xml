@@ -1,0 +1,15 @@
+<pokedex>
+  <move>
+    <id>169</id>
+    <identifier>spider-web</identifier>
+    <type>BUG</type>
+    <power />
+    <pp>10</pp>
+    <accuracy />
+    <priority>0</priority>
+    <target_id>10</target_id>
+    <damage_class_id>1</damage_class_id>
+    <effect_id>107</effect_id>
+    <effect_chance />
+  </move>
+  </pokedex>
