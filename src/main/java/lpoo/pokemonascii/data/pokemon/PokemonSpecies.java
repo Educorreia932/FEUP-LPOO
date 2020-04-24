@@ -22,19 +22,13 @@ public class PokemonSpecies {
     private PokemonStats baseStats;
     private int totalExperience;
 
-    public PokemonSpecies(int pokedexNumber) throws IOException, SAXException {
+    public PokemonSpecies(int pokedexNumber) throws IOException, SAXException, ParserConfigurationException {
         this.pokedexNumber = pokedexNumber;
 
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
-        DocumentBuilder builder = null;
+        DocumentBuilder builder;
 
-        try {
-            builder = factory.newDocumentBuilder();
-        }
-
-        catch (ParserConfigurationException e) {
-            e.printStackTrace();
-        }
+        builder = factory.newDocumentBuilder();
 
         // Load the input XML document, parse it and return an instance of the Document class.
         Document document;

@@ -9,13 +9,14 @@ import lpoo.pokemonascii.data.pokemon.PokemonMove;
 import lpoo.pokemonascii.gui.commands.*;
 import lpoo.pokemonascii.gui.renderers.*;
 import lpoo.pokemonascii.rules.BattleController;
+import org.xml.sax.SAXException;
 
+import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
 
 public class BattleView {
     private Screen screen;
     private TextGraphics graphics;
-    private BattleModel battle;
     private BackgroundRenderer background;
     private PokemonRenderer trainerPokemon;
     private PokemonRenderer adversaryPokemon;
@@ -26,8 +27,6 @@ public class BattleView {
     public BattleView(Screen screen, TextGraphics graphics, BattleModel battle) {
         this.screen = screen;
         this.graphics = graphics;
-
-        this.battle = battle;
 
         background = new BackgroundRenderer("battle_background");
         battleMenu = new BattleMenuRenderer();
@@ -60,14 +59,14 @@ public class BattleView {
         return key;
     }
 
-    public Command getNextCommand(BattleController battle) throws IOException {
+    public Command getNextCommand(BattleController battle) throws IOException, ParserConfigurationException, SAXException {
         KeyStroke pressedKey = getPressedKey(screen);
 
         switch (pressedKey.getKeyType()) {
             case EOF:
                 return new QuitCommand(screen);
             case Enter:
-                return new UsePokemonMoveCommand(battle, new PokemonMove());
+                return new UsePokemonMoveCommand(battle, new PokemonMove("Tackle"));
             case Character:
                 switch (pressedKey.getCharacter()) {
                     case 'q':

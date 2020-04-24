@@ -1,14 +1,13 @@
 @startuml Pokemon
 
 package data {
-    enum Direction
-    enum State
+    class BattleModel
+    class WorldModel
 
     class Obstacle
     class Player 
     class Position
     class Rect
-    class WorldModel
     class Element
     class CollidingElement
 
@@ -18,6 +17,7 @@ package data {
         class PokemonSpecies
         class PokemonType
         class PokemonMove
+        abstract class PokemonExperience
     }
 }
 
@@ -32,36 +32,53 @@ package gui {
         class PlayerMoveLeftCommand
         class PlayerMoveRightCommand
         class PlayerMoveUpCommand
+        class UsePokemonMoveCommand
     }
 
-    package drawers {
-        class Drawer
-        class PlayerDrawer
-        class PokemonDrawer
+    package Renderers {
+        class BackgroundRenderer
+        abstract class BarRenderer
+        class BattleMenuRenderer
+        class CharRenderer
+        class ExperienceBarRenderer
+        class HealthBarRenderer
+        class PlayerRenderer
+        class PokemonRenderer
+        class PokemonInfoRenderer
+        abstract class Renderer
+        class TextRenderer
     }
 
     class Image
     class Sprite
+    class BattleView
     class WorldView
+    class GameView
 }
 
 package rules {
+    class BattleController
+    class GameController
     class WorldController
 }
 
 class Game
 
-Game *-- WorldModel
-Game *-- WorldView
-Game *-- WorldController
+Game *-- GameView
+Game *-- GameController
+
+GameController *-- GameView
+
+BattleController *-- BattleView   
+BattleController *-- BattleModel  
 
 WorldModel *-- Player
 
-WorldController *-- Command
 WorldController *-- WorldView   
 WorldController *-- WorldModel  
 
-WorldView *-- PlayerDrawer
+WorldView *-- PlayerRenderer
+WorldView *-- BackgroundRenderer
 WorldView *-- WorldModel
 
 Element <|-- CollidingElement
@@ -72,28 +89,42 @@ CollidingElement <|-- Obstacle
 CollidingElement *-- Rect
 
 Player *-- Pokemon 
-Player *-- State
 
 Pokemon *-- PokemonSpecies
 Pokemon *-- PokemonStats
 Pokemon *-- PokemonMove
 
+PokemonMove *-- PokemonType
+
 PokemonSpecies *-- PokemonType
-
-Sprite *-- Image
-
-Drawer <|-- PlayerDrawer
-Drawer *-- Sprite
-
-PlayerDrawer *-- Player
-PokemonDrawer *-- Pokemon
 
 Command <|-- DoNothingCommand
 Command <|-- PlayerMoveDownCommand
 Command <|-- PlayerMoveLeftCommand
 Command <|-- PlayerMoveRightCommand
 Command <|-- PlayerMoveUpCommand
+Command <|-- UsePokemonMoveCommand
 
-hide commands
+Sprite *-- Image
+
+Renderer <|-- PlayerRenderer
+Renderer *-- Sprite
+
+PlayerRenderer *-- Player
+
+PokemonRenderer *-- Pokemon
+
+BarRenderer <|-- ExperienceBarRenderer
+BarRenderer <|-- HealthBarRenderer
+
+PokemonInfoRenderer *-- TextRenderer
+PokemonInfoRenderer *-- ExperienceBarRenderer
+PokemonInfoRenderer *-- HealthBarRenderer
+
+TextRenderer *-- CharRenderer
+
+BattleView *-- BackgroundRenderer
+BattleView *-- PokemonRenderer
+BattleView *-- BattleMenuRenderer
 
 @enduml

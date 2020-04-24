@@ -7,6 +7,7 @@ import lpoo.pokemonascii.gui.WorldView;
 
 import org.xml.sax.SAXException;
 
+import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
 
 public class GameController {
@@ -22,7 +23,7 @@ public class GameController {
         this.gui = gui;
     }
 
-    public void run(GameMode gamemode) throws IOException, SAXException {
+    public void run(GameMode gamemode) throws IOException, SAXException, ParserConfigurationException {
         while (!gamemode.equals(GameMode.ENDGAME)) {
             switch (gamemode) {
                 case WORLD:
