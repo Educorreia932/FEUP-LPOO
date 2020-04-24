@@ -1,0 +1,15 @@
+<pokedex>
+  <move>
+    <id>336</id>
+    <identifier>howl</identifier>
+    <type>NORMAL</type>
+    <power />
+    <pp>40</pp>
+    <accuracy />
+    <priority>0</priority>
+    <target_id>7</target_id>
+    <damage_class_id>1</damage_class_id>
+    <effect_id>11</effect_id>
+    <effect_chance />
+  </move>
+  </pokedex>

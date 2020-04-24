@@ -1,0 +1,15 @@
+<pokedex>
+  <move>
+    <id>73</id>
+    <identifier>leech-seed</identifier>
+    <type>GRASS</type>
+    <power />
+    <pp>10</pp>
+    <accuracy>90</accuracy>
+    <priority>0</priority>
+    <target_id>10</target_id>
+    <damage_class_id>1</damage_class_id>
+    <effect_id>85</effect_id>
+    <effect_chance />
+  </move>
+  </pokedex>

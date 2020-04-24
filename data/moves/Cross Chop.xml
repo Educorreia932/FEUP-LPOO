@@ -1,0 +1,15 @@
+<pokedex>
+  <move>
+    <id>238</id>
+    <identifier>cross-chop</identifier>
+    <type>FIGHTING</type>
+    <power>100</power>
+    <pp>5</pp>
+    <accuracy>80</accuracy>
+    <priority>0</priority>
+    <target_id>10</target_id>
+    <damage_class_id>2</damage_class_id>
+    <effect_id>44</effect_id>
+    <effect_chance />
+  </move>
+  </pokedex>

@@ -14,14 +14,12 @@ import java.io.IOException;
 public class WorldView {
     private Screen screen;
     private TextGraphics graphics;
-    private WorldModel world;
     private BackgroundRenderer backgroundRenderer;
     private PlayerRenderer playerRenderer;
 
-    public WorldView(Screen screen, TextGraphics graphics, WorldModel world) throws IOException {
+    public WorldView(Screen screen, TextGraphics graphics, WorldModel world) {
         this.screen = screen;
         this.graphics = graphics;
-        this.world = world;
 
         backgroundRenderer = new BackgroundRenderer("room");
         playerRenderer = new PlayerRenderer(world.getPlayer());

@@ -9,8 +9,8 @@ public class PokemonInfoRenderer extends Renderer {
     private Position position;
     private TextRenderer pokemonName;
     private TextRenderer pokemonLevel;
-    private HealthBarRenderer health;
     private ExperienceBarRenderer experience;
+    private HealthBarRenderer health;
 
     public PokemonInfoRenderer(Pokemon pokemon) {
         switch (pokemon.getFacingDirection()) {

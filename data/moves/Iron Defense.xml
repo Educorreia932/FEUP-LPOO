@@ -1,0 +1,15 @@
+<pokedex>
+  <move>
+    <id>334</id>
+    <identifier>iron-defense</identifier>
+    <type>STEEL</type>
+    <power />
+    <pp>15</pp>
+    <accuracy />
+    <priority>0</priority>
+    <target_id>7</target_id>
+    <damage_class_id>1</damage_class_id>
+    <effect_id>52</effect_id>
+    <effect_chance />
+  </move>
+  </pokedex>

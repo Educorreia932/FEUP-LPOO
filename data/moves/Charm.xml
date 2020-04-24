@@ -1,0 +1,15 @@
+<pokedex>
+  <move>
+    <id>204</id>
+    <identifier>charm</identifier>
+    <type_id>18</type_id>
+    <power />
+    <pp>20</pp>
+    <accuracy>100</accuracy>
+    <priority>0</priority>
+    <target_id>10</target_id>
+    <damage_class_id>1</damage_class_id>
+    <effect_id>59</effect_id>
+    <effect_chance />
+  </move>
+  </pokedex>

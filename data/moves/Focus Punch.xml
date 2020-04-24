@@ -1,0 +1,15 @@
+<pokedex>
+  <move>
+    <id>264</id>
+    <identifier>focus-punch</identifier>
+    <type>FIGHTING</type>
+    <power>150</power>
+    <pp>20</pp>
+    <accuracy>100</accuracy>
+    <priority>-3</priority>
+    <target_id>10</target_id>
+    <damage_class_id>2</damage_class_id>
+    <effect_id>171</effect_id>
+    <effect_chance />
+  </move>
+  </pokedex>

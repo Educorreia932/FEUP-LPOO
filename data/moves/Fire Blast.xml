@@ -1,0 +1,15 @@
+<pokedex>
+  <move>
+    <id>126</id>
+    <identifier>fire-blast</identifier>
+    <type>FIRE</type>
+    <power>110</power>
+    <pp>5</pp>
+    <accuracy>85</accuracy>
+    <priority>0</priority>
+    <target_id>10</target_id>
+    <damage_class_id>3</damage_class_id>
+    <effect_id>5</effect_id>
+    <effect_chance>10</effect_chance>
+  </move>
+  </pokedex>

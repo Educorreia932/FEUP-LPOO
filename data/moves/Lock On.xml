@@ -1,0 +1,15 @@
+<pokedex>
+  <move>
+    <id>199</id>
+    <identifier>lock-on</identifier>
+    <type>NORMAL</type>
+    <power />
+    <pp>5</pp>
+    <accuracy />
+    <priority>0</priority>
+    <target_id>10</target_id>
+    <damage_class_id>1</damage_class_id>
+    <effect_id>95</effect_id>
+    <effect_chance />
+  </move>
+  </pokedex>

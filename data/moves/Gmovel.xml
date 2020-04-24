@@ -1,0 +1,15 @@
+<pokedex>
+  <move>
+    <id>45</id>
+    <identifier>gmovel</identifier>
+    <type>NORMAL</type>
+    <power />
+    <pp>40</pp>
+    <accuracy>100</accuracy>
+    <priority>0</priority>
+    <target_id>11</target_id>
+    <damage_class_id>1</damage_class_id>
+    <effect_id>19</effect_id>
+    <effect_chance />
+  </move>
+  </pokedex>

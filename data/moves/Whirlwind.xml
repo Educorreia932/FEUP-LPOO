@@ -1,0 +1,15 @@
+<pokedex>
+  <move>
+    <id>18</id>
+    <identifier>whirlwind</identifier>
+    <type>NORMAL</type>
+    <power />
+    <pp>20</pp>
+    <accuracy />
+    <priority>-6</priority>
+    <target_id>10</target_id>
+    <damage_class_id>1</damage_class_id>
+    <effect_id>29</effect_id>
+    <effect_chance />
+  </move>
+  </pokedex>

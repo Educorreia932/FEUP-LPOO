@@ -7,35 +7,44 @@ This project was developed by [*Eduardo Correia*](https://github.com/educorreia9
 
 ## Planned Features
 
-- [x] Make the main character appear in-game and be controllable (with arrow keys). 
-- [x] Implement collisions. 
-- [x] Make player's image change according to the direction he's facing.
-- [x] Read data file about pokémons. 
-- [x] Implement MVC. 
-- [x] Render text. 
-- [x] Make a battle menu.
-- [ ] Make pokémon appear when walking on grass.
-- [ ] Add a NPC.
-- [ ] Implement multi-threading (for drawing and for user input).
-- [ ] Implement animations (mainly for playing walking animation).
-- [ ] Include three pokémons (starters) with fixed moves and abilities (but without leveling up).
-- [ ] Make it possible to catch pokémon or battle against it.
-- [ ] Implement items.
-- [ ] Implement a `DamageMultiplier` class
-- [ ] Include music and sound effects.
+### Player
 
-### Graphics
+- [x] Character movement (with arrow keys). 
+- [x] Image changing according to the direction the character's facing.
+- [x] Collisions with walls.
+- [x] Pokémon appearing when walking on tall-grass.
+- [ ] Movement animation.
+- [ ] Ability to run.
+
+### Pokémon
+
+- [x] Type effectiveness multipliers.
+- [ ] Leveling up.
+
+### Battle
+
+- [x] HP and Experience bar.
+- [ ] Battle options menu.
+- [ ] Use Moves.
+- [ ] Use Items.
+
+## Graphics
 
 We initially convert a .png image to text characters, using `img2txt`, a program from [libcaca](http://caca.zoy.org/wiki/libcaca). That program generates a .svg that we parse and then draw using Lanterna.
+
+## To-Do
+
+## Design
 
 ## Game Resources
 
 ### Images
 
-- [Pokémon - Battle](https://veekun.com/dex/downloads), veekrun
+- [Pokémon - Battle](https://veekun.com/dex/downloads), veekun
 - [HP Bars & In-Battle Menu](https://www.spriters-resource.com/game_boy_advance/pokemonfireredleafgreen/sheet/33690/), redblueyellow
 - [Battle Backgrounds](https://www.spriters-resource.com/game_boy_advance/pokemonfireredleafgreen/sheet/3866/), Desgardes
 
 ### Data Files
 
-- [Pokémons](https://github.com/r4vi/zipper-demo/blob/master/resources/pokemon.xml), r4v1
+- [Pokémon](https://github.com/r4vi/zipper-demo/blob/master/resources/pokemon.xml), r4v1
+- [Pokémon Moves](https://github.com/veekun/pokedex/blob/master/pokedex/data/csv/moves.csv), veekun

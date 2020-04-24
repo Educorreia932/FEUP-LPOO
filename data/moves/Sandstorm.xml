@@ -1,0 +1,15 @@
+<pokedex>
+  <move>
+    <id>201</id>
+    <identifier>sandstorm</identifier>
+    <type>ROCK</type>
+    <power />
+    <pp>10</pp>
+    <accuracy />
+    <priority>0</priority>
+    <target_id>12</target_id>
+    <damage_class_id>1</damage_class_id>
+    <effect_id>116</effect_id>
+    <effect_chance />
+  </move>
+  </pokedex>
