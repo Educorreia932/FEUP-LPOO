@@ -13,10 +13,12 @@ import java.io.IOException;
 public class BattleController {
     private BattleView gui;
     private BattleModel battle;
+    private OptionsMenuController options;
 
     public BattleController(BattleView gui, BattleModel battle) {
         this.gui = gui;
         this.battle = battle;
+        this.options = new OptionsMenuController(battle.getOptions());
     }
 
     public GameController.GameMode start() throws IOException, ParserConfigurationException, SAXException {
@@ -33,5 +35,10 @@ public class BattleController {
 
     public void usePokemonMove(PokemonMove move) {
         move.execute(battle.getAdversaryPokemon());
+    }
+
+
+    public OptionsMenuController getOptions() {
+        return options;
     }
 }

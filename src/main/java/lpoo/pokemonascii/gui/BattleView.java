@@ -5,6 +5,7 @@ import com.googlecode.lanterna.input.KeyStroke;
 import com.googlecode.lanterna.screen.Screen;
 
 import lpoo.pokemonascii.data.BattleModel;
+import lpoo.pokemonascii.data.Position;
 import lpoo.pokemonascii.data.pokemon.PokemonMove;
 import lpoo.pokemonascii.gui.commands.*;
 import lpoo.pokemonascii.gui.renderers.*;
@@ -70,6 +71,18 @@ public class BattleView {
         switch (pressedKey.getKeyType()) {
             case EOF:
                 return new QuitCommand(screen);
+            case ArrowUp:
+                battle.getOptions().changeSelectedOption(Position.Direction.UP);
+                break;
+            case ArrowDown:
+                battle.getOptions().changeSelectedOption(Position.Direction.DOWN);
+                break;
+            case ArrowLeft:
+                battle.getOptions().changeSelectedOption(Position.Direction.LEFT);
+                break;
+            case ArrowRight:
+                battle.getOptions().changeSelectedOption(Position.Direction.RIGHT);
+                break;
             case Enter:
                 return new UsePokemonMoveCommand(battle, new PokemonMove("Tackle"));
             case Character:

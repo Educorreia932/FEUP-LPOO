@@ -3,6 +3,7 @@ package lpoo.pokemonascii.gui.renderers;
 import com.googlecode.lanterna.graphics.TextGraphics;
 import lpoo.pokemonascii.data.Option;
 import lpoo.pokemonascii.data.OptionsMenuModel;
+import lpoo.pokemonascii.gui.Sprite;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,6 +13,7 @@ public class OptionsMenuRenderer extends Renderer {
     List<TextRenderer> optionsNames;
     private final int X_DISPLACEMENT = 100;
     private final int Y_DISPLACEMENT = 20;
+    Sprite arrow = new Sprite("selectionArrow");
 
     public OptionsMenuRenderer(OptionsMenuModel options) {
         this.options = options;
@@ -35,7 +37,13 @@ public class OptionsMenuRenderer extends Renderer {
 
     @Override
     public void draw(TextGraphics graphics) {
-        for (TextRenderer optionName : optionsNames)
-            optionName.draw(graphics);
+        for (int i = 0; i < optionsNames.size(); i++) {
+            TextRenderer optionName = optionsNames.get(i);
+
+            if (i == options.getSelectedOption())
+                drawSprite(arrow, optionName.getPosition().left(optionName.getWidth() + 18), graphics, true);
+
+            optionsNames.get(i).draw(graphics);
+        }
     }
 }

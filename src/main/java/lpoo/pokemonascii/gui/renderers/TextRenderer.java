@@ -26,4 +26,17 @@ public class TextRenderer extends Renderer {
         for (CharRenderer charRenderer : chars)
             charRenderer.draw(graphics);
     }
+
+    public Position getPosition() {
+        return position;
+    }
+
+    public int getWidth() {
+        int result = 0;
+
+        for (CharRenderer charRenderer :chars)
+            result += charRenderer.sprite.getWidth();
+
+        return  result;
+    }
 }
