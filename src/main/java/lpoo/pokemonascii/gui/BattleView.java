@@ -23,6 +23,7 @@ public class BattleView {
     private BattleMenuRenderer battleMenu;
     private PokemonInfoRenderer trainerPokemonInfo;
     private PokemonInfoRenderer adversaryPokemonInfo;
+    private OptionsMenuRenderer optionsMenuRenderer;
 
     public BattleView(Screen screen, TextGraphics graphics, BattleModel battle) {
         this.screen = screen;
@@ -36,6 +37,8 @@ public class BattleView {
 
         trainerPokemonInfo = new PokemonInfoRenderer(battle.getTrainerPokemon());
         adversaryPokemonInfo = new PokemonInfoRenderer(battle.getAdversaryPokemon());
+
+        optionsMenuRenderer = new OptionsMenuRenderer(battle.getOptions());
     }
 
     public void drawBattle() throws IOException {
@@ -49,6 +52,8 @@ public class BattleView {
 
         trainerPokemonInfo.draw(graphics);
         adversaryPokemonInfo.draw(graphics);
+
+        optionsMenuRenderer.draw(graphics);
 
         screen.refresh();
     }

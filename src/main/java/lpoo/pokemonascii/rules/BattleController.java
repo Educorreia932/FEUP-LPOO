@@ -28,8 +28,6 @@ public class BattleController {
 
             if (command instanceof QuitCommand)
                 return GameController.GameMode.ENDGAME;
-
-            battle.getAdversaryPokemon().takeDamage(1);
         }
     }
 
