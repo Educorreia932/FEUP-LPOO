@@ -20,6 +20,12 @@ public class WorldModel {
         elements.add(new Obstacle(0, 0, 300, 19));
     }
 
+    public WorldModel(Player player) {
+        this.player = player;
+        tiles = new ArrayList<>();
+        elements = new ArrayList<>();
+    }
+
     public void setPlayerPosition(Position.Direction direction) {
         player.setPosition(player.getPosition(direction));
     }
