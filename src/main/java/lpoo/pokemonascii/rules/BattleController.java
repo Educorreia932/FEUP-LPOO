@@ -3,8 +3,8 @@ package lpoo.pokemonascii.rules;
 import lpoo.pokemonascii.data.BattleModel;
 import lpoo.pokemonascii.data.pokemon.PokemonMove;
 import lpoo.pokemonascii.gui.BattleView;
-import lpoo.pokemonascii.gui.commands.Command;
-import lpoo.pokemonascii.gui.commands.QuitCommand;
+import lpoo.pokemonascii.rules.commands.Command;
+import lpoo.pokemonascii.rules.commands.QuitCommand;
 import org.xml.sax.SAXException;
 
 import javax.xml.parsers.ParserConfigurationException;

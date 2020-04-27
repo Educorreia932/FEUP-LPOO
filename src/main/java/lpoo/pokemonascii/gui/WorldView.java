@@ -4,7 +4,7 @@ import com.googlecode.lanterna.graphics.TextGraphics;
 import com.googlecode.lanterna.input.KeyStroke;
 import com.googlecode.lanterna.screen.Screen;
 import lpoo.pokemonascii.data.WorldModel;
-import lpoo.pokemonascii.gui.commands.*;
+import lpoo.pokemonascii.rules.commands.*;
 import lpoo.pokemonascii.gui.renderers.BackgroundRenderer;
 import lpoo.pokemonascii.gui.renderers.PlayerRenderer;
 import lpoo.pokemonascii.gui.renderers.TileRenderer;

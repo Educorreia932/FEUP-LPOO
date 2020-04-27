@@ -6,7 +6,7 @@ import com.googlecode.lanterna.screen.Screen;
 
 import lpoo.pokemonascii.data.BattleModel;
 import lpoo.pokemonascii.data.pokemon.PokemonMove;
-import lpoo.pokemonascii.gui.commands.*;
+import lpoo.pokemonascii.rules.commands.*;
 import lpoo.pokemonascii.gui.renderers.*;
 import lpoo.pokemonascii.rules.BattleController;
 import org.xml.sax.SAXException;

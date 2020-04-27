@@ -1,4 +1,4 @@
-package lpoo.pokemonascii.gui.commands;
+package lpoo.pokemonascii.rules.commands;
 
 public class DoNothingCommand implements Command {
     @Override

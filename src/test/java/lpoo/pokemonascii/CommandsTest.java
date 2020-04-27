@@ -3,7 +3,7 @@ package lpoo.pokemonascii;
 
 import lpoo.pokemonascii.data.Position;
 import lpoo.pokemonascii.data.WorldModel;
-import lpoo.pokemonascii.gui.commands.*;
+import lpoo.pokemonascii.rules.commands.*;
 import org.junit.Before;
 import org.junit.Test;
 

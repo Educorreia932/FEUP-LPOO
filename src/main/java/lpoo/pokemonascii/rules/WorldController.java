@@ -2,12 +2,10 @@ package lpoo.pokemonascii.rules;
 
 import lpoo.pokemonascii.data.Player;
 import lpoo.pokemonascii.data.Position;
-import lpoo.pokemonascii.data.Tile;
 import lpoo.pokemonascii.data.WorldModel;
-import lpoo.pokemonascii.data.elements.CollidingElement;
 import lpoo.pokemonascii.gui.WorldView;
-import lpoo.pokemonascii.gui.commands.Command;
-import lpoo.pokemonascii.gui.commands.QuitCommand;
+import lpoo.pokemonascii.rules.commands.Command;
+import lpoo.pokemonascii.rules.commands.QuitCommand;
 
 import java.io.IOException;
 
