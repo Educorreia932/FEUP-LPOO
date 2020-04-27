@@ -17,7 +17,6 @@ public class CollisionTest {
 
     @Test
     public void testCollisionCheck(){
-
         //Same Position & Same Sizes
         Position position = new Position(0,0 );
         CollidingElement subject = new Obstacle(0, 0, 5, 5);
@@ -46,7 +45,5 @@ public class CollisionTest {
         subject = new Obstacle(0, 0, 4, 8);
         subject2 = new Obstacle(3, 3, 3, 3);
         assertTrue(subject.collides(position, subject2));
-
     }
-
 }

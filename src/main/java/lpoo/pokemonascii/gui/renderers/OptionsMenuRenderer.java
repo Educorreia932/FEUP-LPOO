@@ -41,7 +41,7 @@ public class OptionsMenuRenderer extends Renderer {
             TextRenderer optionName = optionsNames.get(i);
 
             if (i == options.getSelectedOption())
-                drawSprite(arrow, optionName.getPosition().left(optionName.getWidth() + 18), graphics, true);
+                drawSprite(arrow, optionName.getPosition().left(13).up(1), graphics, true);
 
             optionsNames.get(i).draw(graphics);
         }

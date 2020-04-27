@@ -13,11 +13,12 @@ public class TextRenderer extends Renderer {
     public TextRenderer(int x, int y, String s) {
         this.position = new Position(x, y);
         chars = new ArrayList<>();
+        Position charPosition = position;
 
         for (int i = 0; i < s.length(); i++) {
             char c = s.charAt(i);
-            chars.add(new CharRenderer(c, position));
-            position = position.right(chars.get(i).sprite.getCurrentImage().getWidth() + 1);
+            chars.add(new CharRenderer(c, charPosition));
+            charPosition = charPosition.right(chars.get(i).sprite.getWidth() + 1);
         }
     }
 

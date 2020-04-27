@@ -32,7 +32,7 @@ public class OptionsMenuModel {
                 break;
         }
 
-        if (selectedOption < 0)
+        if (selectedOption < 0 || selectedOption > options.size() - 1)
             selectedOption = oldSelectedOption;
     }
 
