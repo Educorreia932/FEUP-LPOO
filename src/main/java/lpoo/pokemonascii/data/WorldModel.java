@@ -16,7 +16,7 @@ public class WorldModel {
         tiles = new ArrayList<>();
         elements = new ArrayList<>();
 
-        tiles.add(new Grass(150, 40));
+        tiles.add(new Grass(161, 108));
         elements.add(new Obstacle(0, 0, 300, 19));
     }
 
@@ -42,7 +42,7 @@ public class WorldModel {
 
         if (getCollidingElement(position, tiles) != null){
             Random rand = new Random();
-            return rand.nextInt(3) == 1;
+            return rand.nextInt(19) == 1;
         }
         return false;
 

@@ -24,10 +24,11 @@ public class GameController {
     }
 
     public void run(GameMode gamemode) throws IOException, SAXException, ParserConfigurationException {
+        WorldModel world = new WorldModel();
+
         while (!gamemode.equals(GameMode.ENDGAME)) {
             switch (gamemode) {
                 case WORLD:
-                    WorldModel world = new WorldModel();
                     WorldView worldGui = new WorldView(gui.getScreen(), gui.getGraphics(), world);
                     WorldController worldController = new WorldController(worldGui, world);
 

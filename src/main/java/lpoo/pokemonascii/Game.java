@@ -9,7 +9,7 @@ import java.io.IOException;
 
 public class Game {
     public static void main(String[] args) throws IOException, SAXException, ParserConfigurationException {
-        GameController.GameMode gameMode = GameController.GameMode.BATTLE;
+        GameController.GameMode gameMode = GameController.GameMode.WORLD;
         GameView gameGui = new GameView(400, 160);
         GameController gameController = new GameController(gameGui);
 
