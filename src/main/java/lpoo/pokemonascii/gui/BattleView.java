@@ -84,7 +84,8 @@ public class BattleView {
                 battle.getOptions().changeSelectedOption(Position.Direction.RIGHT);
                 break;
             case Enter:
-                return new UsePokemonMoveCommand(battle, new PokemonMove("Tackle"));
+//                return new UsePokemonMoveCommand(battle, new PokemonMove("Tackle"));
+                return new ChoseOptionCommand(battle);
             case Character:
                 switch (pressedKey.getCharacter()) {
                     case 'q':
