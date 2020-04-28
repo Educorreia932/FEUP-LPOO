@@ -1,4 +1,5 @@
 package lpoo.pokemonascii.rules;
+
 import lpoo.pokemonascii.data.BattleModel;
 import lpoo.pokemonascii.data.WorldModel;
 import lpoo.pokemonascii.gui.BattleView;

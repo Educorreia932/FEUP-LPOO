@@ -8,7 +8,6 @@ import lpoo.pokemonascii.rules.WorldController;
 import lpoo.pokemonascii.rules.commands.*;
 import org.junit.Before;
 import org.junit.Test;
-import org.mockito.Mock;
 import org.mockito.Mockito;
 
 import static org.junit.Assert.assertEquals;

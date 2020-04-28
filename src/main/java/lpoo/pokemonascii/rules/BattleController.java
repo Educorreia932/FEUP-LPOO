@@ -2,6 +2,7 @@ package lpoo.pokemonascii.rules;
 
 import lpoo.pokemonascii.data.BattleModel;
 import lpoo.pokemonascii.data.Option;
+import lpoo.pokemonascii.data.pokemon.Pokemon;
 import lpoo.pokemonascii.data.pokemon.PokemonMove;
 import lpoo.pokemonascii.gui.BattleView;
 import lpoo.pokemonascii.rules.commands.Command;
@@ -37,8 +38,12 @@ public class BattleController {
         return GameController.GameMode.WORLD;
     }
 
-    public void usePokemonMove(PokemonMove move) {
-        move.execute(battle.getAdversaryPokemon());
+    public void usePokemonMove(Pokemon pokemon, PokemonMove move) {
+        if (pokemon.getFacingDirection() == Pokemon.facingDirection.BACK)
+            move.execute(battle.getAdversaryPokemon());
+
+        else if (pokemon.getFacingDirection() == Pokemon.facingDirection.FRONT)
+            move.execute(battle.getTrainerPokemon());
     }
 
     public OptionsMenuController getOptions() {

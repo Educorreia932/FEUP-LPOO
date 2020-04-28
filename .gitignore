@@ -39,3 +39,5 @@ build/reports/tests/test/js/
 build/test-results/test/TEST-lpoo.pokemonascii.PokemonTypeTest.xml
 
 build/test-results/test/TEST-lpoo.pokemonascii.PokemonSpeciesTest.xml
+
+build/test-results/test/TEST-lpoo.pokemonascii.PokemonMoveTest.xml
