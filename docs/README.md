@@ -16,7 +16,9 @@ This project was developed by [*Eduardo Correia*](https://github.com/educorreia9
 
 - **Character Movement** - The player will move with the arrow keys in the desired direction, as well its sprite will change according to the direction he's facing.
 
-![Player Walking][Player Walking]
+<p align="center">
+  <img width=300 src="https://i.imgur.com/XgxEBhc.gif">
+</p>
 
 - **Pokémon Appearing in Tall Grass** - When the player walks trough grass, they may encounter a wild pokémon and if so a battle with it will start. 
 
@@ -24,7 +26,9 @@ This project was developed by [*Eduardo Correia*](https://github.com/educorreia9
 
 - **Pokémon Types** - These are properties of pokémon and their moves. A pokémon may have up to two types, while a move only has one.
 
-![Pokemon Types][Pokemon Types]
+<p align="center">
+  <img width=300 src="https://pokemonhelps13.weebly.com/uploads/4/9/5/5/49555787/4602605_orig.png ">
+</p>
 
 - **Type Effectiveness** - When a pokémon uses a move, the damage it will cause to the adversary pokémon will depend on the move's type and the other pokémon's type(s).   
 A super effective attack will cause 2x the damage, a not very effective will cause 0.5x the damage and a no effect will cause 0x damage.  
@@ -40,7 +44,9 @@ For instance, the Water type is super effective against Fire, so if a Water pok�
     - **Pokémon** - Change that's pokémon currently fighting for another one on the party.
     - **Run** - Try to flee from the battle.
     
-![Battle Options][Battle Options]
+<p align="center">
+  <img width=300 src="https://i.imgur.com/WZK43Ed.gif">
+</p>
 
 ## Planned features
 
@@ -66,11 +72,6 @@ For instance, the Water type is super effective against Fire, so if a Water pok�
 
 - **Save the progress**
 - **Create profiles**  
-
-| <img width="903" alt="world" src="https://i.imgur.com/lweXhhw.png"> | <img width="903" alt="battle" src="https://i.imgur.com/tmn2b94.png">  |
-|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-
-
 
 ## Design
 
