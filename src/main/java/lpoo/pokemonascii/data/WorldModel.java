@@ -43,15 +43,9 @@ public class WorldModel {
         return getCollidingElement(position, elements) == null;
     }
 
-    public boolean isPlayerInTile(){
+    public CollidingElement isPlayerInTile(){
         Position position = player.getPosition();
-        CollidingElement tile = getCollidingElement(position, tiles);
-
-        if (tile != null){
-            if(tile instanceof PokemonTile)
-                return ((PokemonTile) tile).foundPokemon();
-        }
-        return false;
+        return getCollidingElement(position, tiles);
     }
 
     public CollidingElement getCollidingElement(Position position, List< ? extends CollidingElement> colliders) {

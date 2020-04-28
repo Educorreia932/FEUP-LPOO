@@ -1,8 +1,10 @@
 package lpoo.pokemonascii.rules;
 
 import lpoo.pokemonascii.data.Player;
+import lpoo.pokemonascii.data.PokemonTile;
 import lpoo.pokemonascii.data.Position;
 import lpoo.pokemonascii.data.WorldModel;
+import lpoo.pokemonascii.data.elements.CollidingElement;
 import lpoo.pokemonascii.gui.WorldView;
 import lpoo.pokemonascii.rules.commands.Command;
 import lpoo.pokemonascii.rules.commands.QuitCommand;
@@ -40,8 +42,9 @@ public class WorldController {
     public void movePlayer(Position.Direction direction) {
         if (world.canPlayerMove(direction)){
             world.setPlayerPosition(direction);
-            if (world.isPlayerInTile())
-                inBattle = true;
+            CollidingElement tile = world.isPlayerInTile();
+            if (tile instanceof PokemonTile)
+                inBattle = ((PokemonTile) tile).foundPokemon();
         }
     }
 
