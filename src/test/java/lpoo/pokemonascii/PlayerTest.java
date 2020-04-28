@@ -39,10 +39,10 @@ public class PlayerTest {
     @Test
     public void testGetPosition(){
         Position current = player.getPosition();
-        Position up = new Position(current.getX(), current.getY() - 4);
-        Position down = new Position(current.getX(), current.getY() + 4);
-        Position left = new Position(current.getX() - 4, current.getY());
-        Position right = new Position(current.getX() + 4, current.getY());
+        Position up = new Position(current.getX(), current.getY() - 16);
+        Position down = new Position(current.getX(), current.getY() + 16);
+        Position left = new Position(current.getX() - 26, current.getY());
+        Position right = new Position(current.getX() + 26, current.getY());
 
         assertEquals(up, player.getPosition(Position.Direction.UP));
         assertEquals(down, player.getPosition(Position.Direction.DOWN));
