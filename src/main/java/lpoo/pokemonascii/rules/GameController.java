@@ -5,9 +5,12 @@ import lpoo.pokemonascii.gui.BattleView;
 import lpoo.pokemonascii.gui.GameView;
 import lpoo.pokemonascii.gui.WorldView;
 
+import javax.sound.sampled.*;
+
 import org.xml.sax.SAXException;
 
 import javax.xml.parsers.ParserConfigurationException;
+import java.io.File;
 import java.io.IOException;
 
 public class GameController {
@@ -31,6 +34,16 @@ public class GameController {
                 case WORLD:
                     WorldView worldGui = new WorldView(gui.getScreen(), gui.getGraphics(), world);
                     WorldController worldController = new WorldController(worldGui, world);
+
+                    try {
+                        AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File("data\\Music\\music.wav").getAbsoluteFile());
+                        Clip clip = AudioSystem.getClip();
+                        clip.open(audioInputStream);
+                        clip.start();
+                    } catch(Exception ex) {
+                        System.out.println("Error with playing sound.");
+                        ex.printStackTrace();
+                    }
 
                     gamemode = worldController.start();
                     break;

@@ -4,6 +4,9 @@ import lpoo.pokemonascii.gui.GameView;
 import lpoo.pokemonascii.rules.GameController;
 
 import org.xml.sax.SAXException;
+
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
 
