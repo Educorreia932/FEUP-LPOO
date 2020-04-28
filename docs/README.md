@@ -8,7 +8,7 @@ The protagonist is a young boy who goes on a journey to be the very best pokémo
 
  In order to achieve his goal, the player will have to catch pokémon and battle other trainers. Whenever he wins a battle its pokémon gain experience points and when they gather a certain amount of experience, they level up or even evolve.  
 
-This project was developed by [*Eduardo Correia*](https://github.com/educorreia932) (up201806433@fe.up.pt) and [*Ana Inês Barros*](https://github.com/anaines14) (up201806593@fe.up.pt) for LPOO 2019/2020.
+This project was developed by [*Ana Inês Barros*](https://github.com/anaines14) (up201806593@fe.up.pt) and [*Eduardo Correia*](https://github.com/educorreia932) (up201806433@fe.up.pt) for LPOO 2019/2020.
 
 ## Implemented Features
 
@@ -17,7 +17,7 @@ This project was developed by [*Eduardo Correia*](https://github.com/educorreia9
 - **Character Movement** - The player will move with the arrow keys in the desired direction, as well its sprite will change according to the direction he's facing.
 
 <p align="center">
-  <img width=300 src="https://i.imgur.com/XgxEBhc.gif">
+  <img width=350 src="https://i.imgur.com/XgxEBhc.gif">
 </p>
 
 - **Pokémon Appearing in Tall Grass** - When the player walks trough grass, they may encounter a wild pokémon and if so a battle with it will start. 
@@ -27,8 +27,10 @@ This project was developed by [*Eduardo Correia*](https://github.com/educorreia9
 - **Pokémon Types** - These are properties of pokémon and their moves. A pokémon may have up to two types, while a move only has one.
 
 <p align="center">
-  <img width=300 src="https://pokemonhelps13.weebly.com/uploads/4/9/5/5/49555787/4602605_orig.png ">
+  <img width=350 src="https://pokemonhelps13.weebly.com/uploads/4/9/5/5/49555787/4602605_orig.png">
 </p>
+
+**Note:** Fairy type isn't included in our game,  as it wasn't in the original 3<sup>rd</sup> generation pokémon games.
 
 - **Type Effectiveness** - When a pokémon uses a move, the damage it will cause to the adversary pokémon will depend on the move's type and the other pokémon's type(s).   
 A super effective attack will cause 2x the damage, a not very effective will cause 0.5x the damage and a no effect will cause 0x damage.  
@@ -38,14 +40,19 @@ For instance, the Water type is super effective against Fire, so if a Water pok�
 
 - **HP and Experience Bar** - These bars represent, respectively, the total health percentage of a pokémon in-battle and its experience progress from its current level to the next.
 
+<p float="left" align="middle">
+  <img width=350 src="https://i.imgur.com/vuoW9ul.gif">
+  <img width=350 src="https://i.imgur.com/7qoZUqi.gif">
+</p>
+
 - **Battle Options Menu** - While in-battle the player has four options of what to do.  
     - **Fight** - Make the pokémon use move.
     - **Bag** - Use an item from the bag.
     - **Pokémon** - Change that's pokémon currently fighting for another one on the party.
     - **Run** - Try to flee from the battle.
-    
+
 <p align="center">
-  <img width=300 src="https://i.imgur.com/WZK43Ed.gif">
+    <img width=350 src="https://i.imgur.com/WZK43Ed.gif">
 </p>
 
 ## Planned features
@@ -75,7 +82,29 @@ For instance, the Water type is super effective against Fire, so if a Water pok�
 
 ## Design
 
-## Graphics
+### Architectural Pattern
+
+For easier development of the game, we implemented the MVC (Model–View–Controller) design pattern, with the following division.
+- **Model** - Stores all of the data structure of the game and its current state.
+- **View** - Handles the interaction with the user, be it input, by pressing the keyboard's keys, or be it output, by a graphical interface that represents the game.
+- **Controller** - Coordinates and processes all the changes that occur.
+
+<p align="center">
+  <img width=350 src="https://i.imgur.com/d19ics3.png">
+</p>
+
+GameMVC
+WorldMVC
+OptionsMenuMVC
+BattleMVC
+
+### Code Smells and Possible Refactorings
+
+Option - Data class
+
+### Collisions
+
+### Graphics
 
 We initially convert a .png image to text characters, using `img2txt`, a program from [libcaca](http://caca.zoy.org/wiki/libcaca). That program generates a .svg that we parse and then draw using Lanterna.
 
@@ -92,6 +121,7 @@ We initially convert a .png image to text characters, using `img2txt`, a program
 - [Pokémon](https://github.com/r4vi/zipper-demo/blob/master/resources/pokemon.xml), r4v1
 - [Pokémon Moves](https://github.com/veekun/pokedex/blob/master/pokedex/data/csv/moves.csv), veekun
 
-[Player Walking]: https://i.imgur.com/XgxEBhc.gif
-[Pokemon Types]: https://pokemonhelps13.weebly.com/uploads/4/9/5/5/49555787/4602605_orig.png 
-[Battle Options]: https://i.imgur.com/WZK43Ed.gif
+## Self-Evaluation
+
+- Ana Inês Barros: 50%
+- Eduardo Correia: 50%
