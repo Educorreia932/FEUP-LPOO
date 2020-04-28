@@ -8,13 +8,4 @@ public class Tile extends CollidingElement {
         super(x, y, width, height);
     }
 
-    @Override
-    public boolean collides(Position pos, CollidingElement c) {
-        return super.collides(pos, c);
-    }
-
-    @Override
-    public Rect getHitbox() {
-        return super.getHitbox();
-    }
 }

@@ -43,15 +43,15 @@ public class WorldModel {
         return getCollidingElement(position, elements) == null;
     }
 
-    public boolean foundPokemon(){
+    public boolean isPlayerInTile(){
         Position position = player.getPosition();
+        CollidingElement tile = getCollidingElement(position, tiles);
 
-        if (getCollidingElement(position, tiles) != null){
-            Random rand = new Random();
-            return rand.nextInt(19) == 1;
+        if (tile != null){
+            if(tile instanceof PokemonTile)
+                return ((PokemonTile) tile).foundPokemon();
         }
         return false;
-
     }
 
     public CollidingElement getCollidingElement(Position position, List< ? extends CollidingElement> colliders) {

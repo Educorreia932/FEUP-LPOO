@@ -1,6 +1,8 @@
 package lpoo.pokemonascii.data;
 
-public class Grass extends Tile{
+import java.util.Random;
+
+public class Grass extends PokemonTile{
     private State state;
 
     public enum State {

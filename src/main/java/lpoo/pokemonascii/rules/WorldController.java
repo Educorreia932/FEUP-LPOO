@@ -40,7 +40,7 @@ public class WorldController {
     public void movePlayer(Position.Direction direction) {
         if (world.canPlayerMove(direction)){
             world.setPlayerPosition(direction);
-            if (world.foundPokemon())
+            if (world.isPlayerInTile())
                 inBattle = true;
         }
     }
