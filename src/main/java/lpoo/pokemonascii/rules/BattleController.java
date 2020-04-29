@@ -1,7 +1,8 @@
 package lpoo.pokemonascii.rules;
 
 import lpoo.pokemonascii.data.BattleModel;
-import lpoo.pokemonascii.data.Option;
+import lpoo.pokemonascii.data.Position;
+import lpoo.pokemonascii.data.options.Option;
 import lpoo.pokemonascii.data.pokemon.Pokemon;
 import lpoo.pokemonascii.data.pokemon.PokemonMove;
 import lpoo.pokemonascii.gui.BattleView;
@@ -13,6 +14,11 @@ import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
 
 public class BattleController {
+    public enum OptionsMenu {
+        BATTLE,
+        FIGHT
+    }
+
     private BattleView gui;
     private BattleModel battle;
     private OptionsMenuController options;
@@ -24,7 +30,7 @@ public class BattleController {
         this.options = new OptionsMenuController(battle.getOptions());
     }
 
-    public GameController.GameMode start() throws IOException, ParserConfigurationException, SAXException {
+    public GameController.GameMode start() throws IOException {
         while (inBattle) {
             gui.drawBattle();
 
@@ -53,6 +59,18 @@ public class BattleController {
     public void executeOption(Option selectedOption) {
         switch (selectedOption.getName()) {
             case "FIGHT":
+                changeBattleOptions(OptionsMenu.FIGHT);
+
+                try {
+                   battle.setAdversaryPokemon(new Pokemon(1, Pokemon.facingDirection.BACK));
+                }
+
+                catch (IOException | SAXException | ParserConfigurationException e) {
+                    e.printStackTrace();
+                }
+
+                System.out.println(battle.getAdversaryPokemon().getPokedexNumber());
+
                 break;
             case "BAG":
                 break;
@@ -62,5 +80,9 @@ public class BattleController {
                 inBattle = false;
                 break;
         }
+    }
+
+    public void changeBattleOptions(OptionsMenu menu) {
+        battle.setOptions(menu);
     }
 }

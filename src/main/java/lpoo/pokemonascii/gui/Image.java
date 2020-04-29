@@ -13,6 +13,8 @@ import java.io.File;
 import java.io.IOException;
 
 public class Image {
+    private static final String IMAGES_PATH = "images\\";
+
     private int width;
     private int height;
     private String[][] background_colors;
@@ -37,7 +39,7 @@ public class Image {
         Document document = null;
 
         try {
-            document = builder.parse(new File("images\\" + filename + ".svg"));
+            document = builder.parse(new File(IMAGES_PATH + filename + ".svg"));
         }
 
         catch (SAXException | IOException e) {

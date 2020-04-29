@@ -1,8 +1,9 @@
-package lpoo.pokemonascii.gui.renderers;
+package lpoo.pokemonascii.gui.renderers.text;
 
 import com.googlecode.lanterna.graphics.TextGraphics;
 import lpoo.pokemonascii.data.Position;
 import lpoo.pokemonascii.gui.Sprite;
+import lpoo.pokemonascii.gui.renderers.Renderer;
 
 public class CharRenderer extends Renderer {
     private Position position;
@@ -23,5 +24,9 @@ public class CharRenderer extends Renderer {
     @Override
     public void draw(TextGraphics graphics) {
         drawSprite(sprite, position, graphics, true);
+    }
+
+    public int getWidth() {
+        return sprite.getWidth();
     }
 }

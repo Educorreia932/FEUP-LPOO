@@ -6,13 +6,19 @@ import com.googlecode.lanterna.screen.Screen;
 
 import lpoo.pokemonascii.data.BattleModel;
 import lpoo.pokemonascii.data.Position;
+import lpoo.pokemonascii.gui.renderers.menu.BattleMenuRenderer;
+import lpoo.pokemonascii.gui.renderers.menu.OptionsMenuRenderer;
+import lpoo.pokemonascii.gui.renderers.pokemon.PokemonInfoRenderer;
+import lpoo.pokemonascii.gui.renderers.pokemon.PokemonRenderer;
 import lpoo.pokemonascii.rules.commands.ChoseOptionCommand;
 import lpoo.pokemonascii.rules.commands.*;
 import lpoo.pokemonascii.gui.renderers.*;
 import lpoo.pokemonascii.rules.BattleController;
-import org.xml.sax.SAXException;
+import lpoo.pokemonascii.rules.commands.menu.OptionsMenuDownCommand;
+import lpoo.pokemonascii.rules.commands.menu.OptionsMenuLeftCommand;
+import lpoo.pokemonascii.rules.commands.menu.OptionsMenuRightCommand;
+import lpoo.pokemonascii.rules.commands.menu.OptionsMenuUpCommand;
 
-import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
 
 public class BattleView {
@@ -65,26 +71,21 @@ public class BattleView {
         return key;
     }
 
-    public Command getNextCommand(BattleController battle) throws IOException, ParserConfigurationException, SAXException {
+    public Command getNextCommand(BattleController battle) throws IOException {
         KeyStroke pressedKey = getPressedKey(screen);
 
         switch (pressedKey.getKeyType()) {
             case EOF:
                 return new QuitCommand(screen);
             case ArrowUp:
-                battle.getOptions().changeSelectedOption(Position.Direction.UP);
-                break;
+                return new OptionsMenuUpCommand(battle.getOptions());
             case ArrowDown:
-                battle.getOptions().changeSelectedOption(Position.Direction.DOWN);
-                break;
+                return new OptionsMenuDownCommand(battle.getOptions());
             case ArrowLeft:
-                battle.getOptions().changeSelectedOption(Position.Direction.LEFT);
-                break;
+                return new OptionsMenuLeftCommand(battle.getOptions());
             case ArrowRight:
-                battle.getOptions().changeSelectedOption(Position.Direction.RIGHT);
-                break;
+                return new OptionsMenuRightCommand(battle.getOptions());
             case Enter:
-//                return new UsePokemonMoveCommand(battle, new PokemonMove("Tackle"));
                 return new ChoseOptionCommand(battle);
             case Character:
                 switch (pressedKey.getCharacter()) {

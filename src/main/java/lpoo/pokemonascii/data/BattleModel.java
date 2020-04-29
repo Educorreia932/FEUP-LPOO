@@ -1,12 +1,14 @@
 package lpoo.pokemonascii.data;
 
+import lpoo.pokemonascii.data.options.BattleOptionsModel;
+import lpoo.pokemonascii.data.options.FightOptionsModel;
+import lpoo.pokemonascii.data.options.OptionsMenuModel;
 import lpoo.pokemonascii.data.pokemon.Pokemon;
+import lpoo.pokemonascii.rules.BattleController;
 import org.xml.sax.SAXException;
 
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
 public class BattleModel {
     private Pokemon trainerPokemon;
@@ -17,12 +19,7 @@ public class BattleModel {
         trainerPokemon = new Pokemon(trainer_pokemon_number, Pokemon.facingDirection.BACK);
         adversaryPokemon = new Pokemon(trainer_pokemon_number, Pokemon.facingDirection.FRONT);
 
-        List<Option> optionList = new ArrayList<>();
-        optionList.add(new Option("FIGHT"));
-        optionList.add(new Option("BAG"));
-        optionList.add(new Option("POKEMON"));
-        optionList.add(new Option("RUN"));
-        options = new OptionsMenuModel(optionList);
+        options = new BattleOptionsModel();
     }
 
     public Pokemon getTrainerPokemon() {
@@ -35,5 +32,17 @@ public class BattleModel {
 
     public OptionsMenuModel getOptions() {
         return options;
+    }
+
+    public void setOptions(BattleController.OptionsMenu menu) {
+        switch (menu) {
+            case FIGHT:
+                options = new FightOptionsModel(trainerPokemon);
+                break;
+        }
+    }
+
+    public void setAdversaryPokemon(Pokemon pokemon) {
+        adversaryPokemon = pokemon;
     }
 }

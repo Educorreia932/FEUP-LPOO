@@ -1,4 +1,4 @@
-package lpoo.pokemonascii.data;
+package lpoo.pokemonascii.data.options;
 
 public class Option {
     enum BattleOptions {

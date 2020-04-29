@@ -1,4 +1,4 @@
-package lpoo.pokemonascii.gui.renderers;
+package lpoo.pokemonascii.gui.renderers.bar;
 
 import com.googlecode.lanterna.graphics.TextGraphics;
 import lpoo.pokemonascii.data.pokemon.Pokemon;
@@ -17,7 +17,7 @@ public class HealthBarRenderer extends BarRenderer {
 
     private Pokemon pokemon;
 
-    HealthBarRenderer(int x, int y, Pokemon pokemon) {
+    public HealthBarRenderer(int x, int y, Pokemon pokemon) {
         super(x, y);
         this.pokemon = pokemon;
         barWidth = 80;

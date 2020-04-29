@@ -41,3 +41,7 @@ build/test-results/test/TEST-lpoo.pokemonascii.PokemonTypeTest.xml
 build/test-results/test/TEST-lpoo.pokemonascii.PokemonSpeciesTest.xml
 
 build/test-results/test/TEST-lpoo.pokemonascii.PokemonMoveTest.xml
+
+build/test-results/test/TEST-lpoo.pokemonascii.PlayerTest.xml
+
+build/test-results/test/TEST-lpoo.pokemonascii.CollisionTest.xml

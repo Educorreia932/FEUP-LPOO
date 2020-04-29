@@ -1,19 +1,27 @@
-package lpoo.pokemonascii.gui.renderers;
+package lpoo.pokemonascii.gui.renderers.menu;
 
 import com.googlecode.lanterna.graphics.TextGraphics;
-import lpoo.pokemonascii.data.Option;
-import lpoo.pokemonascii.data.OptionsMenuModel;
+import lpoo.pokemonascii.data.Position;
+import lpoo.pokemonascii.data.options.BattleOptionsModel;
+import lpoo.pokemonascii.data.options.FightOptionsModel;
+import lpoo.pokemonascii.data.options.Option;
+import lpoo.pokemonascii.data.options.OptionsMenuModel;
 import lpoo.pokemonascii.gui.Sprite;
+import lpoo.pokemonascii.gui.renderers.Renderer;
+import lpoo.pokemonascii.gui.renderers.text.TextRenderer;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class OptionsMenuRenderer extends Renderer {
-    OptionsMenuModel options;
-    List<TextRenderer> optionsNames;
     private final int X_DISPLACEMENT = 100;
     private final int Y_DISPLACEMENT = 20;
-    Sprite arrow = new Sprite("selectionArrow");
+
+    private Position position;
+    private OptionsMenuModel options;
+    private List<TextRenderer> optionsNames;
+    private Sprite background;
+    private Sprite arrow = new Sprite("selectionArrow");
 
     public OptionsMenuRenderer(OptionsMenuModel options) {
         this.options = options;
@@ -33,10 +41,22 @@ public class OptionsMenuRenderer extends Renderer {
                 yOffset += Y_DISPLACEMENT;
             }
         }
+
+        if (options instanceof BattleOptionsModel) {
+            position = new Position(200, 112);
+            background = new Sprite("battle_options");
+        }
+
+        else if (options instanceof FightOptionsModel) {
+            position = new Position(0, 112);
+            background = new Sprite("fight_options");
+        }
     }
 
     @Override
     public void draw(TextGraphics graphics) {
+        drawSprite(background, position, graphics, false);
+
         for (int i = 0; i < optionsNames.size(); i++) {
             TextRenderer optionName = optionsNames.get(i);
 

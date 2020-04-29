@@ -61,4 +61,8 @@ public class PokemonMove {
     public int getPower() {
         return power;
     }
+
+    public String getName() {
+        return name;
+    }
 }

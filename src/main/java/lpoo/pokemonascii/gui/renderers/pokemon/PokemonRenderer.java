@@ -1,10 +1,10 @@
-package lpoo.pokemonascii.gui.renderers;
+package lpoo.pokemonascii.gui.renderers.pokemon;
 
-import com.googlecode.lanterna.TextColor;
 import com.googlecode.lanterna.graphics.TextGraphics;
 import lpoo.pokemonascii.data.pokemon.Pokemon;
 import lpoo.pokemonascii.gui.Image;
 import lpoo.pokemonascii.gui.Sprite;
+import lpoo.pokemonascii.gui.renderers.Renderer;
 
 import java.util.ArrayList;
 import java.util.List;
