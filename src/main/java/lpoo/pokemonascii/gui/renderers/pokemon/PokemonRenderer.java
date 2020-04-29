@@ -9,8 +9,11 @@ import lpoo.pokemonascii.gui.renderers.Renderer;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PokemonRenderer extends Renderer {
+import static lpoo.pokemonascii.gui.Sprite.drawSprite;
+
+public class PokemonRenderer implements Renderer {
     private Pokemon pokemon;
+    private Sprite sprite;
 
     public PokemonRenderer(Pokemon pokemon) {
         this.pokemon = pokemon;

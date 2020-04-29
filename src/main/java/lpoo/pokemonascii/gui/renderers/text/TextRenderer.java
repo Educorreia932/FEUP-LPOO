@@ -7,7 +7,7 @@ import lpoo.pokemonascii.gui.renderers.Renderer;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TextRenderer extends Renderer {
+public class TextRenderer implements Renderer {
     List<CharRenderer> chars;
     private Position position;
 

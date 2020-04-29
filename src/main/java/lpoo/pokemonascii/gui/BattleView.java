@@ -5,9 +5,8 @@ import com.googlecode.lanterna.input.KeyStroke;
 import com.googlecode.lanterna.screen.Screen;
 
 import lpoo.pokemonascii.data.BattleModel;
-import lpoo.pokemonascii.data.Position;
 import lpoo.pokemonascii.gui.renderers.menu.BattleMenuRenderer;
-import lpoo.pokemonascii.gui.renderers.menu.OptionsMenuRenderer;
+import lpoo.pokemonascii.gui.renderers.menu.BattleOptionsRenderer;
 import lpoo.pokemonascii.gui.renderers.pokemon.PokemonInfoRenderer;
 import lpoo.pokemonascii.gui.renderers.pokemon.PokemonRenderer;
 import lpoo.pokemonascii.rules.commands.ChoseOptionCommand;
@@ -24,28 +23,27 @@ import java.io.IOException;
 public class BattleView {
     private Screen screen;
     private TextGraphics graphics;
+    private BattleModel battle;
     private BackgroundRenderer background;
     private PokemonRenderer trainerPokemon;
     private PokemonRenderer adversaryPokemon;
     private BattleMenuRenderer battleMenu;
     private PokemonInfoRenderer trainerPokemonInfo;
     private PokemonInfoRenderer adversaryPokemonInfo;
-    private OptionsMenuRenderer optionsMenuRenderer;
 
     public BattleView(Screen screen, TextGraphics graphics, BattleModel battle) {
         this.screen = screen;
         this.graphics = graphics;
+        this.battle = battle;
 
         background = new BackgroundRenderer("battle_background");
-        battleMenu = new BattleMenuRenderer();
+        battleMenu = new BattleMenuRenderer(battle.getOptions());
 
         trainerPokemon = new PokemonRenderer(battle.getTrainerPokemon());
         adversaryPokemon = new PokemonRenderer(battle.getAdversaryPokemon());
 
         trainerPokemonInfo = new PokemonInfoRenderer(battle.getTrainerPokemon());
         adversaryPokemonInfo = new PokemonInfoRenderer(battle.getAdversaryPokemon());
-
-        optionsMenuRenderer = new OptionsMenuRenderer(battle.getOptions());
     }
 
     public void drawBattle() throws IOException {
@@ -59,8 +57,6 @@ public class BattleView {
 
         trainerPokemonInfo.draw(graphics);
         adversaryPokemonInfo.draw(graphics);
-
-        optionsMenuRenderer.draw(graphics);
 
         screen.refresh();
     }
@@ -95,5 +91,9 @@ public class BattleView {
         }
 
         return new DoNothingCommand();
+    }
+
+    public void setOptionsMenu(BattleController.OptionsMenu optionsMenu) {
+        battleMenu.setOptionsMenu(optionsMenu, battle);
     }
 }

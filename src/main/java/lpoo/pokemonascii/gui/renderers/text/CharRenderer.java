@@ -5,8 +5,11 @@ import lpoo.pokemonascii.data.Position;
 import lpoo.pokemonascii.gui.Sprite;
 import lpoo.pokemonascii.gui.renderers.Renderer;
 
-public class CharRenderer extends Renderer {
+import static lpoo.pokemonascii.gui.Sprite.drawSprite;
+
+public class CharRenderer implements Renderer {
     private Position position;
+    private Sprite sprite;
 
     public CharRenderer(char c, Position position) {
         this.position = position;
@@ -19,6 +22,9 @@ public class CharRenderer extends Renderer {
 
         else if (Character.isDigit(c))
             sprite = new Sprite("font\\numbers\\" + c);
+
+        else if (!Character.isAlphabetic(c))
+            sprite = new Sprite("font\\symbols\\" + c);
     }
 
     @Override

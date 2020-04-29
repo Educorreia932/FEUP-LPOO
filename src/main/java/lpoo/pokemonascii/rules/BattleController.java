@@ -1,16 +1,13 @@
 package lpoo.pokemonascii.rules;
 
 import lpoo.pokemonascii.data.BattleModel;
-import lpoo.pokemonascii.data.Position;
 import lpoo.pokemonascii.data.options.Option;
 import lpoo.pokemonascii.data.pokemon.Pokemon;
 import lpoo.pokemonascii.data.pokemon.PokemonMove;
 import lpoo.pokemonascii.gui.BattleView;
 import lpoo.pokemonascii.rules.commands.Command;
 import lpoo.pokemonascii.rules.commands.QuitCommand;
-import org.xml.sax.SAXException;
 
-import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
 
 public class BattleController {
@@ -59,18 +56,7 @@ public class BattleController {
     public void executeOption(Option selectedOption) {
         switch (selectedOption.getName()) {
             case "FIGHT":
-                changeBattleOptions(OptionsMenu.FIGHT);
-
-                try {
-                   battle.setAdversaryPokemon(new Pokemon(1, Pokemon.facingDirection.BACK));
-                }
-
-                catch (IOException | SAXException | ParserConfigurationException e) {
-                    e.printStackTrace();
-                }
-
-                System.out.println(battle.getAdversaryPokemon().getPokedexNumber());
-
+                gui.setOptionsMenu(OptionsMenu.FIGHT);
                 break;
             case "BAG":
                 break;
@@ -82,7 +68,4 @@ public class BattleController {
         }
     }
 
-    public void changeBattleOptions(OptionsMenu menu) {
-        battle.setOptions(menu);
-    }
 }
