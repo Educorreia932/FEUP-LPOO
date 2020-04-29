@@ -29,7 +29,7 @@ public class PokemonMove {
         // Load the input XML document, parse it and return an instance of the Document class.
         Document document;
 
-        document = builder.parse(new File("data\\moves\\" + name + ".xml"));
+        document = builder.parse(new File("lpoo.pokemonascii.data\\moves\\" + name + ".xml"));
 
         NodeList nodeList = document.getChildNodes();
 

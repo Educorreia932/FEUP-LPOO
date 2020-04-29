@@ -85,7 +85,7 @@ For instance, the Water type is super effective against Fire, so if a Water pok�
 ### Architectural Pattern
 
 For easier development of the game, we implemented the MVC (Model–View–Controller) design pattern, with the following division.
-- **Model** - Stores all of the data structure of the game and its current state.
+- **Model** - Stores all of the lpoo.pokemonascii.data structure of the game and its current state.
 - **View** - Handles the interaction with the user, be it input, by pressing the keyboard's keys, or be it output, by a graphical interface that represents the game.
 - **Controller** - Coordinates and processes all the changes that occur.
 
@@ -119,7 +119,7 @@ We initially convert a .png image to text characters, using `img2txt`, a program
 ### Data Files
 
 - [Pokémon](https://github.com/r4vi/zipper-demo/blob/master/resources/pokemon.xml), r4v1
-- [Pokémon Moves](https://github.com/veekun/pokedex/blob/master/pokedex/data/csv/moves.csv), veekun
+- [Pokémon Moves](https://github.com/veekun/pokedex/blob/master/pokedex/lpoo.pokemonascii.data/csv/moves.csv), veekun
 
 ## Self-Evaluation
 

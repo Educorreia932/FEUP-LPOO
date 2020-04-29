@@ -1,9 +1,9 @@
 /*
 package lpoo.pokemonascii;
 
-import lpoo.pokemonascii.data.Position;
-import lpoo.pokemonascii.data.WorldModel;
-import lpoo.pokemonascii.rules.commands.*;
+import lpoo.pokemonascii.lpoo.pokemonascii.data.Position;
+import lpoo.pokemonascii.lpoo.pokemonascii.data.WorldModel;
+import lpoo.pokemonascii.lpoo.pokemonascii.rules.commands.*;
 import org.junit.Before;
 import org.junit.Test;
 
