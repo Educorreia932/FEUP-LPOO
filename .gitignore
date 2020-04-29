@@ -39,6 +39,11 @@ build/reports/tests/test/js/
 build/test-results/test/TEST-lpoo.pokemonascii.PokemonTypeTest.xml
 
 build/test-results/test/TEST-lpoo.pokemonascii.PokemonSpeciesTest.xml
+gradlew
+
+gradlew.bat
+
+gradle/wrapper/gradle-wrapper.properties
 
 build/test-results/test/TEST-lpoo.pokemonascii.PokemonMoveTest.xml
 

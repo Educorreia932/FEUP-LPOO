@@ -3,10 +3,8 @@ plugins {
     id 'application'
 }
 
-group 'com.educorreia932'
+group 'lpoo'
 version '1.0-SNAPSHOT'
-
-sourceCompatibility = 1.8
 
 repositories {
     mavenCentral()

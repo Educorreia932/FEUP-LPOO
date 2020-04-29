@@ -2,10 +2,7 @@ package lpoo.pokemonascii.data;
 
 import lpoo.pokemonascii.data.elements.CollidingElement;
 import lpoo.pokemonascii.data.pokemon.Pokemon;
-import sun.jvm.hotspot.tools.soql.SOQL;
 
-import javax.net.ssl.SSLContext;
-import javax.swing.plaf.synth.SynthOptionPaneUI;
 import java.util.List;
 
 public class Player extends CollidingElement {

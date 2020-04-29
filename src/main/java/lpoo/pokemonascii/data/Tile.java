@@ -1,6 +1,5 @@
 package lpoo.pokemonascii.data;
 
-import javafx.geometry.Pos;
 import lpoo.pokemonascii.data.elements.CollidingElement;
 
 public class Tile extends CollidingElement {
