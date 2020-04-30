@@ -18,4 +18,8 @@ public class OptionsMenuController {
     public Option getSelectedOption() {
         return options.getOptions().get(options.getSelectedOption());
     }
+
+    public void setOptions(OptionsMenuModel options) {
+        this.options = options;
+    }
 }

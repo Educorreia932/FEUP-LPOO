@@ -83,6 +83,8 @@ public class BattleView {
                 return new OptionsMenuRightCommand(battle.getOptions());
             case Enter:
                 return new ChoseOptionCommand(battle);
+            case Escape:
+                return new DoNothingCommand(); // TODO: Go back command
             case Character:
                 switch (pressedKey.getCharacter()) {
                     case 'q':

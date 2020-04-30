@@ -37,6 +37,10 @@ public class BattleModel {
         return options;
     }
 
+    public void setOptions(OptionsMenuModel options) {
+        this.options = options;
+    }
+
     public void setAdversaryPokemon(Pokemon pokemon) {
         adversaryPokemon = pokemon;
     }

@@ -11,17 +11,19 @@ public class FightOptionsModel extends OptionsMenuModel {
         super(createOptionList(pokemon.getMoves()));
     }
 
-    private static List<Option> createOptionList(List<PokemonMove> pokemonMoves) {
-        List<Option> optionList = new ArrayList<>();
+    private static List<Option> createOptionList(List<PokemonMove> moves) {
+        List<Option> options = new ArrayList<>();
 
-        for (PokemonMove move : pokemonMoves) {
-            if (move != null)
-                optionList.add(new Option(move.getName().toUpperCase()));
+        for (int i = 0; i < 4; i++) {
+            try {
+                options.add(new Option(moves.get(i).getName().toUpperCase()));
+            }
 
-            else
-                optionList.add(new Option("A")); // TODO: Add - to font
+            catch (IndexOutOfBoundsException e) {
+                options.add(new Option("-"));
+            }
         }
 
-        return optionList;
+        return options;
     }
 }

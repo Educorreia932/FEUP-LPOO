@@ -1,6 +1,7 @@
 package lpoo.pokemonascii.rules;
 
 import lpoo.pokemonascii.data.BattleModel;
+import lpoo.pokemonascii.data.options.FightOptionsModel;
 import lpoo.pokemonascii.data.options.Option;
 import lpoo.pokemonascii.data.pokemon.Pokemon;
 import lpoo.pokemonascii.data.pokemon.PokemonMove;
@@ -56,6 +57,8 @@ public class BattleController {
     public void executeOption(Option selectedOption) {
         switch (selectedOption.getName()) {
             case "FIGHT":
+                battle.setOptions(new FightOptionsModel(battle.getTrainerPokemon()));
+                options.setOptions(battle.getOptions());
                 gui.setOptionsMenu(OptionsMenu.FIGHT);
                 break;
             case "BAG":

@@ -29,7 +29,7 @@ public class BattleMenuRenderer implements Renderer {
     public void setOptionsMenu(BattleController.OptionsMenu optionsMenu, BattleModel battle) {
         switch (optionsMenu) {
             case FIGHT:
-                options = new FightOptionsRenderer(battle.getTrainerPokemon().getMoves());
+                options = new FightOptionsRenderer(battle.getOptions());
         }
     }
 }
