@@ -1,6 +1,7 @@
 package lpoo.pokemonascii.rules;
 
 import lpoo.pokemonascii.data.BattleModel;
+import lpoo.pokemonascii.data.options.BattleOptionsModel;
 import lpoo.pokemonascii.data.options.FightOptionsModel;
 import lpoo.pokemonascii.data.options.Option;
 import lpoo.pokemonascii.data.pokemon.Pokemon;
@@ -59,7 +60,7 @@ public class BattleController {
             case "FIGHT":
                 battle.setOptions(new FightOptionsModel(battle.getTrainerPokemon()));
                 options.setOptions(battle.getOptions());
-                gui.setOptionsMenu(OptionsMenu.FIGHT);
+                gui.setOptionsMenuRenderer(OptionsMenu.FIGHT);
                 break;
             case "BAG":
                 break;
@@ -71,4 +72,10 @@ public class BattleController {
         }
     }
 
+    // TODO: Only working for going back
+    public void setOptionsMenu() {
+        battle.setOptions(new BattleOptionsModel());
+        options.setOptions(battle.getOptions());
+        gui.setOptionsMenuRenderer(BattleController.OptionsMenu.BATTLE);
+    }
 }

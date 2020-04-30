@@ -6,17 +6,13 @@ import com.googlecode.lanterna.screen.Screen;
 
 import lpoo.pokemonascii.data.BattleModel;
 import lpoo.pokemonascii.gui.renderers.menu.BattleMenuRenderer;
-import lpoo.pokemonascii.gui.renderers.menu.BattleOptionsRenderer;
 import lpoo.pokemonascii.gui.renderers.pokemon.PokemonInfoRenderer;
 import lpoo.pokemonascii.gui.renderers.pokemon.PokemonRenderer;
 import lpoo.pokemonascii.rules.commands.ChoseOptionCommand;
 import lpoo.pokemonascii.rules.commands.*;
 import lpoo.pokemonascii.gui.renderers.*;
 import lpoo.pokemonascii.rules.BattleController;
-import lpoo.pokemonascii.rules.commands.menu.OptionsMenuDownCommand;
-import lpoo.pokemonascii.rules.commands.menu.OptionsMenuLeftCommand;
-import lpoo.pokemonascii.rules.commands.menu.OptionsMenuRightCommand;
-import lpoo.pokemonascii.rules.commands.menu.OptionsMenuUpCommand;
+import lpoo.pokemonascii.rules.commands.menu.*;
 
 import java.io.IOException;
 
@@ -84,7 +80,7 @@ public class BattleView {
             case Enter:
                 return new ChoseOptionCommand(battle);
             case Escape:
-                return new DoNothingCommand(); // TODO: Go back command
+                return new OptionsMenuGoBackCommand(battle);
             case Character:
                 switch (pressedKey.getCharacter()) {
                     case 'q':
@@ -95,7 +91,7 @@ public class BattleView {
         return new DoNothingCommand();
     }
 
-    public void setOptionsMenu(BattleController.OptionsMenu optionsMenu) {
-        battleMenu.setOptionsMenu(optionsMenu, battle);
+    public void setOptionsMenuRenderer(BattleController.OptionsMenu optionsMenu) {
+        battleMenu.setOptionsMenuRenderer(optionsMenu, battle);
     }
 }
