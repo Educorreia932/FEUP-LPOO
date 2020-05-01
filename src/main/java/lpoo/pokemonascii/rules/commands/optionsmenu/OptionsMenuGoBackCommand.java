@@ -1,4 +1,4 @@
-package lpoo.pokemonascii.rules.commands.menu;
+package lpoo.pokemonascii.rules.commands.optionsmenu;
 
 import lpoo.pokemonascii.rules.BattleController;
 import lpoo.pokemonascii.rules.commands.Command;

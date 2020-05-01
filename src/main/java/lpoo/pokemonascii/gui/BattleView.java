@@ -12,7 +12,7 @@ import lpoo.pokemonascii.rules.commands.ChoseOptionCommand;
 import lpoo.pokemonascii.rules.commands.*;
 import lpoo.pokemonascii.gui.renderers.*;
 import lpoo.pokemonascii.rules.BattleController;
-import lpoo.pokemonascii.rules.commands.menu.*;
+import lpoo.pokemonascii.rules.commands.optionsmenu.*;
 
 import java.io.IOException;
 

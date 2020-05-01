@@ -13,14 +13,14 @@ import java.util.List;
 
 import static lpoo.pokemonascii.gui.Sprite.drawSprite;
 
-public abstract class OptionsRenderer implements Renderer {
+public abstract class OptionsMenuRenderer implements Renderer {
     protected Position position;
     private OptionsMenuModel options;
     protected List<TextRenderer> optionsNames;
     protected Sprite background;
     private Sprite arrow = new Sprite("selectionArrow");
 
-    public OptionsRenderer(OptionsMenuModel options, int x, int y, int xDisplacement, int yDisplacement) {
+    public OptionsMenuRenderer(OptionsMenuModel options, int x, int y, int xDisplacement, int yDisplacement) {
         this.options = options;
         optionsNames = new ArrayList<>();
         int xOffset = 0;

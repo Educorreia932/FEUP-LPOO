@@ -1,64 +1,103 @@
 @startuml Pokemon
 
 package data {
-    class BattleModel
-    class WorldModel
+    package elements {
+        class Element
+        class CollidingElement
+    }
 
-    class Obstacle
-    class Player 
-    class Position
-    class Rect
-    class Element
-    class CollidingElement
+    package options {
+        class BattleOptionsModel
+        class FightOptionsModel
+        class Option
+        class OptionsMenuModel
+    }
 
     package pokemon {
-        class Pokemon
-        class PokemonStats
-        class PokemonSpecies
-        class PokemonType
-        class PokemonMove
-        abstract class PokemonExperience
-    }
+            class Pokemon
+            abstract class PokemonExperience
+            class PokemonMove
+            class PokemonSpecies
+            class PokemonStats
+            class PokemonType
+        }
+
+    class BattleModel
+    class Grass
+    class Obstacle
+    class Player
+    class PokemonTile
+    class Position
+    class Rect
+    class Tile
+    class WorldModel
 }
 
 package gui { 
-    package commands {
-        interface Command {
-            execute
+    package renderers {
+        package bar {
+            abstract class BarRenderer
+            class ExperienceBarRenderer
+            class HealthBarRenderer
         }
 
-        class DoNothingCommand
-        class PlayerMoveDownCommand
-        class PlayerMoveLeftCommand
-        class PlayerMoveRightCommand
-        class PlayerMoveUpCommand
-        class UsePokemonMoveCommand
-    }
+        package menu {
+            class BattleMenuRenderer
+            class BattleOptionsMenuRenderer
+            class FightOptionsMenuRenderer
+            abstract class OptionsMenuRenderer
+}
 
-    package Renderers {
+        package "pokemon " {
+            class PokemonRenderer
+            class PokemonInfoRenderer
+        }
+
+        package text {
+            class CharRenderer
+            class TextRenderer
+        }
+
         class BackgroundRenderer
-        abstract class BarRenderer
-        class BattleMenuRenderer
-        class CharRenderer
-        class ExperienceBarRenderer
-        class HealthBarRenderer
         class PlayerRenderer
-        class PokemonRenderer
-        class PokemonInfoRenderer
-        abstract class Renderer
-        class TextRenderer
+
+        interface Renderer
     }
 
-    class Image
-    class Sprite
     class BattleView
-    class WorldView
     class GameView
+    class Sprite
+    class Image
+    class WorldView
 }
 
 package rules {
+    package commands {
+        package optionsmenu {
+            class OptionsMenuDownCommand
+            class OptionsMenuGoBackCommand
+            class OptionsMenuLeftCommand
+            class OptionsMenuRightCommand
+            class OptionsMenuUpCommand
+        }
+
+        package player {
+            class PlayerMoveDownCommand
+            class PlayerMoveLeftCommand
+            class PlayerMoveRightCommand
+            class PlayerMoveUpCommand
+        }
+
+        class ChoseOptionCommand
+        interface Command
+        class DoNothingCommand
+        class QuitCommand
+        class UsePokemonMoveCommand
+    }
+
     class BattleController
     class GameController
+    class OptionsMenuController
     class WorldController
 }
 
@@ -69,10 +108,22 @@ Game *-- GameController
 
 GameController *-- GameView
 
-BattleController *-- BattleView   
-BattleController *-- BattleModel  
+BattleModel *-- Pokemon
+BattleModel *-- OptionsMenuModel
+
+BattleController *-- BattleView
+BattleController *-- BattleModel
+BattleController *-- OptionsMenuController
+
+BattleView *-- BattleModel
+BattleView *-- BackgroundRenderer
+BattleView *-- PokemonRenderer
+BattleView *-- PokemonInfoRenderer
+BattleView *-- BattleMenuRenderer
 
 WorldModel *-- Player
+WorldModel *-- CollidingElement
+WorldModel *-- Tile
 
 WorldController *-- WorldView   
 WorldController *-- WorldModel  
@@ -98,33 +149,66 @@ PokemonMove *-- PokemonType
 
 PokemonSpecies *-- PokemonType
 
+OptionsMenuModel *-- Option
+OptionsMenuModel <|-- BattleOptionsModel
+OptionsMenuModel <|-- FightOptionsModel
+
 Command <|-- DoNothingCommand
 Command <|-- PlayerMoveDownCommand
 Command <|-- PlayerMoveLeftCommand
 Command <|-- PlayerMoveRightCommand
 Command <|-- PlayerMoveUpCommand
 Command <|-- UsePokemonMoveCommand
+Command <|--  OptionsMenuDownCommand
+Command <|--  OptionsMenuGoBackCommand
+Command <|--  OptionsMenuLeftCommand
+Command <|--  OptionsMenuRightCommand
+Command <|--  OptionsMenuUpCommand
+Command <|--  QuitCommand
 
 Sprite *-- Image
 
+Renderer <|-- BarRenderer
+Renderer <|-- BackgroundRenderer
+Renderer <|-- BattleMenuRenderer
+Renderer <|-- OptionsMenuRenderer
 Renderer <|-- PlayerRenderer
-Renderer *-- Sprite
+Renderer <|-- PokemonInfoRenderer
+Renderer <|-- PokemonRenderer
+Renderer <|-- CharRenderer
+Renderer <|-- TextRenderer
+Renderer <|-- TileRenderer
 
-PlayerRenderer *-- Player
-
-PokemonRenderer *-- Pokemon
-
+BarRenderer *-- Position
+BarRenderer *-- Sprite
 BarRenderer <|-- ExperienceBarRenderer
 BarRenderer <|-- HealthBarRenderer
 
+BackgroundRenderer *-- Sprite
+BackgroundRenderer <|-- BattleOptionsMenuRenderer
+BackgroundRenderer <|-- FightOptionsMenuRenderer
+
+BattleMenuRenderer *-- Sprite
+BattleMenuRenderer *-- OptionsMenuRenderer
+
+PlayerRenderer *-- Sprite
+PlayerRenderer *-- Player
+
+PokemonInfoRenderer *-- Position
+PokemonInfoRenderer *-- Sprite
 PokemonInfoRenderer *-- TextRenderer
 PokemonInfoRenderer *-- ExperienceBarRenderer
 PokemonInfoRenderer *-- HealthBarRenderer
 
+PokemonRenderer *-- Pokemon
+PokemonRenderer *-- Sprite
+
+CharRenderer *-- Position
+CharRenderer *-- Sprite
+
 TextRenderer *-- CharRenderer
 
-BattleView *-- BackgroundRenderer
-BattleView *-- PokemonRenderer
-BattleView *-- BattleMenuRenderer
+TileRenderer *-- Tile
+TileRenderer *-- Sprite
 
 @enduml

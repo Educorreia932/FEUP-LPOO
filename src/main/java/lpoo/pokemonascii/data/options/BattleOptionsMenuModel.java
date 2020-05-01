@@ -3,8 +3,8 @@ package lpoo.pokemonascii.data.options;
 import java.util.ArrayList;
 import java.util.List;
 
-public class BattleOptionsModel extends OptionsMenuModel {
-    public BattleOptionsModel() {
+public class BattleOptionsMenuModel extends OptionsMenuModel {
+    public BattleOptionsMenuModel() {
         super(createOptionList());
     }
 

@@ -12,7 +12,7 @@ import static lpoo.pokemonascii.gui.Sprite.drawSprite;
 
 public class BattleMenuRenderer implements Renderer {
     private Sprite sprite;
-    private OptionsRenderer options;
+    private OptionsMenuRenderer options;
 
     public BattleMenuRenderer(OptionsMenuModel options) {
         this.sprite = new Sprite("battle_menu");

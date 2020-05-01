@@ -6,7 +6,7 @@ import lpoo.pokemonascii.data.options.OptionsMenuModel;
 import lpoo.pokemonascii.gui.Sprite;
 
 
-public class FightOptionsRenderer extends OptionsRenderer {
+public class FightOptionsRenderer extends OptionsMenuRenderer {
     public FightOptionsRenderer(OptionsMenuModel options) {
         super(options, 30, 123, 115, 18);
 

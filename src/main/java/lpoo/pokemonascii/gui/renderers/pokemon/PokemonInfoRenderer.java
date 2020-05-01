@@ -12,8 +12,8 @@ import lpoo.pokemonascii.gui.renderers.text.TextRenderer;
 import static lpoo.pokemonascii.gui.Sprite.drawSprite;
 
 public class PokemonInfoRenderer implements Renderer {
-    private Sprite sprite;
     private Position position;
+    private Sprite sprite;
     private TextRenderer pokemonName;
     private TextRenderer pokemonLevel;
     private ExperienceBarRenderer experience;

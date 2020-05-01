@@ -79,34 +79,57 @@ For instance, the Water type is super effective against Fire, so if a Water pok�
 
 - **Save the progress**
 - **Create profiles**  
+- **Create NPCs**
 
-## Design
-
-### Architectural Pattern
+## Architectural Pattern
 
 For easier development of the game, we implemented the MVC (Model–View–Controller) design pattern, with the following division.
-- **Model** - Stores all of the lpoo.pokemonascii.data structure of the game and its current state.
-- **View** - Handles the interaction with the user, be it input, by pressing the keyboard's keys, or be it output, by a graphical interface that represents the game.
-- **Controller** - Coordinates and processes all the changes that occur.
+- **Model (data)** - Stores all of the lpoo.pokemonascii.data structure of the game and its current state.
+- **View (gui)** - Handles the interaction with the user, be it input, by pressing the keyboard's keys, or be it output, by a graphical interface that represents the game.
+- **Controller (rules)** - Coordinates and processes all the changes that occur.
 
 <p align="center">
   <img width=350 src="https://i.imgur.com/d19ics3.png">
 </p>
 
-GameMVC
-WorldMVC
-OptionsMenuMVC
-BattleMVC
+Our game currently has the MVC implemented in the following modules:
+
+#### Game
+
+Different states of the game, world and battle
+
+#### World 
+
+Player walks around the world
+
+#### Battle
+
+Two pokémon battle each other
+
+#### Options Menu
+
+For menus where the user has choose some option
+
+## Design
+
+### Collisions
+
+###
+
+### Graphics
+
+Due to the fact that pokémon games from Gameboy Advances graphics are colorful and complex, we had to adapt them to meet Lanterna's limitations. 
+The war we did this was to initially convert a `.png` image to text, using `img2txt`, a program from [libcaca](http://caca.zoy.org/wiki/libcaca). That program generates a `.svg` that we parse and then draw using Lanterna.
+We store the parsed image content (such as colors and text characters) in a class `Image` and then we have a class `Sprite`that can store multiple `Images`, each one corresponding to a certain state of what the `Sprite` represents, for instance, the `Player` `Sprite` will have an image for each facing direction.  
+For each game element we have a `Renderer` that is responsible for drawing it in the screen.
+
+TODO: UML image
 
 ### Code Smells and Possible Refactorings
 
 Option - Data class
 
 ### Collisions
-
-### Graphics
-
-We initially convert a .png image to text characters, using `img2txt`, a program from [libcaca](http://caca.zoy.org/wiki/libcaca). That program generates a .svg that we parse and then draw using Lanterna.
 
 ## Game Resources
 

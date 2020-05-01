@@ -6,8 +6,8 @@ import lpoo.pokemonascii.data.pokemon.PokemonMove;
 import java.util.ArrayList;
 import java.util.List;
 
-public class FightOptionsModel extends OptionsMenuModel {
-    public FightOptionsModel(Pokemon pokemon) {
+public class FightOptionsMenuModel extends OptionsMenuModel {
+    public FightOptionsMenuModel(Pokemon pokemon) {
         super(createOptionList(pokemon.getMoves()));
     }
 

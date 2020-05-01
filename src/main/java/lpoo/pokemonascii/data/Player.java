@@ -6,7 +6,6 @@ import lpoo.pokemonascii.data.pokemon.Pokemon;
 import java.util.List;
 
 public class Player extends CollidingElement {
-    private String name;
     private List<Pokemon> pokemons;
     private State state;
 
