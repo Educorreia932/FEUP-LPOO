@@ -10,6 +10,35 @@ The protagonist is a young boy who goes on a journey to be the very best pokémo
 
 This project was developed by [*Ana Inês Barros*](https://github.com/anaines14) (up201806593@fe.up.pt) and [*Eduardo Correia*](https://github.com/educorreia932) (up201806433@fe.up.pt) for LPOO 2019/2020.
 
+## Table of Contents
+
+* [Implemented Features](#implemented-features)
+    + [Player](#player)
+    + [Pokémon](#pok-mon)
+    + [Battle](#battle)
+* [Planned features](#planned-features)
+    + [Player](#player-1)
+    + [Pokémon](#pok-mon-1)
+    + [Battle](#battle-1)
+    + [Other](#other)
+* [Architectural Pattern](#architectural-pattern)
+    - [Game](#game)
+    - [World](#world)
+    - [Battle](#battle-2)
+    - [Options Menu](#options-menu)
+* [Design](#design)
+    + [Collisions](#collisions)
+    + [Gamemode](#gamemode)
+    + [Input](#input)
+    + [Graphics](#graphics)
+    + [Code Smells and Possible Refactorings](#code-smells-and-possible-refactorings)
+    + [Collisions](#collisions-1)
+* [Testing](#testing)
+* [Self-Evaluation](#self-evaluation)
+* [Game Resources](#game-resources)
+    + [Images](#images)
+    + [Data Files](#data-files)
+
 ## Implemented Features
 
 ### Player
@@ -21,6 +50,10 @@ This project was developed by [*Ana Inês Barros*](https://github.com/anaines14)
 </p>
 
 - **Pokémon Appearing in Tall Grass** - When the player walks trough grass, they may encounter a wild pokémon and if so a battle with it will start. 
+
+<p align="center">
+    <img width=350 src="https://i.imgur.com/dSMiNHj.gif">
+</p>
 
 ### Pokémon
 
@@ -114,7 +147,23 @@ For menus where the user has choose some option
 
 ### Collisions
 
-###
+### Gamemode
+
+#### Problem in Context
+
+#### The Pattern
+
+State
+
+### Input 
+
+#### Problem in Context
+
+Depending on the currently game state, different keyboard inputs might execute different actions and sometimes we may even want to undo an action that we commited (like going back on a menu for example).  
+
+#### The Pattern
+
+For that purpose, we used the `Command` design pattern
 
 ### Graphics
 
@@ -123,13 +172,20 @@ The war we did this was to initially convert a `.png` image to text, using `img2
 We store the parsed image content (such as colors and text characters) in a class `Image` and then we have a class `Sprite`that can store multiple `Images`, each one corresponding to a certain state of what the `Sprite` represents, for instance, the `Player` `Sprite` will have an image for each facing direction.  
 For each game element we have a `Renderer` that is responsible for drawing it in the screen.
 
-TODO: UML image
+TODO: UML image / Template Method
 
 ### Code Smells and Possible Refactorings
 
 Option - Data class
 
 ### Collisions
+
+## Testing
+
+## Self-Evaluation
+
+- Ana Inês Barros: 50%
+- Eduardo Correia: 50%
 
 ## Game Resources
 
@@ -143,8 +199,3 @@ Option - Data class
 
 - [Pokémon](https://github.com/r4vi/zipper-demo/blob/master/resources/pokemon.xml), r4v1
 - [Pokémon Moves](https://github.com/veekun/pokedex/blob/master/pokedex/lpoo.pokemonascii.data/csv/moves.csv), veekun
-
-## Self-Evaluation
-
-- Ana Inês Barros: 50%
-- Eduardo Correia: 50%
