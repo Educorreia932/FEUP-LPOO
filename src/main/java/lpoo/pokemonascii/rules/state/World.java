@@ -10,7 +10,6 @@ import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.UnsupportedAudioFileException;
 import java.io.IOException;
 
-
 public class World implements State {
     private WorldView view;
     private WorldModel model;

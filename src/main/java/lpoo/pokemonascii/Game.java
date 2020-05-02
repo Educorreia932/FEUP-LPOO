@@ -20,7 +20,6 @@ public class Game {
         GameState game = new GameState();
         Music music = new Music(game);
 
-
         world.start(game);
 
         while (game.getGamemode() != null){

@@ -30,7 +30,6 @@ public class WorldModel {
         player.setPosition(player.getPosition(direction));
     }
 
-    // Can Player Move?? Top 10 Questions Science Can't Answer
     public boolean canPlayerMove(Position.Direction direction) {
         Position position = player.getPosition(direction);
 

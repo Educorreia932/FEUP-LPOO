@@ -36,7 +36,7 @@ public class WorldController {
                 break;
             }
 
-            if (inBattle){
+            if (inBattle) {
                 inBattle = false;
                 break;
             }
