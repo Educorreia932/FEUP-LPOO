@@ -11,6 +11,8 @@ import lpoo.pokemonascii.rules.commands.Command;
 import lpoo.pokemonascii.rules.commands.QuitCommand;
 import lpoo.pokemonascii.rules.state.GameState;
 
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
 import java.io.IOException;
 
 public class BattleController {
@@ -30,7 +32,7 @@ public class BattleController {
         this.options = new OptionsMenuController(battle.getOptions());
     }
 
-    public void start(GameState game) throws IOException {
+    public void start(GameState game) throws IOException, LineUnavailableException, UnsupportedAudioFileException {
         while (inBattle) {
             gui.drawBattle();
 
