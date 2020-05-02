@@ -178,9 +178,9 @@ TODO: UML image / Template Method
 
 #### Dispensables - Data Class
 
-The [class Option](../src/main/java/lpoo/pokemonascii/rules/commands/optionsmenu) is an example of a Data class in our code.
+The [class Option](../src/main/java/lpoo/pokemonascii/data/options/Option.java) is an example of a Data class in our code.
  This class only has a string field and both a getter and a setter for accessing it. Removing this class would make the 
- code seem a lot simpler since this class can be replaced by the primitive String.
+ code a little simpler since this class can be replaced by the primitive String.
  
 
 #### Dispensables - Lazy Class
@@ -189,19 +189,25 @@ The [class Tile](../src/main/java/lpoo/pokemonascii/data/Tile.java) was designed
 development work that has not been done yet. Our plan is to be able to create different tiles with distinct purposes 
 and methods. However, at the moment, we only have one type of tile, the [Grass class](../src/main/java/lpoo/pokemonascii/data/Grass.java).
   
-Having this class is provokes a small increment in the complexity and size of the code. To solve this problem, we could 
-use the refactoring method **Collapse Hierarchy** by merging the Tile class with the [Grass class](../src/main/java/lpoo/pokemonascii/data/elements/CollidingElement.java).
+Having this class provokes a small increment in the complexity and size of the code. To solve this problem, we could 
+use the refactoring method **Collapse Hierarchy** by merging the Tile class with the [CollidingElement class](../src/main/java/lpoo/pokemonascii/data/elements/CollidingElement.java).
 
 #### Bloaters - Switch Statements
 
 The method getNextCommand() in the [class BattleView](../src/main/java/lpoo/pokemonascii/gui/BattleView.java) has a long
- switch case inside of it. This creates a problem: everytime we want to have a condition we have to find all the switch 
+ switch case inside of it. This creates a problem: Every time we want to have a condition we have to find all the switch 
  code and modify it. 
  
-Since this switch is based on type code, we should use the **Replace Type Code with Subclasses**. To do this, instead of
+Since this *switch* is based on type code, we should use the **Replace Type Code with Subclasses** refactor method. To do this, instead of
 using a enum to represent the key type, we should create a subclass **KeyType** and subclasses of KeyType to each value 
 of the coded type. Then, extract the relevant behaviours from the original class to these subclasses. Replace the control
- flow code with polymorphism. By doing this we imporve code organization.
+ flow code with polymorphism. By doing this we improve code organization.
+
+Also, in the [class Game](../src/main/java/lpoo/pokemonascii/Game.java), 
+in the [class BattleController](../src/main/java/lpoo/pokemonascii/rules/BattleController.java) and in the
+the [class WorldController](../src/main/java/lpoo/pokemonascii/rules/WorldController.java) we have the use of null in a
+if statement where we could appply the refactor method **Introduce Null Object** by creating a subclass that will perform
+ the role of a null object, create a method isNull() and replace the code in the correct places.
 
 
 ### Collisions
