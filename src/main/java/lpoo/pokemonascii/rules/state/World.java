@@ -6,6 +6,8 @@ import lpoo.pokemonascii.data.WorldModel;
 import lpoo.pokemonascii.gui.WorldView;
 import lpoo.pokemonascii.rules.WorldController;
 
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
 import java.io.IOException;
 
 
@@ -21,7 +23,7 @@ public class World implements State {
     }
 
     @Override
-    public void start(GameState game) throws IOException {
+    public void start(GameState game) throws IOException, LineUnavailableException, UnsupportedAudioFileException {
         game.setState(this);
         controller.start(game);
     }
