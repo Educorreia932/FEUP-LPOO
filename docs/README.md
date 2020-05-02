@@ -79,7 +79,7 @@ For instance, the Water type is super effective against Fire, so if a Water pok�
 </p>
 
 - **Battle Options Menu** - While in-battle the player has four options of what to do.  
-    - **Fight** - Make the pokémon use move.
+    - **Fight** - Make the pokémon use one its moves.
     - **Bag** - Use an item from the bag.
     - **Pokémon** - Change that's pokémon currently fighting for another one on the party.
     - **Run** - Try to flee from the battle.
@@ -103,16 +103,15 @@ For instance, the Water type is super effective against Fire, so if a Water pok�
 
 ### Battle
 
-- **Pokémon Moves Menu**
-- **Use Moves**
-- **Pokémon Moves Animations**
-- **Use items**
+- **Use Moves** - Make it possible to choose one of the four pokémon moves and use it against the opponent.
+- **Pokémon Moves Animations** - Implement animations for each move.
+- **Use items** - Make it possible to access the bag and use an item, such as Potions or Pokéballs.
 
 ### Other
 
 - **Save the progress**
-- **Create profiles**  
-- **Create NPCs**
+- **Create profiles**
+- **Create NPCs** - Have NPCs in the overworld whom which the player might interact.
 
 ## Architectural Pattern
 
@@ -145,21 +144,37 @@ For menus where the user has choose some option
 
 ## Design
 
-### Collisions
+### Music
 
 ### Gamemode
 
-Our game will often alternate between the overworld and battling with pokémon. When the player finds a pokémon in grass of battles against a NPC they will be prompted to a battle mode and when the battle is over, they return to were they were in the overworld.
-
 #### Problem in Context
 
-In other words, the game will have different gamemodes at each time depending on the actions of the player and this can quickly expand if we think of a main menu or like so.
+Our game will often alternate between roaming the overworld and battling with pokémon. When the player finds a pokémon in grass of battles against a NPC they will be prompted to a battle mode and when the battle is over, they return to where they were in the overworld.
 
+In other words, the game will have different gamemodes at each time depending on the actions of the player and this can quickly expand if we think of a main menu or like so. For that purpose, we neeeded a way to manage which was the currently state of the game and switch to it.
 
+<p align="center">
+  <img width=350 src="images/Gamemode%20FA.png">
+</p>
 
 #### The Pattern
 
 State
+
+<p align="center">
+  <img width=350 src="images/State.png">
+</p>
+
+#### Implementation
+
+TODO: Add diagram
+
+#### Consequences
+
+- We don't have to rely on flags.
+- No more complex if.
+- More classes.
 
 ### Input 
 
@@ -178,7 +193,9 @@ The war we did this was to initially convert a `.png` image to text, using `img2
 We store the parsed image content (such as colors and text characters) in a class `Image` and then we have a class `Sprite`that can store multiple `Images`, each one corresponding to a certain state of what the `Sprite` represents, for instance, the `Player` `Sprite` will have an image for each facing direction.  
 For each game element we have a `Renderer` that is responsible for drawing it in the screen.
 
-TODO: UML image / Template Method
+### The Pattern
+
+Template Method
 
 ### Collisions
 
