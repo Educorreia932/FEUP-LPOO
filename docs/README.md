@@ -182,7 +182,7 @@ We have applied the **Observer Pattern**. This pattern allows us to make sure a 
 #### The Implementation
 
 <p align="center">
-  <img width=1035 src="images/ObserverPattern.png">
+  <img width=135 src="images/ObserverPattern.png">
 </p>
 
 
