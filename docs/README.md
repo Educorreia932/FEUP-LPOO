@@ -143,6 +143,40 @@ For menus where the user has choose some option
 
 ### Music
 
+#### Problem in Context
+We wanted to add some music to our game so it would even be more similar to the original game. 
+We downloaded the correspondent theme songs for both the [world](../data/Music/town.wav) mode and the [battle](../data/Music/battle.wav) mode. However, 
+we still had to think about the best way to implement this. 
+
+The problem was that we could not assign 
+the task to any class. We could not assign the "dj" responsability to the battle or the world as we first thought 
+since this would add to the responsabilities of those classes. 
+We had to make sure we were not going against any *SOLID* principle. 
+
+#### The Pattern
+
+We have applied the **Observer Pattern**. This pattern allows us to make sure a list of observers of
+ some class is notified every time its state changes. This was exactly what we wanted. Although the gamemode
+  will have only one observer, by doing this we guarantee that the class responsible by the music change will be 
+  notified every time the gamemode's state is altered. 
+  
+  In other words, when the game changes states, it notifies its observers. Since the [class Music](../src/main/java/lpoo/pokemonascii/rules/observer/Music.java) will 
+  be an observer of [GameState](../src/main/java/lpoo/pokemonascii/rules/state/GameState.java), its update() method is called. As a consequence, the track playing 
+  is set accordingly to the state the game is currently in.
+
+#### The Implementation
+
+<p align="center">
+  <img width=1035 src="images/ObserverPattern.png">
+</p>
+
+
+#### Consequences
+
+- We can establish relations between objects at runtime
+- Open/Closed Principle. We can add more observers without changing the GameState code.
+- Single Responsabilty Principle. We avoided adding more responsabilities to other classes.
+
 ### Gamemode
 
 #### Problem in Context
