@@ -159,13 +159,11 @@ In other words, the game will have different gamemodes at each time depending on
 
 State
 
+#### Implementation
+
 <p align="center">
   <img width=350 src="images/State.png">
 </p>
-
-#### Implementation
-
-TODO: Add diagram
 
 #### Consequences
 
@@ -181,37 +179,55 @@ Depending on the currently game state, different keyboard inputs might execute d
 
 #### The Pattern
 
-For that purpose, we used the `Command` design pattern
+For that purpose, we used the [Command](../src/main/java/lpoo/pokemonascii/rules/commands.java) design pattern.
 
 ### Graphics
 
-Due to the fact that pokémon games from Gameboy Advances graphics are colorful and complex, we had to adapt them to meet Lanterna's limitations. 
-The war we did this was to initially convert a `.png` image to text, using `img2txt`, a program from [libcaca](http://caca.zoy.org/wiki/libcaca). That program generates a `.svg` that we parse and then draw using Lanterna.
-We store the parsed image content (such as colors and text characters) in a class `Image` and then we have a class `Sprite`that can store multiple `Images`, each one corresponding to a certain state of what the `Sprite` represents, for instance, the `Player` `Sprite` will have an image for each facing direction.  
-For each game element we have a `Renderer` that is responsible for drawing it in the screen.
+Due to the fact that pokémon games from Gameboy Advance graphics are colorful and complex, we had to adapt them to meet Lanterna's limitations. 
 
-### The Pattern
+The way we did this was to initially convert a `.png` image to text, using `img2txt`, a program from [libcaca](http://caca.zoy.org/wiki/libcaca). That program generates a `.svg` that we parse and then draw using Lanterna.
 
-Template Method
+We store the parsed image content (such as colors and text characters) in a class `Image` and then we have a class [Sprite](../src/main/java/lpoo/pokemonascii/gui/Sprite.java) that can store multiple `Images`, each one corresponding to a certain state of what the `Sprite` represents, for instance, the `Player` `Sprite` will have an image for each facing direction.  
 
-### Collisions
+For each game element we have a [Renderer](../src/main/java/lpoo/pokemonascii/gui/renderers) that is responsible for drawing it in the screen. 
+
+However, some elements of the game have a common general way to draw, but slightly differences between, such as [bars](https://github.com/FEUP-LPOO/lpoo-2020-g40/tree/master/src/main/java/lpoo/pokemonascii/gui/renderers/bar). In battle, we have two distinct types of bars, the [health bar](https://github.com/FEUP-LPOO/lpoo-2020-g40/blob/master/src/main/java/lpoo/pokemonascii/gui/renderers/bar/HealthBarRenderer.java) and the [experience bar](https://github.com/FEUP-LPOO/lpoo-2020-g40/tree/master/src/main/java/lpoo/pokemonascii/gui/renderers/bar/ExperienceBarRenderer.java). 
+
+The way to draw them is the same, we have a percentage and the bar length corresponds to it. Yet, they have different behaviors, the health changes colors according to the health of the pokémon.
+
+#### The Pattern
+
+That being said, we used the **Template Method** pattern to solve this problem. This pattern allowed us to design a general skeleton for the way a bar is rendered, but allowing to slightly adjustments on that process.
+
+#### Implementation
+
+<p align="center">
+  <img width=350 src="images/Template%20Method.png">
+</p>
+
+**Note:** We greyed out some parts of the diagram and removed some attributes and methods of those parts, because they weren't the focus of this pattern, but were relevant nonetheless.
+
+#### Consequences
+
+- Easier to add new renderers without repeating much code.
+- Abstract the overall and focus on the differences.
 
 ## Code Smells and Possible Refactorings
 
 #### Dispensables - Data Class
 
-The [class Option](../src/main/java/lpoo/pokemonascii/data/options/Option.java) is an example of a Data class in our code.
+The class [Option](../src/main/java/lpoo/pokemonascii/data/options/Option.java) is an example of a Data class in our code.
  This class only has a string field and both a getter and a setter for accessing it. Removing this class would make the 
- code a little simpler since this class can be replaced by the primitive String.
+ code a little simpler since this class can be replaced by the primitive `String`.
  
 #### Dispensables - Lazy Class
 
-The [class Tile](../src/main/java/lpoo/pokemonascii/data/Tile.java) was designed in order to support future 
+The class [Tile](../src/main/java/lpoo/pokemonascii/data/Tile.java) was designed in order to support future 
 development work that has not been done yet. Our plan is to be able to create different tiles with distinct purposes 
-and methods. However, at the moment, we only have one type of tile, the [Grass class](../src/main/java/lpoo/pokemonascii/data/Grass.java).
+and methods. However, at the moment, we only have one type of tile, the [Grass](../src/main/java/lpoo/pokemonascii/data/Grass.java) class.
   
 Having this class provokes a small increment in the complexity and size of the code. To solve this problem, we could 
-use the refactoring method **Collapse Hierarchy** by merging the Tile class with the [CollidingElement class](../src/main/java/lpoo/pokemonascii/data/elements/CollidingElement.java).
+use the refactoring method **Collapse Hierarchy** by merging the Tile class with the [CollidingElement](../src/main/java/lpoo/pokemonascii/data/elements/CollidingElement.java) class.
 
 #### Bloaters - Switch Statements
 
@@ -224,9 +240,9 @@ using a enum to represent the key type, we should create a subclass **KeyType** 
 of the coded type. Then, extract the relevant behaviours from the original class to these subclasses. Replace the control
  flow code with polymorphism. By doing this we improve code organization.
 
-Also, in the [class Game](../src/main/java/lpoo/pokemonascii/Game.java), 
-in the [class BattleController](../src/main/java/lpoo/pokemonascii/rules/BattleController.java) and in the
-the [class WorldController](../src/main/java/lpoo/pokemonascii/rules/WorldController.java) we have the use of null in a
+Also, in the class [Game](../src/main/java/lpoo/pokemonascii/Game.java), 
+in the class [BattleController](../src/main/java/lpoo/pokemonascii/rules/BattleController.java) and in the
+the class [WorldController](../src/main/java/lpoo/pokemonascii/rules/WorldController.java) we have the use of null in a
 if statement where we could appply the refactor method **Introduce Null Object** by creating a subclass that will perform
  the role of a null object, create a method isNull() and replace the code in the correct places.
 
