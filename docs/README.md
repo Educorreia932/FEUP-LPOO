@@ -26,20 +26,25 @@ This project was developed by [*Ana Inês Barros*](https://github.com/anaines14)
   - [World](#world)
   - [Battle](#battle-2)
   - [Options Menu](#options-menu)
-    * [Design](#design)
-    + [Music](#music)
-+ [Gamemode](#gamemode)
-  - [Problem in Context](#problem-in-context)
-  - [The Pattern](#the-pattern)
-  - [Implementation](#implementation)
-  - [Consequences](#consequences)
-+ [Input](#input)
-  - [Problem in Context](#problem-in-context-1)
-  - [The Pattern](#the-pattern-1)
-+ [Graphics](#graphics)
-  - [The Pattern](#the-pattern-2)
-  - [Implementation](#implementation-1)
-  - [Consequences](#consequences-1)
+ * [Design](#design)
+   + [Music](#music)
+        - [Problem in Context](#problem-in-context)
+        - [The Pattern](#the-pattern)
+        - [Implementation](#implementation)
+        - [Consequences](#consequences)
+   + [Gamemode](#gamemode)
+        - [Problem in Context](#problem-in-context)
+        - [The Pattern](#the-pattern)
+        - [Implementation](#implementation)
+        - [Consequences](#consequences)
+    + [Input](#input)
+        - [Problem in Context](#problem-in-context-1)
+        - [The Pattern](#the-pattern-1)
+     + [Graphics](#graphics)
+        - [Problem in Context](#problem-in-context-1)
+        - [The Pattern](#the-pattern-2)
+        - [Implementation](#implementation-1)
+        - [Consequences](#consequences-1)
 * [Code Smells and Possible Refactorings](#code-smells-and-possible-refactorings)
   - [Dispensables - Data Class](#dispensables---data-class)
   - [Dispensables - Lazy Class](#dispensables---lazy-class)
@@ -206,7 +211,16 @@ In other words, the game will have different gamemodes at each time depending on
 
 #### The Pattern
 
-State
+We have applied the **State Pattern**. This pattern suggests that we create new classes for all 
+possible states of an object and extract all state-specific behaviors into these classes. Instead of
+ implementing all the behavior on its own, the original object [GameState](../src/main/java/lpoo/pokemonascii/rules/state/GameState.java),
+ stores a reference to one of the objects that represents its current state, adn delegates all the 
+ state-related work to that object.  
+ 
+To transition the context into another state, replace the active state object with another object 
+that represents that new state. This is possible since all state classes follow the same 
+interface [State](../src/main/java/lpoo/pokemonascii/rules/state/State.java) and the [GameState](../src/main/java/lpoo/pokemonascii/rules/state/GameState.java) 
+itself works with these objects through that interface.
 
 #### Implementation
 
