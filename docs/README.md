@@ -46,13 +46,13 @@ This project was developed by [*Ana Inês Barros*](https://github.com/anaines14)
 - **Character Movement** - The player will move with the arrow keys in the desired direction, as well its sprite will change according to the direction he's facing.
 
 <p align="center">
-  <img width=350 src="https://i.imgur.com/XgxEBhc.gif">
+  <img width=350 src="images/Character%20Movement.gif">
 </p>
 
 - **Pokémon Appearing in Tall Grass** - When the player walks trough grass, they may encounter a wild pokémon and if so a battle with it will start. 
 
 <p align="center">
-    <img width=350 src="https://i.imgur.com/dSMiNHj.gif">
+    <img width=350 src="images/Tall%20Grass.gif">
 </p>
 
 ### Pokémon
@@ -60,7 +60,7 @@ This project was developed by [*Ana Inês Barros*](https://github.com/anaines14)
 - **Pokémon Types** - These are properties of pokémon and their moves. A pokémon may have up to two types, while a move only has one.
 
 <p align="center">
-  <img width=350 src="https://pokemonhelps13.weebly.com/uploads/4/9/5/5/49555787/4602605_orig.png">
+  <img width=350 src="images/Pokemon%20Types.png">
 </p>
 
 **Note:** Fairy type isn't included in our game,  as it wasn't in the original 3<sup>rd</sup> generation pokémon games.
@@ -74,8 +74,8 @@ For instance, the Water type is super effective against Fire, so if a Water pok�
 - **HP and Experience Bar** - These bars represent, respectively, the total health percentage of a pokémon in-battle and its experience progress from its current level to the next.
 
 <p float="left" align="middle">
-  <img width=350 src="https://i.imgur.com/vuoW9ul.gif">
-  <img width=350 src="https://i.imgur.com/7qoZUqi.gif">
+  <img width=350 src="images/HP%20Bar.gif">
+  <img width=350 src="images/Experience%20Bar.gif">
 </p>
 
 - **Battle Options Menu** - While in-battle the player has four options of what to do.  
@@ -85,7 +85,7 @@ For instance, the Water type is super effective against Fire, so if a Water pok�
     - **Run** - Try to flee from the battle.
 
 <p align="center">
-    <img width=350 src="https://i.imgur.com/WZK43Ed.gif">
+    <img width=350 src="images/Battle%20Options.gif">
 </p>
 
 ## Planned features
@@ -122,7 +122,7 @@ For easier development of the game, we implemented the MVC (Model–View–Contr
 - **Controller (rules)** - Coordinates and processes all the changes that occur.
 
 <p align="center">
-  <img width=350 src="https://i.imgur.com/d19ics3.png">
+  <img width=350 src="images/MVC.png">
 </p>
 
 Our game currently has the MVC implemented in the following modules:
@@ -149,7 +149,13 @@ For menus where the user has choose some option
 
 ### Gamemode
 
+Our game will often alternate between the overworld and battling with pokémon. When the player finds a pokémon in grass of battles against a NPC they will be prompted to a battle mode and when the battle is over, they return to were they were in the overworld.
+
 #### Problem in Context
+
+In other words, the game will have different gamemodes at each time depending on the actions of the player and this can quickly expand if we think of a main menu or like so.
+
+
 
 #### The Pattern
 
@@ -174,7 +180,9 @@ For each game element we have a `Renderer` that is responsible for drawing it in
 
 TODO: UML image / Template Method
 
-### Code Smells and Possible Refactorings
+### Collisions
+
+## Code Smells and Possible Refactorings
 
 #### Dispensables - Data Class
 
@@ -182,7 +190,6 @@ The [class Option](../src/main/java/lpoo/pokemonascii/rules/commands/optionsmenu
  This class only has a string field and both a getter and a setter for accessing it. Removing this class would make the 
  code seem a lot simpler since this class can be replaced by the primitive String.
  
-
 #### Dispensables - Lazy Class
 
 The [class Tile](../src/main/java/lpoo/pokemonascii/data/Tile.java) was designed in order to support future 
@@ -202,9 +209,6 @@ Since this switch is based on type code, we should use the **Replace Type Code w
 using a enum to represent the key type, we should create a subclass **KeyType** and subclasses of KeyType to each value 
 of the coded type. Then, extract the relevant behaviours from the original class to these subclasses. Replace the control
  flow code with polymorphism. By doing this we imporve code organization.
-
-
-### Collisions
 
 ## Testing
 
