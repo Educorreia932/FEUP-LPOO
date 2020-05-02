@@ -1,29 +1,13 @@
-package lpoo.pokemonascii.rules.commands.state;
-
-import lpoo.pokemonascii.Game;
-import lpoo.pokemonascii.gui.GameView;
-import lpoo.pokemonascii.rules.GameController;
-
-import java.io.IOException;
+package lpoo.pokemonascii.rules.state;
 
 public class GameState {
     private State gamemode;
-    private GameController controller;
-    private GameView view;
 
-    public GameState(State state, GameView gui) throws IOException {
-        view = gui;
-        controller = new GameController(view);
+    public GameState(){ }
+
+    public void setState(State state){
         gamemode = state;
     }
 
-    public void changeState(State state){
-        gamemode = state;
-    }
-
-    public void run() throws IOException {
-        gamemode.start();
-    }
-
-
+    public State getGamemode() { return gamemode; }
 }

@@ -1,4 +1,4 @@
-package lpoo.pokemonascii.rules.commands.state;
+package lpoo.pokemonascii.rules.state;
 
 import com.googlecode.lanterna.graphics.TextGraphics;
 import com.googlecode.lanterna.screen.Screen;
@@ -23,7 +23,9 @@ public class Battle implements State {
     }
 
     @Override
-    public void start() throws IOException {
-        controller.start();
+    public void start(GameState game) throws IOException {
+        game.setState(this);
+        controller.start(game);
     }
 }
+

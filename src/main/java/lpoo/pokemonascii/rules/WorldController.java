@@ -8,6 +8,7 @@ import lpoo.pokemonascii.data.elements.CollidingElement;
 import lpoo.pokemonascii.gui.WorldView;
 import lpoo.pokemonascii.rules.commands.Command;
 import lpoo.pokemonascii.rules.commands.QuitCommand;
+import lpoo.pokemonascii.rules.state.GameState;
 
 import java.io.IOException;
 
@@ -21,20 +22,21 @@ public class WorldController {
         this.world = world;
     }
 
-    public GameController.GameMode start() throws IOException {
+    public void start(GameState game) throws IOException {
         while (true) {
             gui.drawWorld();
 
             Command command = gui.getNextCommand(this);
             command.execute();
 
-            if (command instanceof QuitCommand)
-                return GameController.GameMode.ENDGAME;
+            if (command instanceof QuitCommand){
+                game.setState(null);
+                break;
+            }
 
             if (inBattle){
-                gui.drawWorld();
                 inBattle = false;
-                return GameController.GameMode.BATTLE;
+                break;
             }
         }
     }

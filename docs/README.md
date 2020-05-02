@@ -46,13 +46,13 @@ This project was developed by [*Ana Inês Barros*](https://github.com/anaines14)
 - **Character Movement** - The player will move with the arrow keys in the desired direction, as well its sprite will change according to the direction he's facing.
 
 <p align="center">
-  <img width=350 src="https://i.imgur.com/XgxEBhc.gif">
+  <img width=350 src="images/Character%20Movement.gif">
 </p>
 
 - **Pokémon Appearing in Tall Grass** - When the player walks trough grass, they may encounter a wild pokémon and if so a battle with it will start. 
 
 <p align="center">
-    <img width=350 src="https://i.imgur.com/dSMiNHj.gif">
+    <img width=350 src="images/Tall%20Grass.gif">
 </p>
 
 ### Pokémon
@@ -60,7 +60,7 @@ This project was developed by [*Ana Inês Barros*](https://github.com/anaines14)
 - **Pokémon Types** - These are properties of pokémon and their moves. A pokémon may have up to two types, while a move only has one.
 
 <p align="center">
-  <img width=350 src="https://pokemonhelps13.weebly.com/uploads/4/9/5/5/49555787/4602605_orig.png">
+  <img width=350 src="images/Pokemon%20Types.png">
 </p>
 
 **Note:** Fairy type isn't included in our game,  as it wasn't in the original 3<sup>rd</sup> generation pokémon games.
@@ -74,18 +74,18 @@ For instance, the Water type is super effective against Fire, so if a Water pok�
 - **HP and Experience Bar** - These bars represent, respectively, the total health percentage of a pokémon in-battle and its experience progress from its current level to the next.
 
 <p float="left" align="middle">
-  <img width=350 src="https://i.imgur.com/vuoW9ul.gif">
-  <img width=350 src="https://i.imgur.com/7qoZUqi.gif">
+  <img width=350 src="images/HP%20Bar.gif">
+  <img width=350 src="images/Experience%20Bar.gif">
 </p>
 
 - **Battle Options Menu** - While in-battle the player has four options of what to do.  
-    - **Fight** - Make the pokémon use move.
+    - **Fight** - Make the pokémon use one its moves.
     - **Bag** - Use an item from the bag.
     - **Pokémon** - Change that's pokémon currently fighting for another one on the party.
     - **Run** - Try to flee from the battle.
 
 <p align="center">
-    <img width=350 src="https://i.imgur.com/WZK43Ed.gif">
+    <img width=350 src="images/Battle%20Options.gif">
 </p>
 
 ## Planned features
@@ -103,16 +103,15 @@ For instance, the Water type is super effective against Fire, so if a Water pok�
 
 ### Battle
 
-- **Pokémon Moves Menu**
-- **Use Moves**
-- **Pokémon Moves Animations**
-- **Use items**
+- **Use Moves** - Make it possible to choose one of the four pokémon moves and use it against the opponent.
+- **Pokémon Moves Animations** - Implement animations for each move.
+- **Use items** - Make it possible to access the bag and use an item, such as Potions or Pokéballs.
 
 ### Other
 
 - **Save the progress**
-- **Create profiles**  
-- **Create NPCs**
+- **Create profiles**
+- **Create NPCs** - Have NPCs in the overworld whom which the player might interact.
 
 ## Architectural Pattern
 
@@ -122,7 +121,7 @@ For easier development of the game, we implemented the MVC (Model–View–Contr
 - **Controller (rules)** - Coordinates and processes all the changes that occur.
 
 <p align="center">
-  <img width=350 src="https://i.imgur.com/d19ics3.png">
+  <img width=350 src="images/MVC.png">
 </p>
 
 Our game currently has the MVC implemented in the following modules:
@@ -145,15 +144,37 @@ For menus where the user has choose some option
 
 ## Design
 
-### Collisions
+### Music
 
 ### Gamemode
 
 #### Problem in Context
 
+Our game will often alternate between roaming the overworld and battling with pokémon. When the player finds a pokémon in grass of battles against a NPC they will be prompted to a battle mode and when the battle is over, they return to where they were in the overworld.
+
+In other words, the game will have different gamemodes at each time depending on the actions of the player and this can quickly expand if we think of a main menu or like so. For that purpose, we neeeded a way to manage which was the currently state of the game and switch to it.
+
+<p align="center">
+  <img width=350 src="images/Gamemode%20FA.png">
+</p>
+
 #### The Pattern
 
 State
+
+<p align="center">
+  <img width=350 src="images/State.png">
+</p>
+
+#### Implementation
+
+TODO: Add diagram
+
+#### Consequences
+
+- We don't have to rely on flags.
+- No more complex if.
+- More classes.
 
 ### Input 
 
@@ -172,9 +193,13 @@ The war we did this was to initially convert a `.png` image to text, using `img2
 We store the parsed image content (such as colors and text characters) in a class `Image` and then we have a class `Sprite`that can store multiple `Images`, each one corresponding to a certain state of what the `Sprite` represents, for instance, the `Player` `Sprite` will have an image for each facing direction.  
 For each game element we have a `Renderer` that is responsible for drawing it in the screen.
 
-TODO: UML image / Template Method
+### The Pattern
 
-### Code Smells and Possible Refactorings
+Template Method
+
+### Collisions
+
+## Code Smells and Possible Refactorings
 
 #### Dispensables - Data Class
 
@@ -182,7 +207,6 @@ The [class Option](../src/main/java/lpoo/pokemonascii/data/options/Option.java) 
  This class only has a string field and both a getter and a setter for accessing it. Removing this class would make the 
  code a little simpler since this class can be replaced by the primitive String.
  
-
 #### Dispensables - Lazy Class
 
 The [class Tile](../src/main/java/lpoo/pokemonascii/data/Tile.java) was designed in order to support future 
@@ -208,9 +232,6 @@ in the [class BattleController](../src/main/java/lpoo/pokemonascii/rules/BattleC
 the [class WorldController](../src/main/java/lpoo/pokemonascii/rules/WorldController.java) we have the use of null in a
 if statement where we could appply the refactor method **Introduce Null Object** by creating a subclass that will perform
  the role of a null object, create a method isNull() and replace the code in the correct places.
-
-
-### Collisions
 
 ## Testing
 

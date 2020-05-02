@@ -1,7 +1,8 @@
-package lpoo.pokemonascii.rules.commands.state;
+package lpoo.pokemonascii.rules.state;
+
 
 import java.io.IOException;
 
 public interface State {
-    void start() throws IOException;
+    void start(GameState game) throws IOException;
 }
