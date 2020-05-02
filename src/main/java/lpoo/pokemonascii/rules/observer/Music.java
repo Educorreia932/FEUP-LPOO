@@ -13,24 +13,26 @@ public class Music extends Observer{
     private AudioInputStream worldIn;
     private Clip clip;
 
-    public Music(GameState game) throws LineUnavailableException, IOException, UnsupportedAudioFileException {
+    public Music(GameState game) throws LineUnavailableException {
         gamemode = game;
         gamemode.addObserver(this);
-
-        worldIn = AudioSystem.getAudioInputStream(new File("data\\Music\\town.wav"));
-        battleIn = AudioSystem.getAudioInputStream(new File("data\\Music\\battle.wav"));
         clip = AudioSystem.getClip();
     }
 
     @Override
-    public void update() throws IOException, LineUnavailableException {
+    public void update() throws IOException, LineUnavailableException, UnsupportedAudioFileException {
         clip.stop();
         clip.close();
+
         if(gamemode.getGamemode() instanceof World){
+            worldIn = AudioSystem.getAudioInputStream(new File("data\\Music\\town.wav"));
+            clip = AudioSystem.getClip();
             clip.open(worldIn);
             clip.start();
         }
         else if(gamemode.getGamemode() instanceof Battle){
+            battleIn = AudioSystem.getAudioInputStream(new File("data\\Music\\battle.wav"));
+            clip = AudioSystem.getClip();
             clip.open(battleIn);
             clip.start();
         }

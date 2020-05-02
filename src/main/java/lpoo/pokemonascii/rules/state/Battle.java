@@ -8,6 +8,7 @@ import lpoo.pokemonascii.rules.BattleController;
 import org.xml.sax.SAXException;
 
 import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
 
@@ -24,7 +25,7 @@ public class Battle implements State {
     }
 
     @Override
-    public void start(GameState game) throws IOException, LineUnavailableException {
+    public void start(GameState game) throws IOException, LineUnavailableException, UnsupportedAudioFileException {
         game.setState(this);
         controller.start(game);
     }
