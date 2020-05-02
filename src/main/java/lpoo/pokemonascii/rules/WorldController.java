@@ -10,6 +10,7 @@ import lpoo.pokemonascii.rules.commands.Command;
 import lpoo.pokemonascii.rules.commands.QuitCommand;
 import lpoo.pokemonascii.rules.state.GameState;
 
+import javax.sound.sampled.LineUnavailableException;
 import java.io.IOException;
 
 public class WorldController {
@@ -22,7 +23,7 @@ public class WorldController {
         this.world = world;
     }
 
-    public void start(GameState game) throws IOException {
+    public void start(GameState game) throws IOException, LineUnavailableException {
         while (true) {
             gui.drawWorld();
 

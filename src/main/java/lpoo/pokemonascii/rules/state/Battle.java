@@ -7,6 +7,7 @@ import lpoo.pokemonascii.gui.BattleView;
 import lpoo.pokemonascii.rules.BattleController;
 import org.xml.sax.SAXException;
 
+import javax.sound.sampled.LineUnavailableException;
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
 
@@ -23,7 +24,7 @@ public class Battle implements State {
     }
 
     @Override
-    public void start(GameState game) throws IOException {
+    public void start(GameState game) throws IOException, LineUnavailableException {
         game.setState(this);
         controller.start(game);
     }
