@@ -106,4 +106,10 @@ public class PokemonTypeTest {
         assertEquals(pokemonType.getDamageMultiplier(PokemonType.Type.GHOST), 0.5f);
         assertEquals(pokemonType.getDamageMultiplier(PokemonType.Type.STEEL), 0.0f);
     }
+
+    @Test
+    public void testGroundType() {
+        pokemonType = new PokemonType("GROUND");
+        assertEquals(pokemonType.getDamageMultiplier(PokemonType.Type.FLYING), 0.0f);
+    }
 }

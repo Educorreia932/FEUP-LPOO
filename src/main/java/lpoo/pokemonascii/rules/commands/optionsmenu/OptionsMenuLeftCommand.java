@@ -1,18 +1,18 @@
-package lpoo.pokemonascii.rules.commands.menu;
+package lpoo.pokemonascii.rules.commands.optionsmenu;
 
 import lpoo.pokemonascii.data.Position;
 import lpoo.pokemonascii.rules.OptionsMenuController;
 import lpoo.pokemonascii.rules.commands.Command;
 
-public class OptionsMenuRightCommand implements Command {
+public class OptionsMenuLeftCommand implements Command {
     private OptionsMenuController menu;
 
-    public OptionsMenuRightCommand(OptionsMenuController menu) {
+    public OptionsMenuLeftCommand(OptionsMenuController menu) {
         this.menu = menu;
     }
 
     @Override
     public void execute() {
-        menu.changeSelectedOption(Position.Direction.RIGHT);
+        menu.changeSelectedOption(Position.Direction.LEFT);
     }
 }

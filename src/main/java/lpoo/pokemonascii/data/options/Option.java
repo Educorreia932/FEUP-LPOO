@@ -10,7 +10,7 @@ public class Option {
 
     private String name;
 
-    Option(String name) {
+    public Option(String name) {
         this.name = name;
     }
 

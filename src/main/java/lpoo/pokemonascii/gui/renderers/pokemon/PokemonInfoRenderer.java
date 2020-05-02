@@ -9,8 +9,11 @@ import lpoo.pokemonascii.gui.renderers.bar.ExperienceBarRenderer;
 import lpoo.pokemonascii.gui.renderers.bar.HealthBarRenderer;
 import lpoo.pokemonascii.gui.renderers.text.TextRenderer;
 
-public class PokemonInfoRenderer extends Renderer {
+import static lpoo.pokemonascii.gui.Sprite.drawSprite;
+
+public class PokemonInfoRenderer implements Renderer {
     private Position position;
+    private Sprite sprite;
     private TextRenderer pokemonName;
     private TextRenderer pokemonLevel;
     private ExperienceBarRenderer experience;
