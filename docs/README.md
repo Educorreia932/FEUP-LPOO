@@ -12,6 +12,7 @@ This project was developed by [*Ana Inês Barros*](https://github.com/anaines14)
 
 ## Table of Contents
 
+* [Table of Contents](#table-of-contents)
 * [Implemented Features](#implemented-features)
     + [Player](#player)
     + [Pokémon](#pok-mon)
@@ -22,17 +23,27 @@ This project was developed by [*Ana Inês Barros*](https://github.com/anaines14)
     + [Battle](#battle-1)
     + [Other](#other)
 * [Architectural Pattern](#architectural-pattern)
-    - [Game](#game)
-    - [World](#world)
-    - [Battle](#battle-2)
-    - [Options Menu](#options-menu)
-* [Design](#design)
-    + [Collisions](#collisions)
-    + [Gamemode](#gamemode)
-    + [Input](#input)
-    + [Graphics](#graphics)
-    + [Code Smells and Possible Refactorings](#code-smells-and-possible-refactorings)
-    + [Collisions](#collisions-1)
+  - [World](#world)
+  - [Battle](#battle-2)
+  - [Options Menu](#options-menu)
+    * [Design](#design)
+    + [Music](#music)
++ [Gamemode](#gamemode)
+  - [Problem in Context](#problem-in-context)
+  - [The Pattern](#the-pattern)
+  - [Implementation](#implementation)
+  - [Consequences](#consequences)
++ [Input](#input)
+  - [Problem in Context](#problem-in-context-1)
+  - [The Pattern](#the-pattern-1)
++ [Graphics](#graphics)
+  - [The Pattern](#the-pattern-2)
+  - [Implementation](#implementation-1)
+  - [Consequences](#consequences-1)
+* [Code Smells and Possible Refactorings](#code-smells-and-possible-refactorings)
+  - [Dispensables - Data Class](#dispensables---data-class)
+  - [Dispensables - Lazy Class](#dispensables---lazy-class)
+  - [Bloaters - Switch Statements](#bloaters---switch-statements)
 * [Testing](#testing)
 * [Self-Evaluation](#self-evaluation)
 * [Game Resources](#game-resources)
@@ -79,14 +90,19 @@ For instance, the Water type is super effective against Fire, so if a Water pok�
 </p>
 
 - **Battle Options Menu** - While in-battle the player has four options of what to do.  
+    <p align="center">
+        <img width=350 src="images/Battle%20Options.gif">
+    </p>
+
     - **Fight** - Make the pokémon use one its moves.
+    
+    <p align="center">
+        <img width=550 src="images/Fight%20Options.gif">
+    </p>
+        
     - **Bag** - Use an item from the bag.
     - **Pokémon** - Change that's pokémon currently fighting for another one on the party.
     - **Run** - Try to flee from the battle.
-
-<p align="center">
-    <img width=350 src="images/Battle%20Options.gif">
-</p>
 
 ## Planned features
 
@@ -181,6 +197,8 @@ Depending on the currently game state, different keyboard inputs might execute d
 For that purpose, we used the [Command](../src/main/java/lpoo/pokemonascii/rules/commands.java) design pattern.
 
 ### Graphics
+
+#### Problem in Context
 
 Due to the fact that pokémon games from Gameboy Advance graphics are colorful and complex, we had to adapt them to meet Lanterna's limitations. 
 
