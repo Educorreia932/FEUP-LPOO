@@ -5,7 +5,6 @@ import lpoo.pokemonascii.data.pokemon.Pokemon;
 import lpoo.pokemonascii.data.pokemon.PokemonExperience;
 import lpoo.pokemonascii.gui.Sprite;
 
-
 public class ExperienceBarRenderer extends BarRenderer {
     private Pokemon pokemon;
 

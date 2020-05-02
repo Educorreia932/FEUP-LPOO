@@ -12,6 +12,7 @@ This project was developed by [*Ana Inês Barros*](https://github.com/anaines14)
 
 ## Table of Contents
 
+* [Table of Contents](#table-of-contents)
 * [Implemented Features](#implemented-features)
     + [Player](#player)
     + [Pokémon](#pok-mon)
@@ -22,17 +23,27 @@ This project was developed by [*Ana Inês Barros*](https://github.com/anaines14)
     + [Battle](#battle-1)
     + [Other](#other)
 * [Architectural Pattern](#architectural-pattern)
-    - [Game](#game)
-    - [World](#world)
-    - [Battle](#battle-2)
-    - [Options Menu](#options-menu)
-* [Design](#design)
-    + [Collisions](#collisions)
-    + [Gamemode](#gamemode)
-    + [Input](#input)
-    + [Graphics](#graphics)
-    + [Code Smells and Possible Refactorings](#code-smells-and-possible-refactorings)
-    + [Collisions](#collisions-1)
+  - [World](#world)
+  - [Battle](#battle-2)
+  - [Options Menu](#options-menu)
+    * [Design](#design)
+    + [Music](#music)
++ [Gamemode](#gamemode)
+  - [Problem in Context](#problem-in-context)
+  - [The Pattern](#the-pattern)
+  - [Implementation](#implementation)
+  - [Consequences](#consequences)
++ [Input](#input)
+  - [Problem in Context](#problem-in-context-1)
+  - [The Pattern](#the-pattern-1)
++ [Graphics](#graphics)
+  - [The Pattern](#the-pattern-2)
+  - [Implementation](#implementation-1)
+  - [Consequences](#consequences-1)
+* [Code Smells and Possible Refactorings](#code-smells-and-possible-refactorings)
+  - [Dispensables - Data Class](#dispensables---data-class)
+  - [Dispensables - Lazy Class](#dispensables---lazy-class)
+  - [Bloaters - Switch Statements](#bloaters---switch-statements)
 * [Testing](#testing)
 * [Self-Evaluation](#self-evaluation)
 * [Game Resources](#game-resources)
@@ -46,13 +57,13 @@ This project was developed by [*Ana Inês Barros*](https://github.com/anaines14)
 - **Character Movement** - The player will move with the arrow keys in the desired direction, as well its sprite will change according to the direction he's facing.
 
 <p align="center">
-  <img width=350 src="images/Character%20Movement.gif">
+  <img width=375 src="images/Character%20Movement.gif">
 </p>
 
 - **Pokémon Appearing in Tall Grass** - When the player walks trough grass, they may encounter a wild pokémon and if so a battle with it will start. 
 
 <p align="center">
-    <img width=350 src="images/Tall%20Grass.gif">
+    <img width=450 src="images/Tall%20Grass.gif">
 </p>
 
 ### Pokémon
@@ -79,14 +90,19 @@ For instance, the Water type is super effective against Fire, so if a Water pok�
 </p>
 
 - **Battle Options Menu** - While in-battle the player has four options of what to do.  
+    <p align="center">
+        <img width=350 src="images/Battle%20Options.gif">
+    </p>
+
     - **Fight** - Make the pokémon use one its moves.
+    
+    <p align="center">
+        <img width=550 src="images/Fight%20Options.gif">
+    </p>
+        
     - **Bag** - Use an item from the bag.
     - **Pokémon** - Change that's pokémon currently fighting for another one on the party.
     - **Run** - Try to flee from the battle.
-
-<p align="center">
-    <img width=350 src="images/Battle%20Options.gif">
-</p>
 
 ## Planned features
 
@@ -125,7 +141,6 @@ For easier development of the game, we implemented the MVC (Model–View–Contr
 </p>
 
 Our game currently has the MVC implemented in the following modules:
-
 
 #### World 
 
@@ -193,13 +208,11 @@ In other words, the game will have different gamemodes at each time depending on
 
 State
 
-<p align="center">
-  <img width=350 src="images/State.png">
-</p>
-
 #### Implementation
 
-TODO: Add diagram
+<p align="center">
+  <img width=500 src="images/State.png">
+</p>
 
 #### Consequences
 
@@ -215,37 +228,57 @@ Depending on the currently game state, different keyboard inputs might execute d
 
 #### The Pattern
 
-For that purpose, we used the `Command` design pattern
+For that purpose, we used the [Command](../src/main/java/lpoo/pokemonascii/rules/commands.java) design pattern.
 
 ### Graphics
 
-Due to the fact that pokémon games from Gameboy Advances graphics are colorful and complex, we had to adapt them to meet Lanterna's limitations. 
-The war we did this was to initially convert a `.png` image to text, using `img2txt`, a program from [libcaca](http://caca.zoy.org/wiki/libcaca). That program generates a `.svg` that we parse and then draw using Lanterna.
-We store the parsed image content (such as colors and text characters) in a class `Image` and then we have a class `Sprite`that can store multiple `Images`, each one corresponding to a certain state of what the `Sprite` represents, for instance, the `Player` `Sprite` will have an image for each facing direction.  
-For each game element we have a `Renderer` that is responsible for drawing it in the screen.
+#### Problem in Context
 
-### The Pattern
+Due to the fact that pokémon games from Gameboy Advance graphics are colorful and complex, we had to adapt them to meet Lanterna's limitations. 
 
-Template Method
+The way we did this was to initially convert a `.png` image to text, using `img2txt`, a program from [libcaca](http://caca.zoy.org/wiki/libcaca). That program generates a `.svg` that we parse and then draw using Lanterna.
 
-### Collisions
+We store the parsed image content (such as colors and text characters) in a class `Image` and then we have a class [Sprite](../src/main/java/lpoo/pokemonascii/gui/Sprite.java) that can store multiple `Images`, each one corresponding to a certain state of what the `Sprite` represents, for instance, the `Player` `Sprite` will have an image for each facing direction.  
+
+For each game element we have a [Renderer](../src/main/java/lpoo/pokemonascii/gui/renderers) that is responsible for drawing it in the screen. 
+
+However, some elements of the game have a common general way to draw, but slightly differences between, such as [bars](https://github.com/FEUP-LPOO/lpoo-2020-g40/tree/master/src/main/java/lpoo/pokemonascii/gui/renderers/bar). In battle, we have two distinct types of bars, the [health bar](https://github.com/FEUP-LPOO/lpoo-2020-g40/blob/master/src/main/java/lpoo/pokemonascii/gui/renderers/bar/HealthBarRenderer.java) and the [experience bar](https://github.com/FEUP-LPOO/lpoo-2020-g40/tree/master/src/main/java/lpoo/pokemonascii/gui/renderers/bar/ExperienceBarRenderer.java). 
+
+The way to draw them is the same, we have a percentage and the bar length corresponds to it. Yet, they have different behaviors, the health changes colors according to the health of the pokémon.
+
+#### The Pattern
+
+That being said, we used the **Template Method** pattern to solve this problem. This pattern allowed us to design a general skeleton for the way a bar is rendered, but allowing to slightly adjustments on that process.
+
+#### Implementation
+
+<p align="center">
+  <img width=550 src="images/Template%20Method.png">
+</p>
+
+**Note:** We greyed out some parts of the diagram and removed some attributes and methods of those parts, because they weren't the focus of this pattern, but were relevant nonetheless.
+
+#### Consequences
+
+- Easier to add new renderers without repeating much code.
+- Abstract the overall and focus on the differences.
 
 ## Code Smells and Possible Refactorings
 
 #### Dispensables - Data Class
 
-The [class Option](../src/main/java/lpoo/pokemonascii/data/options/Option.java) is an example of a Data class in our code.
+The class [Option](../src/main/java/lpoo/pokemonascii/data/options/Option.java) is an example of a Data class in our code.
  This class only has a string field and both a getter and a setter for accessing it. Removing this class would make the 
- code a little simpler since this class can be replaced by the primitive String.
+ code a little simpler since this class can be replaced by the primitive `String`.
  
 #### Dispensables - Lazy Class
 
-The [class Tile](../src/main/java/lpoo/pokemonascii/data/Tile.java) was designed in order to support future 
+The class [Tile](../src/main/java/lpoo/pokemonascii/data/Tile.java) was designed in order to support future 
 development work that has not been done yet. Our plan is to be able to create different tiles with distinct purposes 
-and methods. However, at the moment, we only have one type of tile, the [Grass class](../src/main/java/lpoo/pokemonascii/data/Grass.java).
+and methods. However, at the moment, we only have one type of tile, the [Grass](../src/main/java/lpoo/pokemonascii/data/Grass.java) class.
   
 Having this class provokes a small increment in the complexity and size of the code. To solve this problem, we could 
-use the refactoring method **Collapse Hierarchy** by merging the Tile class with the [CollidingElement class](../src/main/java/lpoo/pokemonascii/data/elements/CollidingElement.java).
+use the refactoring method **Collapse Hierarchy** by merging the Tile class with the [CollidingElement](../src/main/java/lpoo/pokemonascii/data/elements/CollidingElement.java) class.
 
 #### Bloaters - Switch Statements
 
@@ -258,9 +291,9 @@ using a enum to represent the key type, we should create a subclass **KeyType** 
 of the coded type. Then, extract the relevant behaviours from the original class to these subclasses. Replace the control
  flow code with polymorphism. By doing this we improve code organization.
 
-Also, in the [class Game](../src/main/java/lpoo/pokemonascii/Game.java), 
-in the [class BattleController](../src/main/java/lpoo/pokemonascii/rules/BattleController.java) and in the
-the [class WorldController](../src/main/java/lpoo/pokemonascii/rules/WorldController.java) we have the use of null in a
+Also, in the class [Game](../src/main/java/lpoo/pokemonascii/Game.java), 
+in the class [BattleController](../src/main/java/lpoo/pokemonascii/rules/BattleController.java) and in the
+the class [WorldController](../src/main/java/lpoo/pokemonascii/rules/WorldController.java) we have the use of null in a
 if statement where we could appply the refactor method **Introduce Null Object** by creating a subclass that will perform
  the role of a null object, create a method isNull() and replace the code in the correct places.
 
