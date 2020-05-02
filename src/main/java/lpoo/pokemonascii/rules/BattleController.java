@@ -9,6 +9,7 @@ import lpoo.pokemonascii.data.pokemon.PokemonMove;
 import lpoo.pokemonascii.gui.BattleView;
 import lpoo.pokemonascii.rules.commands.Command;
 import lpoo.pokemonascii.rules.commands.QuitCommand;
+import lpoo.pokemonascii.rules.state.GameState;
 
 import java.io.IOException;
 
@@ -29,18 +30,19 @@ public class BattleController {
         this.options = new OptionsMenuController(battle.getOptions());
     }
 
-    public GameController.GameMode start() throws IOException {
+    public void start(GameState game) throws IOException {
         while (inBattle) {
             gui.drawBattle();
 
             Command command = gui.getNextCommand(this);
             command.execute();
 
-            if (command instanceof QuitCommand)
-                return GameController.GameMode.ENDGAME;
+            if (command instanceof QuitCommand){
+                game.setState(null);
+                inBattle = false;
+            }
         }
 
-        return GameController.GameMode.WORLD;
     }
 
     public void usePokemonMove(Pokemon pokemon, PokemonMove move) {
