@@ -46,13 +46,13 @@ This project was developed by [*Ana Inês Barros*](https://github.com/anaines14)
 - **Character Movement** - The player will move with the arrow keys in the desired direction, as well its sprite will change according to the direction he's facing.
 
 <p align="center">
-  <img width=350 src="images/Character%20Movement.gif">
+  <img width=375 src="images/Character%20Movement.gif">
 </p>
 
 - **Pokémon Appearing in Tall Grass** - When the player walks trough grass, they may encounter a wild pokémon and if so a battle with it will start. 
 
 <p align="center">
-    <img width=350 src="images/Tall%20Grass.gif">
+    <img width=450 src="images/Tall%20Grass.gif">
 </p>
 
 ### Pokémon
@@ -126,7 +126,6 @@ For easier development of the game, we implemented the MVC (Model–View–Contr
 
 Our game currently has the MVC implemented in the following modules:
 
-
 #### World 
 
 Player walks around the world
@@ -162,7 +161,7 @@ State
 #### Implementation
 
 <p align="center">
-  <img width=350 src="images/State.png">
+  <img width=500 src="images/State.png">
 </p>
 
 #### Consequences
@@ -202,7 +201,7 @@ That being said, we used the **Template Method** pattern to solve this problem. 
 #### Implementation
 
 <p align="center">
-  <img width=350 src="images/Template%20Method.png">
+  <img width=550 src="images/Template%20Method.png">
 </p>
 
 **Note:** We greyed out some parts of the diagram and removed some attributes and methods of those parts, because they weren't the focus of this pattern, but were relevant nonetheless.
