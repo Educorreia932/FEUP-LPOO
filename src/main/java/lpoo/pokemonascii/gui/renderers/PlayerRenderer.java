@@ -8,7 +8,10 @@ import lpoo.pokemonascii.gui.Sprite;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class PlayerRenderer extends Renderer {
+import static lpoo.pokemonascii.gui.Sprite.drawSprite;
+
+public class PlayerRenderer implements Renderer {
+    private Sprite sprite;
     private Player player;
 
     public PlayerRenderer(Player player) {

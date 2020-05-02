@@ -1,4 +1,6 @@
-package lpoo.pokemonascii.data;
+package lpoo.pokemonascii.data.options;
+
+import lpoo.pokemonascii.data.Position;
 
 import java.util.List;
 

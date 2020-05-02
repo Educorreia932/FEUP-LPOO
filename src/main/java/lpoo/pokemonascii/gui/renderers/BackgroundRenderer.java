@@ -3,13 +3,17 @@ package lpoo.pokemonascii.gui.renderers;
 import com.googlecode.lanterna.graphics.TextGraphics;
 import lpoo.pokemonascii.gui.Sprite;
 
-public class BackgroundRenderer extends Renderer {
+import static lpoo.pokemonascii.gui.Sprite.drawSprite;
+
+public class BackgroundRenderer implements Renderer {
+    private Sprite backgorund;
+
     public BackgroundRenderer(String filename) {
-        this.sprite = new Sprite("background\\" + filename);
+        backgorund = new Sprite("background\\" + filename);
     }
 
     @Override
     public void draw(TextGraphics graphics) {
-        drawSprite(sprite, graphics);
+        drawSprite(backgorund, graphics);
     }
 }

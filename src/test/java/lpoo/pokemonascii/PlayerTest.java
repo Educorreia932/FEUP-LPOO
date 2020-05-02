@@ -6,9 +6,12 @@ import lpoo.pokemonascii.data.WorldModel;
 import lpoo.pokemonascii.gui.WorldView;
 import lpoo.pokemonascii.rules.WorldController;
 import lpoo.pokemonascii.rules.commands.*;
+import lpoo.pokemonascii.rules.commands.player.PlayerMoveDownCommand;
+import lpoo.pokemonascii.rules.commands.player.PlayerMoveLeftCommand;
+import lpoo.pokemonascii.rules.commands.player.PlayerMoveRightCommand;
+import lpoo.pokemonascii.rules.commands.player.PlayerMoveUpCommand;
 import org.junit.Before;
 import org.junit.Test;
-import org.mockito.Mock;
 import org.mockito.Mockito;
 
 import static org.junit.Assert.assertEquals;

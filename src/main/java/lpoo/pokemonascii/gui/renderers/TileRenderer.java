@@ -11,9 +11,12 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-public class TileRenderer extends Renderer {
+import static lpoo.pokemonascii.gui.Sprite.drawSprite;
+
+public class TileRenderer implements Renderer {
     private List<Tile> tiles;
     private Sprite grassSprite;
+    private Sprite sprite;
 
     public TileRenderer(List<Tile> tiles) {
         this.tiles = tiles;

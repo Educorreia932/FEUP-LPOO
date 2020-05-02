@@ -1,8 +1,9 @@
-package lpoo.pokemonascii.rules.commands;
+package lpoo.pokemonascii.rules.commands.player;
 
 import lpoo.pokemonascii.data.Player;
 import lpoo.pokemonascii.data.Position;
 import lpoo.pokemonascii.rules.WorldController;
+import lpoo.pokemonascii.rules.commands.Command;
 
 public class PlayerMoveLeftCommand implements Command {
     private WorldController controller;

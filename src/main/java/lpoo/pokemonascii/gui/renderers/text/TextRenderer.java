@@ -1,12 +1,13 @@
-package lpoo.pokemonascii.gui.renderers;
+package lpoo.pokemonascii.gui.renderers.text;
 
 import com.googlecode.lanterna.graphics.TextGraphics;
 import lpoo.pokemonascii.data.Position;
+import lpoo.pokemonascii.gui.renderers.Renderer;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class TextRenderer extends Renderer {
+public class TextRenderer implements Renderer {
     List<CharRenderer> chars;
     private Position position;
 
@@ -18,7 +19,7 @@ public class TextRenderer extends Renderer {
         for (int i = 0; i < s.length(); i++) {
             char c = s.charAt(i);
             chars.add(new CharRenderer(c, charPosition));
-            charPosition = charPosition.right(chars.get(i).sprite.getWidth() + 1);
+            charPosition = charPosition.right(chars.get(i).getWidth() + 1);
         }
     }
 
@@ -30,14 +31,5 @@ public class TextRenderer extends Renderer {
 
     public Position getPosition() {
         return position;
-    }
-
-    public int getWidth() {
-        int result = 0;
-
-        for (CharRenderer charRenderer :chars)
-            result += charRenderer.sprite.getWidth();
-
-        return  result;
     }
 }

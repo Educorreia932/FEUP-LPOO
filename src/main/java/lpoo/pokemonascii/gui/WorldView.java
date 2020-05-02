@@ -9,6 +9,10 @@ import lpoo.pokemonascii.gui.renderers.BackgroundRenderer;
 import lpoo.pokemonascii.gui.renderers.PlayerRenderer;
 import lpoo.pokemonascii.gui.renderers.TileRenderer;
 import lpoo.pokemonascii.rules.WorldController;
+import lpoo.pokemonascii.rules.commands.player.PlayerMoveDownCommand;
+import lpoo.pokemonascii.rules.commands.player.PlayerMoveLeftCommand;
+import lpoo.pokemonascii.rules.commands.player.PlayerMoveRightCommand;
+import lpoo.pokemonascii.rules.commands.player.PlayerMoveUpCommand;
 
 import java.io.IOException;
 

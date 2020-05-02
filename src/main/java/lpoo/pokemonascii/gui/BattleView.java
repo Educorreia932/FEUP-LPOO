@@ -5,41 +5,41 @@ import com.googlecode.lanterna.input.KeyStroke;
 import com.googlecode.lanterna.screen.Screen;
 
 import lpoo.pokemonascii.data.BattleModel;
-import lpoo.pokemonascii.data.Position;
+import lpoo.pokemonascii.gui.renderers.menu.BattleMenuRenderer;
+import lpoo.pokemonascii.gui.renderers.pokemon.PokemonInfoRenderer;
+import lpoo.pokemonascii.gui.renderers.pokemon.PokemonRenderer;
 import lpoo.pokemonascii.rules.commands.ChoseOptionCommand;
 import lpoo.pokemonascii.rules.commands.*;
 import lpoo.pokemonascii.gui.renderers.*;
 import lpoo.pokemonascii.rules.BattleController;
-import org.xml.sax.SAXException;
+import lpoo.pokemonascii.rules.commands.optionsmenu.*;
 
-import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
 
 public class BattleView {
     private Screen screen;
     private TextGraphics graphics;
+    private BattleModel battle;
     private BackgroundRenderer background;
     private PokemonRenderer trainerPokemon;
     private PokemonRenderer adversaryPokemon;
     private BattleMenuRenderer battleMenu;
     private PokemonInfoRenderer trainerPokemonInfo;
     private PokemonInfoRenderer adversaryPokemonInfo;
-    private OptionsMenuRenderer optionsMenuRenderer;
 
     public BattleView(Screen screen, TextGraphics graphics, BattleModel battle) {
         this.screen = screen;
         this.graphics = graphics;
+        this.battle = battle;
 
         background = new BackgroundRenderer("battle_background");
-        battleMenu = new BattleMenuRenderer();
+        battleMenu = new BattleMenuRenderer(battle.getOptions());
 
         trainerPokemon = new PokemonRenderer(battle.getTrainerPokemon());
         adversaryPokemon = new PokemonRenderer(battle.getAdversaryPokemon());
 
         trainerPokemonInfo = new PokemonInfoRenderer(battle.getTrainerPokemon());
         adversaryPokemonInfo = new PokemonInfoRenderer(battle.getAdversaryPokemon());
-
-        optionsMenuRenderer = new OptionsMenuRenderer(battle.getOptions());
     }
 
     public void drawBattle() throws IOException {
@@ -54,8 +54,6 @@ public class BattleView {
         trainerPokemonInfo.draw(graphics);
         adversaryPokemonInfo.draw(graphics);
 
-        optionsMenuRenderer.draw(graphics);
-
         screen.refresh();
     }
 
@@ -65,27 +63,24 @@ public class BattleView {
         return key;
     }
 
-    public Command getNextCommand(BattleController battle) throws IOException, ParserConfigurationException, SAXException {
+    public Command getNextCommand(BattleController battle) throws IOException {
         KeyStroke pressedKey = getPressedKey(screen);
 
         switch (pressedKey.getKeyType()) {
             case EOF:
                 return new QuitCommand(screen);
             case ArrowUp:
-                battle.getOptions().changeSelectedOption(Position.Direction.UP);
-                break;
+                return new OptionsMenuUpCommand(battle.getOptions());
             case ArrowDown:
-                battle.getOptions().changeSelectedOption(Position.Direction.DOWN);
-                break;
+                return new OptionsMenuDownCommand(battle.getOptions());
             case ArrowLeft:
-                battle.getOptions().changeSelectedOption(Position.Direction.LEFT);
-                break;
+                return new OptionsMenuLeftCommand(battle.getOptions());
             case ArrowRight:
-                battle.getOptions().changeSelectedOption(Position.Direction.RIGHT);
-                break;
+                return new OptionsMenuRightCommand(battle.getOptions());
             case Enter:
-//                return new UsePokemonMoveCommand(battle, new PokemonMove("Tackle"));
                 return new ChoseOptionCommand(battle);
+            case Escape:
+                return new OptionsMenuGoBackCommand(battle);
             case Character:
                 switch (pressedKey.getCharacter()) {
                     case 'q':
@@ -94,5 +89,9 @@ public class BattleView {
         }
 
         return new DoNothingCommand();
+    }
+
+    public void setOptionsMenuRenderer(BattleController.OptionsMenu optionsMenu) {
+        battleMenu.setOptionsMenuRenderer(optionsMenu, battle);
     }
 }

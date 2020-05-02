@@ -1,7 +1,7 @@
 package lpoo.pokemonascii.rules;
 
-import lpoo.pokemonascii.data.Option;
-import lpoo.pokemonascii.data.OptionsMenuModel;
+import lpoo.pokemonascii.data.options.Option;
+import lpoo.pokemonascii.data.options.OptionsMenuModel;
 import lpoo.pokemonascii.data.Position;
 
 public class OptionsMenuController {
@@ -17,5 +17,9 @@ public class OptionsMenuController {
 
     public Option getSelectedOption() {
         return options.getOptions().get(options.getSelectedOption());
+    }
+
+    public void setOptions(OptionsMenuModel options) {
+        this.options = options;
     }
 }

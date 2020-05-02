@@ -1,12 +1,19 @@
-package lpoo.pokemonascii.gui.renderers;
+package lpoo.pokemonascii.gui.renderers.pokemon;
 
 import com.googlecode.lanterna.graphics.TextGraphics;
 import lpoo.pokemonascii.data.Position;
 import lpoo.pokemonascii.data.pokemon.Pokemon;
 import lpoo.pokemonascii.gui.Sprite;
+import lpoo.pokemonascii.gui.renderers.Renderer;
+import lpoo.pokemonascii.gui.renderers.bar.ExperienceBarRenderer;
+import lpoo.pokemonascii.gui.renderers.bar.HealthBarRenderer;
+import lpoo.pokemonascii.gui.renderers.text.TextRenderer;
 
-public class PokemonInfoRenderer extends Renderer {
+import static lpoo.pokemonascii.gui.Sprite.drawSprite;
+
+public class PokemonInfoRenderer implements Renderer {
     private Position position;
+    private Sprite sprite;
     private TextRenderer pokemonName;
     private TextRenderer pokemonLevel;
     private ExperienceBarRenderer experience;

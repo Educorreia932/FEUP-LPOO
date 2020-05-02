@@ -1,4 +1,4 @@
-package lpoo.pokemonascii.gui.renderers;
+package lpoo.pokemonascii.gui.renderers.bar;
 
 import com.googlecode.lanterna.graphics.TextGraphics;
 import lpoo.pokemonascii.data.pokemon.Pokemon;
