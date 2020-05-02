@@ -126,9 +126,6 @@ For easier development of the game, we implemented the MVC (Model–View–Contr
 
 Our game currently has the MVC implemented in the following modules:
 
-#### Game
-
-Different states of the game, world and battle
 
 #### World 
 
