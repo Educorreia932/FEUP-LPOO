@@ -10,9 +10,11 @@ import lpoo.pokemonascii.gui.BattleView;
 import lpoo.pokemonascii.rules.commands.Command;
 import lpoo.pokemonascii.rules.commands.QuitCommand;
 import lpoo.pokemonascii.rules.state.GameState;
+import org.xml.sax.SAXException;
 
 import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.UnsupportedAudioFileException;
+import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
 
 public class BattleController {
@@ -37,7 +39,7 @@ public class BattleController {
         this.options = new OptionsMenuController(battle.getOptions());
     }
 
-    public void start(GameState game) throws IOException, LineUnavailableException, UnsupportedAudioFileException {
+    public GameState.Gamemode start(GameState game) throws IOException, LineUnavailableException, UnsupportedAudioFileException, ParserConfigurationException, SAXException {
         while (inBattle) {
             gui.drawBattle();
 
@@ -48,8 +50,12 @@ public class BattleController {
                 game.setState(null);
                 inBattle = false;
             }
+
+            if (!inBattle)
+                return GameState.Gamemode.WORLD;
         }
 
+        return GameState.Gamemode.EXIT;
     }
 
     public void usePokemonMove(Pokemon pokemon, PokemonMove move) {

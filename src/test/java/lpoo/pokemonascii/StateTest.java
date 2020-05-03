@@ -1,14 +1,11 @@
 package lpoo.pokemonascii;
 
-import com.googlecode.lanterna.graphics.TextGraphics;
-import com.googlecode.lanterna.screen.Screen;
 import lpoo.pokemonascii.rules.state.Battle;
 import lpoo.pokemonascii.rules.state.GameState;
 import lpoo.pokemonascii.rules.state.State;
 import lpoo.pokemonascii.rules.state.World;
 import org.junit.Before;
 import org.junit.Test;
-import org.mockito.Mockito;
 import org.xml.sax.SAXException;
 
 import javax.sound.sampled.LineUnavailableException;
@@ -34,19 +31,19 @@ public class StateTest {
 
     @Test
     public void test() throws UnsupportedAudioFileException, IOException, LineUnavailableException {
-        assertEquals(null, gameState.getGamemode());
+        assertEquals(null, gameState.getState());
 
         gameState.setState(battle);
-        assertEquals(battle, gameState.getGamemode());
+        assertEquals(battle, gameState.getState());
 
         gameState.setState(world);
-        assertEquals(world, gameState.getGamemode());
+        assertEquals(world, gameState.getState());
 
         gameState.setState(state);
-        assertEquals(state, gameState.getGamemode());
+        assertEquals(state, gameState.getState());
 
         gameState.setState(null);
-        assertEquals(null, gameState.getGamemode());
+        assertEquals(null, gameState.getState());
     }
 
 }
