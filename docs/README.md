@@ -334,6 +334,12 @@ This code smell is called **Parallel Inheritance**. The solution for it would be
 
 ## Testing
 
+<p align="center">
+  <img width=550 src="images/coverage.png">
+</p>
+
+[Link to Mutation Report](./index.html)
+
 ## Self-Evaluation
 
 - Ana Inês Barros: 50%

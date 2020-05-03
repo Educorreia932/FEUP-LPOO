@@ -1,6 +1,7 @@
 plugins {
     id 'java'
     id 'application'
+    id 'info.solidsoft.pitest' version '1.4.6'
 }
 
 group 'lpoo'
@@ -18,4 +19,8 @@ dependencies {
 
 application {
     mainClassName = 'Game'
+}
+
+pitest {
+    targetClasses = ['lpoo.*']
 }
