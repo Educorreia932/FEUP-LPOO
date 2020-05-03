@@ -164,32 +164,29 @@ For menus where the user has choose some option
 ### Music
 
 #### Problem in Context
+
 We wanted to add some music to our game so it would even be more similar to the original game. 
 We downloaded the correspondent theme songs for both the [world](../data/Music/town.wav) mode and the [battle](../data/Music/battle.wav) mode. However, 
 we still had to think about the best way to implement this. 
 
 The problem was that we could not assign 
-the task to any class. We could not assign the "dj" responsability to the battle or the world as we first thought 
-since this would add to the responsabilities of those classes. 
+the task to any class. We could not assign the "DJ" responsability to the battle or the world as we first thought 
+since this would add to the responsibilities of those classes. 
 We had to make sure we were not going against any *SOLID* principle. 
 
 #### The Pattern
 
-We have applied the **Observer Pattern**. This pattern allows us to make sure a list of observers of
- some class is notified every time its state changes. This was exactly what we wanted. Although the gamemode
-  will have only one observer, by doing this we guarantee that the class responsible by the music change will be 
-  notified every time the gamemode's state is altered. 
+We have applied the **Observer Pattern**. This pattern allows us to make sure a list of observers of 
+some class is notified every time its state changes. This was exactly what we wanted. Although the gamemode 
+will have only one observer, by doing this we guarantee that the class responsible by the music change will be notified every time the gamemode's state is altered. 
   
-  In other words, when the game changes states, it notifies its observers. Since the [class Music](../src/main/java/lpoo/pokemonascii/rules/observer/Music.java) will 
-  be an observer of [GameState](../src/main/java/lpoo/pokemonascii/rules/state/GameState.java), its update() method is called. As a consequence, the track playing 
-  is set accordingly to the state the game is currently in.
+In other words, when the game changes states, it notifies its observers. Since the [class Music](../src/main/java/lpoo/pokemonascii/rules/observer/Music.java) will be an observer of [GameState](../src/main/java/lpoo/pokemonascii/rules/state/GameState.java), its update() method is called. As a consequence, the track playing is set accordingly to the state the game is currently in.
 
 #### The Implementation
 
 <p align="center">
   <img width=435 src="images/ObserverPattern.png">
 </p>
-
 
 #### Consequences
 
@@ -238,11 +235,21 @@ itself works with these objects through that interface.
 
 #### Problem in Context
 
-Depending on the currently game state, different keyboard inputs might execute different actions and sometimes we may even want to undo an action that we commited (like going back on a menu for example).  
+Depending on the currently game state, different keyboard inputs might execute different actions and sometimes we may even want to undo an action that we committed (like going back on a menu for example).  
 
 #### The Pattern
 
 For that purpose, we used the [Command](../src/main/java/lpoo/pokemonascii/rules/commands.java) design pattern.
+
+#### Implementation
+
+<p align="center">
+  <img width=550 src="images/Command.png">
+</p>
+
+#### Consequences
+
+- Easier to add new actions in an abstract way.
 
 ### Graphics
 
