@@ -9,6 +9,9 @@ public class Player extends CollidingElement {
     private List<Pokemon> pokemons;
     private State state;
 
+    public static final int X_MOVEMENT = 26;
+    public static final int Y_MOVEMENT = 16;
+
     public enum State {
         FRONT,
         BACK,

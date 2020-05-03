@@ -1,6 +1,5 @@
 package lpoo.pokemonascii;
 
-
 import lpoo.pokemonascii.data.pokemon.PokemonType;
 import org.junit.Test;
 

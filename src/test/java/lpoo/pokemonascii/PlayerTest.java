@@ -14,9 +14,13 @@ import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mockito;
 
+import static lpoo.pokemonascii.data.Player.X_MOVEMENT;
+import static lpoo.pokemonascii.data.Player.Y_MOVEMENT;
 import static org.junit.Assert.assertEquals;
 
 public class PlayerTest {
+
+
     private Player player;
 
     @Before
@@ -42,10 +46,10 @@ public class PlayerTest {
     @Test
     public void testGetPosition(){
         Position current = player.getPosition();
-        Position up = new Position(current.getX(), current.getY() - 16);
-        Position down = new Position(current.getX(), current.getY() + 16);
-        Position left = new Position(current.getX() - 26, current.getY());
-        Position right = new Position(current.getX() + 26, current.getY());
+        Position up = new Position(current.getX(), current.getY() - Y_MOVEMENT);
+        Position down = new Position(current.getX(), current.getY() + Y_MOVEMENT);
+        Position left = new Position(current.getX() - X_MOVEMENT, current.getY());
+        Position right = new Position(current.getX() + X_MOVEMENT, current.getY());
 
         assertEquals(up, player.getPosition(Position.Direction.UP));
         assertEquals(down, player.getPosition(Position.Direction.DOWN));
@@ -55,7 +59,6 @@ public class PlayerTest {
 
     @Test
     public void testStateChange(){
-
         WorldModel model = new WorldModel(player);
         WorldView gui = Mockito.mock(WorldView.class);
         WorldController worldController = new WorldController(gui, model);
@@ -76,7 +79,5 @@ public class PlayerTest {
 
         right.execute();
         assertEquals(Player.State.RIGHT, player.getState());
-
     }
-
 }
