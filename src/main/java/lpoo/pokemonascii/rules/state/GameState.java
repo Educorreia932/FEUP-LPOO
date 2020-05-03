@@ -4,6 +4,7 @@ import lpoo.pokemonascii.rules.observer.Observer;
 
 import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.UnsupportedAudioFileException;
+import javax.swing.*;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -31,4 +32,9 @@ public class GameState {
     public void addObserver(Observer observer){
         observers.add(observer);
     }
+
+    public List<Observer> getObservers(){
+        return observers;
+    }
+
 }
