@@ -4,7 +4,6 @@ import lpoo.pokemonascii.data.elements.CollidingElement;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 
 public class WorldModel {
     private Player player;
@@ -28,6 +27,10 @@ public class WorldModel {
 
     public void setPlayerPosition(Position.Direction direction) {
         player.setPosition(player.getPosition(direction));
+    }
+
+    public Position getPlayerPosition() {
+        return player.getPosition();
     }
 
     public boolean canPlayerMove(Position.Direction direction) {

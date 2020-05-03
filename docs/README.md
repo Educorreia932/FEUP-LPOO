@@ -12,48 +12,51 @@ This project was developed by [*Ana Inês Barros*](https://github.com/anaines14)
 
 ## Table of Contents
 
-* [Table of Contents](#table-of-contents)
-* [Implemented Features](#implemented-features)
-    + [Player](#player)
-    + [Pokémon](#pok-mon)
-    + [Battle](#battle)
-* [Planned features](#planned-features)
-    + [Player](#player-1)
-    + [Pokémon](#pok-mon-1)
-    + [Battle](#battle-1)
-    + [Other](#other)
-* [Architectural Pattern](#architectural-pattern)
-  - [World](#world)
-  - [Battle](#battle-2)
-  - [Options Menu](#options-menu)
- * [Design](#design)
-   + [Music](#music)
-        - [Problem in Context](#problem-in-context)
-        - [The Pattern](#the-pattern)
-        - [Implementation](#implementation)
-        - [Consequences](#consequences)
-   + [Gamemode](#gamemode)
-        - [Problem in Context](#problem-in-context)
-        - [The Pattern](#the-pattern)
-        - [Implementation](#implementation)
-        - [Consequences](#consequences)
-    + [Input](#input)
-        - [Problem in Context](#problem-in-context-1)
-        - [The Pattern](#the-pattern-1)
-     + [Graphics](#graphics)
-        - [Problem in Context](#problem-in-context-1)
-        - [The Pattern](#the-pattern-2)
-        - [Implementation](#implementation-1)
-        - [Consequences](#consequences-1)
-* [Code Smells and Possible Refactorings](#code-smells-and-possible-refactorings)
-  - [Dispensables - Data Class](#dispensables---data-class)
-  - [Dispensables - Lazy Class](#dispensables---lazy-class)
-  - [Bloaters - Switch Statements](#bloaters---switch-statements)
-* [Testing](#testing)
-* [Self-Evaluation](#self-evaluation)
-* [Game Resources](#game-resources)
-    + [Images](#images)
-    + [Data Files](#data-files)
+- [Table of Contents](#table-of-contents)
+- [Implemented Features](#implemented-features)
+  * [Player](#player)
+  * [Pokémon](#pok-mon)
+  * [Battle](#battle)
+- [Planned features](#planned-features)
+  * [Player](#player-1)
+  * [Pokémon](#pok-mon-1)
+  * [Battle](#battle-1)
+  * [Other](#other)
+- [Architectural Pattern](#architectural-pattern)
+    + [World](#world)
+    + [Battle](#battle-2)
+    + [Options Menu](#options-menu)
+- [Design](#design)
+  * [Music](#music)
+    + [Problem in Context](#problem-in-context)
+    + [The Pattern](#the-pattern)
+    + [The Implementation](#the-implementation)
+    + [Consequences](#consequences)
+  * [Gamemode](#gamemode)
+    + [Problem in Context](#problem-in-context-1)
+    + [The Pattern](#the-pattern-1)
+    + [Implementation](#implementation)
+    + [Consequences](#consequences-1)
+  * [Input](#input)
+    + [Problem in Context](#problem-in-context-2)
+    + [The Pattern](#the-pattern-2)
+    + [Implementation](#implementation-1)
+    + [Consequences](#consequences-2)
+  * [Graphics](#graphics)
+    + [Problem in Context](#problem-in-context-3)
+    + [The Pattern](#the-pattern-3)
+    + [Implementation](#implementation-2)
+    + [Consequences](#consequences-3)
+- [Code Smells and Possible Refactorings](#code-smells-and-possible-refactorings)
+    + [Dispensables - Data Class](#dispensables---data-class)
+    + [Dispensables - Lazy Class](#dispensables---lazy-class)
+    + [Bloaters - Switch Statements](#bloaters---switch-statements)
+    + [Change Preventers - Parallel Inheritance](#change-preventers---parallel-inheritance)
+- [Testing](#testing)
+- [Self-Evaluation](#self-evaluation)
+- [Game Resources](#game-resources)
+  * [Images](#images)
+  * [Data Files](#data-files)
 
 ## Implemented Features
 
@@ -164,32 +167,29 @@ For menus where the user has choose some option
 ### Music
 
 #### Problem in Context
+
 We wanted to add some music to our game so it would even be more similar to the original game. 
 We downloaded the correspondent theme songs for both the [world](../data/Music/town.wav) mode and the [battle](../data/Music/battle.wav) mode. However, 
 we still had to think about the best way to implement this. 
 
 The problem was that we could not assign 
-the task to any class. We could not assign the "dj" responsability to the battle or the world as we first thought 
-since this would add to the responsabilities of those classes. 
+the task to any class. We could not assign the "DJ" responsability to the battle or the world as we first thought 
+since this would add to the responsibilities of those classes. 
 We had to make sure we were not going against any *SOLID* principle. 
 
 #### The Pattern
 
-We have applied the **Observer Pattern**. This pattern allows us to make sure a list of observers of
- some class is notified every time its state changes. This was exactly what we wanted. Although the gamemode
-  will have only one observer, by doing this we guarantee that the class responsible by the music change will be 
-  notified every time the gamemode's state is altered. 
+We have applied the **Observer Pattern**. This pattern allows us to make sure a list of observers of 
+some class is notified every time its state changes. This was exactly what we wanted. Although the gamemode 
+will have only one observer, by doing this we guarantee that the class responsible by the music change will be notified every time the gamemode's state is altered. 
   
-  In other words, when the game changes states, it notifies its observers. Since the [class Music](../src/main/java/lpoo/pokemonascii/rules/observer/Music.java) will 
-  be an observer of [GameState](../src/main/java/lpoo/pokemonascii/rules/state/GameState.java), its update() method is called. As a consequence, the track playing 
-  is set accordingly to the state the game is currently in.
+In other words, when the game changes states, it notifies its observers. Since the [class Music](../src/main/java/lpoo/pokemonascii/rules/observer/Music.java) will be an observer of [GameState](../src/main/java/lpoo/pokemonascii/rules/state/GameState.java), its update() method is called. As a consequence, the track playing is set accordingly to the state the game is currently in.
 
 #### The Implementation
 
 <p align="center">
   <img width=435 src="images/ObserverPattern.png">
 </p>
-
 
 #### Consequences
 
@@ -238,11 +238,21 @@ itself works with these objects through that interface.
 
 #### Problem in Context
 
-Depending on the currently game state, different keyboard inputs might execute different actions and sometimes we may even want to undo an action that we commited (like going back on a menu for example).  
+Depending on the currently game state, different keyboard inputs might execute different actions and sometimes we may even want to undo an action that we committed (like going back on a menu for example).  
 
 #### The Pattern
 
 For that purpose, we used the [Command](../src/main/java/lpoo/pokemonascii/rules/commands.java) design pattern.
+
+#### Implementation
+
+<p align="center">
+  <img width=550 src="images/Command.png">
+</p>
+
+#### Consequences
+
+- Easier to add new actions in an abstract way.
 
 ### Graphics
 
@@ -311,7 +321,24 @@ the class [WorldController](../src/main/java/lpoo/pokemonascii/rules/WorldContro
 if statement where we could appply the refactor method **Introduce Null Object** by creating a subclass that will perform
  the role of a null object, create a method isNull() and replace the code in the correct places.
 
+#### Change Preventers - Parallel Inheritance
+
+Whenever we create a subclass for [Option class](../src/main/java/lpoo/pokemonascii/data/options/Option.java), 
+we find ourselves needing to create a 
+subclass for the [Menu class](../src/main/java/lpoo/pokemonascii/gui/renderers/menu/OptionsMenuRenderer.java).
+This happens because we need a class which knows how to render the option we created. So, as new
+ classes are added, making changes becomes harder and harder.
+
+This code smell is called **Parallel Inheritance**. The solution for it would be to collapse 
+ a hierarchy so we would have only a generec renderer which would be easier to mantain.
+
 ## Testing
+
+<p align="center">
+  <img width=550 src="images/coverage.png">
+</p>
+
+[Link to Mutation Report](./index.html)
 
 ## Self-Evaluation
 
