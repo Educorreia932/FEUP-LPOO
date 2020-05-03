@@ -31,4 +31,9 @@ public class GameState {
     public void addObserver(Observer observer){
         observers.add(observer);
     }
+
+    public List<Observer> getObservers(){
+        return observers;
+    }
+
 }
