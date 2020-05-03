@@ -311,6 +311,17 @@ the class [WorldController](../src/main/java/lpoo/pokemonascii/rules/WorldContro
 if statement where we could appply the refactor method **Introduce Null Object** by creating a subclass that will perform
  the role of a null object, create a method isNull() and replace the code in the correct places.
 
+#### Change Preventers - Parallel Inheritance
+
+Whenever we create a subclass for [Option class](../src/main/java/lpoo/pokemonascii/data/options/Option.java), 
+we find ourselves needing to create a 
+subclass for the [Menu class](../src/main/java/lpoo/pokemonascii/gui/renderers/menu/OptionsMenuRenderer.java).
+This happens because we need a class which knows how to render the option we created. So, as new
+ classes are added, making changes becomes harder and harder.
+
+This code smell is called **Parallel Inheritance**. The solution for it would be to collapse 
+ a hierarchy so we would have only a generec renderer which would be easier to mantain.
+
 ## Testing
 
 ## Self-Evaluation
