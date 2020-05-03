@@ -25,8 +25,10 @@ public class Game {
         while (game.getGamemode() != null){
             Battle battle = new Battle(gui.getScreen(), gui.getGraphics());
             battle.start(game);
-            if(game.getGamemode() == null)
+
+            if (game.getGamemode() == null)
                 break;
+
             world.start(game);
         }
     }

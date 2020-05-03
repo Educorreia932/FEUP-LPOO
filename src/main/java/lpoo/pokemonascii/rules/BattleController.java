@@ -32,6 +32,11 @@ public class BattleController {
         this.options = new OptionsMenuController(battle.getOptions());
     }
 
+    public BattleController(BattleModel battle) {
+        this.battle = battle;
+        this.options = new OptionsMenuController(battle.getOptions());
+    }
+
     public void start(GameState game) throws IOException, LineUnavailableException, UnsupportedAudioFileException {
         while (inBattle) {
             gui.drawBattle();

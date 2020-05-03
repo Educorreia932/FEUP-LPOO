@@ -21,6 +21,11 @@ public class World implements State {
         controller = new WorldController(view, model);
     }
 
+    public World() {
+        model = new WorldModel();
+        controller = new WorldController(view, model);
+    }
+
     @Override
     public void start(GameState game) throws IOException, LineUnavailableException, UnsupportedAudioFileException {
         game.setState(this);

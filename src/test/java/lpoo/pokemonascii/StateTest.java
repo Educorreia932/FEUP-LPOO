@@ -26,11 +26,9 @@ public class StateTest {
 
     @Before
     public void init() throws IOException, SAXException, ParserConfigurationException {
-        Screen screen = Mockito.mock(Screen.class);
-        TextGraphics textGraphics = Mockito.mock(TextGraphics.class);
         gameState = new GameState();
-        battle = new Battle(screen, textGraphics);
-        world = new World(screen, textGraphics);
+        battle = new Battle();
+        world = new World();
         state = battle;
     }
 
