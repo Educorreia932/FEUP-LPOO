@@ -133,6 +133,7 @@ For instance, the Water type is super effective against Fire, so if a Water pok√
 
 ### Other
 
+- **Have a Main Menu**
 - **Save the progress**
 - **Create profiles**
 - **Create NPCs** - Have NPCs in the overworld whom which the player might interact.

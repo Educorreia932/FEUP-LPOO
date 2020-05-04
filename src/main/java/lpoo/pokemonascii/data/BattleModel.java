@@ -9,6 +9,10 @@ import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
 
 public class BattleModel {
+    public enum Turn {
+
+    }
+
     private Pokemon trainerPokemon;
     private Pokemon adversaryPokemon;
     private OptionsMenuModel options;

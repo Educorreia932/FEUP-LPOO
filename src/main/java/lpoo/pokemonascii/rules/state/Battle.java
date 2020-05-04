@@ -1,7 +1,5 @@
 package lpoo.pokemonascii.rules.state;
 
-import com.googlecode.lanterna.graphics.TextGraphics;
-import com.googlecode.lanterna.screen.Screen;
 import lpoo.pokemonascii.data.BattleModel;
 import lpoo.pokemonascii.gui.BattleView;
 import lpoo.pokemonascii.gui.GameView;

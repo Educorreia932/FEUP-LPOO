@@ -70,21 +70,25 @@ public class BattleController {
         return options;
     }
 
-    public void executeOption(Option selectedOption) {
-        switch (selectedOption.getName()) {
-            case "FIGHT":
-                battle.setOptions(new FightOptionsMenuModel(battle.getTrainerPokemon()));
-                options.setOptions(battle.getOptions());
-                gui.setOptionsMenuRenderer(OptionsMenu.FIGHT);
-                break;
-            case "BAG":
-                break;
-            case "POKEMON":
-                break;
-            case "RUN":
-                inBattle = false;
-                break;
-        }
+    public void executeOption(Option selectedOption) throws ParserConfigurationException, SAXException, IOException {
+        if (battle.getOptions() instanceof BattleOptionsMenuModel)
+            switch (selectedOption.getName()) {
+                case "FIGHT":
+                    battle.setOptions(new FightOptionsMenuModel(battle.getTrainerPokemon()));
+                    options.setOptions(battle.getOptions());
+                    gui.setOptionsMenuRenderer(OptionsMenu.FIGHT);
+                    break;
+                case "BAG":
+                    break;
+                case "POKEMON":
+                    break;
+                case "RUN":
+                    inBattle = false;
+                    break;
+            }
+
+        else if (battle.getOptions() instanceof FightOptionsMenuModel && !selectedOption.getName().equals("-"))
+            usePokemonMove(battle.getTrainerPokemon(), new PokemonMove(selectedOption.getName()));
     }
 
     // TODO: Only working for going back
