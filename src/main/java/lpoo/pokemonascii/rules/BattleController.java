@@ -1,8 +1,10 @@
 package lpoo.pokemonascii.rules;
 
 import lpoo.pokemonascii.data.BattleModel;
-import lpoo.pokemonascii.data.options.BattleOptionsMenuModel;
-import lpoo.pokemonascii.data.options.FightOptionsMenuModel;
+import lpoo.pokemonascii.data.options.battle.BattleOption;
+import lpoo.pokemonascii.data.options.battle.BattleOptionsMenuModel;
+import lpoo.pokemonascii.data.options.fight.FightOption;
+import lpoo.pokemonascii.data.options.fight.FightOptionsMenuModel;
 import lpoo.pokemonascii.data.options.Option;
 import lpoo.pokemonascii.data.pokemon.Pokemon;
 import lpoo.pokemonascii.data.pokemon.PokemonMove;
@@ -74,7 +76,7 @@ public class BattleController {
 
     public void executeOption(Option selectedOption) throws ParserConfigurationException, SAXException, IOException {
         if (battle.getOptions() instanceof BattleOptionsMenuModel)
-            switch (selectedOption.getName()) {
+            switch (((BattleOption) selectedOption).getName()) {
                 case "FIGHT":
                     battle.setOptions(new FightOptionsMenuModel(battle.getTrainerPokemon()));
                     options.setOptions(battle.getOptions());
@@ -89,8 +91,8 @@ public class BattleController {
                     break;
             }
 
-        else if (battle.getOptions() instanceof FightOptionsMenuModel && !selectedOption.getName().equals("-")) {
-            usePokemonMove(battle.getTrainerPokemon(), new PokemonMove(selectedOption.getName()));
+        else if (battle.getOptions() instanceof FightOptionsMenuModel && ((FightOption) selectedOption).getMove() != null) {
+            usePokemonMove(battle.getTrainerPokemon(), ((FightOption) selectedOption).getMove());
             setOptionsMenu();
             changeTurn();
         }

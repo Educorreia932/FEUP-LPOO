@@ -54,6 +54,10 @@ public class PokemonMove {
         }
     }
 
+    public PokemonMove() {
+        this.name = "-";
+    }
+
     public void execute(Pokemon pokemon) {
         if (pokemon.getSpecies().getSecondaryType() != null)
             pokemon.takeDamage((int) (type.getDamageMultiplier(pokemon.getSpecies().getPrimaryType()) *

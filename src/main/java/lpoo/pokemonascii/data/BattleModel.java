@@ -1,6 +1,6 @@
 package lpoo.pokemonascii.data;
 
-import lpoo.pokemonascii.data.options.BattleOptionsMenuModel;
+import lpoo.pokemonascii.data.options.battle.BattleOptionsMenuModel;
 import lpoo.pokemonascii.data.options.OptionsMenuModel;
 import lpoo.pokemonascii.data.pokemon.Pokemon;
 import org.xml.sax.SAXException;
