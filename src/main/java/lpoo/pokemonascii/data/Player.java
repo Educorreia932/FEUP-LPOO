@@ -2,7 +2,11 @@ package lpoo.pokemonascii.data;
 
 import lpoo.pokemonascii.data.elements.CollidingElement;
 import lpoo.pokemonascii.data.pokemon.Pokemon;
+import org.xml.sax.SAXException;
 
+import javax.xml.parsers.ParserConfigurationException;
+import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Player extends CollidingElement {
@@ -19,9 +23,11 @@ public class Player extends CollidingElement {
         LEFT,
     }
 
-    public Player() {
+    public Player() throws ParserConfigurationException, SAXException, IOException {
         super(111,70, 23,19);
         state = State.FRONT;
+        pokemons = new ArrayList<>();
+        pokemons.add(new Pokemon(25, Pokemon.facingDirection.BACK));
     }
 
     public Position getPosition(Position.Direction direction) {
@@ -45,5 +51,9 @@ public class Player extends CollidingElement {
 
     public void setState(State state) {
         this.state = state;
+    }
+
+    public List<Pokemon> getPokemons() {
+        return pokemons;
     }
 }

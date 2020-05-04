@@ -44,7 +44,9 @@ public class BattleController {
             gui.drawBattle();
 
             Command command = gui.getNextCommand(this);
-            command.execute();
+
+            if (battle.getCurrentTurn() == BattleModel.Turn.TRAINER)
+                command.execute();
 
             if (command instanceof QuitCommand){
                 game.setState(null);
@@ -87,8 +89,11 @@ public class BattleController {
                     break;
             }
 
-        else if (battle.getOptions() instanceof FightOptionsMenuModel && !selectedOption.getName().equals("-"))
+        else if (battle.getOptions() instanceof FightOptionsMenuModel && !selectedOption.getName().equals("-")) {
             usePokemonMove(battle.getTrainerPokemon(), new PokemonMove(selectedOption.getName()));
+            setOptionsMenu();
+            changeTurn();
+        }
     }
 
     // TODO: Only working for going back
@@ -96,5 +101,13 @@ public class BattleController {
         battle.setOptions(new BattleOptionsMenuModel());
         options.setOptions(battle.getOptions());
         gui.setOptionsMenuRenderer(BattleController.OptionsMenu.BATTLE);
+    }
+
+    public void changeTurn() {
+        if (battle.getCurrentTurn() == BattleModel.Turn.TRAINER)
+            battle.setCurrentTurn(BattleModel.Turn.ADVERSARY);
+
+        else
+            battle.setCurrentTurn(BattleModel.Turn.TRAINER);
     }
 }

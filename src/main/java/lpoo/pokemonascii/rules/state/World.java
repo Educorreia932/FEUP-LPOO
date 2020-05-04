@@ -18,13 +18,13 @@ public class World implements State {
     private WorldModel model;
     private WorldController controller;
 
-    public World(GameView gui) {
+    public World(GameView gui) throws ParserConfigurationException, SAXException, IOException {
         model = new WorldModel();
         view = new WorldView(gui.getScreen(), gui.getGraphics(), model);
         controller = new WorldController(view, model);
     }
 
-    public World() {
+    public World() throws ParserConfigurationException, SAXException, IOException {
         model = new WorldModel();
         controller = new WorldController(view, model);
     }
@@ -35,12 +35,16 @@ public class World implements State {
 
         switch (controller.start(game)) {
             case BATTLE:
-                game.setState(new Battle(game.getGui()));
+                game.setState(new Battle(game.getGui(), game.getWorld().getModel().getPlayer()));
                 break;
             case EXIT:
                 game.setState(null);
                 break;
         }
+    }
+
+    public WorldModel getModel() {
+        return model;
     }
 }
 

@@ -5,9 +5,11 @@ import lpoo.pokemonascii.rules.state.GameState;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mockito;
+import org.xml.sax.SAXException;
 
 import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.UnsupportedAudioFileException;
+import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -20,7 +22,7 @@ public class ObserverTest {
     private GameState gamestate;
 
     @Before
-    public void init() throws LineUnavailableException {
+    public void init() throws LineUnavailableException, UnsupportedAudioFileException, ParserConfigurationException, SAXException, IOException {
         gamestate = new GameState();
         observer = Mockito.mock(Observer.class);
         gamestate.addObserver(observer);

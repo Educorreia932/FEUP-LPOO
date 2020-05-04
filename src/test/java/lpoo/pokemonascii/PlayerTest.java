@@ -13,6 +13,10 @@ import lpoo.pokemonascii.rules.commands.player.PlayerMoveUpCommand;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mockito;
+import org.xml.sax.SAXException;
+
+import javax.xml.parsers.ParserConfigurationException;
+import java.io.IOException;
 
 import static lpoo.pokemonascii.data.Player.X_MOVEMENT;
 import static lpoo.pokemonascii.data.Player.Y_MOVEMENT;
@@ -24,7 +28,7 @@ public class PlayerTest {
     private Player player;
 
     @Before
-    public void init(){
+    public void init() throws IOException, SAXException, ParserConfigurationException {
         player = new Player();
     }
 
@@ -58,7 +62,7 @@ public class PlayerTest {
     }
 
     @Test
-    public void testStateChange(){
+    public void testStateChange() throws ParserConfigurationException, SAXException, IOException {
         WorldModel model = new WorldModel(player);
         WorldView gui = Mockito.mock(WorldView.class);
         WorldController worldController = new WorldController(gui, model);

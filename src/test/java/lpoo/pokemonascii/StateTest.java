@@ -22,7 +22,7 @@ public class StateTest {
     private State state;
 
     @Before
-    public void init() throws IOException, SAXException, ParserConfigurationException {
+    public void init() throws IOException, SAXException, ParserConfigurationException, LineUnavailableException, UnsupportedAudioFileException {
         gameState = new GameState();
         battle = new Battle();
         world = new World();

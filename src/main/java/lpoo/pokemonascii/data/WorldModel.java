@@ -1,7 +1,10 @@
 package lpoo.pokemonascii.data;
 
 import lpoo.pokemonascii.data.elements.CollidingElement;
+import org.xml.sax.SAXException;
 
+import javax.xml.parsers.ParserConfigurationException;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,7 +13,7 @@ public class WorldModel {
     private List<CollidingElement> elements;
     private List<Tile> tiles;
 
-    public WorldModel() {
+    public WorldModel() throws IOException, SAXException, ParserConfigurationException {
         player = new Player();
         tiles = new ArrayList<>();
         elements = new ArrayList<>();
