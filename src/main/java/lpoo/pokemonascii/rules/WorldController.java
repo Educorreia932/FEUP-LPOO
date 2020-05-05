@@ -27,8 +27,7 @@ public class WorldController {
     }
 
     public GameState.Gamemode start(GameState game) throws IOException, LineUnavailableException, UnsupportedAudioFileException, ParserConfigurationException, SAXException {
-        while (true) {
-            gui.drawWorld();
+        new Thread(gui).start();
 
         while (true) {
             Command command = gui.getNextCommand(this);

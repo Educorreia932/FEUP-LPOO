@@ -32,15 +32,22 @@ public class WorldView implements Runnable{
         tileRenderer = new TileRenderer(world.getTiles());
     }
 
-    public void draw() throws IOException {
-        screen.clear();
+    public void draw() throws IOException, InterruptedException {
+        long start = System.currentTimeMillis();
 
+        screen.clear();
 
         backgroundRenderer.draw(graphics);
         tileRenderer.draw(graphics);
         playerRenderer.draw(graphics);
 
         screen.refresh();
+
+        long elapsedTime = System.currentTimeMillis() - start;
+
+        long timeToSleep = 150 - elapsedTime > 0 ? 150 - elapsedTime : 0;
+
+        Thread.sleep(timeToSleep);
     }
 
     public static KeyStroke getPressedKey(Screen screen) throws IOException {
@@ -78,7 +85,9 @@ public class WorldView implements Runnable{
         try {
             while(true)
                 draw();
-        } catch (IOException e) {
+        }
+
+        catch (IOException | InterruptedException e) {
             e.printStackTrace();
         }
     }
