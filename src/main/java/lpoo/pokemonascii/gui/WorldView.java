@@ -16,7 +16,7 @@ import lpoo.pokemonascii.rules.commands.player.PlayerMoveUpCommand;
 
 import java.io.IOException;
 
-public class WorldView {
+public class WorldView implements Runnable{
     private Screen screen;
     private TextGraphics graphics;
     private BackgroundRenderer backgroundRenderer;
@@ -32,8 +32,9 @@ public class WorldView {
         tileRenderer = new TileRenderer(world.getTiles());
     }
 
-    public void drawWorld() throws IOException {
+    public void draw() throws IOException {
         screen.clear();
+
 
         backgroundRenderer.draw(graphics);
         tileRenderer.draw(graphics);
@@ -70,5 +71,15 @@ public class WorldView {
         }
 
         return new DoNothingCommand();
+    }
+
+    @Override
+    public void run() {
+        try {
+            while(true)
+                draw();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

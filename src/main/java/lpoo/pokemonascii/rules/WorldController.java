@@ -30,6 +30,7 @@ public class WorldController {
         while (true) {
             gui.drawWorld();
 
+        while (true) {
             Command command = gui.getNextCommand(this);
             command.execute();
 
