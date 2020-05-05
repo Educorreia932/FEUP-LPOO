@@ -1,17 +1,19 @@
 package lpoo.pokemonascii.data;
 
 import lpoo.pokemonascii.data.elements.CollidingElement;
+import org.xml.sax.SAXException;
 
+import javax.xml.parsers.ParserConfigurationException;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 
 public class WorldModel {
     private Player player;
     private List<CollidingElement> elements;
     private List<Tile> tiles;
 
-    public WorldModel() {
+    public WorldModel() throws IOException, SAXException, ParserConfigurationException {
         player = new Player();
         tiles = new ArrayList<>();
         elements = new ArrayList<>();
@@ -30,7 +32,10 @@ public class WorldModel {
         player.setPosition(player.getPosition(direction));
     }
 
-    // Can Player Move?? Top 10 Questions Science Can't Answer
+    public Position getPlayerPosition() {
+        return player.getPosition();
+    }
+
     public boolean canPlayerMove(Position.Direction direction) {
         Position position = player.getPosition(direction);
 

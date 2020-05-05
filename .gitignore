@@ -50,3 +50,11 @@ build/test-results/test/TEST-lpoo.pokemonascii.PokemonMoveTest.xml
 build/test-results/test/TEST-lpoo.pokemonascii.PlayerTest.xml
 
 build/test-results/test/TEST-lpoo.pokemonascii.CollisionTest.xml
+
+build/test-results/test/
+
+build/test-results/test/TEST-lpoo.pokemonascii.PlayerMovementTest.xml
+
+build/test-results/test/TEST-lpoo.pokemonascii.StateTest.xml
+
+build/test-results/test/

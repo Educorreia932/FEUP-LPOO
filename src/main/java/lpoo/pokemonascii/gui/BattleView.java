@@ -8,7 +8,7 @@ import lpoo.pokemonascii.data.BattleModel;
 import lpoo.pokemonascii.gui.renderers.menu.BattleMenuRenderer;
 import lpoo.pokemonascii.gui.renderers.pokemon.PokemonInfoRenderer;
 import lpoo.pokemonascii.gui.renderers.pokemon.PokemonRenderer;
-import lpoo.pokemonascii.rules.commands.ChoseOptionCommand;
+import lpoo.pokemonascii.rules.commands.optionsmenu.ChoseOptionCommand;
 import lpoo.pokemonascii.rules.commands.*;
 import lpoo.pokemonascii.gui.renderers.*;
 import lpoo.pokemonascii.rules.BattleController;
@@ -42,7 +42,7 @@ public class BattleView {
         adversaryPokemonInfo = new PokemonInfoRenderer(battle.getAdversaryPokemon());
     }
 
-    public void drawBattle() throws IOException {
+    public void draw() throws IOException {
         screen.clear();
 
         background.draw(graphics);

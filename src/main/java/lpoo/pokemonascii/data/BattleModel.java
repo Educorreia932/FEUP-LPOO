@@ -1,23 +1,34 @@
 package lpoo.pokemonascii.data;
 
-import lpoo.pokemonascii.data.options.BattleOptionsMenuModel;
+import lpoo.pokemonascii.data.options.battle.BattleOptionsMenuModel;
 import lpoo.pokemonascii.data.options.OptionsMenuModel;
 import lpoo.pokemonascii.data.pokemon.Pokemon;
 import org.xml.sax.SAXException;
 
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
+import java.util.Random;
 
 public class BattleModel {
+    public enum Turn {
+        TRAINER,
+        ADVERSARY
+    }
+
     private Pokemon trainerPokemon;
     private Pokemon adversaryPokemon;
     private OptionsMenuModel options;
+    private Turn currentTurn;
 
-    public BattleModel(int trainer_pokemon_number) throws IOException, SAXException, ParserConfigurationException {
-        trainerPokemon = new Pokemon(trainer_pokemon_number, Pokemon.facingDirection.BACK);
-        adversaryPokemon = new Pokemon(trainer_pokemon_number, Pokemon.facingDirection.FRONT);
+    public BattleModel(Pokemon trainerPokemon) throws IOException, SAXException, ParserConfigurationException {
+        this.trainerPokemon = trainerPokemon;
 
+        int pokemonNumber = new Random().nextInt(152);
+
+        adversaryPokemon = new Pokemon(pokemonNumber, Pokemon.facingDirection.FRONT);
         options = new BattleOptionsMenuModel();
+
+        currentTurn = Turn.TRAINER;
     }
 
     public Pokemon getTrainerPokemon() {
@@ -36,7 +47,11 @@ public class BattleModel {
         this.options = options;
     }
 
-    public void setAdversaryPokemon(Pokemon pokemon) {
-        adversaryPokemon = pokemon;
+    public Turn getCurrentTurn() {
+        return currentTurn;
+    }
+
+    public void setCurrentTurn(Turn currentTurn) {
+        this.currentTurn = currentTurn;
     }
 }

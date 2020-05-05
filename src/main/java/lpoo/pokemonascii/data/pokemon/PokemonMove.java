@@ -54,9 +54,18 @@ public class PokemonMove {
         }
     }
 
+    public PokemonMove() {
+        this.name = "-";
+    }
+
     public void execute(Pokemon pokemon) {
-        pokemon.takeDamage((int) (type.getDamageMultiplier(pokemon.getSpecies().getPrimaryType()) *
-                                  type.getDamageMultiplier(pokemon.getSpecies().getSecondaryType())* power));
+        if (pokemon.getSpecies().getSecondaryType() != null)
+            pokemon.takeDamage((int) (type.getDamageMultiplier(pokemon.getSpecies().getPrimaryType()) *
+                                  type.getDamageMultiplier(pokemon.getSpecies().getSecondaryType()) *
+                                  power));
+
+        else
+            pokemon.takeDamage((int) (type.getDamageMultiplier(pokemon.getSpecies().getPrimaryType()) * power));
     }
 
     public int getPower() {

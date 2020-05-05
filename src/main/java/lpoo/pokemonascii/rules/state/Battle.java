@@ -1,9 +1,10 @@
 package lpoo.pokemonascii.rules.state;
 
-import com.googlecode.lanterna.graphics.TextGraphics;
-import com.googlecode.lanterna.screen.Screen;
 import lpoo.pokemonascii.data.BattleModel;
+import lpoo.pokemonascii.data.Player;
+import lpoo.pokemonascii.data.pokemon.Pokemon;
 import lpoo.pokemonascii.gui.BattleView;
+import lpoo.pokemonascii.gui.GameView;
 import lpoo.pokemonascii.rules.BattleController;
 import org.xml.sax.SAXException;
 
@@ -17,17 +18,29 @@ public class Battle implements State {
     private BattleModel model;
     private BattleView view;
 
-    public Battle(Screen screen, TextGraphics graphics) throws ParserConfigurationException, SAXException, IOException {
-        model = new BattleModel(6);
-        view = new BattleView(screen, graphics, model);
-
+    public Battle(GameView gui, Player player) throws ParserConfigurationException, SAXException, IOException {
+        model = new BattleModel(player.getPokemons().get(0));
+        view = new BattleView(gui.getScreen(), gui.getGraphics(), model);
         controller = new BattleController(view, model);
     }
 
+    public Battle() throws ParserConfigurationException, SAXException, IOException {
+        model = new BattleModel(new Pokemon(25, Pokemon.facingDirection.BACK));
+        controller = new BattleController(model);
+    }
+
     @Override
-    public void start(GameState game) throws IOException, LineUnavailableException, UnsupportedAudioFileException {
+    public void start(GameState game) throws IOException, LineUnavailableException, UnsupportedAudioFileException, ParserConfigurationException, SAXException {
         game.setState(this);
-        controller.start(game);
+
+        switch (controller.start(game)) {
+            case WORLD:
+                game.setState(game.getWorld());
+                break;
+            case EXIT:
+                game.setState(null);
+                break;
+        }
     }
 }
 
