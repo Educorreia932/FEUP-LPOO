@@ -8,14 +8,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Pokemon implements Cloneable {
-
-    public Object clone() throws
-            CloneNotSupportedException
-    {
-        return super.clone();
-    }
-
+public class Pokemon {
     public enum facingDirection {
         FRONT,
         BACK

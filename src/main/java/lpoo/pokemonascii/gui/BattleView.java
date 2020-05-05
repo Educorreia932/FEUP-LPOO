@@ -42,7 +42,7 @@ public class BattleView {
         adversaryPokemonInfo = new PokemonInfoRenderer(battle.getAdversaryPokemon());
     }
 
-    public void drawBattle() throws IOException {
+    public void draw() throws IOException {
         screen.clear();
 
         background.draw(graphics);

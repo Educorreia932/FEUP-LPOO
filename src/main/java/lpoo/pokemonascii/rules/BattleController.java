@@ -10,7 +10,9 @@ import lpoo.pokemonascii.data.pokemon.Pokemon;
 import lpoo.pokemonascii.data.pokemon.PokemonMove;
 import lpoo.pokemonascii.gui.BattleView;
 import lpoo.pokemonascii.rules.commands.Command;
+import lpoo.pokemonascii.rules.commands.DoNothingCommand;
 import lpoo.pokemonascii.rules.commands.QuitCommand;
+import lpoo.pokemonascii.rules.commands.UsePokemonMoveCommand;
 import lpoo.pokemonascii.rules.state.GameState;
 import org.xml.sax.SAXException;
 
@@ -43,21 +45,36 @@ public class BattleController {
 
     public GameState.Gamemode start(GameState game) throws IOException, LineUnavailableException, UnsupportedAudioFileException, ParserConfigurationException, SAXException {
         while (inBattle) {
-            gui.drawBattle();
+            gui.draw();
 
-            Command command = gui.getNextCommand(this);
+            Command command = new DoNothingCommand();
 
-            if (battle.getCurrentTurn() == BattleModel.Turn.TRAINER)
-                command.execute();
+            if (battle.getCurrentTurn() == BattleModel.Turn.TRAINER) {
+                try {
+                    command = gui.getNextCommand(this);
+                }
+
+                catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
 
             else {
-                PokemonMove move = battle.getAdversaryPokemon().getMoves().get(0);
-                usePokemonMove(battle.getAdversaryPokemon(), move);
+                command = new UsePokemonMoveCommand(this, battle.getAdversaryPokemon(), battle.getAdversaryPokemon().getMoves().get(0));
                 changeTurn();
             }
 
-            if (command instanceof QuitCommand){
-                game.setState(null);
+            command.execute();
+
+            if (command instanceof QuitCommand) {
+                try {
+                    game.setState(null);
+                }
+
+                catch (IOException | LineUnavailableException | UnsupportedAudioFileException e) {
+                    e.printStackTrace();
+                }
+
                 inBattle = false;
             }
 
@@ -86,7 +103,7 @@ public class BattleController {
 
     public void executeOption(Option selectedOption) throws ParserConfigurationException, SAXException, IOException {
         if (battle.getOptions() instanceof BattleOptionsMenuModel)
-            switch (((BattleOption) selectedOption).getName()) {
+            switch (selectedOption.getName()) {
                 case "FIGHT":
                     battle.setOptions(new FightOptionsMenuModel(battle.getTrainerPokemon()));
                     options.setOptions(battle.getOptions());
@@ -101,7 +118,7 @@ public class BattleController {
                     break;
             }
 
-        else if (battle.getOptions() instanceof FightOptionsMenuModel && ((FightOption) selectedOption).getMove() != null) {
+        else if (battle.getOptions() instanceof FightOptionsMenuModel && !((FightOption) selectedOption).getMove().getName().equals("-")) {
             usePokemonMove(battle.getTrainerPokemon(), ((FightOption) selectedOption).getMove());
             setOptionsMenu();
             changeTurn();
