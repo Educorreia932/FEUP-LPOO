@@ -82,6 +82,9 @@ public class Pokemon implements Cloneable {
 
     public void takeDamage(int damage) {
         currentHealth -= damage;
+
+        if (currentHealth  < 0)
+            currentHealth = 0;
     }
 
     public int getLevel() {

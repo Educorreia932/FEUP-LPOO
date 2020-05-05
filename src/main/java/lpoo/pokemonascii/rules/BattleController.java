@@ -50,16 +50,26 @@ public class BattleController {
             if (battle.getCurrentTurn() == BattleModel.Turn.TRAINER)
                 command.execute();
 
+            else {
+                PokemonMove move = battle.getAdversaryPokemon().getMoves().get(0);
+                usePokemonMove(battle.getAdversaryPokemon(), move);
+                changeTurn();
+            }
+
             if (command instanceof QuitCommand){
                 game.setState(null);
                 inBattle = false;
             }
 
-            if (!inBattle)
+            if (!inBattle || pokemonDied())
                 return GameState.Gamemode.WORLD;
         }
 
         return GameState.Gamemode.EXIT;
+    }
+
+    public boolean pokemonDied() {
+        return battle.getTrainerPokemon().getCurrentHealth() == 0 || battle.getAdversaryPokemon().getCurrentHealth() == 0;
     }
 
     public void usePokemonMove(Pokemon pokemon, PokemonMove move) {
