@@ -27,19 +27,25 @@ public class WorldController {
     }
 
     public GameState.Gamemode start(GameState game) throws IOException, LineUnavailableException, UnsupportedAudioFileException, ParserConfigurationException, SAXException {
-        new Thread(gui).start();
+        gui.running = true;
+
+        Thread view = new Thread(gui);
+        view.start();
 
         while (true) {
-            Command command = gui.getNextCommand(this);
+            Command command;
+            command = gui.getNextCommand(this);
             command.execute();
 
             if (command instanceof QuitCommand){
                 game.setState(null);
+                gui.running = false;
                 break;
             }
 
             if (enteredBattle) {
                 enteredBattle = false;
+                gui.running = false;
                 return GameState.Gamemode.BATTLE;
             }
         }

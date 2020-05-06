@@ -3,6 +3,7 @@ package lpoo.pokemonascii.gui;
 import com.googlecode.lanterna.TextColor;
 import com.googlecode.lanterna.graphics.TextGraphics;
 import lpoo.pokemonascii.data.Position;
+import lpoo.pokemonascii.data.Rect;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -45,6 +46,25 @@ public class Sprite {
 
         for (int i = 0; i < image.getWidth(); i++) {
             for (int j = 0; j < image.getHeight(); j++) {
+                graphics.setBackgroundColor(TextColor.Factory.fromString(background_colors[j][i]));
+                graphics.setForegroundColor(TextColor.Factory.fromString(foreground_colors[j][i]));
+
+                // Transparency
+                if (!transparency || (characters[j][i] != null && !background_colors[j][i].equals(CHROMA_GREEN)))
+                    graphics.putString(i + position.getX(), j + position.getY(), characters[j][i]);
+            }
+        }
+    }
+
+    public static void drawSpritePortion(Sprite sprite, Position position, Rect portion, Position portionPosition, TextGraphics graphics, boolean transparency) {
+        Image image = sprite.getCurrentImage();
+
+        String[][] background_colors = image.getBackground_colors();
+        String[][] foreground_colors = image.getForeground_colors();
+        String[][] characters = image.getCharacters();
+
+        for (int i = portionPosition.getX(); i < portionPosition.getX() + portion.getWidth(); i++) {
+            for (int j = portionPosition.getY(); j < portionPosition.getY() + portion.getHeight(); j++) {
                 graphics.setBackgroundColor(TextColor.Factory.fromString(background_colors[j][i]));
                 graphics.setForegroundColor(TextColor.Factory.fromString(foreground_colors[j][i]));
 

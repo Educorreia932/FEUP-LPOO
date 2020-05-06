@@ -22,42 +22,36 @@ public class WorldView implements Runnable{
     private BackgroundRenderer backgroundRenderer;
     private PlayerRenderer playerRenderer;
     private TileRenderer tileRenderer;
+    public boolean running = true;
 
     public WorldView(Screen screen, TextGraphics graphics, WorldModel world) {
         this.screen = screen;
         this.graphics = graphics;
 
-        backgroundRenderer = new BackgroundRenderer("room");
+        backgroundRenderer = new BackgroundRenderer("room", world.getPlayer());
         playerRenderer = new PlayerRenderer(world.getPlayer());
         tileRenderer = new TileRenderer(world.getTiles());
     }
 
     public void draw() throws IOException, InterruptedException {
-        long start = System.currentTimeMillis();
-
-        screen.clear();
-
         backgroundRenderer.draw(graphics);
         tileRenderer.draw(graphics);
         playerRenderer.draw(graphics);
 
         screen.refresh();
-
-        long elapsedTime = System.currentTimeMillis() - start;
-
-        long timeToSleep = 150 - elapsedTime > 0 ? 150 - elapsedTime : 0;
-
-        Thread.sleep(timeToSleep);
     }
 
     public static KeyStroke getPressedKey(Screen screen) throws IOException {
-        KeyStroke key = screen.readInput();
+        KeyStroke key = screen.pollInput();
 
         return key;
     }
 
     public Command getNextCommand(WorldController world) throws IOException {
         KeyStroke pressedKey = getPressedKey(screen);
+
+        if (pressedKey == null)
+            return new DoNothingCommand();
 
         switch (pressedKey.getKeyType()) {
             case ArrowUp:
@@ -83,8 +77,11 @@ public class WorldView implements Runnable{
     @Override
     public void run() {
         try {
-            while(true)
+            screen.clear();
+
+            while (running) {
                 draw();
+            }
         }
 
         catch (IOException | InterruptedException e) {
