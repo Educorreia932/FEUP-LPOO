@@ -43,7 +43,7 @@ public class BattleController {
         this.options = new OptionsMenuController(battle.getOptions());
     }
 
-    public GameState.Gamemode start(GameState game) throws IOException,  ParserConfigurationException, SAXException {
+    public GameState.Gamemode start(GameState game) throws IOException, ParserConfigurationException, SAXException {
         while (inBattle) {
             gui.draw();
 

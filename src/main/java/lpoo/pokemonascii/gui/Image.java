@@ -13,7 +13,7 @@ import java.io.File;
 import java.io.IOException;
 
 public class Image {
-    private static final String IMAGES_PATH = "images\\";
+    private static final String IMAGES_PATH = "data\\images\\";
 
     private int width;
     private int height;
