@@ -16,25 +16,24 @@ import lpoo.pokemonascii.rules.commands.player.PlayerMoveUpCommand;
 
 import java.io.IOException;
 
-public class WorldView {
+public class WorldView implements Runnable{
     private Screen screen;
     private TextGraphics graphics;
     private BackgroundRenderer backgroundRenderer;
     private PlayerRenderer playerRenderer;
     private TileRenderer tileRenderer;
+    public boolean running = true;
 
     public WorldView(Screen screen, TextGraphics graphics, WorldModel world) {
         this.screen = screen;
         this.graphics = graphics;
 
-        backgroundRenderer = new BackgroundRenderer("room");
+        backgroundRenderer = new BackgroundRenderer("room", world.getPlayer());
         playerRenderer = new PlayerRenderer(world.getPlayer());
         tileRenderer = new TileRenderer(world.getTiles());
     }
 
-    public void drawWorld() throws IOException {
-        screen.clear();
-
+    public void draw() throws IOException, InterruptedException {
         backgroundRenderer.draw(graphics);
         tileRenderer.draw(graphics);
         playerRenderer.draw(graphics);
@@ -43,13 +42,16 @@ public class WorldView {
     }
 
     public static KeyStroke getPressedKey(Screen screen) throws IOException {
-        KeyStroke key = screen.readInput();
+        KeyStroke key = screen.pollInput();
 
         return key;
     }
 
     public Command getNextCommand(WorldController world) throws IOException {
         KeyStroke pressedKey = getPressedKey(screen);
+
+        if (pressedKey == null)
+            return new DoNothingCommand();
 
         switch (pressedKey.getKeyType()) {
             case ArrowUp:
@@ -70,5 +72,20 @@ public class WorldView {
         }
 
         return new DoNothingCommand();
+    }
+
+    @Override
+    public void run() {
+        try {
+            screen.clear();
+
+            while (running) {
+                draw();
+            }
+        }
+
+        catch (IOException | InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 }
