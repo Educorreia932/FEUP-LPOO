@@ -18,6 +18,7 @@ public class Pokemon {
     private PokemonSpecies species;
     private String name;
     private PokemonStats stats;
+    private PokemonIV IVs;
     private float currentHealth;
     private int level;
     private int experience;
@@ -28,7 +29,7 @@ public class Pokemon {
         species = new PokemonSpecies(pokedex_number);
         name = species.getName();
         stats = species.getBaseStats();
-        currentHealth = stats.getHP();
+        currentHealth = stats.getStat(PokemonStats.Stat.HP);
         level = 56;
         experience = PokemonExperience.getLevelExperience(species.getTotalExperience(), level) + 5000;
         this.direction = direction;
@@ -70,7 +71,7 @@ public class Pokemon {
     }
 
     public float getCurrentHealthPercentage() {
-        return currentHealth / stats.getHP();
+        return currentHealth / stats.getStat(PokemonStats.Stat.HP);
     }
 
     public void takeDamage(int damage) {

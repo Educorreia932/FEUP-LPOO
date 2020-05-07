@@ -3,47 +3,32 @@ package lpoo.pokemonascii.data.pokemon;
 import java.util.List;
 
 public class PokemonStats {
-    private float hp, attack, defense, spAtk, spDef, speed;
+    enum Stat {
+        HP,
+        ATTACK,
+        DEFENSE,
+        SP_ATTACK,
+        SP_DEFENSE,
+        SPEED
+    }
+
+    private List<Integer> stats;
 
     public PokemonStats(List<Integer> stats) {
-        this.hp = stats.get(0);
-        this.attack = stats.get(1);
-        this.defense = stats.get(2);
-        this.spAtk = stats.get(3);
-        this.spDef = stats.get(4);
-        this.speed = stats.get(5);
+        this.stats = stats;
     }
 
-    public PokemonStats(PokemonStats stats) {
-        this.hp = stats.getHP();
-        this.attack = stats.getAttack();
-        this.defense = stats.getDefense();
-        this.spAtk = stats.getSpAtk();
-        this.spDef = stats.getSpDef();
-        this.speed = stats.getSpeed();
+    public int getStat(Stat stat) {
+        return stats.get(stat.ordinal());
     }
 
-    public float getHP() {
-        return hp;
-    }
+    public float calculateStat(PokemonStats stats, Stat stat, int iv, int level) {
+        float baseStat = stats.getStat(stat);
 
-    public float getAttack() {
-        return attack;
-    }
+        if (stat == Stat.HP)
+            return (((2 * baseStat + iv) * level) / 100) + level + 10;
 
-    public float getDefense() {
-        return defense;
-    }
-
-    public float getSpAtk() {
-        return spAtk;
-    }
-
-    public float getSpDef() {
-        return spDef;
-    }
-
-    public float getSpeed() {
-        return speed;
+        else
+            return (((2 * baseStat + iv) * level) / 100) + 5;
     }
 }
