@@ -17,7 +17,8 @@ public class Pokemon {
     private Position position;
     private PokemonSpecies species;
     private String name;
-    private PokemonStats stats;
+    private PokemonStats baseStats;
+    private PokemonStats currentStats;
     private PokemonIV IVs;
     private float currentHealth;
     private int level;
@@ -28,10 +29,12 @@ public class Pokemon {
     public Pokemon(Integer pokedex_number, facingDirection direction) throws IOException, SAXException, ParserConfigurationException {
         species = new PokemonSpecies(pokedex_number);
         name = species.getName();
-        stats = species.getBaseStats();
-        currentHealth = stats.getStat(PokemonStats.Stat.HP);
+        IVs = new PokemonIV();
+        baseStats = species.getBaseStats();
         level = 56;
         experience = PokemonExperience.getLevelExperience(species.getTotalExperience(), level) + 5000;
+        currentStats = PokemonStats.calculateStats(baseStats, IVs, level);
+        currentHealth = currentStats.getStat(PokemonStats.Stat.HP);
         this.direction = direction;
         moves = new ArrayList<>();
         moves.add(new PokemonMove("Tackle"));
@@ -71,7 +74,7 @@ public class Pokemon {
     }
 
     public float getCurrentHealthPercentage() {
-        return currentHealth / stats.getStat(PokemonStats.Stat.HP);
+        return currentHealth / currentStats.getStat(PokemonStats.Stat.HP);
     }
 
     public void takeDamage(int damage) {

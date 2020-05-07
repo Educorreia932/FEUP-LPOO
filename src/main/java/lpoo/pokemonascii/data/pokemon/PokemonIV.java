@@ -14,4 +14,8 @@ public class PokemonIV {
         for (int i = 0; i < 6; i++)
             IVs.add(rand.nextInt(32));
     }
+
+    public int getIV(int i) {
+        return IVs.get(i);
+    }
 }

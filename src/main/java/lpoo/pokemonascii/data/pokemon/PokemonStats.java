@@ -1,5 +1,6 @@
 package lpoo.pokemonascii.data.pokemon;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class PokemonStats {
@@ -22,13 +23,23 @@ public class PokemonStats {
         return stats.get(stat.ordinal());
     }
 
-    public float calculateStat(PokemonStats stats, Stat stat, int iv, int level) {
-        float baseStat = stats.getStat(stat);
+    public int getStat(int i) {
+        return stats.get(i);
+    }
 
-        if (stat == Stat.HP)
-            return (((2 * baseStat + iv) * level) / 100) + level + 10;
+    public static PokemonStats calculateStats(PokemonStats baseStats, PokemonIV IVs, int level) {
+        List<Integer> stats = new ArrayList<>();
 
-        else
-            return (((2 * baseStat + iv) * level) / 100) + 5;
+        for (int i = 0; i < 6; i++) {
+            float baseStat = baseStats.getStat(i);
+
+            if (i == Stat.HP.ordinal())
+                stats.add((int) ((((2 * baseStat + IVs.getIV(i) /* + (ev /4) */) * level) / 100) + level + 10));
+
+            else
+                stats.add((int) ((((2 * baseStat + IVs.getIV(i) /* + (ev /4) */) * level) / 100) + 5));
+        }
+
+        return new PokemonStats(stats);
     }
 }
