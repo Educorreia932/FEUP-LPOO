@@ -16,7 +16,7 @@ import lpoo.pokemonascii.rules.commands.player.PlayerMoveUpCommand;
 
 import java.io.IOException;
 
-public class WorldView implements Runnable{
+public class WorldView implements Runnable {
     private Screen screen;
     private TextGraphics graphics;
     private BackgroundRenderer backgroundRenderer;
