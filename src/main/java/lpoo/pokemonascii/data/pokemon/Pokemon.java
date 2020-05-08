@@ -20,7 +20,7 @@ public class Pokemon {
     private PokemonStats baseStats;
     private PokemonStats currentStats;
     private PokemonIV IVs;
-    private float currentHealth;
+    private int currentHealth;
     private int level;
     private int experience;
     private List<PokemonMove> moves;
@@ -31,7 +31,7 @@ public class Pokemon {
         name = species.getName();
         IVs = new PokemonIV();
         baseStats = species.getBaseStats();
-        level = 56;
+        level = 100;
         experience = PokemonExperience.getLevelExperience(species.getTotalExperience(), level) + 5000;
         currentStats = PokemonStats.calculateStats(baseStats, IVs, level);
         currentHealth = currentStats.getStat(PokemonStats.Stat.HP);
@@ -69,12 +69,12 @@ public class Pokemon {
         return name;
     }
 
-    public float getCurrentHealth() {
+    public int getCurrentHealth() {
         return currentHealth;
     }
 
     public float getCurrentHealthPercentage() {
-        return currentHealth / currentStats.getStat(PokemonStats.Stat.HP);
+        return currentHealth / (float) currentStats.getStat(PokemonStats.Stat.HP);
     }
 
     public void takeDamage(int damage) {
@@ -98,5 +98,9 @@ public class Pokemon {
 
     public List<PokemonMove> getMoves() {
         return moves;
+    }
+
+    public int getStat(PokemonStats.Stat stat) {
+        return currentStats.getStat(stat);
     }
 }

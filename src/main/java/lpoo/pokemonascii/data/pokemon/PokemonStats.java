@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PokemonStats {
-    enum Stat {
+    public enum Stat {
         HP,
         ATTACK,
         DEFENSE,

@@ -19,7 +19,7 @@ public class WorldModel {
         elements = new ArrayList<>();
 
         tiles.add(new Grass(161, 108));
-        elements.add(new Obstacle(0, 0, 300, 19));
+        elements.add(new Obstacle(0, 0, 400, 19));
     }
 
     public WorldModel(Player player) {
@@ -40,8 +40,8 @@ public class WorldModel {
         Position position = player.getPosition(direction);
 
         // Check if the player moves off screen borders
-        if (position.getX() < 0 || position.getX() > 300 ||
-                position.getY() < 0 || position.getY() > 110)
+        if (position.getX() < 0 || position.getX() > 380 ||
+                position.getY() < 0 || position.getY() > 140)
             return false;
 
         // Check if the player collides with anything

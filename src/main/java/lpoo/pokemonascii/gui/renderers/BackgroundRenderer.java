@@ -11,7 +11,7 @@ import static lpoo.pokemonascii.gui.Sprite.drawSpritePortion;
 public class BackgroundRenderer implements Renderer {
     private Sprite background;
     private Player player;
-    private boolean firstTime;
+    public boolean firstTime;
 
     public BackgroundRenderer(String filename, Player player) {
         background = new Sprite("background\\" + filename);

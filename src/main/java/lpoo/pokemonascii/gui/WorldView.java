@@ -33,7 +33,7 @@ public class WorldView implements Runnable{
         tileRenderer = new TileRenderer(world.getTiles());
     }
 
-    public void draw() throws IOException, InterruptedException {
+    public void draw() throws IOException {
         backgroundRenderer.draw(graphics);
         tileRenderer.draw(graphics);
         playerRenderer.draw(graphics);
@@ -80,11 +80,12 @@ public class WorldView implements Runnable{
             screen.clear();
 
             while (running) {
+                backgroundRenderer.firstTime = true;
                 draw();
             }
         }
 
-        catch (IOException | InterruptedException e) {
+        catch (IOException e) {
             e.printStackTrace();
         }
     }

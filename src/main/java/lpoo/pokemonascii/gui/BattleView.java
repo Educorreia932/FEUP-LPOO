@@ -46,8 +46,6 @@ public class BattleView {
     }
 
     public void draw() throws IOException {
-        screen.clear();
-
         background.draw(graphics);
         battleMenu.draw(graphics);
 
