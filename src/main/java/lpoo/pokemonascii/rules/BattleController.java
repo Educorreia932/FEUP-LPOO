@@ -8,19 +8,14 @@ import lpoo.pokemonascii.data.options.Option;
 import lpoo.pokemonascii.data.pokemon.Pokemon;
 import lpoo.pokemonascii.data.pokemon.PokemonMove;
 import lpoo.pokemonascii.gui.BattleView;
-import lpoo.pokemonascii.rules.commands.Command;
-import lpoo.pokemonascii.rules.commands.DoNothingCommand;
-import lpoo.pokemonascii.rules.commands.QuitCommand;
-import lpoo.pokemonascii.rules.commands.UsePokemonMoveCommand;
+import lpoo.pokemonascii.rules.commands.*;
 import lpoo.pokemonascii.rules.state.GameState;
 import org.xml.sax.SAXException;
 
-import javax.sound.sampled.LineUnavailableException;
-import javax.sound.sampled.UnsupportedAudioFileException;
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
 
-public class BattleController {
+public class BattleController implements Controller {
     public enum OptionsMenu {
         BATTLE,
         FIGHT
@@ -30,33 +25,29 @@ public class BattleController {
     private BattleModel battle;
     private OptionsMenuController options;
     private boolean inBattle = true;
+    private GameState.Gamemode gamemode;
 
     public BattleController(BattleView gui, BattleModel battle) {
         this.gui = gui;
         this.battle = battle;
-        this.options = new OptionsMenuController(battle.getOptions());
+        options = new OptionsMenuController(battle.getOptions());
+        gamemode = GameState.Gamemode.BATTLE;
     }
 
     public BattleController(BattleModel battle) {
         this.battle = battle;
         this.options = new OptionsMenuController(battle.getOptions());
+        gamemode = GameState.Gamemode.BATTLE;
     }
 
-    public GameState.Gamemode start(GameState game) throws IOException, ParserConfigurationException, SAXException {
-        while (inBattle) {
+    public GameState.Gamemode start(GameState game) {
+        while (gamemode == GameState.Gamemode.BATTLE) {
             gui.draw();
 
-            Command command = new DoNothingCommand();
+            Command command;
 
-            if (battle.getCurrentTurn() == BattleModel.Turn.TRAINER) {
-                try {
-                    command = gui.getNextCommand(this);
-                }
-
-                catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
+            if (battle.getCurrentTurn() == BattleModel.Turn.TRAINER) 
+                command = gui.getNextCommand(this);
 
             else {
                 command = new UsePokemonMoveCommand(this, battle.getAdversaryPokemon(), battle.getAdversaryPokemon().getMoves().get(0));
@@ -65,23 +56,16 @@ public class BattleController {
 
             command.execute();
 
-            if (command instanceof QuitCommand) {
-                try {
-                    game.setState(null);
-                }
-
-                catch (IOException | LineUnavailableException | UnsupportedAudioFileException e) {
-                    e.printStackTrace();
-                }
-
-                inBattle = false;
-            }
-
-            if (!inBattle || pokemonDied())
-                return GameState.Gamemode.WORLD;
+            if (pokemonDied())
+                gamemode = GameState.Gamemode.WORLD;
         }
 
-        return GameState.Gamemode.EXIT;
+        return gamemode;
+    }
+
+    @Override
+    public void setGamemode(GameState.Gamemode gamemode) {
+        this.gamemode = gamemode;
     }
 
     public boolean pokemonDied() {
@@ -113,7 +97,7 @@ public class BattleController {
                 case "POKEMON":
                     break;
                 case "RUN":
-                    inBattle = false;
+                    new ChangedStateCommand(this, GameState.Gamemode.WORLD).execute();
                     break;
             }
 

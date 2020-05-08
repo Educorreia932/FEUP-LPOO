@@ -30,10 +30,12 @@ public class Battle implements State {
     }
 
     @Override
-    public void start(GameState game) throws IOException, LineUnavailableException, UnsupportedAudioFileException, ParserConfigurationException, SAXException {
+    public void start(GameState game) {
         game.setState(this);
 
-        switch (controller.start(game)) {
+        GameState.Gamemode gamemode = controller.start(game);
+
+        switch (gamemode) {
             case WORLD:
                 game.setState(game.getWorld());
                 break;

@@ -75,6 +75,11 @@ public class Sprite {
         }
     }
 
+    public static void drawSprite(Sprite sprite, int x, int y, TextGraphics graphics, boolean transparency) {
+        Position position = new Position(x, y);
+        drawSprite(sprite, position, graphics, false);
+    }
+
     public static void drawSprite(Sprite sprite, int x, int y, TextGraphics graphics) {
         Position position = new Position(x, y);
         drawSprite(sprite, position, graphics, false);

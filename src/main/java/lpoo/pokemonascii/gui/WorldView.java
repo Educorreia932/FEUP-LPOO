@@ -13,6 +13,7 @@ import lpoo.pokemonascii.rules.commands.player.PlayerMoveDownCommand;
 import lpoo.pokemonascii.rules.commands.player.PlayerMoveLeftCommand;
 import lpoo.pokemonascii.rules.commands.player.PlayerMoveRightCommand;
 import lpoo.pokemonascii.rules.commands.player.PlayerMoveUpCommand;
+import lpoo.pokemonascii.rules.state.GameState;
 
 import java.io.IOException;
 
@@ -47,8 +48,15 @@ public class WorldView implements Runnable {
         return key;
     }
 
-    public Command getNextCommand(WorldController world) throws IOException {
-        KeyStroke pressedKey = getPressedKey(screen);
+    public Command getNextCommand(WorldController world) {
+        KeyStroke pressedKey = null;
+        try {
+            pressedKey = getPressedKey(screen);
+        }
+
+        catch (IOException e) {
+            e.printStackTrace();
+        }
 
         if (pressedKey == null)
             return new DoNothingCommand();
@@ -63,11 +71,12 @@ public class WorldView implements Runnable {
             case ArrowLeft:
                 return new PlayerMoveLeftCommand(world);
             case EOF:
-                return new QuitCommand(screen);
+                return new ChangedStateCommand(world, GameState.Gamemode.EXIT);
             case Character:
                 switch (pressedKey.getCharacter()) {
                     case 'q':
-                        return new QuitCommand(screen);
+//                        return new QuitCommand(screen);
+                        return new ChangedStateCommand(world, GameState.Gamemode.EXIT);
                 }
         }
 

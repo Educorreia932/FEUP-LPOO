@@ -3,7 +3,6 @@ package lpoo.pokemonascii.gui;
 import com.googlecode.lanterna.graphics.TextGraphics;
 import com.googlecode.lanterna.screen.Screen;
 import lpoo.pokemonascii.data.PokemonSummaryModel;
-import lpoo.pokemonascii.data.pokemon.PokemonType;
 import lpoo.pokemonascii.gui.renderers.pokemon.PokemonRenderer;
 import lpoo.pokemonascii.gui.renderers.pokemon.PokemonTypeRenderer;
 import lpoo.pokemonascii.gui.renderers.text.TextRenderer;
@@ -16,9 +15,10 @@ public class PokemonSummaryView {
     private Sprite info;
     private Sprite selectedBar;
     private TextGraphics graphics;
+    private TextRenderer pokemonLevel;
+    private TextRenderer pokemonName;
     private TextRenderer pokedexNumber;
     private TextRenderer pokemonSpecies;
-    private TextRenderer pokemonName;
     private PokemonRenderer pokemon;
     private PokemonTypeRenderer primaryType;
     private PokemonTypeRenderer secondaryType;
@@ -31,9 +31,10 @@ public class PokemonSummaryView {
         info = new Sprite("summary\\pokemon_info");
         selectedBar = new Sprite("summary\\selected_bar");
 
-        pokedexNumber = new TextRenderer(280, 23, String.valueOf(model.getPokemon().getPokedexNumber()));
-        pokemonSpecies = new TextRenderer(80, 21, model.getPokemon().getName());
+        pokemonLevel = new TextRenderer(10, 21, "Lv" + model.getPokemon().getLevel());
         pokemonName = new TextRenderer(280, 38, model.getPokemon().getName());
+        pokedexNumber = new TextRenderer(280, 23, String.format("%03d", model.getPokemon().getPokedexNumber()));
+        pokemonSpecies = new TextRenderer(80, 21, model.getPokemon().getName());
         pokemon = new PokemonRenderer(50, 35, model.getPokemon());
         primaryType = new PokemonTypeRenderer(280, 51, model.getPokemon().getSpecies().getPrimaryType());
 
@@ -47,6 +48,7 @@ public class PokemonSummaryView {
         Sprite.drawSprite(selectedBar, graphics);
 
         pokedexNumber.draw(graphics);
+        pokemonLevel.draw(graphics);
         pokemonSpecies.draw(graphics);
         pokemonName.draw(graphics);
         pokemon.draw(graphics);

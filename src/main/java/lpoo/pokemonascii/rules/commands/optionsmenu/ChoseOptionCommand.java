@@ -15,8 +15,13 @@ public class ChoseOptionCommand implements Command {
     }
 
     @Override
-    public void execute() throws IOException, SAXException, ParserConfigurationException {
-        battle.executeOption(battle.getOptions().getSelectedOption());
+    public void execute()  {
+        try {
+            battle.executeOption(battle.getOptions().getSelectedOption());
+        }
 
+        catch (ParserConfigurationException | SAXException | IOException e) {
+            e.printStackTrace();
+        }
     }
 }

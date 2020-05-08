@@ -7,11 +7,11 @@ public class PokemonTile extends Tile {
 
     public PokemonTile(int x, int y, int width, int height) {
         super(x, y, width, height);
-        probability = 19;
+        probability = 1;
     }
 
-    public boolean foundPokemon(){
+    public boolean foundPokemon() {
         Random rand = new Random();
-        return rand.nextInt(probability) == 1;
+        return rand.nextInt(probability) == 0;
     }
 }

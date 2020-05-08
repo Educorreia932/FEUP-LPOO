@@ -39,7 +39,6 @@ public class PokemonInfoRenderer implements Renderer {
                 position = new Position(215, 74);
                 pokemonName = new TextRenderer(position.getX() + 26, position.getY() + 5, pokemon.getName());
                 pokemonLevel = new TextRenderer(position.getX() + 119, position.getY() + 5, "Lv" + pokemon.getLevel());
-                System.out.println(pokemon.getCurrentHealth());
                 pokemonHealth = new TextRenderer(position.getX() + 100, position.getY() + 22, pokemon.getCurrentHealth() + "/" +pokemon.getStat(PokemonStats.Stat.HP));
                 healthBar = new HealthBarRenderer(position.getX() + 80, position.getY() + 17, pokemon);
                 experience = new ExperienceBarRenderer(position.getX() + 54, position.getY() + 33, pokemon);

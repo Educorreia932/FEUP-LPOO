@@ -23,7 +23,7 @@ public class BattleModel {
     public BattleModel(Pokemon trainerPokemon) throws IOException, SAXException, ParserConfigurationException {
         this.trainerPokemon = trainerPokemon;
 
-        int pokemonNumber = new Random().nextInt(152);
+        int pokemonNumber = new Random().nextInt(151) + 1;
 
         adversaryPokemon = new Pokemon(pokemonNumber, Pokemon.FacingDirection.FRONT);
         options = new BattleOptionsMenuModel();
