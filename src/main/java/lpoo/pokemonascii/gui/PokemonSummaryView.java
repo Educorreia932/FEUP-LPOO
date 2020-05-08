@@ -15,6 +15,8 @@ public class PokemonSummaryView {
     private TextRenderer pokemonSpecies;
     private TextRenderer pokemonName;
     private PokemonRenderer pokemon;
+    private Sprite background;
+    private Sprite info;
 
     public PokemonSummaryView(Screen screen, TextGraphics graphics, PokemonSummaryModel model) {
         this.screen = screen;
@@ -23,13 +25,14 @@ public class PokemonSummaryView {
         pokedexNumber = new TextRenderer(0, 0, String.valueOf(model.getPokemon().getPokedexNumber()));
         pokemonSpecies = new TextRenderer(0, 0, model.getPokemon().getName());
         pokemonName = new TextRenderer(0, 0, model.getPokemon().getName());
-        pokemon = new PokemonRenderer(model.getPokemon());
+        pokemon = new PokemonRenderer(50, 50, model.getPokemon());
     }
 
     public void draw() throws IOException {
         pokedexNumber.draw(graphics);
         pokemonSpecies.draw(graphics);
         pokemonName.draw(graphics);
+        pokemon.draw(graphics);
 
         screen.refresh();
     }

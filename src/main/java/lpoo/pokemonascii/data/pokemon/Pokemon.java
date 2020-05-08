@@ -1,6 +1,5 @@
 package lpoo.pokemonascii.data.pokemon;
 
-import lpoo.pokemonascii.data.Position;
 import org.xml.sax.SAXException;
 
 import javax.xml.parsers.ParserConfigurationException;
@@ -9,12 +8,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Pokemon {
-    public enum facingDirection {
+    public enum FacingDirection {
         FRONT,
         BACK
     }
 
-    private Position position;
     private PokemonSpecies species;
     private String name;
     private PokemonStats baseStats;
@@ -24,9 +22,9 @@ public class Pokemon {
     private int level;
     private int experience;
     private List<PokemonMove> moves;
-    private facingDirection direction;
+    private FacingDirection direction;
 
-    public Pokemon(Integer pokedex_number, facingDirection direction) throws IOException, SAXException, ParserConfigurationException {
+    public Pokemon(Integer pokedex_number, FacingDirection direction) throws IOException, SAXException, ParserConfigurationException {
         species = new PokemonSpecies(pokedex_number);
         name = species.getName();
         IVs = new PokemonIV();
@@ -38,26 +36,9 @@ public class Pokemon {
         this.direction = direction;
         moves = new ArrayList<>();
         moves.add(new PokemonMove("Tackle"));
-
-        switch (direction) {
-            case FRONT:
-                position = new Position(245, 15);
-                break;
-            case BACK:
-                position = new Position(67, 61);
-                break;
-        }
     }
 
-    public Position getPosition() {
-        return position;
-    }
-
-    public void setPosition(Position position) {
-        this.position = position;
-    }
-
-    public facingDirection getFacingDirection() {
+    public FacingDirection getFacingDirection() {
         return direction;
     }
 
@@ -102,5 +83,9 @@ public class Pokemon {
 
     public int getStat(PokemonStats.Stat stat) {
         return currentStats.getStat(stat);
+    }
+
+    public void setDirection(FacingDirection direction) {
+        this.direction = direction;
     }
 }

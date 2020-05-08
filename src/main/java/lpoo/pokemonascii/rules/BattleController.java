@@ -1,7 +1,6 @@
 package lpoo.pokemonascii.rules;
 
 import lpoo.pokemonascii.data.BattleModel;
-import lpoo.pokemonascii.data.options.battle.BattleOption;
 import lpoo.pokemonascii.data.options.battle.BattleOptionsMenuModel;
 import lpoo.pokemonascii.data.options.fight.FightOption;
 import lpoo.pokemonascii.data.options.fight.FightOptionsMenuModel;
@@ -90,10 +89,10 @@ public class BattleController {
     }
 
     public void usePokemonMove(Pokemon pokemon, PokemonMove move) {
-        if (pokemon.getFacingDirection() == Pokemon.facingDirection.BACK)
+        if (pokemon.getFacingDirection() == Pokemon.FacingDirection.BACK)
             move.execute(battle.getAdversaryPokemon());
 
-        else if (pokemon.getFacingDirection() == Pokemon.facingDirection.FRONT)
+        else if (pokemon.getFacingDirection() == Pokemon.FacingDirection.FRONT)
             move.execute(battle.getTrainerPokemon());
     }
 

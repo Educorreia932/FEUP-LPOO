@@ -1,7 +1,6 @@
 package lpoo.pokemonascii.rules.state;
 
 import lpoo.pokemonascii.data.PokemonSummaryModel;
-import lpoo.pokemonascii.data.WorldModel;
 import lpoo.pokemonascii.data.pokemon.Pokemon;
 import lpoo.pokemonascii.gui.GameView;
 import lpoo.pokemonascii.gui.PokemonSummaryView;

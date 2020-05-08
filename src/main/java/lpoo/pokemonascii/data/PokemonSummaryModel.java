@@ -7,6 +7,7 @@ public class PokemonSummaryModel {
 
     public PokemonSummaryModel(Pokemon pokemon) {
         this.pokemon = pokemon;
+        pokemon.setDirection(Pokemon.FacingDirection.FRONT);
     }
 
     public Pokemon getPokemon() {

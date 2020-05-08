@@ -25,7 +25,7 @@ public class Battle implements State {
     }
 
     public Battle() throws ParserConfigurationException, SAXException, IOException {
-        model = new BattleModel(new Pokemon(25, Pokemon.facingDirection.BACK));
+        model = new BattleModel(new Pokemon(25, Pokemon.FacingDirection.BACK));
         controller = new BattleController(model);
     }
 

@@ -38,8 +38,8 @@ public class BattleView {
         background = new BackgroundRenderer("battle_background", new Player());
         battleMenu = new BattleMenuRenderer(battle.getOptions());
 
-        trainerPokemon = new PokemonRenderer(battle.getTrainerPokemon());
-        adversaryPokemon = new PokemonRenderer(battle.getAdversaryPokemon());
+        trainerPokemon = new PokemonRenderer(245, 15, battle.getTrainerPokemon());
+        adversaryPokemon = new PokemonRenderer(67, 61, battle.getAdversaryPokemon());
 
         trainerPokemonInfo = new PokemonInfoRenderer(battle.getTrainerPokemon());
         adversaryPokemonInfo = new PokemonInfoRenderer(battle.getAdversaryPokemon());

@@ -1,6 +1,7 @@
 package lpoo.pokemonascii.gui.renderers.pokemon;
 
 import com.googlecode.lanterna.graphics.TextGraphics;
+import lpoo.pokemonascii.data.Position;
 import lpoo.pokemonascii.data.pokemon.Pokemon;
 import lpoo.pokemonascii.gui.Image;
 import lpoo.pokemonascii.gui.Sprite;
@@ -14,9 +15,11 @@ import static lpoo.pokemonascii.gui.Sprite.drawSprite;
 public class PokemonRenderer implements Renderer {
     private Pokemon pokemon;
     private Sprite sprite;
+    private Position position;
 
-    public PokemonRenderer(Pokemon pokemon) {
+    public PokemonRenderer(int x, int y, Pokemon pokemon) {
         this.pokemon = pokemon;
+        this.position = new Position(x, y);
 
         List<Image> images = new ArrayList<>();
         images.add(new Image("pokemon\\front\\" + pokemon.getPokedexNumber()));
@@ -28,6 +31,6 @@ public class PokemonRenderer implements Renderer {
     @Override
     public void draw(TextGraphics graphics) {
         sprite.setCurrentImage(pokemon.getFacingDirection().ordinal());
-        drawSprite(sprite, pokemon.getPosition(), graphics, true);
+        drawSprite(sprite, position, graphics, true);
     }
 }
