@@ -354,6 +354,7 @@ This code smell is called **Parallel Inheritance**. The solution for it would be
 - [Pokémon - Battle](https://veekun.com/dex/downloads), veekun
 - [HP Bars & In-Battle Menu](https://www.spriters-resource.com/game_boy_advance/pokemonfireredleafgreen/sheet/33690/), redblueyellow
 - [Battle Backgrounds](https://www.spriters-resource.com/game_boy_advance/pokemonfireredleafgreen/sheet/3866/), Desgardes
+- [Pokémon Summary Menu](https://www.spriters-resource.com/game_boy_advance/pokemonfireredleafgreen/sheet/112720/), Pnick0509
 
 ### Data Files
 

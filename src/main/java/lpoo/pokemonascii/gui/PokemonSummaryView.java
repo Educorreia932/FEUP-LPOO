@@ -3,7 +3,9 @@ package lpoo.pokemonascii.gui;
 import com.googlecode.lanterna.graphics.TextGraphics;
 import com.googlecode.lanterna.screen.Screen;
 import lpoo.pokemonascii.data.PokemonSummaryModel;
+import lpoo.pokemonascii.data.pokemon.PokemonType;
 import lpoo.pokemonascii.gui.renderers.pokemon.PokemonRenderer;
+import lpoo.pokemonascii.gui.renderers.pokemon.PokemonTypeRenderer;
 import lpoo.pokemonascii.gui.renderers.text.TextRenderer;
 
 import java.io.IOException;
@@ -18,6 +20,8 @@ public class PokemonSummaryView {
     private TextRenderer pokemonSpecies;
     private TextRenderer pokemonName;
     private PokemonRenderer pokemon;
+    private PokemonTypeRenderer primaryType;
+    private PokemonTypeRenderer secondaryType;
 
     public PokemonSummaryView(Screen screen, TextGraphics graphics, PokemonSummaryModel model) {
         this.screen = screen;
@@ -31,6 +35,10 @@ public class PokemonSummaryView {
         pokemonSpecies = new TextRenderer(80, 21, model.getPokemon().getName());
         pokemonName = new TextRenderer(280, 38, model.getPokemon().getName());
         pokemon = new PokemonRenderer(50, 35, model.getPokemon());
+        primaryType = new PokemonTypeRenderer(280, 51, model.getPokemon().getSpecies().getPrimaryType());
+
+        if (model.getPokemon().getSpecies().getSecondaryType() != null)
+            secondaryType = new PokemonTypeRenderer(337, 51, model.getPokemon().getSpecies().getSecondaryType());
     }
 
     public void draw() throws IOException {
@@ -42,6 +50,10 @@ public class PokemonSummaryView {
         pokemonSpecies.draw(graphics);
         pokemonName.draw(graphics);
         pokemon.draw(graphics);
+        primaryType.draw(graphics);
+
+        if (secondaryType != null)
+            secondaryType.draw(graphics);
 
         screen.refresh();
     }
