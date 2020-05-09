@@ -3,6 +3,7 @@ package lpoo.pokemonascii.gui.renderers.pokemon;
 import com.googlecode.lanterna.graphics.TextGraphics;
 import lpoo.pokemonascii.data.Position;
 import lpoo.pokemonascii.data.pokemon.Pokemon;
+import lpoo.pokemonascii.data.pokemon.PokemonStats;
 import lpoo.pokemonascii.gui.Sprite;
 import lpoo.pokemonascii.gui.renderers.Renderer;
 import lpoo.pokemonascii.gui.renderers.bar.ExperienceBarRenderer;
@@ -14,19 +15,23 @@ import static lpoo.pokemonascii.gui.Sprite.drawSprite;
 public class PokemonInfoRenderer implements Renderer {
     private Position position;
     private Sprite sprite;
+    private Pokemon pokemon;
     private TextRenderer pokemonName;
     private TextRenderer pokemonLevel;
+    private TextRenderer pokemonHealth;
     private ExperienceBarRenderer experience;
-    private HealthBarRenderer health;
+    private HealthBarRenderer healthBar;
 
     public PokemonInfoRenderer(Pokemon pokemon) {
+        this.pokemon = pokemon;
+
         switch (pokemon.getFacingDirection()) {
             case FRONT: // TODO: Strategy Pattern ?
                 sprite = new Sprite("adversary_pokemon_info");
                 position = new Position(20, 10);
                 pokemonName = new TextRenderer(position.getX() + 11, position.getY() + 5, pokemon.getName());
                 pokemonLevel = new TextRenderer(position.getX() + 103, position.getY() + 5, "Lv" + pokemon.getLevel());
-                health = new HealthBarRenderer(position.getX() + 65, position.getY() + 17, pokemon);
+                healthBar = new HealthBarRenderer(position.getX() + 65, position.getY() + 17, pokemon);
                 experience = null; // TODO: Introduce Null object
                 break;
             case BACK:
@@ -34,7 +39,8 @@ public class PokemonInfoRenderer implements Renderer {
                 position = new Position(215, 74);
                 pokemonName = new TextRenderer(position.getX() + 26, position.getY() + 5, pokemon.getName());
                 pokemonLevel = new TextRenderer(position.getX() + 119, position.getY() + 5, "Lv" + pokemon.getLevel());
-                health = new HealthBarRenderer(position.getX() + 80, position.getY() + 17, pokemon);
+                pokemonHealth = new TextRenderer(position.getX() + 100, position.getY() + 22, pokemon.getCurrentHealth() + "/" +pokemon.getStat(PokemonStats.Stat.HP));
+                healthBar = new HealthBarRenderer(position.getX() + 80, position.getY() + 17, pokemon);
                 experience = new ExperienceBarRenderer(position.getX() + 54, position.getY() + 33, pokemon);
                 break;
         }
@@ -45,9 +51,14 @@ public class PokemonInfoRenderer implements Renderer {
         drawSprite(sprite, position, graphics, true);
         pokemonName.draw(graphics);
         pokemonLevel.draw(graphics);
-        health.draw(graphics);
+        healthBar.draw(graphics);
 
         if (experience != null)
             experience.draw(graphics);
+
+        if (pokemonHealth != null) {
+            pokemonHealth.setText(pokemon.getCurrentHealth() + "/" + pokemon.getStat(PokemonStats.Stat.HP));
+            pokemonHealth.draw(graphics);
+        }
     }
 }

@@ -22,16 +22,16 @@ public class StateTest {
     private State state;
 
     @Before
-    public void init() throws IOException, SAXException, ParserConfigurationException {
+    public void init() throws IOException, SAXException, ParserConfigurationException, LineUnavailableException, UnsupportedAudioFileException {
         gameState = new GameState();
         battle = new Battle();
-        world = new World();
+        world = gameState.getWorld();
         state = battle;
     }
 
     @Test
     public void test() throws UnsupportedAudioFileException, IOException, LineUnavailableException {
-        assertEquals(null, gameState.getState());
+        assertEquals(world, gameState.getState());
 
         gameState.setState(battle);
         assertEquals(battle, gameState.getState());

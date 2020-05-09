@@ -12,6 +12,10 @@ import lpoo.pokemonascii.rules.commands.player.PlayerMoveUpCommand;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mockito;
+import org.xml.sax.SAXException;
+
+import javax.xml.parsers.ParserConfigurationException;
+import java.io.IOException;
 
 import static junit.framework.TestCase.assertEquals;
 import static lpoo.pokemonascii.data.Player.X_MOVEMENT;
@@ -23,13 +27,13 @@ public class PlayerMovementTest {
     private Command command;
 
     @Before
-    public void init() {
+    public void init() throws ParserConfigurationException, SAXException, IOException {
         world = new WorldModel();
         controller = new WorldController(Mockito.mock(WorldView.class), world);
     }
 
     @Test
-    public void PlayerMoveUpTest() {
+    public void PlayerMoveUpTest() throws ParserConfigurationException, SAXException, IOException {
         Position before = world.getPlayerPosition();
 
         command = new PlayerMoveUpCommand(controller);
@@ -41,7 +45,7 @@ public class PlayerMovementTest {
     }
 
     @Test
-    public void PlayerMoveDownTest() {
+    public void PlayerMoveDownTest() throws ParserConfigurationException, SAXException, IOException {
         Position before = world.getPlayerPosition();
 
         command = new PlayerMoveDownCommand(controller);
@@ -53,7 +57,7 @@ public class PlayerMovementTest {
     }
 
     @Test
-    public void PlayerMoveRightTest() {
+    public void PlayerMoveRightTest() throws ParserConfigurationException, SAXException, IOException {
         Position before = world.getPlayerPosition();
 
         command = new PlayerMoveRightCommand(controller);
@@ -65,7 +69,7 @@ public class PlayerMovementTest {
     }
 
     @Test
-    public void PlayerMoveLeftTest() {
+    public void PlayerMoveLeftTest() throws ParserConfigurationException, SAXException, IOException {
         Position before = world.getPlayerPosition();
 
         command = new PlayerMoveLeftCommand(controller);

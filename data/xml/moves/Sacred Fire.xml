@@ -1,0 +1,15 @@
+<pokedex>
+  <move>
+    <id>221</id>
+    <identifier>sacred-fire</identifier>
+    <type>FIRE</type>
+    <power>100</power>
+    <pp>5</pp>
+    <accuracy>95</accuracy>
+    <priority>0</priority>
+    <target_id>10</target_id>
+    <damage_class_id>2</damage_class_id>
+    <effect_id>126</effect_id>
+    <effect_chance>50</effect_chance>
+  </move>
+  </pokedex>

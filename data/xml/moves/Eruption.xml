@@ -1,0 +1,15 @@
+<pokedex>
+  <move>
+    <id>284</id>
+    <identifier>eruption</identifier>
+    <type>FIRE</type>
+    <power>150</power>
+    <pp>5</pp>
+    <accuracy>100</accuracy>
+    <priority>0</priority>
+    <target_id>11</target_id>
+    <damage_class_id>3</damage_class_id>
+    <effect_id>191</effect_id>
+    <effect_chance />
+  </move>
+  </pokedex>

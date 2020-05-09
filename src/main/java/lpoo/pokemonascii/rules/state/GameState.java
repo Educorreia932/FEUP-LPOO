@@ -19,20 +19,28 @@ public class GameState {
 
     public enum Gamemode {
         WORLD,
+        SUMMARY,
         BATTLE,
         EXIT
     }
 
-    public GameState() throws IOException, UnsupportedAudioFileException, LineUnavailableException, SAXException, ParserConfigurationException {
+    public GameState() throws IOException, SAXException, ParserConfigurationException {
         gui = new GameView(400, 160);
         observers = new ArrayList<>();
         world = new World(gui);
         setState(world);
     }
 
-    public void setState(State state) throws IOException, LineUnavailableException, UnsupportedAudioFileException {
+    public void setState(State state)  {
         this.state = state;
-        notifyAllObservers();
+
+        try {
+            notifyAllObservers();
+        }
+
+        catch (IOException | LineUnavailableException | UnsupportedAudioFileException e) {
+            e.printStackTrace();
+        }
     }
 
     private void notifyAllObservers() throws IOException, LineUnavailableException, UnsupportedAudioFileException {

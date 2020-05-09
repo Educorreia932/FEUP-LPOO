@@ -1,0 +1,15 @@
+<pokedex>
+  <move>
+    <id>289</id>
+    <identifier>snatch</identifier>
+    <type>DARK</type>
+    <power />
+    <pp>10</pp>
+    <accuracy />
+    <priority>4</priority>
+    <target_id>7</target_id>
+    <damage_class_id>1</damage_class_id>
+    <effect_id>196</effect_id>
+    <effect_chance />
+  </move>
+  </pokedex>

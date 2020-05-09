@@ -1,0 +1,15 @@
+<pokedex>
+  <move>
+    <id>338</id>
+    <identifier>frenzy-plant</identifier>
+    <type>GRASS</type>
+    <power>150</power>
+    <pp>5</pp>
+    <accuracy>90</accuracy>
+    <priority>0</priority>
+    <target_id>10</target_id>
+    <damage_class_id>3</damage_class_id>
+    <effect_id>81</effect_id>
+    <effect_chance />
+  </move>
+  </pokedex>

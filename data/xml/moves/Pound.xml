@@ -1,0 +1,15 @@
+<pokedex>
+  <move>
+    <id>1</id>
+    <identifier>pound</identifier>
+    <type>NORMAL</type>
+    <power>40</power>
+    <pp>35</pp>
+    <accuracy>100</accuracy>
+    <priority>0</priority>
+    <target_id>10</target_id>
+    <damage_class_id>2</damage_class_id>
+    <effect_id>1</effect_id>
+    <effect_chance />
+  </move>
+  </pokedex>

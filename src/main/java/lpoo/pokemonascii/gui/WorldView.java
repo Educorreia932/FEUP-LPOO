@@ -13,28 +13,28 @@ import lpoo.pokemonascii.rules.commands.player.PlayerMoveDownCommand;
 import lpoo.pokemonascii.rules.commands.player.PlayerMoveLeftCommand;
 import lpoo.pokemonascii.rules.commands.player.PlayerMoveRightCommand;
 import lpoo.pokemonascii.rules.commands.player.PlayerMoveUpCommand;
+import lpoo.pokemonascii.rules.state.GameState;
 
 import java.io.IOException;
 
-public class WorldView {
+public class WorldView implements Runnable {
     private Screen screen;
     private TextGraphics graphics;
     private BackgroundRenderer backgroundRenderer;
     private PlayerRenderer playerRenderer;
     private TileRenderer tileRenderer;
+    public boolean running = true;
 
     public WorldView(Screen screen, TextGraphics graphics, WorldModel world) {
         this.screen = screen;
         this.graphics = graphics;
 
-        backgroundRenderer = new BackgroundRenderer("room");
+        backgroundRenderer = new BackgroundRenderer("room", world.getPlayer());
         playerRenderer = new PlayerRenderer(world.getPlayer());
         tileRenderer = new TileRenderer(world.getTiles());
     }
 
-    public void drawWorld() throws IOException {
-        screen.clear();
-
+    public void draw() throws IOException {
         backgroundRenderer.draw(graphics);
         tileRenderer.draw(graphics);
         playerRenderer.draw(graphics);
@@ -43,13 +43,24 @@ public class WorldView {
     }
 
     public static KeyStroke getPressedKey(Screen screen) throws IOException {
-        KeyStroke key = screen.readInput();
+        KeyStroke key = screen.pollInput();
 
         return key;
     }
 
-    public Command getNextCommand(WorldController world) throws IOException {
-        KeyStroke pressedKey = getPressedKey(screen);
+    public Command getNextCommand(WorldController world) {
+        KeyStroke pressedKey = null;
+
+        try {
+            pressedKey = getPressedKey(screen);
+        }
+
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        if (pressedKey == null)
+            return new DoNothingCommand();
 
         switch (pressedKey.getKeyType()) {
             case ArrowUp:
@@ -61,14 +72,33 @@ public class WorldView {
             case ArrowLeft:
                 return new PlayerMoveLeftCommand(world);
             case EOF:
-                return new QuitCommand(screen);
+                return new ChangedStateCommand(world, GameState.Gamemode.EXIT);
             case Character:
                 switch (pressedKey.getCharacter()) {
                     case 'q':
-                        return new QuitCommand(screen);
+//                        return new QuitCommand(screen);
+                        return new ChangedStateCommand(world, GameState.Gamemode.EXIT);
+                    case 's':
+                        return new ChangedStateCommand(world, GameState.Gamemode.SUMMARY);
                 }
         }
 
         return new DoNothingCommand();
+    }
+
+    @Override
+    public void run() {
+        try {
+            screen.clear();
+
+            while (running) {
+                backgroundRenderer.firstTime = true;
+                draw();
+            }
+        }
+
+        catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

@@ -1,8 +1,8 @@
 package lpoo.pokemonascii.rules.state;
 
-import com.googlecode.lanterna.graphics.TextGraphics;
-import com.googlecode.lanterna.screen.Screen;
 import lpoo.pokemonascii.data.BattleModel;
+import lpoo.pokemonascii.data.Player;
+import lpoo.pokemonascii.data.pokemon.Pokemon;
 import lpoo.pokemonascii.gui.BattleView;
 import lpoo.pokemonascii.gui.GameView;
 import lpoo.pokemonascii.rules.BattleController;
@@ -18,19 +18,19 @@ public class Battle implements State {
     private BattleModel model;
     private BattleView view;
 
-    public Battle(GameView gui) throws ParserConfigurationException, SAXException, IOException {
-        model = new BattleModel(6);
+    public Battle(GameView gui, Player player) throws ParserConfigurationException, SAXException, IOException {
+        model = new BattleModel(player.getPokemons().get(0));
         view = new BattleView(gui.getScreen(), gui.getGraphics(), model);
         controller = new BattleController(view, model);
     }
 
     public Battle() throws ParserConfigurationException, SAXException, IOException {
-        model = new BattleModel(6);
+        model = new BattleModel(new Pokemon(25, Pokemon.FacingDirection.BACK));
         controller = new BattleController(model);
     }
 
     @Override
-    public void start(GameState game) throws IOException, LineUnavailableException, UnsupportedAudioFileException, ParserConfigurationException, SAXException {
+    public void start(GameState game) {
         game.setState(this);
 
         switch (controller.start(game)) {

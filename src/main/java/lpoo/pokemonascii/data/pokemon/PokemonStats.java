@@ -1,49 +1,45 @@
 package lpoo.pokemonascii.data.pokemon;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class PokemonStats {
-    private float hp, attack, defense, spAtk, spDef, speed;
+    public enum Stat {
+        HP,
+        ATTACK,
+        DEFENSE,
+        SP_ATTACK,
+        SP_DEFENSE,
+        SPEED
+    }
+
+    private List<Integer> stats;
 
     public PokemonStats(List<Integer> stats) {
-        this.hp = stats.get(0);
-        this.attack = stats.get(1);
-        this.defense = stats.get(2);
-        this.spAtk = stats.get(3);
-        this.spDef = stats.get(4);
-        this.speed = stats.get(5);
+        this.stats = stats;
     }
 
-    public PokemonStats(PokemonStats stats) {
-        this.hp = stats.getHP();
-        this.attack = stats.getAttack();
-        this.defense = stats.getDefense();
-        this.spAtk = stats.getSpAtk();
-        this.spDef = stats.getSpDef();
-        this.speed = stats.getSpeed();
+    public int getStat(Stat stat) {
+        return stats.get(stat.ordinal());
     }
 
-    public float getHP() {
-        return hp;
+    public int getStat(int i) {
+        return stats.get(i);
     }
 
-    public float getAttack() {
-        return attack;
-    }
+    public static PokemonStats calculateStats(PokemonStats baseStats, PokemonIV IVs, int level) {
+        List<Integer> stats = new ArrayList<>();
 
-    public float getDefense() {
-        return defense;
-    }
+        for (int i = 0; i < 6; i++) {
+            float baseStat = baseStats.getStat(i);
 
-    public float getSpAtk() {
-        return spAtk;
-    }
+            if (i == Stat.HP.ordinal())
+                stats.add((int) ((((2 * baseStat + IVs.getIV(i) /* + (ev /4) */) * level) / 100) + level + 10));
 
-    public float getSpDef() {
-        return spDef;
-    }
+            else
+                stats.add((int) ((((2 * baseStat + IVs.getIV(i) /* + (ev /4) */) * level) / 100) + 5));
+        }
 
-    public float getSpeed() {
-        return speed;
+        return new PokemonStats(stats);
     }
 }

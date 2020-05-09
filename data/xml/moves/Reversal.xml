@@ -1,0 +1,15 @@
+<pokedex>
+  <move>
+    <id>179</id>
+    <identifier>reversal</identifier>
+    <type>FIGHTING</type>
+    <power />
+    <pp>15</pp>
+    <accuracy>100</accuracy>
+    <priority>0</priority>
+    <target_id>10</target_id>
+    <damage_class_id>2</damage_class_id>
+    <effect_id>100</effect_id>
+    <effect_chance />
+  </move>
+  </pokedex>

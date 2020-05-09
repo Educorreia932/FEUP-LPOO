@@ -19,7 +19,7 @@ import static junit.framework.TestCase.assertEquals;
 public class PokemonMoveTest {
     @Test
     public void testUsePokemonMove() throws ParserConfigurationException, SAXException, IOException {
-        BattleModel battle = new BattleModel(1);
+        BattleModel battle = new BattleModel(new Pokemon(1, Pokemon.FacingDirection.BACK));
 
         Pokemon trainerPokemon = battle.getTrainerPokemon();
         Pokemon foePokemon = battle.getAdversaryPokemon();

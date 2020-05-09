@@ -1,7 +1,5 @@
 package lpoo.pokemonascii.rules.state;
 
-import com.googlecode.lanterna.graphics.TextGraphics;
-import com.googlecode.lanterna.screen.Screen;
 import lpoo.pokemonascii.data.WorldModel;
 import lpoo.pokemonascii.gui.GameView;
 import lpoo.pokemonascii.gui.WorldView;
@@ -18,29 +16,36 @@ public class World implements State {
     private WorldModel model;
     private WorldController controller;
 
-    public World(GameView gui) {
+    public World(GameView gui) throws ParserConfigurationException, SAXException, IOException {
         model = new WorldModel();
         view = new WorldView(gui.getScreen(), gui.getGraphics(), model);
         controller = new WorldController(view, model);
     }
 
-    public World() {
+    public World() throws ParserConfigurationException, SAXException, IOException {
         model = new WorldModel();
         controller = new WorldController(view, model);
     }
 
     @Override
-    public void start(GameState game) throws IOException, LineUnavailableException, UnsupportedAudioFileException, ParserConfigurationException, SAXException {
+    public void start(GameState game) throws IOException, ParserConfigurationException, SAXException {
         game.setState(this);
 
         switch (controller.start(game)) {
             case BATTLE:
-                game.setState(new Battle(game.getGui()));
+                game.setState(new Battle(game.getGui(), game.getWorld().getModel().getPlayer()));
+                break;
+            case SUMMARY:
+                game.setState(new PokemonSummary(game.getGui(), model.getPlayer().getPokemons().get(0)));
                 break;
             case EXIT:
                 game.setState(null);
                 break;
         }
+    }
+
+    public WorldModel getModel() {
+        return model;
     }
 }
 

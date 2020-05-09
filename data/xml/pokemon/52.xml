@@ -1,0 +1,308 @@
+<pokedex>
+    <pokemon id="52">
+        <name>MEOWTH</name>
+        <type>Normal</type>
+        <ability>Pickup</ability>
+        <exp>1000000</exp>
+        <stats>
+            <HP>40</HP>
+            <ATK>45</ATK>
+            <DEF>35</DEF>
+            <SPD>90</SPD>
+            <SAT>40</SAT>
+            <SDF>40</SDF>
+        </stats>
+        <evolutions>
+            <evolution id="52">
+                <name>Meowth</name>
+            </evolution>
+            <evolution id="53">
+                <name>Persian</name>
+                <lvl>28</lvl>
+            </evolution>
+        </evolutions>
+        <egg-group>Field</egg-group>
+        <species>Scratch Cat Pokemon</species>
+        <height>0.4</height>
+        <weight>4.2</weight>
+        <description>It is nocturnal in nature. If it spots something shiny, its eyes glitter brightly.</description>
+        <moves>
+            <move type="level-up">
+                <name>Scratch</name>
+                <lvl>1</lvl>
+            </move>
+            <move type="level-up">
+                <name>Growl</name>
+                <lvl>1</lvl>
+            </move>
+            <move type="level-up">
+                <name>Bite</name>
+                <lvl>6</lvl>
+            </move>
+            <move type="level-up">
+                <name>Fake Out</name>
+                <lvl>9</lvl>
+            </move>
+            <move type="level-up">
+                <name>Fury Swipes</name>
+                <lvl>14</lvl>
+            </move>
+            <move type="level-up">
+                <name>Screech</name>
+                <lvl>17</lvl>
+            </move>
+            <move type="level-up">
+                <name>Faint Attack</name>
+                <lvl>22</lvl>
+            </move>
+            <move type="level-up">
+                <name>Taunt</name>
+                <lvl>25</lvl>
+            </move>
+            <move type="level-up">
+                <name>Pay Day</name>
+                <lvl>30</lvl>
+            </move>
+            <move type="level-up">
+                <name>Slash</name>
+                <lvl>33</lvl>
+            </move>
+            <move type="level-up">
+                <name>Nasty Plot</name>
+                <lvl>38</lvl>
+            </move>
+            <move type="level-up">
+                <name>Assurance</name>
+                <lvl>41</lvl>
+            </move>
+            <move type="level-up">
+                <name>Captivate</name>
+                <lvl>46</lvl>
+            </move>
+            <move type="level-up">
+                <name>Night Slash</name>
+                <lvl>49</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Water Pulse</name>
+                <lvl>03</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Toxic</name>
+                <lvl>06</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Hidden Power</name>
+                <lvl>10</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Sunny Day</name>
+                <lvl>11</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Taunt</name>
+                <lvl>12</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Protect</name>
+                <lvl>17</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Rain Dance</name>
+                <lvl>18</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Frustration</name>
+                <lvl>21</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Iron Tail</name>
+                <lvl>23</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Thunderbolt</name>
+                <lvl>24</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Thunder</name>
+                <lvl>25</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Return</name>
+                <lvl>27</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Dig</name>
+                <lvl>28</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Shadow Ball</name>
+                <lvl>30</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Double Team</name>
+                <lvl>32</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Shock Wave</name>
+                <lvl>34</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Aerial Ace</name>
+                <lvl>40</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Torment</name>
+                <lvl>41</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Facade</name>
+                <lvl>42</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Secret Power</name>
+                <lvl>43</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Rest</name>
+                <lvl>44</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Attract</name>
+                <lvl>45</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Thief</name>
+                <lvl>46</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Snatch</name>
+                <lvl>49</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Endure</name>
+                <lvl>58</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Shadow Claw</name>
+                <lvl>65</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Payback</name>
+                <lvl>66</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Flash</name>
+                <lvl>70</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Psych Up</name>
+                <lvl>77</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Captivate</name>
+                <lvl>78</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Dark Pulse</name>
+                <lvl>79</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Sleep Talk</name>
+                <lvl>82</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Natural Gift</name>
+                <lvl>83</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Dream Eater</name>
+                <lvl>85</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Swagger</name>
+                <lvl>87</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>U-turn</name>
+                <lvl>89</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Substitute</name>
+                <lvl>90</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>HM</machine>
+                <name>Cut</name>
+                <lvl>1</lvl>
+            </move>
+            <move type="egg">
+                <name>Amnesia</name>
+            </move>
+            <move type="egg">
+                <name>Assist</name>
+            </move>
+            <move type="egg">
+                <name>Charm</name>
+            </move>
+            <move type="egg">
+                <name>Flail</name>
+            </move>
+            <move type="egg">
+                <name>Hypnosis</name>
+            </move>
+            <move type="egg">
+                <name>Last Resort</name>
+            </move>
+            <move type="egg">
+                <name>Odor Sleuth</name>
+            </move>
+            <move type="egg">
+                <name>Psych Up</name>
+            </move>
+            <move type="egg">
+                <name>Punishment</name>
+            </move>
+            <move type="egg">
+                <name>Spite</name>
+            </move>
+        </moves>
+    </pokemon>
+    </pokedex>

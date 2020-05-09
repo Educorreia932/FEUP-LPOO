@@ -29,6 +29,17 @@ public class TextRenderer implements Renderer {
             charRenderer.draw(graphics);
     }
 
+    public void setText(String s) {
+        chars = new ArrayList<>();
+        Position charPosition = position;
+
+        for (int i = 0; i < s.length(); i++) {
+            char c = s.charAt(i);
+            chars.add(new CharRenderer(c, charPosition));
+            charPosition = charPosition.right(chars.get(i).getWidth() + 1);
+        }
+    }
+
     public Position getPosition() {
         return position;
     }

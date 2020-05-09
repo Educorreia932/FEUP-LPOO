@@ -33,7 +33,7 @@ public class PokemonSpecies {
         // Load the input XML document, parse it and return an instance of the Document class.
         Document document;
 
-        document = builder.parse(new File("data\\pokemon\\" + pokedexNumber + ".xml"));
+        document = builder.parse(new File("data\\xml\\pokemon\\" + pokedexNumber + ".xml"));
 
         NodeList nodeList = document.getChildNodes();
 

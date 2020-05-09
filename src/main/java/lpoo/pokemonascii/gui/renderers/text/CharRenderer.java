@@ -23,8 +23,13 @@ public class CharRenderer implements Renderer {
         else if (Character.isDigit(c))
             sprite = new Sprite("font\\numbers\\" + c);
 
-        else if (!Character.isAlphabetic(c))
-            sprite = new Sprite("font\\symbols\\" + c);
+        else if (!Character.isAlphabetic(c)) {
+            if (c == '/')
+                sprite = new Sprite("font\\symbols\\slash");
+
+            else
+                sprite = new Sprite("font\\symbols\\" + c);
+        }
     }
 
     @Override

@@ -1,0 +1,15 @@
+<pokedex>
+  <move>
+    <id>192</id>
+    <identifier>zap-cannon</identifier>
+    <type>ELECTRIC</type>
+    <power>120</power>
+    <pp>5</pp>
+    <accuracy>50</accuracy>
+    <priority>0</priority>
+    <target_id>10</target_id>
+    <damage_class_id>3</damage_class_id>
+    <effect_id>7</effect_id>
+    <effect_chance>100</effect_chance>
+  </move>
+  </pokedex>

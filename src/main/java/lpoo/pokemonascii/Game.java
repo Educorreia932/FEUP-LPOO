@@ -1,7 +1,9 @@
 package lpoo.pokemonascii;
 
 import lpoo.pokemonascii.rules.observer.Music;
+import lpoo.pokemonascii.rules.state.Battle;
 import lpoo.pokemonascii.rules.state.GameState;
+import lpoo.pokemonascii.rules.state.PokemonSummary;
 import org.xml.sax.SAXException;
 
 import javax.sound.sampled.LineUnavailableException;
@@ -12,7 +14,10 @@ import java.io.IOException;
 public class Game {
     public static void main(String[] args) throws IOException, SAXException, ParserConfigurationException, LineUnavailableException, UnsupportedAudioFileException {
         GameState game = new GameState();
-        Music music = new Music(game);
+//        Music music = new Music(game);
+
+//        game.setState(new Battle(game.getGui(), game.getWorld().getModel().getPlayer()));
+//        game.setState(new PokemonSummary(game.getGui(), game.getWorld().getModel().getPlayer().getPokemons().get(0)));
 
         while (game.getState() != null)
             game.getState().start(game);

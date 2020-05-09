@@ -1,0 +1,15 @@
+<pokedex>
+  <move>
+    <id>141</id>
+    <identifier>leech-life</identifier>
+    <type>BUG</type>
+    <power>80</power>
+    <pp>10</pp>
+    <accuracy>100</accuracy>
+    <priority>0</priority>
+    <target_id>10</target_id>
+    <damage_class_id>2</damage_class_id>
+    <effect_id>4</effect_id>
+    <effect_chance />
+  </move>
+  </pokedex>

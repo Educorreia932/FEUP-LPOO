@@ -1,7 +1,10 @@
 package lpoo.pokemonascii.data;
 
 import lpoo.pokemonascii.data.elements.CollidingElement;
+import org.xml.sax.SAXException;
 
+import javax.xml.parsers.ParserConfigurationException;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,13 +13,13 @@ public class WorldModel {
     private List<CollidingElement> elements;
     private List<Tile> tiles;
 
-    public WorldModel() {
+    public WorldModel() throws IOException, SAXException, ParserConfigurationException {
         player = new Player();
         tiles = new ArrayList<>();
         elements = new ArrayList<>();
 
         tiles.add(new Grass(161, 108));
-        elements.add(new Obstacle(0, 0, 300, 19));
+        elements.add(new Obstacle(0, 0, 400, 19));
     }
 
     public WorldModel(Player player) {
@@ -37,8 +40,8 @@ public class WorldModel {
         Position position = player.getPosition(direction);
 
         // Check if the player moves off screen borders
-        if (position.getX() < 0 || position.getX() > 300 ||
-                position.getY() < 0 || position.getY() > 110)
+        if (position.getX() < 0 || position.getX() > 380 ||
+                position.getY() < 0 || position.getY() > 140)
             return false;
 
         // Check if the player collides with anything

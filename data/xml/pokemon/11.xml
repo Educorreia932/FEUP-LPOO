@@ -1,0 +1,44 @@
+<pokedex>
+    <pokemon id="11">
+        <name>METAPOD</name>
+        <type>Bug</type>
+        <ability>Shed</ability>
+        <exp>1000000</exp>
+        <stats>
+            <HP>50</HP>
+            <ATK>20</ATK>
+            <DEF>55</DEF>
+            <SPD>30</SPD>
+            <SAT>25</SAT>
+            <SDF>25</SDF>
+        </stats>
+        <evolutions>
+            <evolution id="10">
+                <name>Caterpie</name>
+            </evolution>
+            <evolution id="11">
+                <name>Metapod</name>
+                <lvl>7</lvl>
+            </evolution>
+            <evolution id="12">
+                <name>Butterfree</name>
+                <lvl>10</lvl>
+            </evolution>
+        </evolutions>
+        <egg-group>Bug</egg-group>
+        <species>Cocoon Pokemon</species>
+        <height>0.7</height>
+        <weight>9.9</weight>
+        <description>A steel-hard shell protects its tender body. It quietly endures hardships while awaiting evolution.</description>
+        <moves>
+            <move type="level-up">
+                <name>Harden</name>
+                <lvl>1</lvl>
+            </move>
+            <move type="level-up">
+                <name>Harden</name>
+                <lvl>7</lvl>
+            </move>
+        </moves>
+    </pokemon>
+    </pokedex>

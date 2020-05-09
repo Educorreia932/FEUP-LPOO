@@ -1,0 +1,233 @@
+<pokedex>
+    <pokemon id="26">
+        <name>RAICHU</name>
+        <type>Electric</type>
+        <ability>Static</ability>
+        <exp>1000000</exp>
+        <stats>
+            <HP>60</HP>
+            <ATK>90</ATK>
+            <DEF>55</DEF>
+            <SPD>100</SPD>
+            <SAT>90</SAT>
+            <SDF>80</SDF>
+        </stats>
+        <evolutions>
+            <evolution id="172">
+                <name>Pichu</name>
+            </evolution>
+            <evolution id="25">
+                <name>Pikachu</name>
+                <condition>Happiness</condition>
+            </evolution>
+            <evolution id="26">
+                <name>Raichu</name>
+                <condition>Thunderstone</condition>
+            </evolution>
+        </evolutions>
+        <egg-group>Field</egg-group>
+        <egg-group>Fairy</egg-group>
+        <species>Mouse Pokemon</species>
+        <height>0.8</height>
+        <weight>30</weight>
+        <description>It turns aggressive if it has too much electricity in its body. It discharges power through its tail.</description>
+        <moves>
+            <move type="level-up">
+                <name>Thundershock</name>
+                <lvl>1</lvl>
+            </move>
+            <move type="level-up">
+                <name>Tail Whip</name>
+                <lvl>1</lvl>
+            </move>
+            <move type="level-up">
+                <name>Quick Attack</name>
+                <lvl>1</lvl>
+            </move>
+            <move type="level-up">
+                <name>Thunderbolt</name>
+                <lvl>1</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Focus Punch</name>
+                <lvl>01</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Toxic</name>
+                <lvl>06</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Hidden Power</name>
+                <lvl>10</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Hyper Beam</name>
+                <lvl>15</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Light Screen</name>
+                <lvl>16</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Protect</name>
+                <lvl>17</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Rain Dance</name>
+                <lvl>18</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Frustration</name>
+                <lvl>21</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Iron Tail</name>
+                <lvl>23</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Thunderbolt</name>
+                <lvl>24</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Thunder</name>
+                <lvl>25</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Return</name>
+                <lvl>27</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Dig</name>
+                <lvl>28</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Brick Break</name>
+                <lvl>31</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Double Team</name>
+                <lvl>32</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Shock Wave</name>
+                <lvl>34</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Facade</name>
+                <lvl>42</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Secret Power</name>
+                <lvl>43</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Rest</name>
+                <lvl>44</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Attract</name>
+                <lvl>45</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Thief</name>
+                <lvl>46</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Focus Blast</name>
+                <lvl>52</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Fling</name>
+                <lvl>56</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Charge Beam</name>
+                <lvl>57</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Endure</name>
+                <lvl>58</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Giga Impact</name>
+                <lvl>68</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Flash</name>
+                <lvl>70</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Thunder Wave</name>
+                <lvl>73</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Captivate</name>
+                <lvl>78</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Sleep Talk</name>
+                <lvl>82</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Natural Gift</name>
+                <lvl>83</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Grass Knot</name>
+                <lvl>86</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Swagger</name>
+                <lvl>87</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Substitute</name>
+                <lvl>90</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>HM</machine>
+                <name>Strength</name>
+                <lvl>4</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>HM</machine>
+                <name>Rock Smash</name>
+                <lvl>6</lvl>
+            </move>
+        </moves>
+    </pokemon>
+    </pokedex>

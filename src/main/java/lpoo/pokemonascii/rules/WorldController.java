@@ -6,45 +6,37 @@ import lpoo.pokemonascii.data.Position;
 import lpoo.pokemonascii.data.WorldModel;
 import lpoo.pokemonascii.data.elements.CollidingElement;
 import lpoo.pokemonascii.gui.WorldView;
+import lpoo.pokemonascii.rules.commands.ChangedStateCommand;
 import lpoo.pokemonascii.rules.commands.Command;
-import lpoo.pokemonascii.rules.commands.QuitCommand;
 import lpoo.pokemonascii.rules.state.GameState;
-import org.xml.sax.SAXException;
 
-import javax.sound.sampled.LineUnavailableException;
-import javax.sound.sampled.UnsupportedAudioFileException;
-import javax.xml.parsers.ParserConfigurationException;
-import java.io.IOException;
-
-public class WorldController {
+public class WorldController implements Controller {
     private WorldView gui;
     private WorldModel world;
-    boolean enteredBattle = false;
+    private GameState.Gamemode gamemode;
 
     public WorldController(WorldView gui, WorldModel world) {
         this.gui = gui;
         this.world = world;
+        gamemode = GameState.Gamemode.WORLD;
     }
 
-    public GameState.Gamemode start(GameState game) throws IOException, LineUnavailableException, UnsupportedAudioFileException, ParserConfigurationException, SAXException {
-        while (true) {
-            gui.drawWorld();
+    public GameState.Gamemode start(GameState game) {
+        gamemode = GameState.Gamemode.WORLD;
+        gui.running = true;
 
-            Command command = gui.getNextCommand(this);
+        Thread view = new Thread(gui);
+        view.start();
+
+        while (gamemode == GameState.Gamemode.WORLD) {
+            Command command;
+            command = gui.getNextCommand(this);
             command.execute();
-
-            if (command instanceof QuitCommand){
-                game.setState(null);
-                break;
-            }
-
-            if (enteredBattle) {
-                enteredBattle = false;
-                return GameState.Gamemode.BATTLE;
-            }
         }
 
-        return GameState.Gamemode.EXIT;
+        gui.running = false;
+        view.interrupt();
+        return gamemode;
     }
 
     public void movePlayer(Position.Direction direction) {
@@ -53,11 +45,17 @@ public class WorldController {
             CollidingElement tile = world.isPlayerInTile();
 
             if (tile instanceof PokemonTile)
-                enteredBattle = ((PokemonTile) tile).foundPokemon();
+                if (((PokemonTile) tile).foundPokemon())
+                    new ChangedStateCommand(this, GameState.Gamemode.BATTLE).execute();
         }
     }
 
     public void setPlayerState(Player.State state) {
         world.getPlayer().setState(state);
+    }
+
+    @Override
+    public void setGamemode(GameState.Gamemode gamemode) {
+        this.gamemode = gamemode;
     }
 }

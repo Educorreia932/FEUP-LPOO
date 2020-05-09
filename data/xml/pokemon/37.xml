@@ -1,0 +1,265 @@
+<pokedex>
+    <pokemon id="37">
+        <name>VULPIX</name>
+        <type>Fire</type>
+        <ability>Flash</ability>
+        <exp>1000000</exp>
+        <stats>
+            <HP>38</HP>
+            <ATK>41</ATK>
+            <DEF>40</DEF>
+            <SPD>65</SPD>
+            <SAT>50</SAT>
+            <SDF>65</SDF>
+        </stats>
+        <evolutions>
+            <evolution id="37">
+                <name>Vulpix</name>
+            </evolution>
+            <evolution id="38">
+                <name>Ninetales</name>
+                <condition>Fire Stone</condition>
+            </evolution>
+        </evolutions>
+        <egg-group>Field</egg-group>
+        <species>Fox Pokemon</species>
+        <height>0.6</height>
+        <weight>9.9</weight>
+        <description>It controls balls of fire. As it grows, its six tails split from their tips to make more tails.</description>
+        <moves>
+            <move type="level-up">
+                <name>Ember</name>
+                <lvl>1</lvl>
+            </move>
+            <move type="level-up">
+                <name>Tail Whip</name>
+                <lvl>4</lvl>
+            </move>
+            <move type="level-up">
+                <name>Roar</name>
+                <lvl>7</lvl>
+            </move>
+            <move type="level-up">
+                <name>Quick Attack</name>
+                <lvl>11</lvl>
+            </move>
+            <move type="level-up">
+                <name>Will-o-wisp</name>
+                <lvl>14</lvl>
+            </move>
+            <move type="level-up">
+                <name>Confuse Ray</name>
+                <lvl>17</lvl>
+            </move>
+            <move type="level-up">
+                <name>Imprison</name>
+                <lvl>21</lvl>
+            </move>
+            <move type="level-up">
+                <name>Flamethrower</name>
+                <lvl>24</lvl>
+            </move>
+            <move type="level-up">
+                <name>Safeguard</name>
+                <lvl>27</lvl>
+            </move>
+            <move type="level-up">
+                <name>Payback</name>
+                <lvl>31</lvl>
+            </move>
+            <move type="level-up">
+                <name>Fire Spin</name>
+                <lvl>34</lvl>
+            </move>
+            <move type="level-up">
+                <name>Captivate</name>
+                <lvl>37</lvl>
+            </move>
+            <move type="level-up">
+                <name>Grudge</name>
+                <lvl>41</lvl>
+            </move>
+            <move type="level-up">
+                <name>Extrasensory</name>
+                <lvl>44</lvl>
+            </move>
+            <move type="level-up">
+                <name>Fire Blast</name>
+                <lvl>47</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Roar</name>
+                <lvl>05</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Toxic</name>
+                <lvl>06</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Hidden Power</name>
+                <lvl>10</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Sunny Day</name>
+                <lvl>11</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Protect</name>
+                <lvl>17</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Safeguard</name>
+                <lvl>20</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Frustration</name>
+                <lvl>21</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Iron Tail</name>
+                <lvl>23</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Return</name>
+                <lvl>27</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Dig</name>
+                <lvl>28</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Double Team</name>
+                <lvl>32</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Flamethrower</name>
+                <lvl>35</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Fire Blast</name>
+                <lvl>38</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Facade</name>
+                <lvl>42</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Secret Power</name>
+                <lvl>43</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Rest</name>
+                <lvl>44</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Attract</name>
+                <lvl>45</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Overheat</name>
+                <lvl>50</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Endure</name>
+                <lvl>58</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Will-o-wisp</name>
+                <lvl>61</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Payback</name>
+                <lvl>66</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Psych Up</name>
+                <lvl>77</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Captivate</name>
+                <lvl>78</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Dark Pulse</name>
+                <lvl>79</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Sleep Talk</name>
+                <lvl>82</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Natural Gift</name>
+                <lvl>83</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Swagger</name>
+                <lvl>87</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Substitute</name>
+                <lvl>90</lvl>
+            </move>
+            <move type="egg">
+                <name>Disable</name>
+            </move>
+            <move type="egg">
+                <name>Energy Ball</name>
+            </move>
+            <move type="egg">
+                <name>Extrasensory</name>
+            </move>
+            <move type="egg">
+                <name>Faint Attack</name>
+            </move>
+            <move type="egg">
+                <name>Flail</name>
+            </move>
+            <move type="egg">
+                <name>Flare Blitz</name>
+            </move>
+            <move type="egg">
+                <name>Heat Wave</name>
+            </move>
+            <move type="egg">
+                <name>Howl</name>
+            </move>
+            <move type="egg">
+                <name>Hypnosis</name>
+            </move>
+            <move type="egg">
+                <name>Psych Up</name>
+            </move>
+            <move type="egg">
+                <name>Spite</name>
+            </move>
+        </moves>
+    </pokemon>
+    </pokedex>

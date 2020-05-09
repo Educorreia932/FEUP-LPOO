@@ -1,0 +1,15 @@
+<pokedex>
+  <move>
+    <id>5</id>
+    <identifier>mega-punch</identifier>
+    <type>NORMAL</type>
+    <power>80</power>
+    <pp>20</pp>
+    <accuracy>85</accuracy>
+    <priority>0</priority>
+    <target_id>10</target_id>
+    <damage_class_id>2</damage_class_id>
+    <effect_id>1</effect_id>
+    <effect_chance />
+  </move>
+  </pokedex>

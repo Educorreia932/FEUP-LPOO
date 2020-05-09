@@ -1,0 +1,233 @@
+<pokedex>
+    <pokemon id="48">
+        <name>VENONAT</name>
+        <type>Bug</type>
+        <type>Poison</type>
+        <ability>Compoundeyes</ability>
+        <exp>1000000</exp>
+        <stats>
+            <HP>60</HP>
+            <ATK>55</ATK>
+            <DEF>50</DEF>
+            <SPD>45</SPD>
+            <SAT>40</SAT>
+            <SDF>55</SDF>
+        </stats>
+        <evolutions>
+            <evolution id="48">
+                <name>Venonat</name>
+            </evolution>
+            <evolution id="49">
+                <name>Venomoth</name>
+                <lvl>31</lvl>
+            </evolution>
+        </evolutions>
+        <egg-group>Bug</egg-group>
+        <species>Insect Pokemon</species>
+        <height>1</height>
+        <weight>30</weight>
+        <description>Its big eyes are actually clusters of tiny eyes. At night, its kind is drawn by light.</description>
+        <moves>
+            <move type="level-up">
+                <name>Tackle</name>
+                <lvl>1</lvl>
+            </move>
+            <move type="level-up">
+                <name>Disable</name>
+                <lvl>1</lvl>
+            </move>
+            <move type="level-up">
+                <name>Foresight</name>
+                <lvl>1</lvl>
+            </move>
+            <move type="level-up">
+                <name>Supersonic</name>
+                <lvl>5</lvl>
+            </move>
+            <move type="level-up">
+                <name>Confusion</name>
+                <lvl>11</lvl>
+            </move>
+            <move type="level-up">
+                <name>Poisonpowder</name>
+                <lvl>13</lvl>
+            </move>
+            <move type="level-up">
+                <name>Leech Life</name>
+                <lvl>17</lvl>
+            </move>
+            <move type="level-up">
+                <name>Stun Spore</name>
+                <lvl>23</lvl>
+            </move>
+            <move type="level-up">
+                <name>Psybeam</name>
+                <lvl>25</lvl>
+            </move>
+            <move type="level-up">
+                <name>Sleep Powder</name>
+                <lvl>29</lvl>
+            </move>
+            <move type="level-up">
+                <name>Signal Beam</name>
+                <lvl>35</lvl>
+            </move>
+            <move type="level-up">
+                <name>Zen Headbutt</name>
+                <lvl>37</lvl>
+            </move>
+            <move type="level-up">
+                <name>Poison Fang</name>
+                <lvl>41</lvl>
+            </move>
+            <move type="level-up">
+                <name>Psychic</name>
+                <lvl>47</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Toxic</name>
+                <lvl>06</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Hidden Power</name>
+                <lvl>10</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Sunny Day</name>
+                <lvl>11</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Protect</name>
+                <lvl>17</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Giga Drain</name>
+                <lvl>19</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Frustration</name>
+                <lvl>21</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Solarbeam</name>
+                <lvl>22</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Return</name>
+                <lvl>27</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Psychic</name>
+                <lvl>29</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Double Team</name>
+                <lvl>32</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Sludge Bomb</name>
+                <lvl>36</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Facade</name>
+                <lvl>42</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Secret Power</name>
+                <lvl>43</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Rest</name>
+                <lvl>44</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Attract</name>
+                <lvl>45</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Thief</name>
+                <lvl>46</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Skill Swap</name>
+                <lvl>48</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Endure</name>
+                <lvl>58</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Flash</name>
+                <lvl>70</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Captivate</name>
+                <lvl>78</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Sleep Talk</name>
+                <lvl>82</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Natural Gift</name>
+                <lvl>83</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Swagger</name>
+                <lvl>87</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Substitute</name>
+                <lvl>90</lvl>
+            </move>
+            <move type="egg">
+                <name>Agility</name>
+            </move>
+            <move type="egg">
+                <name>Baton Pass</name>
+            </move>
+            <move type="egg">
+                <name>Bug Bite</name>
+            </move>
+            <move type="egg">
+                <name>Giga Drain</name>
+            </move>
+            <move type="egg">
+                <name>Morning Sun</name>
+            </move>
+            <move type="egg">
+                <name>Screech</name>
+            </move>
+            <move type="egg">
+                <name>Signal Beam</name>
+            </move>
+            <move type="egg">
+                <name>Toxic Spikes</name>
+            </move>
+        </moves>
+    </pokemon>
+    </pokedex>

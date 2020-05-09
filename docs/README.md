@@ -122,6 +122,7 @@ For instance, the Water type is super effective against Fire, so if a Water pok�
 
 ### Pokémon
 
+- **Summary Menu** - Display a menu with a summary of a pokémon.
 - **Leveling Up** - A pokémon's level goes from 1 to 100 and it can level up when it reaches a certain amount of experience, improving its stats.
 - **Evolving** - Some pokémon have two or even three different evolutions and if so, they evolve when they reach a certain level.
 
@@ -129,12 +130,13 @@ For instance, the Water type is super effective against Fire, so if a Water pok�
 
 - **Use Moves** - Make it possible to choose one of the four pokémon moves and use it against the opponent.
 - **Pokémon Moves Animations** - Implement animations for each move.
-- **Use items** - Make it possible to access the bag and use an item, such as Potions or Pokéballs.
+- **Use Items** - Make it possible to access the bag and use an item, such as Potions or Pokéballs.
 
 ### Other
 
+- **Have a Main Menu**
 - **Save the progress**
-- **Create profiles**
+- **Create profiles** 
 - **Create NPCs** - Have NPCs in the overworld whom which the player might interact.
 
 ## Architectural Pattern
@@ -352,6 +354,7 @@ This code smell is called **Parallel Inheritance**. The solution for it would be
 - [Pokémon - Battle](https://veekun.com/dex/downloads), veekun
 - [HP Bars & In-Battle Menu](https://www.spriters-resource.com/game_boy_advance/pokemonfireredleafgreen/sheet/33690/), redblueyellow
 - [Battle Backgrounds](https://www.spriters-resource.com/game_boy_advance/pokemonfireredleafgreen/sheet/3866/), Desgardes
+- [Pokémon Summary Menu](https://www.spriters-resource.com/game_boy_advance/pokemonfireredleafgreen/sheet/112720/), Pnick0509
 
 ### Data Files
 
