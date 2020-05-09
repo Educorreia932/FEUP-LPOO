@@ -21,6 +21,7 @@ public class PokemonSpecies {
     private PokemonType secondaryType;
     private PokemonStats baseStats;
     private int totalExperience;
+    private ArrayList<PokemonMove> levelMoves;
 
     public PokemonSpecies(int pokedexNumber) throws IOException, SAXException, ParserConfigurationException {
         this.pokedexNumber = pokedexNumber;
@@ -56,7 +57,7 @@ public class PokemonSpecies {
             // Total Experience
             totalExperience = Integer.parseInt(elem.getElementsByTagName("exp").item(0).getTextContent());
 
-            // Stats
+            // Base Stats
             NodeList statsNodes = elem.getElementsByTagName("stats").item(0).getChildNodes();
             List<Integer> stats = new ArrayList<>();
 
@@ -70,6 +71,31 @@ public class PokemonSpecies {
             }
 
             baseStats = new PokemonStats(stats);
+
+            // Moves
+            NodeList movesNodes = elem.getElementsByTagName("moves").item(0).getChildNodes();
+            levelMoves = new ArrayList<>();
+
+            for (int i = 0; i <  movesNodes.getLength(); i++) {
+                Node moveNode =  movesNodes.item(i);
+
+                if (moveNode.getNodeType() == Node.ELEMENT_NODE) {
+                    Element nodeElement = (Element) moveNode;
+                    String moveName = nodeElement.getElementsByTagName("name").item(0).getTextContent();
+
+                    if (nodeElement.getAttribute("type").equals("level-up")) {
+                        try {
+                            levelMoves.add(new PokemonMove(moveName));
+                        }
+
+                        catch (Exception ignored) {
+                            // The correspondent file wasn't found
+                            // This might be, because it was a move from another generation
+                            // Or its name was spelled incorrectly
+                        }
+                    }
+                }
+            }
         }
     }
 
@@ -95,5 +121,9 @@ public class PokemonSpecies {
 
     public int getTotalExperience() {
         return totalExperience;
+    }
+
+    public List<PokemonMove> getLevelMoves() {
+        return levelMoves;
     }
 }

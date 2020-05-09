@@ -25,8 +25,9 @@ public class BattleModel {
         trainerPokemon.setDirection(Pokemon.FacingDirection.BACK);
 
         int pokemonNumber = new Random().nextInt(151) + 1;
+        int level = new Random().nextInt(100) + 1;
 
-        adversaryPokemon = new Pokemon(pokemonNumber, Pokemon.FacingDirection.FRONT);
+        adversaryPokemon = new Pokemon(pokemonNumber, level, Pokemon.FacingDirection.FRONT);
         options = new BattleOptionsMenuModel();
 
         currentTurn = Turn.TRAINER;

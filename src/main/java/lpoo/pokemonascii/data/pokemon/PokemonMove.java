@@ -44,13 +44,25 @@ public class PokemonMove {
             type = new PokemonType(elem.getElementsByTagName("type").item(0).getTextContent());
 
             // Power
-            power = Integer.parseInt(elem.getElementsByTagName("power").item(0).getTextContent());
+            try {
+                power = Integer.parseInt(elem.getElementsByTagName("power").item(0).getTextContent());
+            }
+
+            catch (NumberFormatException e) {
+                power = 0;
+            }
 
             // PP
             pp = Integer.parseInt(elem.getElementsByTagName("pp").item(0).getTextContent());
 
             // Accuracy
-            accuracy = Integer.parseInt(elem.getElementsByTagName("accuracy").item(0).getTextContent());
+            try {
+                accuracy = Integer.parseInt(elem.getElementsByTagName("accuracy").item(0).getTextContent());
+            }
+
+            catch (NumberFormatException e) {
+                accuracy = 100;
+            }
         }
     }
 

@@ -6,6 +6,7 @@ import java.util.Objects;
 
 public class Rect {
     private int width, height;
+    private Position position;
 
     public Rect(int width, int height) {
         this.width = width;

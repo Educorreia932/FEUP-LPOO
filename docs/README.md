@@ -88,6 +88,12 @@ This project was developed by [*Ana Inês Barros*](https://github.com/anaines14)
 A super effective attack will cause 2x the damage, a not very effective will cause 0.5x the damage and a no effect will cause 0x damage.  
 For instance, the Water type is super effective against Fire, so if a Water pokémon move is used against a Fire pokémon, it would cause two times the normal damage it would cause.
 
+- **Summary Menu** - Display a menu with a summary of a pokémon.
+
+<p align="center">
+  <img width=550 src="images/coverage.png">
+</p>
+
 ### Battle
 
 - **HP and Experience Bar** - These bars represent, respectively, the total health percentage of a pokémon in-battle and its experience progress from its current level to the next.
@@ -122,9 +128,9 @@ For instance, the Water type is super effective against Fire, so if a Water pok�
 
 ### Pokémon
 
-- **Summary Menu** - Display a menu with a summary of a pokémon.
 - **Leveling Up** - A pokémon's level goes from 1 to 100 and it can level up when it reaches a certain amount of experience, improving its stats.
 - **Evolving** - Some pokémon have two or even three different evolutions and if so, they evolve when they reach a certain level.
+- **Pokémon PC**
 
 ### Battle
 

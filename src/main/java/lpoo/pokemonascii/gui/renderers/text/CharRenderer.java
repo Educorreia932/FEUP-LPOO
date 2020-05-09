@@ -24,11 +24,17 @@ public class CharRenderer implements Renderer {
             sprite = new Sprite("font\\numbers\\" + c);
 
         else if (!Character.isAlphabetic(c)) {
-            if (c == '/')
-                sprite = new Sprite("font\\symbols\\slash");
-
-            else
-                sprite = new Sprite("font\\symbols\\" + c);
+            switch (c) {
+                case '/':
+                    sprite = new Sprite("font\\symbols\\slash");
+                    break;
+                case ' ':
+                    sprite = new Sprite("font\\symbols\\space");
+                    break;
+                default:
+                    sprite = new Sprite("font\\symbols\\" + c);
+                    break;
+            }
         }
     }
 
