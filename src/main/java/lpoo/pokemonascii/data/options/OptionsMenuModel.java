@@ -12,8 +12,12 @@ public class OptionsMenuModel {
         this.options = options;
     }
 
-    public int getSelectedOption() {
+    public int getSelectedOptionNumber() {
         return selectedOption;
+    }
+
+    public Option getSelectedOption() {
+        return options.get(selectedOption);
     }
 
     public void setSelectedOption(Position.Direction direction) {

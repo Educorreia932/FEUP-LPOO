@@ -4,9 +4,9 @@ import com.googlecode.lanterna.graphics.TextGraphics;
 import lpoo.pokemonascii.data.Position;
 import lpoo.pokemonascii.data.options.OptionsMenuModel;
 import lpoo.pokemonascii.data.options.fight.FightOption;
+import lpoo.pokemonascii.data.pokemon.PokemonMove;
 import lpoo.pokemonascii.gui.Sprite;
 import lpoo.pokemonascii.gui.renderers.text.TextRenderer;
-
 
 public class FightOptionsRenderer extends OptionsMenuRenderer {
     private OptionsMenuModel model;
@@ -19,7 +19,7 @@ public class FightOptionsRenderer extends OptionsMenuRenderer {
         position = new Position(0, 112);
         background = new Sprite("fight_options");
         model = options;
-//        movePP = new TextRenderer(340, 120, String.valueOf(getSelectedMovePP()), "normal");
+        movePP = new TextRenderer(334, 123, getSelectedMovePP(), "normal");
         moveType = new TextRenderer(319, 139, getSelectedMoveType(), "normal");
     }
 
@@ -27,15 +27,20 @@ public class FightOptionsRenderer extends OptionsMenuRenderer {
     public void draw(TextGraphics graphics) {
         super.draw(graphics);
 
+        movePP.setText(getSelectedMovePP());
         moveType.setText(getSelectedMoveType());
+
+        movePP.draw(graphics);
         moveType.draw(graphics);
     }
 
-    private int getSelectedMovePP() {
-        return ((FightOption) model.getOptions().get(model.getSelectedOption())).getMove().getPP();
+    private String getSelectedMovePP() {
+        PokemonMove move = ((FightOption) model.getSelectedOption()).getMove();
+
+        return move.getCurrentPP() + "/" + move.getTotalPP();
     }
 
     private String getSelectedMoveType() {
-        return ((FightOption) model.getOptions().get(model.getSelectedOption())).getMove().getType().getName();
+        return ((FightOption) model.getSelectedOption()).getMove().getType().getName();
     }
 }

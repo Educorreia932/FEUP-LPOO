@@ -15,7 +15,8 @@ import java.io.IOException;
 public class PokemonMove {
     private String name;
     private int power;
-    private int pp;
+    private int totalPP;
+    private int currentPP;
     private int accuracy;
     private PokemonType type;
 
@@ -53,7 +54,8 @@ public class PokemonMove {
             }
 
             // PP
-            pp = Integer.parseInt(elem.getElementsByTagName("pp").item(0).getTextContent());
+            totalPP = Integer.parseInt(elem.getElementsByTagName("pp").item(0).getTextContent());
+            currentPP = totalPP;
 
             // Accuracy
             try {
@@ -88,8 +90,12 @@ public class PokemonMove {
         return name;
     }
 
-    public int getPP() {
-        return pp;
+    public int getTotalPP() {
+        return totalPP;
+    }
+
+    public int getCurrentPP() {
+        return currentPP;
     }
 
     public PokemonType getType() {
