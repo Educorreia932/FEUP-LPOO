@@ -5,12 +5,6 @@ import lpoo.pokemonascii.data.pokemon.Pokemon;
 import lpoo.pokemonascii.gui.GameView;
 import lpoo.pokemonascii.gui.PokemonSummaryView;
 import lpoo.pokemonascii.rules.PokemonSummaryController;
-import org.xml.sax.SAXException;
-
-import javax.sound.sampled.LineUnavailableException;
-import javax.sound.sampled.UnsupportedAudioFileException;
-import javax.xml.parsers.ParserConfigurationException;
-import java.io.IOException;
 
 public class PokemonSummary implements State {
     private PokemonSummaryModel model;
@@ -24,9 +18,16 @@ public class PokemonSummary implements State {
     }
 
     @Override
-    public void start(GameState game) throws UnsupportedAudioFileException, IOException, LineUnavailableException, ParserConfigurationException, SAXException {
+    public void start(GameState game) {
         game.setState(this);
 
-        controller.start(game);
+        switch (controller.start(game)) {
+            case WORLD:
+                game.setState(game.getWorld());
+                break;
+            case EXIT:
+                game.setState(null);
+                break;
+        }
     }
 }

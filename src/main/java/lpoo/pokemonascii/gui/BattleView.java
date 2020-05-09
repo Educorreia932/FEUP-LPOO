@@ -13,7 +13,6 @@ import lpoo.pokemonascii.rules.BattleController;
 import lpoo.pokemonascii.rules.commands.ChangedStateCommand;
 import lpoo.pokemonascii.rules.commands.Command;
 import lpoo.pokemonascii.rules.commands.DoNothingCommand;
-import lpoo.pokemonascii.rules.commands.QuitCommand;
 import lpoo.pokemonascii.rules.commands.optionsmenu.*;
 import lpoo.pokemonascii.rules.state.GameState;
 import org.xml.sax.SAXException;

@@ -33,9 +33,7 @@ public class Battle implements State {
     public void start(GameState game) {
         game.setState(this);
 
-        GameState.Gamemode gamemode = controller.start(game);
-
-        switch (gamemode) {
+        switch (controller.start(game)) {
             case WORLD:
                 game.setState(game.getWorld());
                 break;

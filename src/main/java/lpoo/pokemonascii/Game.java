@@ -16,7 +16,7 @@ public class Game {
         GameState game = new GameState();
 //        Music music = new Music(game);
 
-        game.setState(new Battle(game.getGui(), game.getWorld().getModel().getPlayer()));
+//        game.setState(new Battle(game.getGui(), game.getWorld().getModel().getPlayer()));
 //        game.setState(new PokemonSummary(game.getGui(), game.getWorld().getModel().getPlayer().getPokemons().get(0)));
 
         while (game.getState() != null)

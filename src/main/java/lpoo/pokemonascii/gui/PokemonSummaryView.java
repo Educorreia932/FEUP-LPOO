@@ -1,13 +1,21 @@
 package lpoo.pokemonascii.gui;
 
 import com.googlecode.lanterna.graphics.TextGraphics;
+import com.googlecode.lanterna.input.KeyStroke;
 import com.googlecode.lanterna.screen.Screen;
 import lpoo.pokemonascii.data.PokemonSummaryModel;
 import lpoo.pokemonascii.gui.renderers.pokemon.PokemonRenderer;
 import lpoo.pokemonascii.gui.renderers.pokemon.PokemonTypeRenderer;
 import lpoo.pokemonascii.gui.renderers.text.TextRenderer;
+import lpoo.pokemonascii.rules.PokemonSummaryController;
+import lpoo.pokemonascii.rules.commands.ChangedStateCommand;
+import lpoo.pokemonascii.rules.commands.Command;
+import lpoo.pokemonascii.rules.commands.DoNothingCommand;
+import lpoo.pokemonascii.rules.state.GameState;
 
 import java.io.IOException;
+
+import static lpoo.pokemonascii.gui.WorldView.getPressedKey;
 
 public class PokemonSummaryView {
     private Screen screen;
@@ -42,7 +50,31 @@ public class PokemonSummaryView {
             secondaryType = new PokemonTypeRenderer(337, 51, model.getPokemon().getSpecies().getSecondaryType());
     }
 
-    public void draw() throws IOException {
+    public Command getNextCommand(PokemonSummaryController summary) {
+        KeyStroke pressedKey = null;
+
+        try {
+            pressedKey = getPressedKey(screen);
+        }
+
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        if (pressedKey == null)
+            return new DoNothingCommand();
+
+        switch (pressedKey.getKeyType()) {
+            case EOF:
+                return new ChangedStateCommand(summary, GameState.Gamemode.EXIT);
+            case Escape:
+                return new ChangedStateCommand(summary, GameState.Gamemode.WORLD);
+        }
+
+        return new DoNothingCommand();
+    }
+
+    public void draw() {
         Sprite.drawSprite(info, 0, 16, graphics);
         Sprite.drawSprite(background, 0, 16, graphics);
         Sprite.drawSprite(selectedBar, graphics);
@@ -57,6 +89,12 @@ public class PokemonSummaryView {
         if (secondaryType != null)
             secondaryType.draw(graphics);
 
-        screen.refresh();
+        try {
+            screen.refresh();
+        }
+
+        catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

@@ -50,6 +50,7 @@ public class WorldView implements Runnable {
 
     public Command getNextCommand(WorldController world) {
         KeyStroke pressedKey = null;
+
         try {
             pressedKey = getPressedKey(screen);
         }
@@ -77,6 +78,8 @@ public class WorldView implements Runnable {
                     case 'q':
 //                        return new QuitCommand(screen);
                         return new ChangedStateCommand(world, GameState.Gamemode.EXIT);
+                    case 's':
+                        return new ChangedStateCommand(world, GameState.Gamemode.SUMMARY);
                 }
         }
 

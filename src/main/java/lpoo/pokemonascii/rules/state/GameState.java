@@ -19,11 +19,12 @@ public class GameState {
 
     public enum Gamemode {
         WORLD,
+        SUMMARY,
         BATTLE,
         EXIT
     }
 
-    public GameState() throws IOException, UnsupportedAudioFileException, LineUnavailableException, SAXException, ParserConfigurationException {
+    public GameState() throws IOException, SAXException, ParserConfigurationException {
         gui = new GameView(400, 160);
         observers = new ArrayList<>();
         world = new World(gui);

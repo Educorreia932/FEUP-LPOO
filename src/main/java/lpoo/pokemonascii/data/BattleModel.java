@@ -22,6 +22,7 @@ public class BattleModel {
 
     public BattleModel(Pokemon trainerPokemon) throws IOException, SAXException, ParserConfigurationException {
         this.trainerPokemon = trainerPokemon;
+        trainerPokemon.setDirection(Pokemon.FacingDirection.BACK);
 
         int pokemonNumber = new Random().nextInt(151) + 1;
 

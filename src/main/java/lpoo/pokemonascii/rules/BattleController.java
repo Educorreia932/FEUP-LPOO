@@ -24,7 +24,6 @@ public class BattleController implements Controller {
     private BattleView gui;
     private BattleModel battle;
     private OptionsMenuController options;
-    private boolean inBattle = true;
     private GameState.Gamemode gamemode;
 
     public BattleController(BattleView gui, BattleModel battle) {
