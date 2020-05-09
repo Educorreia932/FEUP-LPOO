@@ -91,7 +91,7 @@ For instance, the Water type is super effective against Fire, so if a Water pok√
 - **Summary Menu** - Display a menu with a summary of a pok√©mon.
 
 <p align="center">
-  <img width=550 src="images/coverage.png">
+  <img width=500 src="images/Pokemon%20Summary.png">
 </p>
 
 ### Battle

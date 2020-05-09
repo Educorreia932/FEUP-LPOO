@@ -10,15 +10,17 @@ import java.util.List;
 public class TextRenderer implements Renderer {
     List<CharRenderer> chars;
     private Position position;
+    private String fontname;
 
-    public TextRenderer(int x, int y, String s) {
+    public TextRenderer(int x, int y, String s, String fontname) {
         this.position = new Position(x, y);
+        this.fontname = fontname;
         chars = new ArrayList<>();
         Position charPosition = position;
 
         for (int i = 0; i < s.length(); i++) {
             char c = s.charAt(i);
-            chars.add(new CharRenderer(c, charPosition));
+            chars.add(new CharRenderer(c, charPosition, fontname));
             charPosition = charPosition.right(chars.get(i).getWidth() + 1);
         }
     }
@@ -35,7 +37,7 @@ public class TextRenderer implements Renderer {
 
         for (int i = 0; i < s.length(); i++) {
             char c = s.charAt(i);
-            chars.add(new CharRenderer(c, charPosition));
+            chars.add(new CharRenderer(c, charPosition, fontname));
             charPosition = charPosition.right(chars.get(i).getWidth() + 1);
         }
     }

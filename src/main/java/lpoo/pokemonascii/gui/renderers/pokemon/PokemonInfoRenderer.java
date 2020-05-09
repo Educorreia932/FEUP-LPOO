@@ -29,17 +29,17 @@ public class PokemonInfoRenderer implements Renderer {
             case FRONT: // TODO: Strategy Pattern ?
                 sprite = new Sprite("adversary_pokemon_info");
                 position = new Position(20, 10);
-                pokemonName = new TextRenderer(position.getX() + 11, position.getY() + 5, pokemon.getName());
-                pokemonLevel = new TextRenderer(position.getX() + 103, position.getY() + 5, "Lv" + pokemon.getLevel());
+                pokemonName = new TextRenderer(position.getX() + 11, position.getY() + 5, pokemon.getName(), "battle");
+                pokemonLevel = new TextRenderer(position.getX() + 103, position.getY() + 5, "Lv" + pokemon.getLevel(), "battle");
                 healthBar = new HealthBarRenderer(position.getX() + 65, position.getY() + 17, pokemon);
                 experience = null; // TODO: Introduce Null object
                 break;
             case BACK:
                 sprite = new Sprite("trainer_pokemon_info");
                 position = new Position(215, 74);
-                pokemonName = new TextRenderer(position.getX() + 26, position.getY() + 5, pokemon.getName());
-                pokemonLevel = new TextRenderer(position.getX() + 119, position.getY() + 5, "Lv" + pokemon.getLevel());
-                pokemonHealth = new TextRenderer(position.getX() + 100, position.getY() + 22, pokemon.getCurrentHealth() + "/" +pokemon.getStat(PokemonStats.Stat.HP));
+                pokemonName = new TextRenderer(position.getX() + 26, position.getY() + 5, pokemon.getName(), "battle");
+                pokemonLevel = new TextRenderer(position.getX() + 119, position.getY() + 5, "Lv" + pokemon.getLevel(), "battle");
+                pokemonHealth = new TextRenderer(position.getX() + 100, position.getY() + 22, pokemon.getCurrentHealth() + "/" +pokemon.getStat(PokemonStats.Stat.HP), "battle");
                 healthBar = new HealthBarRenderer(position.getX() + 80, position.getY() + 17, pokemon);
                 experience = new ExperienceBarRenderer(position.getX() + 54, position.getY() + 33, pokemon);
                 break;

@@ -1,6 +1,8 @@
-package lpoo.pokemonascii.data;
+package lpoo.pokemonascii.data.tile;
 
-public class Grass extends PokemonTile{
+import lpoo.pokemonascii.data.tile.PokemonTile;
+
+public class Grass extends PokemonTile {
     private State state;
 
     public enum State {

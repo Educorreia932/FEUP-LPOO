@@ -39,10 +39,10 @@ public class PokemonSummaryView {
         info = new Sprite("summary\\pokemon_info");
         selectedBar = new Sprite("summary\\selected_bar");
 
-        pokemonLevel = new TextRenderer(10, 21, "Lv" + model.getPokemon().getLevel());
-        pokemonName = new TextRenderer(280, 38, model.getPokemon().getName());
-        pokedexNumber = new TextRenderer(280, 23, String.format("%03d", model.getPokemon().getPokedexNumber()));
-        pokemonSpecies = new TextRenderer(80, 21, model.getPokemon().getName());
+        pokemonLevel = new TextRenderer(10, 21, "Lv" + model.getPokemon().getLevel(), "battle");
+        pokemonName = new TextRenderer(280, 38, model.getPokemon().getName(), "battle");
+        pokedexNumber = new TextRenderer(280, 23, String.format("%03d", model.getPokemon().getPokedexNumber()), "battle");
+        pokemonSpecies = new TextRenderer(80, 21, model.getPokemon().getName(), "battle");
         pokemon = new PokemonRenderer(50, 35, model.getPokemon());
         primaryType = new PokemonTypeRenderer(280, 51, model.getPokemon().getSpecies().getPrimaryType());
 

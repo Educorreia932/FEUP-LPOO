@@ -1,6 +1,8 @@
 package lpoo.pokemonascii.data;
 
 import lpoo.pokemonascii.data.elements.CollidingElement;
+import lpoo.pokemonascii.data.tile.Grass;
+import lpoo.pokemonascii.data.tile.Tile;
 import org.xml.sax.SAXException;
 
 import javax.xml.parsers.ParserConfigurationException;

@@ -48,13 +48,14 @@ public class BattleView {
 
     public void draw() {
         background.draw(graphics);
-        battleMenu.draw(graphics);
 
         trainerPokemon.draw(graphics);
         adversaryPokemon.draw(graphics);
 
         trainerPokemonInfo.draw(graphics);
         adversaryPokemonInfo.draw(graphics);
+
+        battleMenu.draw(graphics);
 
         try {
             screen.refresh();

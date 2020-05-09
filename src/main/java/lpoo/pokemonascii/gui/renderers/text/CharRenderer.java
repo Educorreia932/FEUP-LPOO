@@ -11,28 +11,28 @@ public class CharRenderer implements Renderer {
     private Position position;
     private Sprite sprite;
 
-    public CharRenderer(char c, Position position) {
+    public CharRenderer(char c, Position position, String fontname) {
         this.position = position;
 
         if (Character.isLowerCase(c))
-            sprite = new Sprite("font\\lower_case\\" + c);
+            sprite = new Sprite("font\\" + fontname + "\\lower_case\\" + c);
 
         else if (Character.isUpperCase(c))
-            sprite = new Sprite("font\\upper_case\\" + c);
+            sprite = new Sprite("font\\" + fontname + "\\upper_case\\" + c);
 
         else if (Character.isDigit(c))
-            sprite = new Sprite("font\\numbers\\" + c);
+            sprite = new Sprite("font\\" + fontname + "\\numbers\\" + c);
 
         else if (!Character.isAlphabetic(c)) {
             switch (c) {
                 case '/':
-                    sprite = new Sprite("font\\symbols\\slash");
+                    sprite = new Sprite("font\\" + fontname + "\\symbols\\slash");
                     break;
                 case ' ':
-                    sprite = new Sprite("font\\symbols\\space");
+                    sprite = new Sprite("font\\" + fontname + "\\symbols\\space");
                     break;
                 default:
-                    sprite = new Sprite("font\\symbols\\" + c);
+                    sprite = new Sprite("font\\" + fontname + "\\symbols\\" + c);
                     break;
             }
         }

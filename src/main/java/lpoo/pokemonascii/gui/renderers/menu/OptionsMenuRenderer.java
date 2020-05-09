@@ -27,7 +27,7 @@ public abstract class OptionsMenuRenderer implements Renderer {
         int yOffset = 0;
 
         for (Option option : options.getOptions()) {
-            optionsNames.add(new TextRenderer(x + xOffset, y + yOffset, option.getName()));
+            optionsNames.add(new TextRenderer(x + xOffset, y + yOffset, option.getName(), "battle"));
 
             xOffset += xDisplacement;
 

@@ -1,4 +1,4 @@
-package lpoo.pokemonascii.data;
+package lpoo.pokemonascii.data.tile;
 
 import lpoo.pokemonascii.data.elements.CollidingElement;
 

@@ -87,4 +87,12 @@ public class PokemonMove {
     public String getName() {
         return name;
     }
+
+    public int getPP() {
+        return pp;
+    }
+
+    public PokemonType getType() {
+        return type;
+    }
 }

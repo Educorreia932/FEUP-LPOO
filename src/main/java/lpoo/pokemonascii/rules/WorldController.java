@@ -1,7 +1,7 @@
 package lpoo.pokemonascii.rules;
 
 import lpoo.pokemonascii.data.Player;
-import lpoo.pokemonascii.data.PokemonTile;
+import lpoo.pokemonascii.data.tile.PokemonTile;
 import lpoo.pokemonascii.data.Position;
 import lpoo.pokemonascii.data.WorldModel;
 import lpoo.pokemonascii.data.elements.CollidingElement;
