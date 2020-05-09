@@ -17,6 +17,7 @@ public class UsePokemonMoveCommand implements Command {
 
     @Override
     public void execute() {
-        battle.usePokemonMove(pokemon, move);
+        if (move.getCurrentPP() > 0)
+            battle.usePokemonMove(pokemon, move);
     }
 }

@@ -80,6 +80,8 @@ public class PokemonMove {
 
         else
             pokemon.takeDamage((int) (type.getDamageMultiplier(pokemon.getSpecies().getPrimaryType()) * power));
+
+        currentPP--;
     }
 
     public int getPower() {
