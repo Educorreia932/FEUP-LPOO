@@ -28,15 +28,15 @@ public class World implements State {
     }
 
     @Override
-    public void start(GameState game) throws IOException, ParserConfigurationException, SAXException {
+    public void start(GameState game, GameView gui) throws IOException, ParserConfigurationException, SAXException {
         game.setState(this);
 
         switch (controller.start(game)) {
             case BATTLE:
-                game.setState(new Battle(game.getGui(), game.getWorld().getModel().getPlayer()));
+                game.setState(new Battle(gui, game.getWorld().getModel().getPlayer()));
                 break;
             case SUMMARY:
-                game.setState(new PokemonSummary(game.getGui(), model.getPlayer().getPokemons().get(0)));
+                game.setState(new PokemonSummary(gui, model.getPlayer().getPokemons().get(0)));
                 break;
             case EXIT:
                 game.setState(null);

@@ -30,7 +30,7 @@ public class Battle implements State {
     }
 
     @Override
-    public void start(GameState game) {
+    public void start(GameState game, GameView gui) {
         game.setState(this);
 
         switch (controller.start(game)) {

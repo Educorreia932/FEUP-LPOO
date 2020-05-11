@@ -1,5 +1,6 @@
 package lpoo.pokemonascii;
 
+import lpoo.pokemonascii.gui.GameView;
 import lpoo.pokemonascii.rules.observer.Observer;
 import lpoo.pokemonascii.rules.state.GameState;
 import org.junit.Before;
@@ -22,8 +23,9 @@ public class ObserverTest {
     private GameState gamestate;
 
     @Before
-    public void init() throws LineUnavailableException, UnsupportedAudioFileException, ParserConfigurationException, SAXException, IOException {
-        gamestate = new GameState();
+    public void init() throws ParserConfigurationException, SAXException, IOException {
+        GameView gui = Mockito.mock(GameView.class);
+        gamestate = new GameState(gui);
         observer = Mockito.mock(Observer.class);
         gamestate.addObserver(observer);
     }
