@@ -11,6 +11,6 @@ public class CatchPokemonCommand implements Command {
 
     @Override
     public void execute() {
-        
+        battle.playerCaughtPokemon();
     }
 }

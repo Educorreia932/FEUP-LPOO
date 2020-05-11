@@ -19,4 +19,8 @@ public class PokemonTypeRenderer implements Renderer {
     public void draw(TextGraphics graphics) {
         Sprite.drawSprite(sprite, position, graphics, true);
     }
+
+    public void setType(PokemonType type) {
+        sprite = new Sprite("types\\" + type.getType().name().toLowerCase());
+    }
 }

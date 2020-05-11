@@ -19,9 +19,11 @@ public class BattleModel {
     private Pokemon adversaryPokemon;
     private OptionsMenuModel options;
     private Turn currentTurn;
+    private Player player;
 
-    public BattleModel(Pokemon trainerPokemon) throws IOException, SAXException, ParserConfigurationException {
-        this.trainerPokemon = trainerPokemon;
+    public BattleModel(Player player) throws IOException, SAXException, ParserConfigurationException {
+        this.player = player;
+        trainerPokemon = player.getPokemons().get(0);
         trainerPokemon.setDirection(Pokemon.FacingDirection.BACK);
 
         int pokemonNumber = new Random().nextInt(151) + 1;
@@ -55,5 +57,9 @@ public class BattleModel {
 
     public void setCurrentTurn(Turn currentTurn) {
         this.currentTurn = currentTurn;
+    }
+
+    public Player getPlayer() {
+        return player;
     }
 }

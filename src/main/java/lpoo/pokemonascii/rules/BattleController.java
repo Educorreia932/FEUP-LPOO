@@ -83,7 +83,7 @@ public class BattleController implements Controller {
         return options;
     }
 
-    public void executeOption(Option selectedOption) throws ParserConfigurationException, SAXException, IOException {
+    public void executeOption(Option selectedOption) {
         if (battle.getOptions() instanceof BattleOptionsMenuModel)
             switch (selectedOption.getName()) {
                 case "FIGHT":
@@ -106,7 +106,6 @@ public class BattleController implements Controller {
         }
     }
 
-    // TODO: Move to Command
     public void setOptionsMenu(BattleController.OptionsMenu options) {
         switch (options) {
             case BATTLE:
@@ -127,5 +126,9 @@ public class BattleController implements Controller {
 
         else
             battle.setCurrentTurn(BattleModel.Turn.TRAINER);
+    }
+
+    public void playerCaughtPokemon() {
+        battle.getPlayer().addPokemon(battle.getAdversaryPokemon());
     }
 }

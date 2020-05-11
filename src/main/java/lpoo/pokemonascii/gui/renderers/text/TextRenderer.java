@@ -42,6 +42,10 @@ public class TextRenderer implements Renderer {
         }
     }
 
+    public void setText(int i) {
+        setText(String.valueOf(i));
+    }
+
     public Position getPosition() {
         return position;
     }

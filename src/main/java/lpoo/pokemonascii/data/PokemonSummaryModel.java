@@ -1,18 +1,32 @@
 package lpoo.pokemonascii.data;
 
 import lpoo.pokemonascii.data.pokemon.Pokemon;
-import lpoo.pokemonascii.rules.state.GameState;
+
+import java.util.List;
 
 public class PokemonSummaryModel {
-    Pokemon pokemon;
-    private GameState.Gamemode gamemode;
+    List<Pokemon> pokemons;
+    int selectedPokemon;
 
-    public PokemonSummaryModel(Pokemon pokemon) {
-        this.pokemon = pokemon;
-        pokemon.setDirection(Pokemon.FacingDirection.FRONT);
+    public PokemonSummaryModel(List<Pokemon> pokemons) {
+        this.pokemons = pokemons;
+        selectedPokemon = 0;
+        pokemons.forEach((pokemon -> pokemon.setDirection(Pokemon.FacingDirection.FRONT)));
     }
 
     public Pokemon getPokemon() {
-        return pokemon;
+        return pokemons.get(selectedPokemon);
+    }
+
+    public void setSelectedPokemon(int selectedPokemon) {
+        this.selectedPokemon = selectedPokemon;
+    }
+
+    public int getSelectedPokemon() {
+        return selectedPokemon;
+    }
+
+    public List<Pokemon> getPokemons() {
+        return pokemons;
     }
 }

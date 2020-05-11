@@ -4,6 +4,7 @@ import lpoo.pokemonascii.gui.GameView;
 import lpoo.pokemonascii.rules.observer.Music;
 import lpoo.pokemonascii.rules.state.Battle;
 import lpoo.pokemonascii.rules.state.GameState;
+import lpoo.pokemonascii.rules.state.PokemonSummary;
 import org.xml.sax.SAXException;
 
 import javax.sound.sampled.LineUnavailableException;

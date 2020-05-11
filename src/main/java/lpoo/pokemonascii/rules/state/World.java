@@ -36,7 +36,7 @@ public class World implements State {
                 game.setState(new Battle(gui, game.getWorld().getModel().getPlayer()));
                 break;
             case SUMMARY:
-                game.setState(new PokemonSummary(gui, model.getPlayer().getPokemons().get(0)));
+                game.setState(new PokemonSummary(gui, model.getPlayer().getPokemons()));
                 break;
             case EXIT:
                 game.setState(null);
