@@ -19,13 +19,13 @@ import static junit.framework.TestCase.assertEquals;
 public class PokemonMoveTest {
     @Test
     public void testUsePokemonMove() throws ParserConfigurationException, SAXException, IOException {
-        BattleModel battle = new BattleModel(new Pokemon(1, Pokemon.FacingDirection.BACK));
+        BattleModel battle = new BattleModel(new Pokemon(1, 1, Pokemon.FacingDirection.BACK));
 
         Pokemon trainerPokemon = battle.getTrainerPokemon();
         Pokemon foePokemon = battle.getAdversaryPokemon();
 
-        float trainerPokemonHP = trainerPokemon.getCurrentHealth();
-        float foePokemonHP = foePokemon.getCurrentHealth();
+        int trainerPokemonHP = trainerPokemon.getCurrentHealth();
+        int foePokemonHP = foePokemon.getCurrentHealth();
 
         PokemonMove move = new PokemonMove("Tackle");
 
@@ -33,7 +33,7 @@ public class PokemonMoveTest {
         controller.usePokemonMove(trainerPokemon, move);
         controller.usePokemonMove(foePokemon, move);
 
-        assertEquals(foePokemon.getCurrentHealth(), foePokemonHP - move.getPower());
-        assertEquals(trainerPokemon.getCurrentHealth(), trainerPokemonHP - move.getPower());
+        assertEquals(foePokemon.getCurrentHealth(), Math.max(foePokemonHP - move.getPower(), 0));
+        assertEquals(trainerPokemon.getCurrentHealth(), Math.max(trainerPokemonHP - move.getPower(), 0));
     }
 }

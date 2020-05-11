@@ -87,11 +87,10 @@ public class BattleController implements Controller {
         if (battle.getOptions() instanceof BattleOptionsMenuModel)
             switch (selectedOption.getName()) {
                 case "FIGHT":
-                    battle.setOptions(new FightOptionsMenuModel(battle.getTrainerPokemon()));
-                    options.setOptions(battle.getOptions());
-                    gui.setOptionsMenuRenderer(OptionsMenu.FIGHT);
+                    setOptionsMenu(OptionsMenu.FIGHT);
                     break;
                 case "BAG":
+                    new CatchPokemonCommand(this).execute();
                     break;
                 case "POKEMON":
                     break;
@@ -102,16 +101,24 @@ public class BattleController implements Controller {
 
         else if (battle.getOptions() instanceof FightOptionsMenuModel && !((FightOption) selectedOption).getMove().getName().equals("-")) {
             usePokemonMove(battle.getTrainerPokemon(), ((FightOption) selectedOption).getMove());
-            setOptionsMenu();
+            setOptionsMenu(OptionsMenu.BATTLE);
             changeTurn();
         }
     }
 
-    // TODO: Only working for going back
-    public void setOptionsMenu() {
-        battle.setOptions(new BattleOptionsMenuModel());
-        options.setOptions(battle.getOptions());
-        gui.setOptionsMenuRenderer(BattleController.OptionsMenu.BATTLE);
+    // TODO: Move to Command
+    public void setOptionsMenu(BattleController.OptionsMenu options) {
+        switch (options) {
+            case BATTLE:
+                battle.setOptions(new BattleOptionsMenuModel());
+                break;
+            case FIGHT:
+                battle.setOptions(new FightOptionsMenuModel(battle.getTrainerPokemon()));
+                break;
+        }
+
+        this.options.setOptions(battle.getOptions());
+        gui.setOptionsMenuRenderer(options);
     }
 
     public void changeTurn() {
