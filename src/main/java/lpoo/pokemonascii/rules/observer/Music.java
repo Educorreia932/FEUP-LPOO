@@ -38,6 +38,6 @@ public class Music extends Observer{
         }
 
         FloatControl gainControl = (FloatControl) clip.getControl(FloatControl.Type.MASTER_GAIN);
-        gainControl.setValue(-15.0f); // Reduce volume by 10 decibels.
+        gainControl.setValue(-30.0f); // Reduce volume by 10 decibels.
     }
 }

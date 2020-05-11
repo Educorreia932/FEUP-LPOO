@@ -1,6 +1,7 @@
 package lpoo.pokemonascii.rules;
 
 import lpoo.pokemonascii.data.BattleModel;
+import lpoo.pokemonascii.data.SoundEffects.AttackSound;
 import lpoo.pokemonascii.data.options.battle.BattleOptionsMenuModel;
 import lpoo.pokemonascii.data.options.fight.FightOption;
 import lpoo.pokemonascii.data.options.fight.FightOptionsMenuModel;
@@ -25,12 +26,14 @@ public class BattleController implements Controller {
     private BattleModel battle;
     private OptionsMenuController options;
     private GameState.Gamemode gamemode;
+    private AttackSound attackSound;
 
     public BattleController(BattleView gui, BattleModel battle) {
         this.gui = gui;
         this.battle = battle;
         options = new OptionsMenuController(battle.getOptions());
         gamemode = GameState.Gamemode.BATTLE;
+        attackSound = new AttackSound();
     }
 
     public BattleController(BattleModel battle) {
@@ -101,6 +104,7 @@ public class BattleController implements Controller {
             }
 
         else if (battle.getOptions() instanceof FightOptionsMenuModel && !((FightOption) selectedOption).getMove().getName().equals("-")) {
+            attackSound.play();
             usePokemonMove(battle.getTrainerPokemon(), ((FightOption) selectedOption).getMove());
             setOptionsMenu();
             changeTurn();
