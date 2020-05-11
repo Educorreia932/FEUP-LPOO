@@ -22,7 +22,7 @@ public class StateTest {
     private State state;
 
     @Before
-    public void init() throws IOException, SAXException, ParserConfigurationException, LineUnavailableException, UnsupportedAudioFileException {
+    public void init() throws IOException, SAXException, ParserConfigurationException {
         gameState = new GameState();
         battle = new Battle();
         world = gameState.getWorld();
@@ -30,7 +30,7 @@ public class StateTest {
     }
 
     @Test
-    public void test() throws UnsupportedAudioFileException, IOException, LineUnavailableException {
+    public void test() {
         assertEquals(world, gameState.getState());
 
         gameState.setState(battle);

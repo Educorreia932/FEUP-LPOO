@@ -9,7 +9,7 @@ public class PokemonTile extends Tile {
 
     public PokemonTile(int x, int y, int width, int height) {
         super(x, y, width, height);
-        probability = 1;
+        probability = 5;
     }
 
     public boolean foundPokemon() {
