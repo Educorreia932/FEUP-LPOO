@@ -11,8 +11,6 @@ import java.io.IOException;
 public class Music extends Observer{
     private static final String AUDIO_PATH = "data\\audio\\";
 
-    private AudioInputStream battleIn;
-    private AudioInputStream worldIn;
     private Clip clip;
 
     public Music(GameState game) throws LineUnavailableException {
@@ -27,13 +25,13 @@ public class Music extends Observer{
         clip.close();
 
         if(gamemode.getState() instanceof World){
-            worldIn = AudioSystem.getAudioInputStream(new File(AUDIO_PATH + "town.wav"));
+            AudioInputStream worldIn = AudioSystem.getAudioInputStream(new File(AUDIO_PATH + "town.wav"));
             clip = AudioSystem.getClip();
             clip.open(worldIn);
             clip.start();
         }
         else if(gamemode.getState() instanceof Battle){
-            battleIn = AudioSystem.getAudioInputStream(new File(AUDIO_PATH + "battle.wav"));
+            AudioInputStream battleIn = AudioSystem.getAudioInputStream(new File(AUDIO_PATH + "battle.wav"));
             clip = AudioSystem.getClip();
             clip.open(battleIn);
             clip.start();
