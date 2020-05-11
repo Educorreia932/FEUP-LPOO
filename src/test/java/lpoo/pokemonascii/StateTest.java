@@ -1,15 +1,11 @@
 package lpoo.pokemonascii;
 
-import lpoo.pokemonascii.data.pokemon.Pokemon;
 import lpoo.pokemonascii.gui.GameView;
 import lpoo.pokemonascii.rules.state.*;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mockito;
 import org.xml.sax.SAXException;
-
-import javax.sound.sampled.LineUnavailableException;
-import javax.sound.sampled.UnsupportedAudioFileException;
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
 
@@ -26,12 +22,11 @@ public class StateTest {
     @Before
     public void init() throws IOException, SAXException, ParserConfigurationException{
         GameView gui = Mockito.mock(GameView.class);
-        Pokemon pokemon = Mockito.mock(Pokemon.class);
         gameState = new GameState(gui);
-        battle = new Battle();
+        battle = Mockito.mock(Battle.class);
         world = gameState.getWorld();
         state = battle;
-        summary = new PokemonSummary(gui, pokemon);
+        summary = Mockito.mock(PokemonSummary.class);
     }
 
     @Test
