@@ -176,6 +176,25 @@ For menus where the user has choose some option
 
 ## Design
 
+### SoundEffects
+
+#### Problem in Context
+In order to add some sound effects to our game, we had to think about the best way to implement this feature without 
+risking going against a SOLID principle. This functionality requires that we are able to easily add 
+more and many sound effects without raising the complexity of the game and make it easy to manage all of this sounds.
+
+#### The Pattern
+The pattern we decided to use was the **Template pattern**. We created an abstract class 
+[SoundEffect](../src/main/java/lpoo/pokemonascii/data/SoundEffects/SoundEffect.java)
+whose constructor receives a string. This string is concatenated to the path string wich leads
+to the folder where all the sound effects are stores as wav files. When the function
+*play()* is called, the class creates a clip using the full string retrieving the correct file
+and plays it. Each subclass knows the name of the sound effect file it represents, so in their constructor,
+they call the *super(name_of_file.wav)*. The rest of the magic is left to the super class. 
+
+This patetrn allowed us to do another thing which came down to be quite useful. Some sound effects
+might not 
+
 ### Music
 
 #### Problem in Context
