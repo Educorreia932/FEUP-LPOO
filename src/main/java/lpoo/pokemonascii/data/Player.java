@@ -24,7 +24,7 @@ public class Player extends CollidingElement {
     }
 
     public Player() throws ParserConfigurationException, SAXException, IOException {
-        super(293,134, 23,19);
+        super(293,100, 23,19);
         state = State.BACK;
         pokemons = new ArrayList<>();
         pokemons.add(new Pokemon(6, 100, Pokemon.FacingDirection.BACK));

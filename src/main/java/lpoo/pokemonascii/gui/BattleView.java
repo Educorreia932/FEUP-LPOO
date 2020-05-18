@@ -36,7 +36,7 @@ public class BattleView {
         this.graphics = graphics;
         this.battle = battle;
 
-        background = new BackgroundRenderer("battle_background", new Player());
+        background = new BackgroundRenderer("battle_background");
         battleMenu = new BattleMenuRenderer(battle.getOptions());
 
         trainerPokemon = new PokemonRenderer(67, 61, battle.getTrainerPokemon());

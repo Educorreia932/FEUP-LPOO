@@ -19,6 +19,11 @@ public class BackgroundRenderer implements Renderer {
         this.firstTime = true;
     }
 
+    public BackgroundRenderer(String filename) {
+        background = new Sprite("background\\" + filename);
+        this.firstTime = true;
+    }
+
     @Override
     public void draw(TextGraphics graphics) {
         if (firstTime) {
@@ -26,7 +31,7 @@ public class BackgroundRenderer implements Renderer {
             firstTime = false;
         }
 
-        else {
+        else if (player !=  null){
             drawSpritePortion(background, new Position(0, 0), player.getHitbox(), player.getPreviousPosition(), graphics, false);
         }
     }

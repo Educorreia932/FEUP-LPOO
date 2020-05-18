@@ -22,7 +22,6 @@ public class Battle implements State {
         controller = new BattleController(view, model);
     }
 
-
     @Override
     public void start(GameState game, GameView gui) {
         game.setState(this);
