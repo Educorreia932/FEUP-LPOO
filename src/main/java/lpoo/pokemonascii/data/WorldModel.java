@@ -17,7 +17,7 @@ enum MapZone {
 }
 
 public abstract class WorldModel {
-    private Player player;
+    protected Player player;
     protected List<CollidingElement> elements;
     protected List<Tile> tiles;
 
@@ -70,7 +70,7 @@ public abstract class WorldModel {
         return player;
     }
 
-    public List<Tile> getTiles() {
-        return tiles;
-    }
+    public abstract boolean zoneUpdate(Position.Direction direction);
+
+    public abstract String getImage();
 }

@@ -3,6 +3,7 @@ package lpoo.pokemonascii.gui;
 import com.googlecode.lanterna.graphics.TextGraphics;
 import com.googlecode.lanterna.input.KeyStroke;
 import com.googlecode.lanterna.screen.Screen;
+import lpoo.pokemonascii.data.Player;
 import lpoo.pokemonascii.data.WorldModel;
 import lpoo.pokemonascii.rules.commands.*;
 import lpoo.pokemonascii.gui.renderers.BackgroundRenderer;
@@ -27,7 +28,7 @@ public class WorldView implements Runnable {
         this.screen = screen;
         this.graphics = graphics;
 
-        backgroundRenderer = new BackgroundRenderer("4", world.getPlayer());
+        backgroundRenderer = new BackgroundRenderer(world.getImage(), world.getPlayer());
         playerRenderer = new PlayerRenderer(world.getPlayer());
     }
 
@@ -72,7 +73,6 @@ public class WorldView implements Runnable {
             case Character:
                 switch (pressedKey.getCharacter()) {
                     case 'q':
-//                        return new QuitCommand(screen);
                         return new ChangedStateCommand(world, GameState.Gamemode.EXIT);
                     case 's':
                         return new ChangedStateCommand(world, GameState.Gamemode.SUMMARY);
@@ -80,6 +80,10 @@ public class WorldView implements Runnable {
         }
 
         return new DoNothingCommand();
+    }
+
+    public void setBackground(String file, Player player){
+        backgroundRenderer = new BackgroundRenderer(file, player);
     }
 
     @Override
