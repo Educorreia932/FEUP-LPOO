@@ -16,6 +16,7 @@ public class Game {
     public static void main(String[] args) throws IOException, SAXException, ParserConfigurationException, LineUnavailableException, UnsupportedAudioFileException {
         GameView gui = new GameView(400, 160);
         GameState game = new GameState(gui);
+      
         Music music = new Music(game);
 
  //       game.setState(new Battle(gui, game.getWorld().getModel().getPlayer()));

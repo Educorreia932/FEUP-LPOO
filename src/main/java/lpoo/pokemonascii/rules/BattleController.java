@@ -1,6 +1,8 @@
 package lpoo.pokemonascii.rules;
 
 import lpoo.pokemonascii.data.BattleModel;
+import lpoo.pokemonascii.data.SoundEffects.AttackSound;
+import lpoo.pokemonascii.data.SoundEffects.SelectSound;
 import lpoo.pokemonascii.data.options.battle.BattleOptionsMenuModel;
 import lpoo.pokemonascii.data.options.fight.FightOption;
 import lpoo.pokemonascii.data.options.fight.FightOptionsMenuModel;
@@ -27,12 +29,16 @@ public class BattleController implements Controller {
     private BattleModel battle;
     private OptionsMenuController options;
     private GameState.Gamemode gamemode;
+    private AttackSound attackSound;
+    private SelectSound selectSound;
 
     public BattleController(BattleView gui, BattleModel battle) {
         this.gui = gui;
         this.battle = battle;
         options = new OptionsMenuController(battle.getOptions());
         gamemode = GameState.Gamemode.BATTLE;
+        attackSound = new AttackSound();
+        selectSound = new SelectSound();
     }
 
     public BattleController(BattleModel battle) {
@@ -85,8 +91,9 @@ public class BattleController implements Controller {
         return options;
     }
 
-    public void executeOption(Option selectedOption) {
-        if (battle.getOptions() instanceof BattleOptionsMenuModel)
+    public void executeOption(Option selectedOption) throws ParserConfigurationException, SAXException, IOException {
+        selectSound.play();
+        if (battle.getOptions() instanceof BattleOptionsMenuModel){
             switch (selectedOption.getName()) {
                 case "FIGHT":
                     setOptionsMenu(OptionsMenu.FIGHT);
@@ -100,8 +107,9 @@ public class BattleController implements Controller {
                     new ChangedStateCommand(this, GameState.Gamemode.WORLD).execute();
                     break;
             }
-
+        }
         else if (battle.getOptions() instanceof FightOptionsMenuModel && !((FightOption) selectedOption).getMove().getName().equals("-")) {
+            attackSound.play();
             usePokemonMove(battle.getTrainerPokemon(), ((FightOption) selectedOption).getMove());
             setOptionsMenu(OptionsMenu.BATTLE);
             changeTurn();
