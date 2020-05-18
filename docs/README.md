@@ -90,6 +90,7 @@ For instance, the Water type is super effective against Fire, so if a Water pok�
 
 - **Summary Menu** - Display a menu with a summary of a pokémon.
 
+
 <p align="center">
   <img width=500 src="images/Pokemon%20Summary.png">
 </p>
@@ -117,6 +118,8 @@ For instance, the Water type is super effective against Fire, so if a Water pok�
     - **Bag** - Use an item from the bag.
     - **Pokémon** - Change that's pokémon currently fighting for another one on the party.
     - **Run** - Try to flee from the battle.
+    
+- **Catch' Em** -
 
 ## Planned features
 
@@ -128,6 +131,7 @@ For instance, the Water type is super effective against Fire, so if a Water pok�
 
 ### Pokémon
 
+- **Catch Rate**
 - **Leveling Up** - A pokémon's level goes from 1 to 100 and it can level up when it reaches a certain amount of experience, improving its stats.
 - **Evolving** - Some pokémon have two or even three different evolutions and if so, they evolve when they reach a certain level.
 - **Pokémon PC**

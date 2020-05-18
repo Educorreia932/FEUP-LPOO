@@ -22,11 +22,6 @@ public class World implements State {
         controller = new WorldController(view, model);
     }
 
-    public World() throws ParserConfigurationException, SAXException, IOException {
-        model = new WorldModel();
-        controller = new WorldController(view, model);
-    }
-
     @Override
     public void start(GameState game, GameView gui) throws IOException, ParserConfigurationException, SAXException {
         game.setState(this);

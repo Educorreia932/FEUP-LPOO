@@ -88,15 +88,7 @@ public class PokemonSummaryView {
         Sprite.drawSprite(background, 0, 16, graphics);
         Sprite.drawSprite(selectedBar, graphics);
 
-        pokemonLevel.setText(model.getPokemon().getLevel());
-        pokemonName.setText(model.getPokemon().getName());
-        pokedexNumber.setText(model.getPokemon().getPokedexNumber());
-        pokemonSpecies.setText(model.getPokemon().getSpecies().getName());
-        pokemon.setPokemon(model.getPokemon());
-        primaryType.setType(model.getPokemon().getSpecies().getPrimaryType());
-
-        if (model.getPokemon().getSpecies().getSecondaryType() != null)
-            secondaryType.setType(model.getPokemon().getSpecies().getSecondaryType());
+        refresh();
 
         pokedexNumber.draw(graphics);
         pokemonLevel.draw(graphics);
@@ -115,5 +107,17 @@ public class PokemonSummaryView {
         catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    private void refresh() {
+        pokemonLevel.setText(model.getPokemon().getLevel());
+        pokemonName.setText(model.getPokemon().getName());
+        pokedexNumber.setText(model.getPokemon().getPokedexNumber());
+        pokemonSpecies.setText(model.getPokemon().getSpecies().getName());
+        pokemon.setPokemon(model.getPokemon());
+        primaryType.setType(model.getPokemon().getSpecies().getPrimaryType());
+
+        if (model.getPokemon().getSpecies().getSecondaryType() != null)
+            secondaryType.setType(model.getPokemon().getSpecies().getSecondaryType());
     }
 }

@@ -7,6 +7,7 @@ import lpoo.pokemonascii.data.options.fight.FightOptionsMenuModel;
 import lpoo.pokemonascii.data.options.Option;
 import lpoo.pokemonascii.data.pokemon.Pokemon;
 import lpoo.pokemonascii.data.pokemon.PokemonMove;
+import lpoo.pokemonascii.data.pokemon.PokemonStats;
 import lpoo.pokemonascii.gui.BattleView;
 import lpoo.pokemonascii.rules.commands.*;
 import lpoo.pokemonascii.rules.state.GameState;
@@ -14,6 +15,7 @@ import org.xml.sax.SAXException;
 
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
+import java.util.Random;
 
 public class BattleController implements Controller {
     public enum OptionsMenu {
@@ -129,6 +131,25 @@ public class BattleController implements Controller {
     }
 
     public void playerCaughtPokemon() {
+        Random rand = new Random();
+
+        final double HP_MAX = battle.getAdversaryPokemon().getStat(PokemonStats.Stat.HP);
+        final double HP_CURRENT = battle.getAdversaryPokemon().getCurrentHealth();
+        final double CATCH_RATE = 255;
+        final double BONUS_BALL = 1;
+        final double BONUS_STATUS = 1;
+
+        double a = ((3 * HP_MAX - 2 * HP_CURRENT) * CATCH_RATE * BONUS_BALL) / (3 * HP_MAX) * BONUS_STATUS;
+        int b = (int) (1048560.0 / Math.sqrt(Math.sqrt(16711680.0 / a)));
+
+        for (int i = 0; i < 4; i++)
+            if (rand.nextInt(65536) >= b) {
+                changeTurn();
+                return;
+            }
+
         battle.getPlayer().addPokemon(battle.getAdversaryPokemon());
+        new ChangedStateCommand(this, GameState.Gamemode.WORLD).execute();
+
     }
 }
