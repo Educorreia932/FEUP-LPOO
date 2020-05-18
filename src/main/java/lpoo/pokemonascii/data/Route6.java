@@ -15,7 +15,7 @@ public class Route6 extends WorldModel{
 
     public Route6() throws IOException, SAXException, ParserConfigurationException {
         super();
-        zone = MapZone.DOWNLEFT; //Start zone
+        zone = MapZone.UPRIGHT; //Start zone
         addPokemonTiles();
         addElements();
     }
@@ -23,14 +23,16 @@ public class Route6 extends WorldModel{
     private void addElements() {
         switch(zone){
             case UPLEFT:
+                elements.add(new Obstacle(161-26*6, 111+16, 26+26*14, 16)); // water
+                elements.add(new Obstacle(0, 0, 26*2, 16*8)); // trees
                 break;
             case UPRIGHT:
+                elements.add(new Obstacle(161+26, 0, 26, 16*9)); // trees
                 break;
             case DOWNRIGHT:
                 break;
             case DOWNLEFT:
-                elements.add(new Obstacle(161-26*6, 111+16, 26+26*14, 16)); // water
-                elements.add(new Obstacle(0, 0, 26*2, 16*8)); // trees
+
                 break;
         }
     }
