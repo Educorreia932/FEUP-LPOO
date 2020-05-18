@@ -18,10 +18,12 @@ public class Game {
         GameState game = new GameState(gui);
         Music music = new Music(game);
 
-        game.setState(new Battle(gui, game.getWorld().getModel().getPlayer()));
+ //       game.setState(new Battle(gui, game.getWorld().getModel().getPlayer()));
 //        game.setState(new PokemonSummary(gui, game.getWorld().getModel().getPlayer().getPokemons().get(0)));
 
         while (game.getState() != null)
             game.getState().start(game, gui);
+
+        gui.getScreen().close();
     }
 }
