@@ -1,6 +1,6 @@
 package lpoo.pokemonascii.data;
 
-import lpoo.pokemonascii.data.tile.Grass;
+import lpoo.pokemonascii.data.tile.PokemonTile;
 import org.xml.sax.SAXException;
 
 import javax.xml.parsers.ParserConfigurationException;
@@ -50,16 +50,16 @@ public class Route6 extends WorldModel{
             case UPLEFT:
                 for (int line = 0; line < 8; line++){  //Left patch
                     for(int row = 0; row < 4; row++)
-                        tiles.add(new Grass(26*2 + 26*row, 16*line));
+                        tiles.add(new PokemonTile(26*2 + 26*row, 16*line));
                 }
 
                 for(int row = 0; row < 9; row++)   //Down patch
-                    tiles.add(new Grass(26*7 + 26*row, 16*7));
+                    tiles.add(new PokemonTile(26*7 + 26*row, 16*7));
 
 
                 for (int line = 0; line < 4; line++){  //Right patch
                     for(int row = 0; row < 6; row++)
-                        tiles.add(new Grass(26*8 + 26*row, 16*line));
+                        tiles.add(new PokemonTile(26*8 + 26*row, 16*line));
                 }
 
                 break;
@@ -67,17 +67,17 @@ public class Route6 extends WorldModel{
 
                 for (int line = 0; line < 3; line++){  //Top patch
                     for(int row = 0; row < 7; row++)
-                        tiles.add(new Grass(26*row, 16 + 16*line));
+                        tiles.add(new PokemonTile(26*row, 16 + 16*line));
                 }
 
                 for (int line = 0; line < 3; line++){  //Left patch
                     for(int row = 0; row < 2; row++)
-                        tiles.add(new Grass(26*row, 16*7 + 16*line));
+                        tiles.add(new PokemonTile(26*row, 16*7 + 16*line));
                 }
 
                 for (int line = 0; line < 6; line++){  //Right patch
                     for(int row = 0; row < 2; row++)
-                        tiles.add(new Grass(26*5 + 26*row, 16*4 + 16*line));
+                        tiles.add(new PokemonTile(26*5 + 26*row, 16*4 + 16*line));
                 }
 
                 break;
@@ -85,17 +85,17 @@ public class Route6 extends WorldModel{
 
                 for (int line = 0; line < 2; line++){  //Right Top patch
                     for(int row = 0; row < 2; row++)
-                        tiles.add(new Grass(26*row,16*line));
+                        tiles.add(new PokemonTile(26*row,16*line));
                 }
 
                 for (int line = 0; line < 5; line++){  //Left patch
                     for(int row = 0; row < 2; row++)
-                        tiles.add(new Grass(26*5 + 26*row,16*line));
+                        tiles.add(new PokemonTile(26*5 + 26*row,16*line));
                 }
 
                 for (int line = 0; line < 4; line++){  //Right Bottom patch
                     for(int row = 0; row < 2; row++)
-                        tiles.add(new Grass(26*row,16*5 + 16*line));
+                        tiles.add(new PokemonTile(26*row,16*5 + 16*line));
                 }
 
                 break;
@@ -103,7 +103,7 @@ public class Route6 extends WorldModel{
 
                 for (int line = 0; line < 4; line++){  //Right Bottom patch
                     for(int row = 0; row < 2; row++)
-                        tiles.add(new Grass(26*14 + 26*row,16*5 + 16*line));
+                        tiles.add(new PokemonTile(26*14 + 26*row,16*5 + 16*line));
                 }
 
                 break;

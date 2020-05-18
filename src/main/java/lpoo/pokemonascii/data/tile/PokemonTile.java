@@ -5,8 +5,8 @@ import java.util.Random;
 public class PokemonTile extends Tile {
     protected int probability;
 
-    public PokemonTile(int x, int y, int width, int height) {
-        super(x, y, width, height);
+    public PokemonTile(int x, int y) {
+        super(x, y, 26, 16);
         probability = 5;
     }
 

@@ -7,7 +7,6 @@ import lpoo.pokemonascii.data.WorldModel;
 import lpoo.pokemonascii.rules.commands.*;
 import lpoo.pokemonascii.gui.renderers.BackgroundRenderer;
 import lpoo.pokemonascii.gui.renderers.PlayerRenderer;
-import lpoo.pokemonascii.gui.renderers.TileRenderer;
 import lpoo.pokemonascii.rules.WorldController;
 import lpoo.pokemonascii.rules.commands.player.PlayerMoveDownCommand;
 import lpoo.pokemonascii.rules.commands.player.PlayerMoveLeftCommand;
@@ -22,7 +21,6 @@ public class WorldView implements Runnable {
     private TextGraphics graphics;
     private BackgroundRenderer backgroundRenderer;
     private PlayerRenderer playerRenderer;
-    private TileRenderer tileRenderer;
     public boolean running = true;
 
     public WorldView(Screen screen, TextGraphics graphics, WorldModel world) {
@@ -31,12 +29,10 @@ public class WorldView implements Runnable {
 
         backgroundRenderer = new BackgroundRenderer("4", world.getPlayer());
         playerRenderer = new PlayerRenderer(world.getPlayer());
-        tileRenderer = new TileRenderer(world.getTiles());
     }
 
     public void draw() throws IOException {
         backgroundRenderer.draw(graphics);
-        tileRenderer.draw(graphics);
         playerRenderer.draw(graphics);
 
         screen.refresh();

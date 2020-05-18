@@ -1,7 +1,6 @@
 package lpoo.pokemonascii.data;
 
 import lpoo.pokemonascii.data.elements.CollidingElement;
-import lpoo.pokemonascii.data.tile.Grass;
 import lpoo.pokemonascii.data.tile.Tile;
 import org.xml.sax.SAXException;
 
@@ -27,8 +26,6 @@ public abstract class WorldModel {
         tiles = new ArrayList<>();
         elements = new ArrayList<>();
 
-        //tiles.add(new Grass(161, 111));
-        //elements.add(new Obstacle(0, 0, 400, 19));
     }
 
     public WorldModel(Player player) {
