@@ -91,7 +91,7 @@ public class BattleController implements Controller {
         return options;
     }
 
-    public void executeOption(Option selectedOption) throws ParserConfigurationException, SAXException, IOException {
+    public void executeOption(Option selectedOption) {
         selectSound.play();
         if (battle.getOptions() instanceof BattleOptionsMenuModel){
             switch (selectedOption.getName()) {
