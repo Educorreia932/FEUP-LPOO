@@ -10,18 +10,25 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+enum MapZone {
+    UPLEFT,
+    UPRIGHT,
+    DOWNRIGHT,
+    DOWNLEFT
+}
+
 public abstract class WorldModel {
     private Player player;
-    private List<CollidingElement> elements;
-    private List<Tile> tiles;
+    protected List<CollidingElement> elements;
+    protected List<Tile> tiles;
 
     public WorldModel() throws IOException, SAXException, ParserConfigurationException {
         player = new Player();
         tiles = new ArrayList<>();
         elements = new ArrayList<>();
 
-        tiles.add(new Grass(161, 108));
-        elements.add(new Obstacle(0, 0, 400, 19));
+        tiles.add(new Grass(161, 111));
+        //elements.add(new Obstacle(0, 0, 400, 19));
     }
 
     public WorldModel(Player player) {

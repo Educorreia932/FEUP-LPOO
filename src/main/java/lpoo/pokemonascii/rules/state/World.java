@@ -1,13 +1,13 @@
 package lpoo.pokemonascii.rules.state;
 
 import lpoo.pokemonascii.data.WorldModel;
+import lpoo.pokemonascii.data.Route6;
 import lpoo.pokemonascii.gui.GameView;
 import lpoo.pokemonascii.gui.WorldView;
 import lpoo.pokemonascii.rules.WorldController;
 import org.xml.sax.SAXException;
 
-import javax.sound.sampled.LineUnavailableException;
-import javax.sound.sampled.UnsupportedAudioFileException;
+
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
 
@@ -17,7 +17,7 @@ public class World implements State {
     private WorldController controller;
 
     public World(GameView gui) throws ParserConfigurationException, SAXException, IOException {
-        model = new WorldModel();
+        model = new Route6();
         view = new WorldView(gui.getScreen(), gui.getGraphics(), model);
         controller = new WorldController(view, model);
     }

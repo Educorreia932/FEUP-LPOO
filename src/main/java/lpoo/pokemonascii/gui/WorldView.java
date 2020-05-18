@@ -29,7 +29,7 @@ public class WorldView implements Runnable {
         this.screen = screen;
         this.graphics = graphics;
 
-        backgroundRenderer = new BackgroundRenderer("room", world.getPlayer());
+        backgroundRenderer = new BackgroundRenderer("1", world.getPlayer());
         playerRenderer = new PlayerRenderer(world.getPlayer());
         tileRenderer = new TileRenderer(world.getTiles());
     }
