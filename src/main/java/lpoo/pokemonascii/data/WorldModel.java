@@ -10,7 +10,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class WorldModel {
+public abstract class WorldModel {
     private Player player;
     private List<CollidingElement> elements;
     private List<Tile> tiles;

@@ -1,7 +1,5 @@
 package lpoo.pokemonascii.data.tile;
 
-import lpoo.pokemonascii.data.tile.PokemonTile;
-
 public class Grass extends PokemonTile {
     private State state;
 

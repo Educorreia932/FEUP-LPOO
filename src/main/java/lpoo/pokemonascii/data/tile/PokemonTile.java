@@ -1,7 +1,5 @@
 package lpoo.pokemonascii.data.tile;
 
-import lpoo.pokemonascii.data.tile.Tile;
-
 import java.util.Random;
 
 public class PokemonTile extends Tile {
