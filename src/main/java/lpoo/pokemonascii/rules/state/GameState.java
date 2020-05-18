@@ -14,7 +14,6 @@ import java.util.List;
 public class GameState {
     private State state;
     List<Observer> observers;
-    private GameView gui;
     private World world;
 
     public enum Gamemode {
@@ -24,8 +23,7 @@ public class GameState {
         EXIT
     }
 
-    public GameState() throws IOException, SAXException, ParserConfigurationException {
-        gui = new GameView(400, 160);
+    public GameState(GameView gui) throws IOException, SAXException, ParserConfigurationException {
         observers = new ArrayList<>();
         world = new World(gui);
         setState(world);
@@ -56,10 +54,6 @@ public class GameState {
 
     public List<Observer> getObservers(){
         return observers;
-    }
-
-    public GameView getGui() {
-        return gui;
     }
 
     public World getWorld() {

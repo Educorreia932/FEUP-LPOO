@@ -33,4 +33,12 @@ public class PokemonRenderer implements Renderer {
         sprite.setCurrentImage(pokemon.getFacingDirection().ordinal());
         drawSprite(sprite, position, graphics, true);
     }
+
+    public void setPokemon(Pokemon pokemon) {
+        List<Image> images = new ArrayList<>();
+        images.add(new Image("pokemon\\front\\" + pokemon.getPokedexNumber()));
+        images.add(new Image("pokemon\\back\\" + pokemon.getPokedexNumber()));
+
+        sprite = new Sprite(images);
+    }
 }

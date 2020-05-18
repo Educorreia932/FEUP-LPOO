@@ -24,18 +24,19 @@ public class Pokemon {
     private List<PokemonMove> moves;
     private FacingDirection direction;
 
-    public Pokemon(Integer pokedex_number, FacingDirection direction) throws IOException, SAXException, ParserConfigurationException {
+    public Pokemon(Integer pokedex_number, int level, FacingDirection direction) throws IOException, SAXException, ParserConfigurationException {
         species = new PokemonSpecies(pokedex_number);
         name = species.getName();
         IVs = new PokemonIV();
         baseStats = species.getBaseStats();
-        level = 100;
-        experience = PokemonExperience.getLevelExperience(species.getTotalExperience(), level) + 5000;
+        this.level = level;
+        experience = PokemonExperience.getLevelExperience(species.getTotalExperience(), level);
         currentStats = PokemonStats.calculateStats(baseStats, IVs, level);
         currentHealth = currentStats.getStat(PokemonStats.Stat.HP);
         this.direction = direction;
         moves = new ArrayList<>();
-        moves.add(new PokemonMove("Tackle"));
+
+        moves.addAll(species.getLevelMoves());
     }
 
     public FacingDirection getFacingDirection() {

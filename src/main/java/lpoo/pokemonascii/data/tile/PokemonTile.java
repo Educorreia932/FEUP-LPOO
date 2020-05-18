@@ -1,4 +1,6 @@
-package lpoo.pokemonascii.data;
+package lpoo.pokemonascii.data.tile;
+
+import lpoo.pokemonascii.data.tile.Tile;
 
 import java.util.Random;
 
@@ -7,7 +9,7 @@ public class PokemonTile extends Tile {
 
     public PokemonTile(int x, int y, int width, int height) {
         super(x, y, width, height);
-        probability = 1;
+        probability = 5;
     }
 
     public boolean foundPokemon() {

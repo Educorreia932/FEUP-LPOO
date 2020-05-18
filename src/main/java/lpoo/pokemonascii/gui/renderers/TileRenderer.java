@@ -1,14 +1,13 @@
 package lpoo.pokemonascii.gui.renderers;
 
 import com.googlecode.lanterna.graphics.TextGraphics;
-import lpoo.pokemonascii.data.Grass;
-import lpoo.pokemonascii.data.Tile;
+import lpoo.pokemonascii.data.tile.Grass;
+import lpoo.pokemonascii.data.tile.Tile;
 import lpoo.pokemonascii.gui.Image;
 import lpoo.pokemonascii.gui.Sprite;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 
 import static lpoo.pokemonascii.gui.Sprite.drawSprite;

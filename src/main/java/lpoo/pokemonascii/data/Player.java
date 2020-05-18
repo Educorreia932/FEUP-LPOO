@@ -27,7 +27,8 @@ public class Player extends CollidingElement {
         super(111,70, 23,19);
         state = State.FRONT;
         pokemons = new ArrayList<>();
-        pokemons.add(new Pokemon(1, Pokemon.FacingDirection.BACK));
+        pokemons.add(new Pokemon(6, 100, Pokemon.FacingDirection.BACK));
+        pokemons.add(new Pokemon(25, 100, Pokemon.FacingDirection.BACK));
     }
 
     public Position getPosition(Position.Direction direction) {
@@ -55,5 +56,9 @@ public class Player extends CollidingElement {
 
     public List<Pokemon> getPokemons() {
         return pokemons;
+    }
+
+    public void addPokemon(Pokemon pokemon) {
+        this.pokemons.add(pokemon);
     }
 }

@@ -48,13 +48,14 @@ public class BattleView {
 
     public void draw() {
         background.draw(graphics);
-        battleMenu.draw(graphics);
 
         trainerPokemon.draw(graphics);
         adversaryPokemon.draw(graphics);
 
         trainerPokemonInfo.draw(graphics);
         adversaryPokemonInfo.draw(graphics);
+
+        battleMenu.draw(graphics);
 
         try {
             screen.refresh();
@@ -94,7 +95,7 @@ public class BattleView {
             case Enter:
                 return new ChoseOptionCommand(battle);
             case Escape:
-                return new OptionsMenuGoBackCommand(battle);
+                return new ChangeOptionsMenuCommand(battle, BattleController.OptionsMenu.BATTLE);
             case EOF:
                 return new ChangedStateCommand(battle, GameState.Gamemode.EXIT);
             case Character:

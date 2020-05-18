@@ -15,7 +15,8 @@ import java.io.IOException;
 public class PokemonMove {
     private String name;
     private int power;
-    private int pp;
+    private int totalPP;
+    private int currentPP;
     private int accuracy;
     private PokemonType type;
 
@@ -44,13 +45,26 @@ public class PokemonMove {
             type = new PokemonType(elem.getElementsByTagName("type").item(0).getTextContent());
 
             // Power
-            power = Integer.parseInt(elem.getElementsByTagName("power").item(0).getTextContent());
+            try {
+                power = Integer.parseInt(elem.getElementsByTagName("power").item(0).getTextContent());
+            }
+
+            catch (NumberFormatException e) {
+                power = 0;
+            }
 
             // PP
-            pp = Integer.parseInt(elem.getElementsByTagName("pp").item(0).getTextContent());
+            totalPP = Integer.parseInt(elem.getElementsByTagName("pp").item(0).getTextContent());
+            currentPP = totalPP;
 
             // Accuracy
-            accuracy = Integer.parseInt(elem.getElementsByTagName("accuracy").item(0).getTextContent());
+            try {
+                accuracy = Integer.parseInt(elem.getElementsByTagName("accuracy").item(0).getTextContent());
+            }
+
+            catch (NumberFormatException e) {
+                accuracy = 100;
+            }
         }
     }
 
@@ -66,6 +80,8 @@ public class PokemonMove {
 
         else
             pokemon.takeDamage((int) (type.getDamageMultiplier(pokemon.getSpecies().getPrimaryType()) * power));
+
+        currentPP--;
     }
 
     public int getPower() {
@@ -74,5 +90,17 @@ public class PokemonMove {
 
     public String getName() {
         return name;
+    }
+
+    public int getTotalPP() {
+        return totalPP;
+    }
+
+    public int getCurrentPP() {
+        return currentPP;
+    }
+
+    public PokemonType getType() {
+        return type;
     }
 }

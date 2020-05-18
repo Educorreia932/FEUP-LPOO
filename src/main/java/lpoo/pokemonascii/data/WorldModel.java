@@ -1,6 +1,8 @@
 package lpoo.pokemonascii.data;
 
 import lpoo.pokemonascii.data.elements.CollidingElement;
+import lpoo.pokemonascii.data.tile.Grass;
+import lpoo.pokemonascii.data.tile.Tile;
 import org.xml.sax.SAXException;
 
 import javax.xml.parsers.ParserConfigurationException;
@@ -40,8 +42,7 @@ public class WorldModel {
         Position position = player.getPosition(direction);
 
         // Check if the player moves off screen borders
-        if (position.getX() < 0 || position.getX() > 380 ||
-                position.getY() < 0 || position.getY() > 140)
+        if (position.getX() < 0 || position.getX() > 380 || position.getY() < 0 || position.getY() > 140)
             return false;
 
         // Check if the player collides with anything

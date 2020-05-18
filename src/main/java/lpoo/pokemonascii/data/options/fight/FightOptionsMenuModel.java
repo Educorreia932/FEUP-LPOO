@@ -12,11 +12,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class FightOptionsMenuModel extends OptionsMenuModel {
-    public FightOptionsMenuModel(Pokemon pokemon) throws IOException, SAXException, ParserConfigurationException {
+    public FightOptionsMenuModel(Pokemon pokemon) {
         super(createOptionList(pokemon.getMoves()));
     }
 
-    private static List<Option> createOptionList(List<PokemonMove> moves) throws ParserConfigurationException, SAXException, IOException {
+    private static List<Option> createOptionList(List<PokemonMove> moves) {
         List<Option> options = new ArrayList<>();
 
         for (int i = 0; i < 4; i++) {

@@ -47,7 +47,7 @@
                 <lvl>40</lvl>
             </move>
             <move type="level-up">
-                <name>Ancientpower</name>
+                <name>Ancient Power</name>
                 <lvl>50</lvl>
             </move>
             <move type="level-up">
@@ -55,20 +55,8 @@
                 <lvl>60</lvl>
             </move>
             <move type="level-up">
-                <name>Me First</name>
-                <lvl>70</lvl>
-            </move>
-            <move type="level-up">
                 <name>Baton Pass</name>
                 <lvl>80</lvl>
-            </move>
-            <move type="level-up">
-                <name>Nasty Plot</name>
-                <lvl>90</lvl>
-            </move>
-            <move type="level-up">
-                <name>Aura Sphere</name>
-                <lvl>100</lvl>
             </move>
             <move type="TM/HM">
                 <machine>TM</machine>

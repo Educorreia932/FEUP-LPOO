@@ -27,7 +27,7 @@ public abstract class OptionsMenuRenderer implements Renderer {
         int yOffset = 0;
 
         for (Option option : options.getOptions()) {
-            optionsNames.add(new TextRenderer(x + xOffset, y + yOffset, option.getName()));
+            optionsNames.add(new TextRenderer(x + xOffset, y + yOffset, option.getName(), "battle"));
 
             xOffset += xDisplacement;
 
@@ -45,7 +45,7 @@ public abstract class OptionsMenuRenderer implements Renderer {
         for (int i = 0; i < optionsNames.size(); i++) {
             TextRenderer optionName = optionsNames.get(i);
 
-            if (i == options.getSelectedOption())
+            if (i == options.getSelectedOptionNumber())
                 drawSprite(arrow, optionName.getPosition().left(13).up(1), graphics, true);
 
             optionsNames.get(i).draw(graphics);

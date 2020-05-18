@@ -28,33 +28,12 @@ hs_err_pid*
 
 *.html
 
-build/reports/tests/test/css/
+build/
 
-build/test-results/test/binary/
-
-build/test-results/test/TEST-lpoo.pokemonascii.CommandsTest.xml
-
-build/reports/tests/test/js/
-
-build/test-results/test/TEST-lpoo.pokemonascii.PokemonTypeTest.xml
-
-build/test-results/test/TEST-lpoo.pokemonascii.PokemonSpeciesTest.xml
 gradlew
 
 gradlew.bat
 
 gradle/wrapper/gradle-wrapper.properties
 
-build/test-results/test/TEST-lpoo.pokemonascii.PokemonMoveTest.xml
 
-build/test-results/test/TEST-lpoo.pokemonascii.PlayerTest.xml
-
-build/test-results/test/TEST-lpoo.pokemonascii.CollisionTest.xml
-
-build/test-results/test/
-
-build/test-results/test/TEST-lpoo.pokemonascii.PlayerMovementTest.xml
-
-build/test-results/test/TEST-lpoo.pokemonascii.StateTest.xml
-
-build/test-results/test/
