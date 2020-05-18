@@ -1,5 +1,6 @@
 package lpoo.pokemonascii.data;
 
+import lpoo.pokemonascii.data.tile.Grass;
 import org.xml.sax.SAXException;
 
 import javax.xml.parsers.ParserConfigurationException;
@@ -15,7 +16,7 @@ public class Route6 extends WorldModel{
 
     public Route6() throws IOException, SAXException, ParserConfigurationException {
         super();
-        zone = MapZone.DOWNLEFT; //Start zone
+        zone = MapZone.UPLEFT; //Start zone
         addPokemonTiles();
         addElements();
     }
@@ -47,6 +48,20 @@ public class Route6 extends WorldModel{
     void addPokemonTiles(){
         switch(zone){
             case UPLEFT:
+                for (int line = 0; line < 8; line++){  //Left patch
+                    for(int row = 0; row < 4; row++)
+                        tiles.add(new Grass(26*2 + 26*row, 16*line));
+                }
+
+                for(int row = 0; row < 9; row++)   //Down patch
+                    tiles.add(new Grass(26*7 + 26*row, 16*7));
+
+
+                for (int line = 0; line < 4; line++){  //Right patch
+                    for(int row = 0; row < 6; row++)
+                        tiles.add(new Grass(26*8 + 26*row, 16*line));
+                }
+
                 break;
             case UPRIGHT:
                 break;
