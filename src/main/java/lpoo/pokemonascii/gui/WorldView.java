@@ -3,11 +3,11 @@ package lpoo.pokemonascii.gui;
 import com.googlecode.lanterna.graphics.TextGraphics;
 import com.googlecode.lanterna.input.KeyStroke;
 import com.googlecode.lanterna.screen.Screen;
+import lpoo.pokemonascii.data.Player;
 import lpoo.pokemonascii.data.WorldModel;
 import lpoo.pokemonascii.rules.commands.*;
 import lpoo.pokemonascii.gui.renderers.BackgroundRenderer;
 import lpoo.pokemonascii.gui.renderers.PlayerRenderer;
-import lpoo.pokemonascii.gui.renderers.TileRenderer;
 import lpoo.pokemonascii.rules.WorldController;
 import lpoo.pokemonascii.rules.commands.player.PlayerMoveDownCommand;
 import lpoo.pokemonascii.rules.commands.player.PlayerMoveLeftCommand;
@@ -22,21 +22,18 @@ public class WorldView implements Runnable {
     private TextGraphics graphics;
     private BackgroundRenderer backgroundRenderer;
     private PlayerRenderer playerRenderer;
-    private TileRenderer tileRenderer;
     public boolean running = true;
 
     public WorldView(Screen screen, TextGraphics graphics, WorldModel world) {
         this.screen = screen;
         this.graphics = graphics;
 
-        backgroundRenderer = new BackgroundRenderer("room", world.getPlayer());
+        backgroundRenderer = new BackgroundRenderer(world.getImage(), world.getPlayer());
         playerRenderer = new PlayerRenderer(world.getPlayer());
-        tileRenderer = new TileRenderer(world.getTiles());
     }
 
     public void draw() throws IOException {
         backgroundRenderer.draw(graphics);
-        tileRenderer.draw(graphics);
         playerRenderer.draw(graphics);
 
         screen.refresh();
@@ -76,7 +73,6 @@ public class WorldView implements Runnable {
             case Character:
                 switch (pressedKey.getCharacter()) {
                     case 'q':
-//                        return new QuitCommand(screen);
                         return new ChangedStateCommand(world, GameState.Gamemode.EXIT);
                     case 's':
                         return new ChangedStateCommand(world, GameState.Gamemode.SUMMARY);
@@ -84,6 +80,10 @@ public class WorldView implements Runnable {
         }
 
         return new DoNothingCommand();
+    }
+
+    public void setBackground(String file, Player player){
+        backgroundRenderer = new BackgroundRenderer(file, player);
     }
 
     @Override

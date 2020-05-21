@@ -22,11 +22,6 @@ public class Battle implements State {
         controller = new BattleController(view, model);
     }
 
-    public Battle() throws ParserConfigurationException, SAXException, IOException {
-        model = new BattleModel(new Player());
-        controller = new BattleController(model);
-    }
-
     @Override
     public void start(GameState game, GameView gui) {
         game.setState(this);

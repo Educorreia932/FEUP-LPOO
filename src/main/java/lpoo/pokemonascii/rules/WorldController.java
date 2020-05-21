@@ -1,6 +1,7 @@
 package lpoo.pokemonascii.rules;
 
 import lpoo.pokemonascii.data.Player;
+import lpoo.pokemonascii.data.Route6;
 import lpoo.pokemonascii.data.tile.PokemonTile;
 import lpoo.pokemonascii.data.Position;
 import lpoo.pokemonascii.data.WorldModel;
@@ -48,6 +49,9 @@ public class WorldController implements Controller {
                 if (((PokemonTile) tile).foundPokemon())
                     new ChangedStateCommand(this, GameState.Gamemode.BATTLE).execute();
         }
+
+        else if(world.zoneUpdate(direction))
+            gui.setBackground(world.getImage(), world.getPlayer());
     }
 
     public void setPlayerState(Player.State state) {
