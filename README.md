@@ -1,6 +1,6 @@
 # Laboratory of Object-Oriented Programming
 
-MIEIC 2019/2020 - 2º ano / 2º semestre ☕🔦
+## MIEIC - 2nd year / 1st semester
 
 ## Exercises
 
