@@ -28,7 +28,7 @@ public class World implements State {
 
         switch (controller.start(game)) {
             case BATTLE:
-                game.setState(new Battle(gui, game.getWorld().getModel().getPlayer()));
+                game.setState(new Battle(gui, game.getWorld().getModel().getPlayer(), model.getPokemonNumber()));
                 break;
             case SUMMARY:
                 game.setState(new PokemonSummary(gui, model.getPlayer().getPokemons()));

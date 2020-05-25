@@ -1,6 +1,7 @@
 package lpoo.pokemonascii;
 
 import lpoo.pokemonascii.data.Position;
+import lpoo.pokemonascii.data.Route6;
 import lpoo.pokemonascii.data.WorldModel;
 import lpoo.pokemonascii.gui.WorldView;
 import lpoo.pokemonascii.rules.WorldController;
@@ -28,7 +29,7 @@ public class PlayerMovementTest {
 
     @Before
     public void init() throws ParserConfigurationException, SAXException, IOException {
-        world = new WorldModel();
+        world = new Route6();
         controller = new WorldController(Mockito.mock(WorldView.class), world);
     }
 
