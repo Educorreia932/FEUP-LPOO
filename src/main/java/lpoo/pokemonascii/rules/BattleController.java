@@ -1,8 +1,10 @@
 package lpoo.pokemonascii.rules;
 
 import lpoo.pokemonascii.data.BattleModel;
-import lpoo.pokemonascii.data.sounds.AttackSound;
-import lpoo.pokemonascii.data.sounds.SelectSound;
+import lpoo.pokemonascii.data.SoundEffects.AttackSound;
+import lpoo.pokemonascii.data.SoundEffects.CatchSound;
+import lpoo.pokemonascii.data.SoundEffects.SelectSound;
+import lpoo.pokemonascii.data.SoundEffects.SoundEffect;
 import lpoo.pokemonascii.data.options.battle.BattleOptionsMenuModel;
 import lpoo.pokemonascii.data.options.fight.FightOption;
 import lpoo.pokemonascii.data.options.fight.FightOptionsMenuModel;
@@ -26,8 +28,9 @@ public class BattleController implements Controller {
     private BattleModel battle;
     private OptionsMenuController options;
     private GameState.Gamemode gamemode;
-    private AttackSound attackSound;
-    private SelectSound selectSound;
+    private SoundEffect attackSound;
+    private SoundEffect selectSound;
+    private SoundEffect catchSound;
 
     public BattleController(BattleView gui, BattleModel battle) {
         this.gui = gui;
@@ -36,6 +39,7 @@ public class BattleController implements Controller {
         gamemode = GameState.Gamemode.BATTLE;
         attackSound = new AttackSound();
         selectSound = new SelectSound();
+        catchSound = new CatchSound();
     }
 
     public BattleController(BattleModel battle) {
@@ -152,7 +156,7 @@ public class BattleController implements Controller {
                 changeTurn();
                 return;
             }
-
+        catchSound.play();
         battle.getPlayer().addPokemon(battle.getAdversaryPokemon());
         new ChangedStateCommand(this, GameState.Gamemode.WORLD).execute();
 

@@ -1,6 +1,7 @@
 package lpoo.pokemonascii.data;
 
 import lpoo.pokemonascii.data.tile.PokemonTile;
+import lpoo.pokemonascii.data.tile.Tiles;
 import org.xml.sax.SAXException;
 
 import javax.xml.parsers.ParserConfigurationException;
@@ -13,6 +14,7 @@ public class Route6 extends WorldModel{
     public Route6() throws IOException, SAXException, ParserConfigurationException {
         super();
         zone = MapZone.DOWNLEFT; //Start zone
+        tiles.setRanges(zone);
         updatePokemonTiles();
         updateElements();
     }
@@ -64,7 +66,6 @@ public class Route6 extends WorldModel{
 
                 break;
             case UPRIGHT:
-
                 for (int line = 0; line < 3; line++){  //Top patch
                     for(int row = 0; row < 7; row++)
                         tiles.add(new PokemonTile(26*row, 16 + 16*line));
@@ -177,6 +178,7 @@ public class Route6 extends WorldModel{
         if(changed){
             updateElements();
             updatePokemonTiles();
+            tiles.setRanges(zone);
         }
 
         return changed;
