@@ -17,6 +17,7 @@ public class GameState {
     private World world;
 
     public enum Gamemode {
+        MAIN_MENU,
         WORLD,
         SUMMARY,
         BATTLE,
@@ -26,7 +27,7 @@ public class GameState {
     public GameState(GameView gui) throws IOException, SAXException, ParserConfigurationException {
         observers = new ArrayList<>();
         world = new World(gui);
-        setState(world);
+        setState(new MainMenu(gui));
     }
 
     public void setState(State state)  {

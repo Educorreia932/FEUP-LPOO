@@ -1,8 +1,8 @@
 package lpoo.pokemonascii.rules;
 
 import lpoo.pokemonascii.data.BattleModel;
-import lpoo.pokemonascii.data.SoundEffects.AttackSound;
-import lpoo.pokemonascii.data.SoundEffects.SelectSound;
+import lpoo.pokemonascii.data.sounds.AttackSound;
+import lpoo.pokemonascii.data.sounds.SelectSound;
 import lpoo.pokemonascii.data.options.battle.BattleOptionsMenuModel;
 import lpoo.pokemonascii.data.options.fight.FightOption;
 import lpoo.pokemonascii.data.options.fight.FightOptionsMenuModel;
@@ -13,10 +13,7 @@ import lpoo.pokemonascii.data.pokemon.PokemonStats;
 import lpoo.pokemonascii.gui.BattleView;
 import lpoo.pokemonascii.rules.commands.*;
 import lpoo.pokemonascii.rules.state.GameState;
-import org.xml.sax.SAXException;
 
-import javax.xml.parsers.ParserConfigurationException;
-import java.io.IOException;
 import java.util.Random;
 
 public class BattleController implements Controller {
