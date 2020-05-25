@@ -15,10 +15,7 @@ import lpoo.pokemonascii.data.pokemon.PokemonStats;
 import lpoo.pokemonascii.gui.BattleView;
 import lpoo.pokemonascii.rules.commands.*;
 import lpoo.pokemonascii.rules.state.GameState;
-import org.xml.sax.SAXException;
 
-import javax.xml.parsers.ParserConfigurationException;
-import java.io.IOException;
 import java.util.Random;
 
 public class BattleController implements Controller {

@@ -37,6 +37,7 @@ public class WorldController implements Controller {
 
         gui.running = false;
         view.interrupt();
+
         return gamemode;
     }
 
