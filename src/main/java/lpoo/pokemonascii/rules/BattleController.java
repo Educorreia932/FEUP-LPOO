@@ -1,10 +1,7 @@
 package lpoo.pokemonascii.rules;
 
 import lpoo.pokemonascii.data.BattleModel;
-import lpoo.pokemonascii.data.SoundEffects.AttackSound;
 import lpoo.pokemonascii.data.SoundEffects.CatchSound;
-import lpoo.pokemonascii.data.SoundEffects.SelectSound;
-import lpoo.pokemonascii.data.SoundEffects.SoundEffect;
 import lpoo.pokemonascii.data.options.battle.BattleOptionsMenuModel;
 import lpoo.pokemonascii.data.options.fight.FightOption;
 import lpoo.pokemonascii.data.options.fight.FightOptionsMenuModel;
@@ -12,6 +9,9 @@ import lpoo.pokemonascii.data.options.Option;
 import lpoo.pokemonascii.data.pokemon.Pokemon;
 import lpoo.pokemonascii.data.pokemon.PokemonMove;
 import lpoo.pokemonascii.data.pokemon.PokemonStats;
+import lpoo.pokemonascii.data.sounds.AttackSound;
+import lpoo.pokemonascii.data.sounds.SelectSound;
+import lpoo.pokemonascii.data.sounds.SoundEffect;
 import lpoo.pokemonascii.gui.BattleView;
 import lpoo.pokemonascii.rules.commands.*;
 import lpoo.pokemonascii.rules.state.GameState;
@@ -94,6 +94,7 @@ public class BattleController implements Controller {
 
     public void executeOption(Option selectedOption) {
         selectSound.play();
+
         if (battle.getOptions() instanceof BattleOptionsMenuModel){
             switch (selectedOption.getName()) {
                 case "FIGHT":
@@ -103,6 +104,7 @@ public class BattleController implements Controller {
                     new CatchPokemonCommand(this).execute();
                     break;
                 case "POKEMON":
+                    new ChangePokemonCommand(this).execute();
                     break;
                 case "RUN":
                     new ChangedStateCommand(this, GameState.Gamemode.WORLD).execute();
@@ -160,5 +162,17 @@ public class BattleController implements Controller {
         battle.getPlayer().addPokemon(battle.getAdversaryPokemon());
         new ChangedStateCommand(this, GameState.Gamemode.WORLD).execute();
 
+    }
+
+    public void changePlayerPokemon() {
+        battle.setAdversaryPokemon();
+    }
+
+    public BattleView getGui() {
+        return gui;
+    }
+
+    public BattleModel getModel() {
+        return battle;
     }
 }

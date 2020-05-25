@@ -15,6 +15,7 @@ public class BattleModel {
         ADVERSARY
     }
 
+    private int currentTrainerPokemon = 0;
     private Pokemon trainerPokemon;
     private Pokemon adversaryPokemon;
     private OptionsMenuModel options;
@@ -23,7 +24,7 @@ public class BattleModel {
 
     public BattleModel(Player player, int pokemonNumber) throws IOException, SAXException, ParserConfigurationException {
         this.player = player;
-        trainerPokemon = player.getPokemons().get(0);
+        trainerPokemon = player.getPokemons().get(currentTrainerPokemon);
         trainerPokemon.setDirection(Pokemon.FacingDirection.BACK);
 
         int level = new Random().nextInt(100) + 1;
@@ -60,5 +61,10 @@ public class BattleModel {
 
     public Player getPlayer() {
         return player;
+    }
+
+    public void setAdversaryPokemon() {
+        currentTrainerPokemon = (currentTrainerPokemon + 1) % player.getPokemons().size();
+        trainerPokemon = player.getPokemons().get(currentTrainerPokemon);
     }
 }

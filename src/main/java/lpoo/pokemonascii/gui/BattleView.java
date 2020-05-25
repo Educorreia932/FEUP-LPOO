@@ -5,6 +5,7 @@ import com.googlecode.lanterna.input.KeyStroke;
 import com.googlecode.lanterna.screen.Screen;
 import lpoo.pokemonascii.data.BattleModel;
 import lpoo.pokemonascii.data.Player;
+import lpoo.pokemonascii.data.pokemon.Pokemon;
 import lpoo.pokemonascii.gui.renderers.BackgroundRenderer;
 import lpoo.pokemonascii.gui.renderers.menu.BattleMenuRenderer;
 import lpoo.pokemonascii.gui.renderers.pokemon.PokemonInfoRenderer;
@@ -99,10 +100,8 @@ public class BattleView {
             case EOF:
                 return new ChangedStateCommand(battle, GameState.Gamemode.EXIT);
             case Character:
-                switch (pressedKey.getCharacter()) {
-                    case 'q':
-                        return new ChangedStateCommand(battle, GameState.Gamemode.EXIT);
-                }
+                if (pressedKey.getCharacter() == 'q')
+                    return new ChangedStateCommand(battle, GameState.Gamemode.EXIT);
         }
 
         return new DoNothingCommand();
@@ -110,5 +109,14 @@ public class BattleView {
 
     public void setOptionsMenuRenderer(BattleController.OptionsMenu optionsMenu) {
         battleMenu.setOptionsMenuRenderer(optionsMenu, battle);
+    }
+
+    public void changePokemon(Pokemon pokemon) {
+        background.firstTime = true;
+        screen.clear();
+
+        pokemon.setDirection(Pokemon.FacingDirection.BACK);
+        trainerPokemon = new PokemonRenderer(67, 61, pokemon);
+        trainerPokemonInfo = new PokemonInfoRenderer(pokemon);
     }
 }

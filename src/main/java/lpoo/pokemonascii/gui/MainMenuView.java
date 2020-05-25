@@ -38,6 +38,7 @@ public class MainMenuView {
         }
     }
 
+
     public Command getNextCommand(MainMenuController mainMenu) {
         KeyStroke pressedKey = null;
 
