@@ -2,7 +2,6 @@ package lpoo.pokemonascii.rules.state;
 
 import lpoo.pokemonascii.data.BattleModel;
 import lpoo.pokemonascii.data.Player;
-import lpoo.pokemonascii.data.pokemon.Pokemon;
 import lpoo.pokemonascii.gui.BattleView;
 import lpoo.pokemonascii.gui.GameView;
 import lpoo.pokemonascii.rules.BattleController;
@@ -16,8 +15,8 @@ public class Battle implements State {
     private BattleModel model;
     private BattleView view;
 
-    public Battle(GameView gui, Player player) throws ParserConfigurationException, SAXException, IOException {
-        model = new BattleModel(player);
+    public Battle(GameView gui, Player player, int pokemonNumber) throws ParserConfigurationException, SAXException, IOException {
+        model = new BattleModel(player, pokemonNumber);
         view = new BattleView(gui.getScreen(), gui.getGraphics(), model);
         controller = new BattleController(view, model);
     }
