@@ -100,10 +100,8 @@ public class BattleView {
             case EOF:
                 return new ChangedStateCommand(battle, GameState.Gamemode.EXIT);
             case Character:
-                switch (pressedKey.getCharacter()) {
-                    case 'q':
-                        return new ChangedStateCommand(battle, GameState.Gamemode.EXIT);
-                }
+                if (pressedKey.getCharacter() == 'q')
+                    return new ChangedStateCommand(battle, GameState.Gamemode.EXIT);
         }
 
         return new DoNothingCommand();
@@ -114,6 +112,10 @@ public class BattleView {
     }
 
     public void changePokemon(Pokemon pokemon) {
+        background.firstTime = true;
+        screen.clear();
+
+        pokemon.setDirection(Pokemon.FacingDirection.BACK);
         trainerPokemon = new PokemonRenderer(67, 61, pokemon);
         trainerPokemonInfo = new PokemonInfoRenderer(pokemon);
     }

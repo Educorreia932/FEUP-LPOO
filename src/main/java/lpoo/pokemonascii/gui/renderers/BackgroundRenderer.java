@@ -31,8 +31,7 @@ public class BackgroundRenderer implements Renderer {
             firstTime = false;
         }
 
-        else if (player != null){
+        else if (player != null)
             drawSpritePortion(background, new Position(0, 0), player.getHitbox(), player.getPreviousPosition(), graphics, false);
-        }
     }
 }
