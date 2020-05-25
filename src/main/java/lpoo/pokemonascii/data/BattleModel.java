@@ -61,4 +61,8 @@ public class BattleModel {
     public Player getPlayer() {
         return player;
     }
+
+    public void setAdversaryPokemon() {
+        trainerPokemon = player.getPokemons().get(1);
+    }
 }

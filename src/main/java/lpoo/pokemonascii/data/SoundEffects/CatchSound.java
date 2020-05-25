@@ -1,8 +1,10 @@
 package lpoo.pokemonascii.data.SoundEffects;
 
+import lpoo.pokemonascii.data.sounds.SoundEffect;
+
 import javax.sound.sampled.FloatControl;
 
-public class CatchSound extends SoundEffect{
+public class CatchSound extends SoundEffect {
 
     public CatchSound() {
         super("catchPokemon.wav");

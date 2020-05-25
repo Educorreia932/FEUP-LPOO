@@ -17,7 +17,7 @@ public class Game {
         GameView gui = new GameView(400, 160);
         GameState game = new GameState(gui);
       
-//        Music music = new Music(game);
+        Music music = new Music(game);
 
  //       game.setState(new Battle(gui, game.getWorld().getModel().getPlayer()));
 //        game.setState(new PokemonSummary(gui, game.getWorld().getModel().getPlayer().getPokemons().get(0)));

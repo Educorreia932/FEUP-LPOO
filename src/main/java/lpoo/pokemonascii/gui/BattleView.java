@@ -5,6 +5,7 @@ import com.googlecode.lanterna.input.KeyStroke;
 import com.googlecode.lanterna.screen.Screen;
 import lpoo.pokemonascii.data.BattleModel;
 import lpoo.pokemonascii.data.Player;
+import lpoo.pokemonascii.data.pokemon.Pokemon;
 import lpoo.pokemonascii.gui.renderers.BackgroundRenderer;
 import lpoo.pokemonascii.gui.renderers.menu.BattleMenuRenderer;
 import lpoo.pokemonascii.gui.renderers.pokemon.PokemonInfoRenderer;
@@ -110,5 +111,10 @@ public class BattleView {
 
     public void setOptionsMenuRenderer(BattleController.OptionsMenu optionsMenu) {
         battleMenu.setOptionsMenuRenderer(optionsMenu, battle);
+    }
+
+    public void changePokemon(Pokemon pokemon) {
+        trainerPokemon = new PokemonRenderer(67, 61, pokemon);
+        trainerPokemonInfo = new PokemonInfoRenderer(pokemon);
     }
 }

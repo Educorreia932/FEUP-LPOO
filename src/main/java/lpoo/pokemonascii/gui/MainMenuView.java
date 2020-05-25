@@ -38,19 +38,14 @@ public class MainMenuView {
         }
     }
 
-    public Command getNextCommand(MainMenuController mainMenu) {
-        KeyStroke pressedKey = null;
+    public Command getNextCommand(MainMenuController mainMenu)  {
 
+        KeyStroke pressedKey = null;
         try {
             pressedKey = getPressedKey(screen);
-        }
-
-        catch (IOException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
-
-        if (pressedKey == null)
-            return new DoNothingCommand();
 
         switch (pressedKey.getKeyType()) {
             case EOF:

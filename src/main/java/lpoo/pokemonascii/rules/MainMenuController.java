@@ -6,6 +6,8 @@ import lpoo.pokemonascii.gui.MainMenuView;
 import lpoo.pokemonascii.rules.commands.Command;
 import lpoo.pokemonascii.rules.state.GameState;
 
+import java.io.IOException;
+
 public class MainMenuController implements Controller {
     private MainMenuView gui;
     private GameState.Gamemode gamemode;
@@ -25,8 +27,9 @@ public class MainMenuController implements Controller {
             Command command;
 
             command = gui.getNextCommand(this);
-            selectSound.play();
             command.execute();
+
+//            selectSound.play();
         }
 
         return gamemode;
