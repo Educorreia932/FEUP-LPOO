@@ -22,7 +22,7 @@ public class Tiles extends Tile{
     public void setRanges(MapZone zone){
         switch (zone){
             case DOWNLEFT:
-                range_min = 1;
+                range_min = 0;
                 range_max = 37;
                 break;
             case DOWNRIGHT:
@@ -42,7 +42,7 @@ public class Tiles extends Tile{
 
     public int getPokemonNumber(){
         Random rand = new Random();
-        return rand.nextInt(range_max -  range_min + 1) + range_min;
+        return rand.nextInt(range_max -  range_min +1 ) + range_min;
     }
 
     public void add(Tile tile){
