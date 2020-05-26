@@ -2,6 +2,7 @@ package lpoo.pokemonascii.rules;
 
 import lpoo.pokemonascii.data.BattleModel;
 import lpoo.pokemonascii.data.SoundEffects.CatchSound;
+import lpoo.pokemonascii.data.SoundEffects.*;
 import lpoo.pokemonascii.data.options.battle.BattleOptionsMenuModel;
 import lpoo.pokemonascii.data.options.fight.FightOption;
 import lpoo.pokemonascii.data.options.fight.FightOptionsMenuModel;
@@ -9,9 +10,6 @@ import lpoo.pokemonascii.data.options.Option;
 import lpoo.pokemonascii.data.pokemon.Pokemon;
 import lpoo.pokemonascii.data.pokemon.PokemonMove;
 import lpoo.pokemonascii.data.pokemon.PokemonStats;
-import lpoo.pokemonascii.data.sounds.AttackSound;
-import lpoo.pokemonascii.data.sounds.SelectSound;
-import lpoo.pokemonascii.data.sounds.SoundEffect;
 import lpoo.pokemonascii.gui.BattleView;
 import lpoo.pokemonascii.rules.commands.*;
 import lpoo.pokemonascii.rules.state.GameState;
