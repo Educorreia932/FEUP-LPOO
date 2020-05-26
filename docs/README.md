@@ -180,20 +180,38 @@ For menus where the user has choose some option
 
 #### Problem in Context
 In order to add some sound effects to our game, we had to think about the best way to implement this feature without 
-risking going against a SOLID principle. This functionality requires that we are able to easily add 
-more and many sound effects without raising the complexity of the game and make it easy to manage all of this sounds.
+risking going against any SOLID principle. This functionality requires that we are able to easily add 
+more, and many sound effects without raising the complexity of the game and to make it easy to manage all of this sounds.
+Whether we want to remove / add / change / reduce or increase volume, the implementation must provide 
+us an effective simple way of rapidly doing all of that.
 
 #### The Pattern
 The pattern we decided to use was the **Template pattern**. We created an abstract class 
 [SoundEffect](../src/main/java/lpoo/pokemonascii/data/SoundEffects/SoundEffect.java)
-whose constructor receives a string. This string is concatenated to the path string wich leads
-to the folder where all the sound effects are stores as wav files. When the function
-*play()* is called, the class creates a clip using the full string retrieving the correct file
+whose constructor receives a string. This string is concatenated to the path string which leads
+to the folder where all the sound effects are stored as .wav files. When the function
+*play()* is called, the class creates a clip retrieving the wav file
 and plays it. Each subclass knows the name of the sound effect file it represents, so in their constructor,
 they call the *super(name_of_file.wav)*. The rest of the magic is left to the super class. 
 
-This patetrn allowed us to do another thing which came down to be quite useful. Some sound effects
-might not 
+This pattern allowed us to do another thing we hadn't thought about which came down to be quite useful. Some sound effects
+volume might not be what we wished. Either they were too loud compared to the rest or they were too low.  
+To solve this we must apply a volume reduction or increment to specific sound effects, not to every soundeffect.
+With this pattern it was easy. Simply, in the sound effect classes we want to change volume, we **override**
+the superclass' *play()* method. Then, we are able to still call the superclass *play()* method but still
+we are able to add the lines of code we need to control the volume when that sound effect plays.
+
+#### The Implementation
+
+<p align="center">
+  <img width=435 src="images/TemplateSoundEffect.png">
+</p>
+
+#### Consequences
+- Flexibility to change volume of specific sounds.
+- Easy to add / remove / change sounds.
+- Simple solution easy to understand.
+- Only subclasses know which file the sounds correspond to.
 
 ### Music
 
