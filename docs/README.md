@@ -370,6 +370,16 @@ the class [WorldController](../src/main/java/lpoo/pokemonascii/rules/WorldContro
 if statement where we could appply the refactor method **Introduce Null Object** by creating a subclass that will perform
  the role of a null object, create a method isNull() and replace the code in the correct places.
 
+The [Route6 Class](../src/main/java/lpoo/pokemonascii/data/Route6.java) is another example of the strong use of switch
+statements. The whole class is a group of functions full of switch statements. This class represents the
+only map of the game. The map is made of 4 zones. For each zones there are different elements. For
+that reason, we use the switch cases as a resource to define the elements for each case. 
+
+This situation could be changed using the same refactor mentioned before. We would create subclasses,
+one for called Zone and subclasses of Zone. By doing this, we would be able to easily define the different
+behaviours for each zone without getting the help of switch cases.
+
+
 #### Change Preventers - Parallel Inheritance
 
 Whenever we create a subclass for [Option class](../src/main/java/lpoo/pokemonascii/data/options/Option.java), 
