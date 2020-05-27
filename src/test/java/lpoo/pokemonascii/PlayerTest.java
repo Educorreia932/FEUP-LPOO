@@ -2,6 +2,7 @@ package lpoo.pokemonascii;
 
 import lpoo.pokemonascii.data.Player;
 import lpoo.pokemonascii.data.Position;
+import lpoo.pokemonascii.data.Route6;
 import lpoo.pokemonascii.data.WorldModel;
 import lpoo.pokemonascii.gui.WorldView;
 import lpoo.pokemonascii.rules.WorldController;
@@ -23,32 +24,20 @@ import static lpoo.pokemonascii.data.Player.Y_MOVEMENT;
 import static org.junit.Assert.assertEquals;
 
 public class PlayerTest {
-
-
-    private Player player;
+    private WorldModel model;
+    private WorldController worldController;
 
     @Before
     public void init() throws IOException, SAXException, ParserConfigurationException {
-        player = new Player();
-    }
-
-    @Test
-    public void testSetGetsStates(){
-        player.setState(Player.State.BACK);
-        assertEquals(Player.State.BACK, player.getState());
-
-        player.setState(Player.State.FRONT);
-        assertEquals(Player.State.FRONT, player.getState());
-
-        player.setState(Player.State.LEFT);
-        assertEquals(Player.State.LEFT, player.getState());
-
-        player.setState(Player.State.RIGHT);
-        assertEquals(Player.State.RIGHT, player.getState());
+        model = new Route6();
+        WorldView gui = Mockito.mock(WorldView.class);
+        worldController = new WorldController(gui, model);
     }
 
     @Test
     public void testGetPosition(){
+        Player player = model.getPlayer();
+
         Position current = player.getPosition();
         Position up = new Position(current.getX(), current.getY() - Y_MOVEMENT);
         Position down = new Position(current.getX(), current.getY() + Y_MOVEMENT);
@@ -62,10 +51,9 @@ public class PlayerTest {
     }
 
     @Test
-    public void testStateChange() throws ParserConfigurationException, SAXException, IOException {
-        WorldModel model = new WorldModel(player);
-        WorldView gui = Mockito.mock(WorldView.class);
-        WorldController worldController = new WorldController(gui, model);
+    public void testStateChange(){
+
+        Player player = model.getPlayer();
 
         Command up = new PlayerMoveUpCommand(worldController);
         Command down = new PlayerMoveDownCommand(worldController);

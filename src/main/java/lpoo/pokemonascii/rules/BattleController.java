@@ -40,11 +40,6 @@ public class BattleController implements Controller {
         catchSound = new CatchSound();
     }
 
-    public BattleController(BattleModel battle) {
-        this.battle = battle;
-        this.options = new OptionsMenuController(battle.getOptions());
-        gamemode = GameState.Gamemode.BATTLE;
-    }
 
     public GameState.Gamemode start(GameState game) {
         while (gamemode == GameState.Gamemode.BATTLE) {

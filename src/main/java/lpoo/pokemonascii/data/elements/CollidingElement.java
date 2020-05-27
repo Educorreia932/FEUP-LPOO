@@ -18,11 +18,11 @@ public abstract class CollidingElement extends Element {
         Position r2 = new Position(l2.getX() + c.getHitbox().getWidth(), l2.getY() + c.getHitbox().getHeight()); // Lower right corner of c
 
         // If one rectangle is on left side of other
-        if (l1.getX() > r2.getX() || l2.getX() > r1.getX())
+        if (l1.getX() >= r2.getX() || l2.getX() >= r1.getX())
             return false;
 
         // If one rectangle is above other
-        else if (l1.getY() > r2.getY() || l2.getY() > r1.getY())
+        else if (l1.getY() >= r2.getY() || l2.getY() >= r1.getY())
             return false;
 
         return true;

@@ -20,11 +20,6 @@ public abstract class WorldModel {
         tiles = new Tiles();
     }
 
-    public WorldModel(Player player) {
-        this.player = player;
-        elements = new ArrayList<>();
-    }
-
     public void setPlayerPosition(Position.Direction direction) {
         player.setPosition(player.getPosition(direction));
     }
