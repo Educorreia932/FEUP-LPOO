@@ -2,13 +2,14 @@ package lpoo.pokemonascii;
 
 import lpoo.pokemonascii.data.pokemon.PokemonSpecies;
 import lpoo.pokemonascii.data.pokemon.PokemonType;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.xml.sax.SAXException;
 
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
 
-import static junit.framework.TestCase.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 
 public class PokemonSpeciesTest {
     private PokemonSpecies species;

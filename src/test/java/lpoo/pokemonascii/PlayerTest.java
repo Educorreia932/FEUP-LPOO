@@ -11,8 +11,8 @@ import lpoo.pokemonascii.rules.commands.player.PlayerMoveDownCommand;
 import lpoo.pokemonascii.rules.commands.player.PlayerMoveLeftCommand;
 import lpoo.pokemonascii.rules.commands.player.PlayerMoveRightCommand;
 import lpoo.pokemonascii.rules.commands.player.PlayerMoveUpCommand;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 import org.xml.sax.SAXException;
 
@@ -21,14 +21,14 @@ import java.io.IOException;
 
 import static lpoo.pokemonascii.data.Player.X_MOVEMENT;
 import static lpoo.pokemonascii.data.Player.Y_MOVEMENT;
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class PlayerTest {
-    private WorldModel model;
-    private WorldController worldController;
+    private static WorldModel model;
+    private static WorldController worldController;
 
-    @Before
-    public void init() throws IOException, SAXException, ParserConfigurationException {
+    @BeforeAll
+    static void init() throws IOException, SAXException, ParserConfigurationException {
         model = new Route6();
         WorldView gui = Mockito.mock(WorldView.class);
         worldController = new WorldController(gui, model);

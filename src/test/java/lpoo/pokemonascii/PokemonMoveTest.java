@@ -7,26 +7,24 @@ import lpoo.pokemonascii.data.pokemon.PokemonMove;
 import lpoo.pokemonascii.gui.BattleView;
 import lpoo.pokemonascii.rules.BattleController;
 
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 import org.xml.sax.SAXException;
 
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
 
-import static junit.framework.TestCase.assertEquals;
-import static org.mockito.Mockito.times;
-import static org.mockito.Mockito.verify;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
 public class PokemonMoveTest {
-    private BattleModel model;
-    private BattleController controller;
+    private static BattleModel model;
+    private static BattleController controller;
 
 
-    @Before
-    public void init() throws ParserConfigurationException, SAXException, IOException {
+    @BeforeAll
+    static void init() throws ParserConfigurationException, SAXException, IOException {
         model = new BattleModel(new Player(), 1);
         controller = new BattleController(Mockito.mock(BattleView.class), model);
     }

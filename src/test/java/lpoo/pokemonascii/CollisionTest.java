@@ -4,9 +4,9 @@ import lpoo.pokemonascii.data.Obstacle;
 import lpoo.pokemonascii.data.Position;
 import lpoo.pokemonascii.data.Rect;
 import lpoo.pokemonascii.data.elements.CollidingElement;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class CollisionTest {
     @Test
