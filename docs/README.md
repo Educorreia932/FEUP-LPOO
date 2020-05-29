@@ -335,6 +335,7 @@ That being said, we used the **Template Method** pattern to solve this problem. 
 
 - Easier to add new renderers without repeating much code.
 - Abstract the overall and focus on the differences.
+- Respect SOLID principles.
 
 ## Code Smells and Possible Refactorings
 

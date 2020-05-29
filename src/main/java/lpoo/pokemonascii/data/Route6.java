@@ -1,22 +1,24 @@
 package lpoo.pokemonascii.data;
 
 import lpoo.pokemonascii.data.tile.PokemonTile;
-import lpoo.pokemonascii.data.tile.Tiles;
 import org.xml.sax.SAXException;
 
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
+import java.util.Random;
 
 
 public class Route6 extends WorldModel{
     private MapZone zone;
+    private int range_max;
+    private int range_min;
 
     public Route6() throws IOException, SAXException, ParserConfigurationException {
         super();
         zone = MapZone.DOWNLEFT; //Start zone
-        tiles.setRanges(zone);
         updatePokemonTiles();
         updateElements();
+        setRanges();
     }
 
     private void updateElements() {
@@ -178,7 +180,7 @@ public class Route6 extends WorldModel{
         if(changed){
             updateElements();
             updatePokemonTiles();
-            tiles.setRanges(zone);
+            setRanges();
         }
 
         return changed;
@@ -204,5 +206,31 @@ public class Route6 extends WorldModel{
                 file = "1";
         }
         return file;
+    }
+
+    public int getPokemonNumber(){
+        Random rand = new Random();
+        return rand.nextInt(range_max -  range_min +1 ) + range_min;
+    }
+
+    public void setRanges(){
+        switch (zone){
+            case DOWNLEFT:
+                range_min = 0;
+                range_max = 37;
+                break;
+            case DOWNRIGHT:
+                range_min = 38;
+                range_max = 74;
+                break;
+            case UPRIGHT:
+                range_min = 75;
+                range_max = 111;
+                break;
+            case UPLEFT:
+                range_min = 112;
+                range_max = 151;
+                break;
+        }
     }
 }
