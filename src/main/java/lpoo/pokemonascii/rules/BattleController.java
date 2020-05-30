@@ -51,7 +51,8 @@ public class BattleController implements Controller {
                 command = gui.getNextCommand(this);
 
             else {
-                command = new UsePokemonMoveCommand(this, battle.getAdversaryPokemon(), battle.getAdversaryPokemon().getMoves().get(0));
+                Random rand = new Random();
+                command = new UsePokemonMoveCommand(this, battle.getAdversaryPokemon(), battle.getAdversaryPokemon().getMoves().get(rand.nextInt(4)));
                 changeTurn();
             }
 
