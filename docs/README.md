@@ -2,11 +2,11 @@
 
 Our game consists, as the title states, in a *mock* version of the RPG Pokémon series, more specific, the Fire Red/Leaf Green games from Gameboy Advance.  
 
-In it, the player will be able to catch and battle with pokémons in tall grass, try to catch them or even battle them with other their own pokémon.
+In it, the player will be able to catch and battle with pokémons in tall grass, try to catch and battle them with our own pokémons.
 
 The protagonist is a young boy who goes on a journey to be the very best pokémon trainer like no one ever was. 🎵
 
- In order to achieve his goal, the player will have to catch pokémon and battle other trainers. Whenever he wins a battle its pokémon gain experience points and when they gather a certain amount of experience, they level up or even evolve.  
+ In order to achieve his goal, the player will have to catch pokémon and battle other trainers. Whenever he wins a battle his pokémons gain experience points and when they gather a certain amount of experience, they level up or even evolve.  
 
 This project was developed by [*Ana Inês Barros*](https://github.com/anaines14) (up201806593@fe.up.pt) and [*Eduardo Correia*](https://github.com/educorreia932) (up201806433@fe.up.pt) for LPOO 2019/2020.
 
@@ -63,6 +63,8 @@ This project was developed by [*Ana Inês Barros*](https://github.com/anaines14)
 ### Player
 
 - **Character Movement** - The player will move with the arrow keys in the desired direction, as well its sprite will change according to the direction he's facing.
+Colisions are implemented so the player does not wal through obstacles and to detect when a player
+collides with a PokemonTile.
 
 <p align="center">
   <img width=375 src="images/Character%20Movement.gif">
@@ -73,6 +75,9 @@ This project was developed by [*Ana Inês Barros*](https://github.com/anaines14)
 <p align="center">
     <img width=450 src="images/Tall%20Grass.gif">
 </p>
+
+The pokemon that might appear depends on the zone of the map the grass is. Starting from zone 1, the level of the
+pokemons that might appear will increase along the four different areas.
 
 ### Pokémon
 
@@ -88,7 +93,8 @@ This project was developed by [*Ana Inês Barros*](https://github.com/anaines14)
 A super effective attack will cause 2x the damage, a not very effective will cause 0.5x the damage and a no effect will cause 0x damage.  
 For instance, the Water type is super effective against Fire, so if a Water pokémon move is used against a Fire pokémon, it would cause two times the normal damage it would cause.
 
-- **Summary Menu** - Display a menu with a summary of a pokémon.
+- **Summary Menu** - When we click on the S key, the game displays a summary of the player's current pokémons.
+To scroll through the rest of the player's pokemons press up and down arrows.
 
 
 <p align="center">
@@ -115,11 +121,26 @@ For instance, the Water type is super effective against Fire, so if a Water pok�
         <img width=550 src="images/Fight%20Options.gif">
     </p>
         
-    - **Bag** - Use an item from the bag.
-    - **Pokémon** - Change that's pokémon currently fighting for another one on the party.
-    - **Run** - Try to flee from the battle.
+    - **Bag** - Use a pokeball from the bag. A pokeball is used to catch a pokemon. 
+    Pokemons with less HP are easier to catch.
+    - **Pokémon** - Swipe pokemon currently fighting for another one on the party (player's pokemons).
+    - **Run** - Leave battle without a consequence.
     
-- **Catch' Em** -
+- **Basic Battle Features** - Simple explanation of battle mode.
+
+    - The player is always the first to attack.
+    - As soon as the player performs an action, it is the other pokemon turn to attack.
+    - Attacks might make a lot of damage / almost no damage / no damage at all. It is important, during battles,
+    that the player takes notes of what attacks work better according to the types of pokemon in battle since
+    effectiveness depends on the type.
+    - For the reason stated above, the player must think about when it is better to swap pokemons
+    in order to win the battle.
+    - The chances of catching a pokemon increase if the HP of the pokemon we are trying to catch is lower.
+    With this in mind, the player should try to decrease the HP of the adversary (without killing him) before attempting to catch him.
+    - If the player chooses to run from the battle, nothing happens and the player shall appear on the same
+    tile it was before entering the battle.
+    
+    
 
 ## Planned features
 
@@ -134,17 +155,15 @@ For instance, the Water type is super effective against Fire, so if a Water pok�
 - **Catch Rate**
 - **Leveling Up** - A pokémon's level goes from 1 to 100 and it can level up when it reaches a certain amount of experience, improving its stats.
 - **Evolving** - Some pokémon have two or even three different evolutions and if so, they evolve when they reach a certain level.
-- **Pokémon PC**
+- **Pokémon PC** - Cure injured pokémons
 
 ### Battle
 
-- **Use Moves** - Make it possible to choose one of the four pokémon moves and use it against the opponent.
 - **Pokémon Moves Animations** - Implement animations for each move.
-- **Use Items** - Make it possible to access the bag and use an item, such as Potions or Pokéballs.
+- **Use Potions** - Make it possible to access the bag and use a potion.
 
 ### Other
 
-- **Have a Main Menu**
 - **Save the progress**
 - **Create profiles** 
 - **Create NPCs** - Have NPCs in the overworld whom which the player might interact.
