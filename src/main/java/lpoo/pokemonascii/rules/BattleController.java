@@ -42,6 +42,11 @@ public class BattleController implements Controller {
 
 
     public GameState.Gamemode start(GameState game) {
+
+        if(battle.getTrainerPokemon().getCurrentHealth() == 0){
+            battle.getTrainerPokemon().setHP(1); //So the player can enter the battle
+        }
+
         while (gamemode == GameState.Gamemode.BATTLE) {
             gui.draw();
 

@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Pokemon {
+
     public enum FacingDirection {
         FRONT,
         BACK
@@ -88,5 +89,9 @@ public class Pokemon {
 
     public void setDirection(FacingDirection direction) {
         this.direction = direction;
+    }
+
+    public void setHP(int n) {
+        currentHealth = n;
     }
 }
