@@ -10,6 +10,10 @@ The protagonist is a young boy who goes on a journey to be the very best pokémo
 
 This project was developed by [*Ana Inês Barros*](https://github.com/anaines14) (up201806593@fe.up.pt) and [*Eduardo Correia*](https://github.com/educorreia932) (up201806433@fe.up.pt) for LPOO 2019/2020.
 
+<p align="center">
+    <img width=450 src="images/DEMO_GIF.gif">
+</p>
+
 ## Table of Contents
 
 - [Table of Contents](#table-of-contents)
@@ -62,22 +66,21 @@ This project was developed by [*Ana Inês Barros*](https://github.com/anaines14)
 
 ### Player
 
-- **Character Movement** - The player will move with the arrow keys in the desired direction, as well its sprite will change according to the direction he's facing.
-Colisions are implemented so the player does not wal through obstacles and to detect when a player
-collides with a PokemonTile.
+- **Character Movement** - The player will move using the arrow keys in the desired direction. Its sprite will also change according to the direction he's facing.  
+Colisions are implemented so the player does not walk through obstacles and to detect when a player collides with a `PokemonTile` (which might trigger a pokémon encounter).
 
 <p align="center">
   <img width=375 src="images/Character%20Movement.gif">
 </p>
 
-- **Pokémon Appearing in Tall Grass** - When the player walks trough grass, they may encounter a wild pokémon and if so a battle with it will start. 
+- **Pokémon Appearing in Tall Grass** - When the player walks trough grass, they may encounter a wild pokémon and if so a battle with it will start.   
+The pokémon that appears depends on the zone of the map in which the grass is.   
+Starting from zone 1, the level of the
+pokémon that might appear will increase along the four different areas.
 
 <p align="center">
     <img width=450 src="images/Tall%20Grass.gif">
 </p>
-
-The pokemon that might appear depends on the zone of the map the grass is. Starting from zone 1, the level of the
-pokemons that might appear will increase along the four different areas.
 
 ### Pokémon
 
@@ -90,12 +93,11 @@ pokemons that might appear will increase along the four different areas.
 **Note:** Fairy type isn't included in our game,  as it wasn't in the original 3<sup>rd</sup> generation pokémon games.
 
 - **Type Effectiveness** - When a pokémon uses a move, the damage it will cause to the adversary pokémon will depend on the move's type and the other pokémon's type(s).   
-A super effective attack will cause 2x the damage, a not very effective will cause 0.5x the damage and a no effect will cause 0x damage.  
-For instance, the Water type is super effective against Fire, so if a Water pokémon move is used against a Fire pokémon, it would cause two times the normal damage it would cause.
+A **super effective** attack will cause 2x the damage, a **not very effective** will cause 0.5x the damage and a **no effect** will cause 0x damage.  
+For instance, the **Water** type is super effective against **Fire**, so if a **Water** pokémon move is used against a **Fire** pokémon, it will cause two times the normal damage it would cause.
 
 - **Summary Menu** - When we click on the S key, the game displays a summary of the player's current pokémons.
 To scroll through the rest of the player's pokemons press up and down arrows.
-
 
 <p align="center">
   <img width=500 src="images/Pokemon%20Summary.png">
@@ -121,26 +123,22 @@ To scroll through the rest of the player's pokemons press up and down arrows.
         <img width=550 src="images/Fight%20Options.gif">
     </p>
         
-    - **Bag** - Use a pokeball from the bag. A pokeball is used to catch a pokemon. 
-    Pokemons with less HP are easier to catch.
+    - **Bag** - Use a pokéball from the bag. A pokéball is used to catch a pokémon. 
+    Pokémon with less HP are easier to catch.
     - **Pokémon** - Swipe pokemon currently fighting for another one on the party (player's pokemons).
     - **Run** - Leave battle without a consequence.
     
 - **Basic Battle Features** - Simple explanation of battle mode.
-
     - The player is always the first to attack.
     - As soon as the player performs an action, it is the other pokemon turn to attack.
     - Attacks might make a lot of damage / almost no damage / no damage at all. It is important, during battles,
-    that the player takes notes of what attacks work better according to the types of pokemon in battle since
-    effectiveness depends on the type.
-    - For the reason stated above, the player must think about when it is better to swap pokemons
+    that the player takes notes of what attacks work better according to the types of pokémon in battle since effectiveness depends on the type.
+    - For the reason stated above, the player must think about when it is better to swap pokémon.
     in order to win the battle.
     - The chances of catching a pokemon increase if the HP of the pokemon we are trying to catch is lower.
     With this in mind, the player should try to decrease the HP of the adversary (without killing him) before attempting to catch him.
     - If the player chooses to run from the battle, nothing happens and the player shall appear on the same
     tile it was before entering the battle.
-    
-    
 
 ## Planned features
 
@@ -164,11 +162,17 @@ To scroll through the rest of the player's pokemons press up and down arrows.
 
 ### Other
 
-- **Save the progress**
-- **Create profiles** 
-- **Create NPCs** - Have NPCs in the overworld whom which the player might interact.
+- **Save the progress** - It's not an easy task to catch all 151 pokémon in just one run, so saving the progress made to come back later would facilitate the process.
+- **Create profiles** - The original pokémon games only let you have one save at a time, but sometimes, more than one person is playing on the same device, so it is important to let them have a profile for each person with its own save file.
+- **Create NPCs** - Have NPCs in the overworld whom which the player might interact (battle with them, buy items, trade pokémon...).
 
-## Architectural Pattern
+## Design
+
+### Architectural Pattern
+
+#### Problem in Context
+
+#### The Pattern
 
 For easier development of the game, we implemented the MVC (Model–View–Controller) design pattern, with the following division.
 - **Model (data)** - Stores all of the lpoo.pokemonascii.data structure of the game and its current state.
@@ -181,30 +185,21 @@ For easier development of the game, we implemented the MVC (Model–View–Contr
 
 Our game currently has the MVC implemented in the following modules:
 
-#### World 
+#### The Implementation
 
-Player walks around the world
+#### Consequences
 
-#### Battle
-
-Two pokémon battle each other
-
-#### Options Menu
-
-For menus where the user has choose some option
-
-## Design
-
-### SoundEffects
+### Sound Effects
 
 #### Problem in Context
-In order to add some sound effects to our game, we had to think about the best way to implement this feature without 
-risking going against any SOLID principle. This functionality requires that we are able to easily add 
-more, and many sound effects without raising the complexity of the game and to make it easy to manage all of this sounds.
-Whether we want to remove / add / change / reduce or increase volume, the implementation must provide 
-us an effective simple way of rapidly doing all of that.
+
+In order to add some sound effects to our game, we had to think about the best way to implement this feature without risking going against any SOLID principle.  
+This functionality requires that we are able to easily add 
+more, and many sound effects without raising the complexity of the game and to make it easy to manage all of this sounds.  
+Whether we want to remove / add / change / reduce or increase volume, the implementation must provide us an effective simple way of rapidly doing all of that.
 
 #### The Pattern
+
 The pattern we decided to use was the **Template pattern**. We created an abstract class 
 [SoundEffect](../src/main/java/lpoo/pokemonascii/data/SoundEffects/SoundEffect.java)
 whose constructor receives a string. This string is concatenated to the path string which leads
@@ -220,6 +215,7 @@ With this pattern it was easy. Simply, in the sound effect classes we want to ch
 the superclass' *play()* method. Then, we are able to still call the superclass *play()* method but still
 we are able to add the lines of code we need to control the volume when that sound effect plays.
 
+
 #### The Implementation
 
 <p align="center">
@@ -227,6 +223,7 @@ we are able to add the lines of code we need to control the volume when that sou
 </p>
 
 #### Consequences
+
 - Flexibility to change volume of specific sounds.
 - Easy to add / remove / change sounds.
 - Simple solution easy to understand.
@@ -390,7 +387,7 @@ the class [WorldController](../src/main/java/lpoo/pokemonascii/rules/WorldContro
 if statement where we could appply the refactor method **Introduce Null Object** by creating a subclass that will perform
  the role of a null object, create a method isNull() and replace the code in the correct places.
 
-The [Route6 Class](../src/main/java/lpoo/pokemonascii/data/Route6.java) is another example of the strong use of switch
+The [Route 6 Class](../src/main/java/lpoo/pokemonascii/data/Route6.java) is another example of the strong use of switch
 statements. The whole class is a group of functions full of switch statements. This class represents the
 only map of the game. The map is made of 4 zones. For each zones there are different elements. For
 that reason, we use the switch cases as a resource to define the elements for each case. 
@@ -398,7 +395,6 @@ that reason, we use the switch cases as a resource to define the elements for ea
 This situation could be changed using the same refactor mentioned before. We would create subclasses,
 one for called Zone and subclasses of Zone. By doing this, we would be able to easily define the different
 behaviours for each zone without getting the help of switch cases.
-
 
 #### Change Preventers - Parallel Inheritance
 
@@ -409,7 +405,7 @@ This happens because we need a class which knows how to render the option we cre
  classes are added, making changes becomes harder and harder.
 
 This code smell is called **Parallel Inheritance**. The solution for it would be to collapse 
- a hierarchy so we would have only a generec renderer which would be easier to mantain.
+ a hierarchy, so we would have only a generic renderer which would be easier to maintain.
 
 ## Testing
 
@@ -432,6 +428,7 @@ This code smell is called **Parallel Inheritance**. The solution for it would be
 - [HP Bars & In-Battle Menu](https://www.spriters-resource.com/game_boy_advance/pokemonfireredleafgreen/sheet/33690/), redblueyellow
 - [Battle Backgrounds](https://www.spriters-resource.com/game_boy_advance/pokemonfireredleafgreen/sheet/3866/), Desgardes
 - [Pokémon Summary Menu](https://www.spriters-resource.com/game_boy_advance/pokemonfireredleafgreen/sheet/112720/), Pnick0509
+- [Route 6](https://www.spriters-resource.com/game_boy_advance/pokemonfireredleafgreen/sheet/3745/), Bob799
 
 ### Data Files
 
