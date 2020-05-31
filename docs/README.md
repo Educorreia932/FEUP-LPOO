@@ -522,7 +522,7 @@ This code smell is called **Parallel Inheritance**. The solution for it would be
   <img width=550 src="images/coverage.png">
 </p>
 
-[Link To Coverage Report]()
+[Link To Coverage Report](./reports/coverage/index.html)
 
 ### Mutation Testing Report
 
@@ -530,11 +530,11 @@ This code smell is called **Parallel Inheritance**. The solution for it would be
   <img width=550 src="images/MutationReport.png">
 </p>
 
-[Link To Mutation Testing Report]()
+[Link To Mutation Testing Report](./reports/pitest/index.html)
 
 ### PBT Testing
 
-Using jqwik, we were able to add PBT Testing to some of our tests.
+Using [jqwik](https://jqwik.net/), we were able to add PBT Testing to some of our tests.
 
 ## Self-Evaluation
 
