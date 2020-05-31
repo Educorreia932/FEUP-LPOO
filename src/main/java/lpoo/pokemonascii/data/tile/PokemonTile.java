@@ -2,7 +2,7 @@ package lpoo.pokemonascii.data.tile;
 
 import java.util.Random;
 
-public class PokemonTile extends Tile {
+public abstract class PokemonTile extends Tile {
     protected int probability;
 
     public PokemonTile(int x, int y, int width, int height) {

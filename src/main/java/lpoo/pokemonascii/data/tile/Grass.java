@@ -6,10 +6,7 @@ public class Grass extends PokemonTile {
     public static int grassHEIGHT = 16;
 
     public Grass(int x, int y){
-        super(x, y, 26, 16);
+        super(x, y, grassWIDTH, grassHEIGHT);
     }
 
-    public Grass(int x, int y, int width, int height){
-        super(x, y, width, height);
-    }
 }

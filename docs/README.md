@@ -375,6 +375,42 @@ For that purpose, we used the [Command](../src/main/java/lpoo/pokemonascii/rules
 
 - Easier to add new actions in an abstract way.
 
+### Grass Patches
+
+#### Problem in Context
+
+In our game, we have a class [Grass](../src/main/java/lpoo/pokemonascii/data/tile/Grass.java)
+which represents a single Grass Tile. In the map we chose, there were a lot of grass
+tiles and, eventually, we ended up with code smells. For every group of grass tiles,
+we had to add one by one the grass tiles. This did not help to manage the patches of tiles.
+If we wanted to apply something to a group of tiles, for example a translation, it would
+be very difficult to apply it because we had to run through the list of all tiles, find the tiles
+we wanted to translate and only after that apply the translation.
+
+We had to find a way of getting rid of this problem with the help of a code pattern.
+
+#### The Pattern
+
+To solve this problem, we implemented the **Composite Pattern**. This
+pattern allowed us to created Patches of Tiles as one only Tile just with different
+width and height. In other words, we created a class [PokemonTilePatch](../src/main/java/lpoo/pokemonascii/data/tile/PokemonTilePatch.java)
+which represents a rectangle of tiles next to each other. 
+
+Because this class extends [PokemonTile](../src/main/java/lpoo/pokemonascii/data/tile/PokemonTile.java), we can still check colisions with it as it was a single tile and,
+we can also save it to the list of tiles in the world model. Also, it makes it easy to manage the tiles by groups.
+
+#### Implementation
+
+<p align="center">
+  <img width=550 src="images/composite.png">
+</p>
+
+
+#### Consequences
+- It is easier to add a big group of tiles.
+- Code organization improved.
+- Easier to manage/change groups of tiles.
+
 ### Graphics
 
 #### Problem in Context

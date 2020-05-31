@@ -1,11 +1,17 @@
 package lpoo.pokemonascii.data;
 
-import lpoo.pokemonascii.data.tile.GrassPatch;
+import lpoo.pokemonascii.data.tile.Grass;
+import lpoo.pokemonascii.data.tile.PokemonTilePatch;
 import org.xml.sax.SAXException;
 
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
+
+import static lpoo.pokemonascii.data.tile.Grass.grassHEIGHT;
+import static lpoo.pokemonascii.data.tile.Grass.grassWIDTH;
 
 
 public class Route6 extends WorldModel{
@@ -49,25 +55,26 @@ public class Route6 extends WorldModel{
 
     void updatePokemonTiles(){
         tiles.clear();
+        List<Grass> grass;
 
         switch(zone){
             case UPLEFT:
-                tiles.add(new GrassPatch(26*2, 0, 8, 4)); //Left patch
-                tiles.add(new GrassPatch(26*6, 16*7, 1, 9)); //Down patch
-                tiles.add(new GrassPatch(26*9, 0, 4, 6)); //Right patch
+                tiles.add(createPatch(26*2, 0, 8, 4)); //Left patch
+                tiles.add(createPatch(26*6, 16*7, 1, 9)); //Down patch
+                tiles.add(createPatch(26*9, 0, 4, 6)); //Right patch
                 break;
             case UPRIGHT:
-                tiles.add(new GrassPatch(0, 16, 3, 7)); //Top patch
-                tiles.add(new GrassPatch(0, 16*7, 3, 2)); //Left patch
-                tiles.add(new GrassPatch(26*5, 16*4, 6, 2)); //Right patch
+                tiles.add(createPatch(0, 16, 3, 7)); //Top patch
+                tiles.add(createPatch(0, 16*7, 3, 2)); //Left patch
+                tiles.add(createPatch(26*5, 16*4, 6, 2)); //Right patch
                 break;
             case DOWNRIGHT:
-                tiles.add(new GrassPatch(0, 0, 2, 2)); //Right Top patch
-                tiles.add(new GrassPatch(26*5, 0, 5, 2)); //Left patch
-                tiles.add(new GrassPatch(0, 16*5, 4, 2)); //Right Bottom patch
+                tiles.add(createPatch(0, 0, 2, 2)); //Left Top patch
+                tiles.add(createPatch(26*5, 0, 5, 2)); //Right patch
+                tiles.add(createPatch(0, 16*5, 4, 2)); //Left Bottom patch
                 break;
             case DOWNLEFT:
-                tiles.add(new GrassPatch(26*14, 16*5, 4, 2)); //Right Bottom patch
+                tiles.add(createPatch(26*14, 16*5, 4, 2)); //Right Bottom patch
                 break;
         }
     }
@@ -191,5 +198,16 @@ public class Route6 extends WorldModel{
                 range_max = 151;
                 break;
         }
+    }
+
+    private PokemonTilePatch createPatch(int x, int y, int lines, int rows) {
+        List<Grass> patch = new ArrayList<>();
+
+        for (int line = 0; line < lines; line++) {
+            for (int row = 0; row < rows; row++)
+                patch.add(new Grass(x + grassWIDTH * row, y + grassHEIGHT * line));
+        }
+
+        return new PokemonTilePatch(x, y, lines * grassHEIGHT, rows * grassWIDTH, patch);
     }
 }
