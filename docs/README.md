@@ -490,3 +490,9 @@ This code smell is called **Parallel Inheritance**. The solution for it would be
 
 - [Pokémon](https://github.com/r4vi/zipper-demo/blob/master/resources/pokemon.xml), r4v1
 - [Pokémon Moves](https://github.com/veekun/pokedex/blob/master/pokedex/lpoo.pokemonascii.data/csv/moves.csv), veekun
+
+## DEMO
+
+<p align="center">
+  <img width=375 src="DEMO_GIF.gif">
+</p>
