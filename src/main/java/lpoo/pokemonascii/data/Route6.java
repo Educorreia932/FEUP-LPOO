@@ -1,6 +1,6 @@
 package lpoo.pokemonascii.data;
 
-import lpoo.pokemonascii.data.tile.PokemonTile;
+import lpoo.pokemonascii.data.tile.GrassPatch;
 import org.xml.sax.SAXException;
 
 import javax.xml.parsers.ParserConfigurationException;
@@ -52,63 +52,22 @@ public class Route6 extends WorldModel{
 
         switch(zone){
             case UPLEFT:
-                for (int line = 0; line < 8; line++){  //Left patch
-                    for(int row = 0; row < 4; row++)
-                        tiles.add(new PokemonTile(26*2 + 26*row, 16*line));
-                }
-
-                for(int row = 0; row < 9; row++)   //Down patch
-                    tiles.add(new PokemonTile(26*6 + 26*row, 16*7));
-
-
-                for (int line = 0; line < 4; line++){  //Right patch
-                    for(int row = 0; row < 6; row++)
-                        tiles.add(new PokemonTile(26*9 + 26*row, 16*line));
-                }
-
+                tiles.add(new GrassPatch(26*2, 0, 8, 4)); //Left patch
+                tiles.add(new GrassPatch(26*6, 16*7, 1, 9)); //Down patch
+                tiles.add(new GrassPatch(26*9, 0, 4, 6)); //Right patch
                 break;
             case UPRIGHT:
-                for (int line = 0; line < 3; line++){  //Top patch
-                    for(int row = 0; row < 7; row++)
-                        tiles.add(new PokemonTile(26*row, 16 + 16*line));
-                }
-
-                for (int line = 0; line < 3; line++){  //Left patch
-                    for(int row = 0; row < 2; row++)
-                        tiles.add(new PokemonTile(26*row, 16*7 + 16*line));
-                }
-
-                for (int line = 0; line < 6; line++){  //Right patch
-                    for(int row = 0; row < 2; row++)
-                        tiles.add(new PokemonTile(26*5 + 26*row, 16*4 + 16*line));
-                }
-
+                tiles.add(new GrassPatch(0, 16, 3, 7)); //Top patch
+                tiles.add(new GrassPatch(0, 16*7, 3, 2)); //Left patch
+                tiles.add(new GrassPatch(26*5, 16*4, 6, 2)); //Right patch
                 break;
             case DOWNRIGHT:
-
-                for (int line = 0; line < 2; line++){  //Right Top patch
-                    for(int row = 0; row < 2; row++)
-                        tiles.add(new PokemonTile(26*row,16*line));
-                }
-
-                for (int line = 0; line < 5; line++){  //Left patch
-                    for(int row = 0; row < 2; row++)
-                        tiles.add(new PokemonTile(26*5 + 26*row,16*line));
-                }
-
-                for (int line = 0; line < 4; line++){  //Right Bottom patch
-                    for(int row = 0; row < 2; row++)
-                        tiles.add(new PokemonTile(26*row,16*5 + 16*line));
-                }
-
+                tiles.add(new GrassPatch(0, 0, 2, 2)); //Right Top patch
+                tiles.add(new GrassPatch(26*5, 0, 5, 2)); //Left patch
+                tiles.add(new GrassPatch(0, 16*5, 4, 2)); //Right Bottom patch
                 break;
             case DOWNLEFT:
-
-                for (int line = 0; line < 4; line++){  //Right Bottom patch
-                    for(int row = 0; row < 2; row++)
-                        tiles.add(new PokemonTile(26*14 + 26*row,16*5 + 16*line));
-                }
-
+                tiles.add(new GrassPatch(26*14, 16*5, 4, 2)); //Right Bottom patch
                 break;
         }
     }

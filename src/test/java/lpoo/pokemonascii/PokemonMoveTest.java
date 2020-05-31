@@ -10,9 +10,7 @@ import lpoo.pokemonascii.rules.BattleController;
 
 import net.jqwik.api.ForAll;
 import net.jqwik.api.Property;
-import net.jqwik.api.Provide;
 import net.jqwik.api.constraints.IntRange;
-import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 import org.xml.sax.SAXException;
 

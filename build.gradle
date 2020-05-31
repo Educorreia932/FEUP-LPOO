@@ -23,7 +23,7 @@ application {
 }
 
 pitest {
-    targetClasses = ['lpoo.*']
+    targetClasses = ['lpoo.pokemonascii.*']
 }
 
 test{
