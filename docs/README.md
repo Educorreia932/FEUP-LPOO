@@ -10,8 +10,10 @@ The protagonist is a young boy who goes on a journey to be the very best pokémo
 
 This project was developed by [*Ana Inês Barros*](https://github.com/anaines14) (up201806593@fe.up.pt) and [*Eduardo Correia*](https://github.com/educorreia932) (up201806433@fe.up.pt) for LPOO 2019/2020.
 
+## Gameplay demo
+
 <p align="center">
-    <img width=450 src="images/DEMO_GIF.gif">
+    <img width=550 src="images/DEMO_GIF.gif">
 </p>
 
 ## Table of Contents
@@ -84,6 +86,8 @@ pokémon that might appear will increase along the four different areas.
 
 ### Pokémon
 
+- **Levels** - A pokémon's level goes from 1 to 100 and it can level up when it reaches a certain amount of experience, improving its stats.
+
 - **Pokémon Types** - These are properties of pokémon and their moves. A pokémon may have up to two types, while a move only has one.
 
 <p align="center">
@@ -96,8 +100,8 @@ pokémon that might appear will increase along the four different areas.
 A **super effective** attack will cause 2x the damage, a **not very effective** will cause 0.5x the damage and a **no effect** will cause 0x damage.  
 For instance, the **Water** type is super effective against **Fire**, so if a **Water** pokémon move is used against a **Fire** pokémon, it will cause two times the normal damage it would cause.
 
-- **Summary Menu** - When we click on the S key, the game displays a summary of the player's current pokémons.
-To scroll through the rest of the player's pokemons press up and down arrows.
+- **Summary Menu** - When we click on the S key, the game displays a summary of the player's current pokémon.  
+To scroll through the rest of the player's pokémon press ↑ or ↓ keys.
 
 <p align="center">
   <img width=500 src="images/Pokemon%20Summary.png">
@@ -125,7 +129,12 @@ To scroll through the rest of the player's pokemons press up and down arrows.
         
     - **Bag** - Use a pokéball from the bag. A pokéball is used to catch a pokémon. 
     Pokémon with less HP are easier to catch.
-    - **Pokémon** - Swipe pokemon currently fighting for another one on the party (player's pokemons).
+    - **Pokémon** - Switch pokemon currently fighting for another one on the party (player's pokemons).
+    
+    <p align="center">
+        <img width=550 src="images/Change%20Pokémon.gif">
+    </p>
+    
     - **Run** - Leave battle without a consequence.
     
 - **Basic Battle Features** - Simple explanation of battle mode.
@@ -144,26 +153,56 @@ To scroll through the rest of the player's pokemons press up and down arrows.
 
 ### Player
 
-- **Movement Animation** - When the player moves in a direction, a walking animation will play.
-- **Ability to Run** - When the player presses the Z key while moving, they will start to run.
+- **Movement Animation** - When the player moves in a direction, a walking animation would play.
+
+- **Ability to Run** - When the player presses the Z key while moving, they would start to run.
+
 - **Option to be a Boy or a Girl** - At the start of a new game, the player may chose his character gender (for cosmetic purposes only).
+
+<p align="center">
+    <img width=300 src="images/Boy%20or%20Girl.png">
+</p>
 
 ### Pokémon
 
-- **Catch Rate**
-- **Leveling Up** - A pokémon's level goes from 1 to 100 and it can level up when it reaches a certain amount of experience, improving its stats.
+- **Catch Rate** - Some pokémon are harder to catch than others, even with the same HP and at the same level, such as the fame legendary pokémon (rare pokémon that are much powerful than regular pokémon, an example is the number 150 pokémon, Mewtwo). 
+This is due to different pokémon having different catch which vary between 0 and 255.  
+The higher the catch rate of a pokémon, the easier it is to catch it.
+
 - **Evolving** - Some pokémon have two or even three different evolutions and if so, they evolve when they reach a certain level.
-- **Pokémon PC** - Cure injured pokémons
+
+<p align="center">
+    <img width=450 src="images/Evolving.jpg">
+</p>
+
+- **Pokémon Center** - This would work like a hospital in which you could cure your pokémon (for free!) after a battle.
+
+<p align="center">
+    <img width=550 src="images/Pokemon%20Center.jpg">
+</p>
+
+- **Pokémon PC** - When you have too many pokémon, it gets hard to keep track of them, that's where the pokémon PC utility comes in. It's a pratical interface that let's you easily manage all of your catched pokémon and it's usually located in the pokémon center (the computer in the upper right cornet in the previous image).
+
+<p align="center">
+    <img width=550 src="images/Pokemon%20PC.jpg">
+</p>
 
 ### Battle
 
 - **Pokémon Moves Animations** - Implement animations for each move.
-- **Use Potions** - Make it possible to access the bag and use a potion.
+
+- **Use Items** - Make it possible to access the bag and use an item.
+
+<p align="center">
+    <img width=500 src="images/Items.png">
+</p>
 
 ### Other
 
 - **Save the progress** - It's not an easy task to catch all 151 pokémon in just one run, so saving the progress made to come back later would facilitate the process.
+
 - **Create profiles** - The original pokémon games only let you have one save at a time, but sometimes, more than one person is playing on the same device, so it is important to let them have a profile for each person with its own save file.
+
 - **Create NPCs** - Have NPCs in the overworld whom which the player might interact (battle with them, buy items, trade pokémon...).
 
 ## Design
@@ -357,10 +396,10 @@ That being said, we used the **Template Method** pattern to solve this problem. 
 
 #### Dispensables - Data Class
 
-The class [Option](../src/main/java/lpoo/pokemonascii/data/options/Option.java) is an example of a Data class in our code.
- This class only has a string field and both a getter and a setter for accessing it. Removing this class would make the 
+The class [Option](../src/main/java/lpoo/pokemonascii/data/options/Option.java) is an example of a Data class in our code.  
+This class only has a string field and both a getter and a setter for accessing it. Removing this class would make the 
  code a little simpler since this class can be replaced by the primitive `String`.
- 
+
 #### Dispensables - Lazy Class
 
 The class [Tile](../src/main/java/lpoo/pokemonascii/data/Tile.java) was designed in order to support future 
