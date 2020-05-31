@@ -465,11 +465,25 @@ This code smell is called **Parallel Inheritance**. The solution for it would be
 
 ## Testing
 
+### Coverage Report
+
 <p align="center">
   <img width=550 src="images/coverage.png">
 </p>
 
-[Link to Mutation Report](./index.html)
+[Link To Coverage Report]()
+
+### Mutation Testing Report
+
+<p align="center">
+  <img width=550 src="images/MutationReport.png">
+</p>
+
+[Link To Mutation Testing Report]()
+
+### PBT Testing
+
+Using jqwik, we were able to add PBT Testing to some of our tests.
 
 ## Self-Evaluation
 
@@ -491,8 +505,4 @@ This code smell is called **Parallel Inheritance**. The solution for it would be
 - [Pokémon](https://github.com/r4vi/zipper-demo/blob/master/resources/pokemon.xml), r4v1
 - [Pokémon Moves](https://github.com/veekun/pokedex/blob/master/pokedex/lpoo.pokemonascii.data/csv/moves.csv), veekun
 
-## DEMO
-
-<p align="center">
-  <img width=375 src="DEMO_GIF.gif">
-</p>
+    
