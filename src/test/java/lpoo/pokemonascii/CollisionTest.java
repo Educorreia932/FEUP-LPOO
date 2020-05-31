@@ -4,15 +4,17 @@ import lpoo.pokemonascii.data.Obstacle;
 import lpoo.pokemonascii.data.Position;
 import lpoo.pokemonascii.data.Rect;
 import lpoo.pokemonascii.data.elements.CollidingElement;
-import org.junit.Test;
+import net.jqwik.api.ForAll;
+import net.jqwik.api.Property;
+import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class CollisionTest {
-    @Test
-    public void testGetHitbox(){
-        CollidingElement subject = new Obstacle(0, 0, 10, 10);
-        assertEquals(subject.getHitbox(), new Rect(10, 10));
+    @Property
+    public void testGetHitbox(@ForAll int width, @ForAll int height){
+        CollidingElement subject = new Obstacle(0, 0, width, height);
+        assertEquals(subject.getHitbox(), new Rect(width, height));
     }
 
     @Test

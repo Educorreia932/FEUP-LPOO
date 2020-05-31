@@ -1,7 +1,7 @@
 package lpoo.pokemonascii.data;
 
 import lpoo.pokemonascii.data.elements.CollidingElement;
-import lpoo.pokemonascii.data.tile.Tiles;
+import lpoo.pokemonascii.data.tile.PokemonTile;
 import org.xml.sax.SAXException;
 
 import javax.xml.parsers.ParserConfigurationException;
@@ -12,12 +12,12 @@ import java.util.List;
 public abstract class WorldModel {
     protected Player player;
     protected List<CollidingElement> elements;
-    protected Tiles tiles;
+    protected List<PokemonTile> tiles;
 
     public WorldModel() throws IOException, SAXException, ParserConfigurationException {
         player = new Player();
         elements = new ArrayList<>();
-        tiles = new Tiles();
+        tiles = new ArrayList<>();
     }
 
     public void setPlayerPosition(Position.Direction direction) {
@@ -41,7 +41,7 @@ public abstract class WorldModel {
 
     public CollidingElement isPlayerInTile(){
         Position position = player.getPosition();
-        return getCollidingElement(position, tiles.getTiles());
+        return getCollidingElement(position, tiles);
     }
 
     public CollidingElement getCollidingElement(Position position, List< ? extends CollidingElement> colliders) {
@@ -60,7 +60,5 @@ public abstract class WorldModel {
 
     public abstract String getImage();
 
-    public int getPokemonNumber(){
-        return tiles.getPokemonNumber();
-    }
+    public abstract int getPokemonNumber();
 }

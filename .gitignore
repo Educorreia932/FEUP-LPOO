@@ -26,7 +26,6 @@ hs_err_pid*
 .idea/
 .gradle/
 
-*.html
 
 build/
 
@@ -37,3 +36,5 @@ gradlew.bat
 gradle/wrapper/gradle-wrapper.properties
 
 
+
+.jqwik-database

@@ -7,63 +7,51 @@ import lpoo.pokemonascii.data.pokemon.PokemonMove;
 import lpoo.pokemonascii.gui.BattleView;
 import lpoo.pokemonascii.rules.BattleController;
 
-import org.junit.Before;
-import org.junit.Test;
+
+import net.jqwik.api.ForAll;
+import net.jqwik.api.Property;
+import net.jqwik.api.constraints.IntRange;
 import org.mockito.Mockito;
 import org.xml.sax.SAXException;
 
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
+import java.util.Random;
 
-import static junit.framework.TestCase.assertEquals;
-import static org.mockito.Mockito.times;
-import static org.mockito.Mockito.verify;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
 public class PokemonMoveTest {
-    private BattleModel model;
-    private BattleController controller;
 
+    public int getDamage(Pokemon pokemon, PokemonMove move){
+        if (pokemon.getSpecies().getSecondaryType() != null)
+            return (int) (move.getType().getDamageMultiplier(pokemon.getSpecies().getPrimaryType()) *
+                    move.getType().getDamageMultiplier(pokemon.getSpecies().getSecondaryType()) *
+                    move.getPower());
 
-    @Before
-    public void init() throws ParserConfigurationException, SAXException, IOException {
-        model = new BattleModel(new Player(), 1);
-        controller = new BattleController(Mockito.mock(BattleView.class), model);
+        else
+            return (int) (move.getType().getDamageMultiplier(pokemon.getSpecies().getPrimaryType()) * move.getPower());
     }
 
-    @Test
-    public void testUsePokemonMove(){
+    @Property
+    public void testUsePokemonMove(@ForAll @IntRange(max = 151) int pokemon) throws IOException, SAXException, ParserConfigurationException {
+        BattleModel model = new BattleModel(new Player(), pokemon);
+        BattleController controller = new BattleController(Mockito.mock(BattleView.class), model);
+
         Pokemon trainerPokemon = model.getTrainerPokemon();
         Pokemon foePokemon = model.getAdversaryPokemon();
 
         int HPt = trainerPokemon.getCurrentHealth();
         int HPf = foePokemon.getCurrentHealth();
 
-        PokemonMove moveT = trainerPokemon.getMoves().get(0);
-        PokemonMove moveF = foePokemon.getMoves().get(0);
+        PokemonMove moveT = trainerPokemon.getMoves().get(new Random().nextInt(4));
+        PokemonMove moveF = trainerPokemon.getMoves().get(new Random().nextInt(4));
 
-        controller.usePokemonMove(trainerPokemon, moveF);
-        controller.usePokemonMove(foePokemon, moveT);
+        int damageF = getDamage(trainerPokemon, moveF); //Damage trainer pokemon is going to take
+        int damageT = getDamage(foePokemon, moveT); //Damage foe pokemon is going to take
 
-        int damageT, damageF;
-
-        //Damage for trainer pokemon
-        if (trainerPokemon.getSpecies().getSecondaryType() != null)
-            damageT = (int) (moveF.getType().getDamageMultiplier(trainerPokemon.getSpecies().getPrimaryType()) *
-                    moveF.getType().getDamageMultiplier(trainerPokemon.getSpecies().getSecondaryType()) *
-                    moveF.getPower());
-
-        else
-            damageT = (int) (moveF.getType().getDamageMultiplier(trainerPokemon.getSpecies().getPrimaryType()) * moveF.getPower());
-
-        //Damage for Foe pokemon
-        if (trainerPokemon.getSpecies().getSecondaryType() != null)
-            damageF = (int) (moveT.getType().getDamageMultiplier(trainerPokemon.getSpecies().getPrimaryType()) *
-                    moveT.getType().getDamageMultiplier(trainerPokemon.getSpecies().getSecondaryType()) *
-                    moveT.getPower());
-
-        else
-            damageF = (int) (moveT.getType().getDamageMultiplier(trainerPokemon.getSpecies().getPrimaryType()) * moveT.getPower());
+        controller.usePokemonMove(trainerPokemon, moveT); //Attack
+        controller.usePokemonMove(foePokemon, moveF);
 
         assertEquals(foePokemon.getCurrentHealth(), Math.max(HPf - damageT, 0));
         assertEquals(trainerPokemon.getCurrentHealth(), Math.max(HPt - damageF, 0));

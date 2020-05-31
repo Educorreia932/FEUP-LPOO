@@ -42,6 +42,11 @@ public class BattleController implements Controller {
 
 
     public GameState.Gamemode start(GameState game) {
+
+        if(battle.getTrainerPokemon().getCurrentHealth() == 0){
+            battle.getTrainerPokemon().setHP(1); //So the player can enter the battle
+        }
+
         while (gamemode == GameState.Gamemode.BATTLE) {
             gui.draw();
 
@@ -51,7 +56,8 @@ public class BattleController implements Controller {
                 command = gui.getNextCommand(this);
 
             else {
-                command = new UsePokemonMoveCommand(this, battle.getAdversaryPokemon(), battle.getAdversaryPokemon().getMoves().get(0));
+                Random rand = new Random();
+                command = new UsePokemonMoveCommand(this, battle.getAdversaryPokemon(), battle.getAdversaryPokemon().getMoves().get(rand.nextInt(4)));
                 changeTurn();
             }
 

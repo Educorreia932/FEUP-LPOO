@@ -18,8 +18,6 @@ public class Game {
       
         Music music = new Music(game);
 
-//        game.setState(new Battle(gui, game.getWorld().getModel().getPlayer(), 0));
-
         while (game.getState() != null)
             game.getState().start(game, gui);
 
