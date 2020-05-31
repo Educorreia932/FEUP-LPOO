@@ -160,7 +160,7 @@ To scroll through the rest of the player's pokémon press ↑ or ↓ keys.
 - **Option to be a Boy or a Girl** - At the start of a new game, the player may chose his character gender (for cosmetic purposes only).
 
 <p align="center">
-    <img width=300 src="images/Boy%20or%20Girl.png">
+    <img width=400 src="images/Boy%20or%20Girl.png">
 </p>
 
 ### Pokémon
@@ -178,13 +178,13 @@ The higher the catch rate of a pokémon, the easier it is to catch it.
 - **Pokémon Center** - This would work like a hospital in which you could cure your pokémon (for free!) after a battle.
 
 <p align="center">
-    <img width=550 src="images/Pokemon%20Center.jpg">
+    <img width=450 src="images/Pokemon%20Center.jpg">
 </p>
 
 - **Pokémon PC** - When you have too many pokémon, it gets hard to keep track of them, that's where the pokémon PC utility comes in. It's a pratical interface that let's you easily manage all of your catched pokémon and it's usually located in the pokémon center (the computer in the upper right cornet in the previous image).
 
 <p align="center">
-    <img width=550 src="images/Pokemon%20PC.jpg">
+    <img width=450 src="images/Pokemon%20PC.jpg">
 </p>
 
 ### Battle
@@ -203,6 +203,10 @@ The higher the catch rate of a pokémon, the easier it is to catch it.
 
 - **Create profiles** - The original pokémon games only let you have one save at a time, but sometimes, more than one person is playing on the same device, so it is important to let them have a profile for each person with its own save file.
 
+<p align="center">
+    <img width=400 src="images/Profiles.PNG">
+</p>
+
 - **Create NPCs** - Have NPCs in the overworld whom which the player might interact (battle with them, buy items, trade pokémon...).
 
 ## Design
@@ -211,22 +215,35 @@ The higher the catch rate of a pokémon, the easier it is to catch it.
 
 #### Problem in Context
 
+The architecture of the project is one of the most important parts of a project like this.  
+It's the foundation in which the game will be built, so, it's crutial to choose the most correct approach early on, as it can be extremely difficult to change it later in development.
+
 #### The Pattern
 
-For easier development of the game, we implemented the MVC (Model–View–Controller) design pattern, with the following division.
+To solve that problem, we implemented the **MVC** (Model–View–Controller) design pattern, with the following division.
 - **Model (data)** - Stores all of the lpoo.pokemonascii.data structure of the game and its current state.
 - **View (gui)** - Handles the interaction with the user, be it input, by pressing the keyboard's keys, or be it output, by a graphical interface that represents the game.
 - **Controller (rules)** - Coordinates and processes all the changes that occur.
+
+Our game currently has a MVC module for each one of the four states:
+
+- Main Menu
+- World
+- Battle
+- Pokémon Summary
+
+#### The Implementation
 
 <p align="center">
   <img width=350 src="images/MVC.png">
 </p>
 
-Our game currently has the MVC implemented in the following modules:
-
-#### The Implementation
-
 #### Consequences
+
+- Ease of modification.
+- Low coupling among models, views or controllers
+- High cohesion.
+- Better testability.
 
 ### Sound Effects
 
