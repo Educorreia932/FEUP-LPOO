@@ -1,0 +1,15 @@
+<pokedex>
+  <move>
+    <id>351</id>
+    <identifier>shock-wave</identifier>
+    <type>ELECTRIC</type>
+    <power>60</power>
+    <pp>20</pp>
+    <accuracy />
+    <priority>0</priority>
+    <target_id>10</target_id>
+    <damage_class_id>3</damage_class_id>
+    <effect_id>18</effect_id>
+    <effect_chance />
+  </move>
+  </pokedex>

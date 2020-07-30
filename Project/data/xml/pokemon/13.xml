@@ -1,0 +1,45 @@
+<pokedex>
+    <pokemon id="13">
+        <name>WEEDLE</name>
+        <type>Bug</type>
+        <type>Poison</type>
+        <ability>Shield</ability>
+        <exp>1000000</exp>
+        <stats>
+            <HP>40</HP>
+            <ATK>35</ATK>
+            <DEF>30</DEF>
+            <SPD>50</SPD>
+            <SAT>20</SAT>
+            <SDF>20</SDF>
+        </stats>
+        <evolutions>
+            <evolution id="13">
+                <name>Weedle</name>
+            </evolution>
+            <evolution id="14">
+                <name>Kakuna</name>
+                <lvl>7</lvl>
+            </evolution>
+            <evolution id="15">
+                <name>Beedrill</name>
+                <lvl>10</lvl>
+            </evolution>
+        </evolutions>
+        <egg-group>Bug</egg-group>
+        <species>Hairy Bug Pokemon</species>
+        <height>0.3</height>
+        <weight>3.2</weight>
+        <description>It eats its weight in leaves every day. It fends off attackers with the needle on its head.</description>
+        <moves>
+            <move type="level-up">
+                <name>Poison Sting</name>
+                <lvl>1</lvl>
+            </move>
+            <move type="level-up">
+                <name>String Shot</name>
+                <lvl>1</lvl>
+            </move>
+        </moves>
+    </pokemon>
+</pokedex>

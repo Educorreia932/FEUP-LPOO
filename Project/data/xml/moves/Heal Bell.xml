@@ -1,0 +1,15 @@
+<pokedex>
+  <move>
+    <id>215</id>
+    <identifier>heal-bell</identifier>
+    <type>NORMAL</type>
+    <power />
+    <pp>5</pp>
+    <accuracy />
+    <priority>0</priority>
+    <target_id>13</target_id>
+    <damage_class_id>1</damage_class_id>
+    <effect_id>103</effect_id>
+    <effect_chance />
+  </move>
+  </pokedex>

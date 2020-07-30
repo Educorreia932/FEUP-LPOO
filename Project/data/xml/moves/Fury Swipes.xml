@@ -1,0 +1,15 @@
+<pokedex>
+  <move>
+    <id>154</id>
+    <identifier>fury-swipes</identifier>
+    <type>NORMAL</type>
+    <power>18</power>
+    <pp>15</pp>
+    <accuracy>80</accuracy>
+    <priority>0</priority>
+    <target_id>10</target_id>
+    <damage_class_id>2</damage_class_id>
+    <effect_id>30</effect_id>
+    <effect_chance />
+  </move>
+  </pokedex>

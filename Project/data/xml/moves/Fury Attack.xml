@@ -1,0 +1,15 @@
+<pokedex>
+  <move>
+    <id>31</id>
+    <identifier>fury-attack</identifier>
+    <type>NORMAL</type>
+    <power>15</power>
+    <pp>20</pp>
+    <accuracy>85</accuracy>
+    <priority>0</priority>
+    <target_id>10</target_id>
+    <damage_class_id>2</damage_class_id>
+    <effect_id>30</effect_id>
+    <effect_chance />
+  </move>
+  </pokedex>

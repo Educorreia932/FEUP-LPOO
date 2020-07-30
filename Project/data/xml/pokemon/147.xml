@@ -1,0 +1,279 @@
+<pokedex>
+    <pokemon id="147">
+        <name>DRATINI</name>
+        <type>Dragon</type>
+        <ability>Shed</ability>
+        <exp>1250000</exp>
+        <stats>
+            <HP>41</HP>
+            <ATK>64</ATK>
+            <DEF>45</DEF>
+            <SPD>50</SPD>
+            <SAT>50</SAT>
+            <SDF>50</SDF>
+        </stats>
+        <evolutions>
+            <evolution id="147">
+                <name>Dratini</name>
+            </evolution>
+            <evolution id="148">
+                <name>Dragonair</name>
+                <lvl>30</lvl>
+            </evolution>
+            <evolution id="149">
+                <name>Dragonite</name>
+                <lvl>55</lvl>
+            </evolution>
+        </evolutions>
+        <egg-group>Water</egg-group>
+        <species>Dragon Pokemon</species>
+        <height>1.8</height>
+        <weight>3.3</weight>
+        <description>It is called the "Mirage Pokemon" because so few have seen it. Its shed skin has been found.</description>
+        <moves>
+            <move type="level-up">
+                <name>Wrap</name>
+                <lvl>1</lvl>
+            </move>
+            <move type="level-up">
+                <name>Leer</name>
+                <lvl>1</lvl>
+            </move>
+            <move type="level-up">
+                <name>Thunder Wave</name>
+                <lvl>5</lvl>
+            </move>
+            <move type="level-up">
+                <name>Twister</name>
+                <lvl>11</lvl>
+            </move>
+            <move type="level-up">
+                <name>Dragon Rage</name>
+                <lvl>15</lvl>
+            </move>
+            <move type="level-up">
+                <name>Slam</name>
+                <lvl>21</lvl>
+            </move>
+            <move type="level-up">
+                <name>Agility</name>
+                <lvl>25</lvl>
+            </move>
+            <move type="level-up">
+                <name>Aqua Tail</name>
+                <lvl>31</lvl>
+            </move>
+            <move type="level-up">
+                <name>Dragon Rush</name>
+                <lvl>35</lvl>
+            </move>
+            <move type="level-up">
+                <name>Safeguard</name>
+                <lvl>41</lvl>
+            </move>
+            <move type="level-up">
+                <name>Dragon Dance</name>
+                <lvl>45</lvl>
+            </move>
+            <move type="level-up">
+                <name>Outrage</name>
+                <lvl>51</lvl>
+            </move>
+            <move type="level-up">
+                <name>Hyper Beam</name>
+                <lvl>55</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Water Pulse</name>
+                <lvl>03</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Toxic</name>
+                <lvl>06</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Hail</name>
+                <lvl>07</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Hidden Power</name>
+                <lvl>10</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Sunny Day</name>
+                <lvl>11</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Ice Beam</name>
+                <lvl>13</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Blizzard</name>
+                <lvl>14</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Hyper Beam</name>
+                <lvl>15</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Protect</name>
+                <lvl>17</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Rain Dance</name>
+                <lvl>18</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Safeguard</name>
+                <lvl>20</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Frustration</name>
+                <lvl>21</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Iron Tail</name>
+                <lvl>23</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Thunderbolt</name>
+                <lvl>24</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Thunder</name>
+                <lvl>25</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Return</name>
+                <lvl>27</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Double Team</name>
+                <lvl>32</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Shock Wave</name>
+                <lvl>34</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Flamethrower</name>
+                <lvl>35</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Fire Blast</name>
+                <lvl>38</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Facade</name>
+                <lvl>42</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Secret Power</name>
+                <lvl>43</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Rest</name>
+                <lvl>44</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Attract</name>
+                <lvl>45</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Endure</name>
+                <lvl>58</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Dragon Pulse</name>
+                <lvl>59</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Thunder Wave</name>
+                <lvl>73</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Captivate</name>
+                <lvl>78</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Sleep Talk</name>
+                <lvl>82</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Natural Gift</name>
+                <lvl>83</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Swagger</name>
+                <lvl>87</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Substitute</name>
+                <lvl>90</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>HM</machine>
+                <name>Surf</name>
+                <lvl>3</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>HM</machine>
+                <name>Waterfall</name>
+                <lvl>7</lvl>
+            </move>
+            <move type="egg">
+                <name>Dragon Dance</name>
+            </move>
+            <move type="egg">
+                <name>Dragon Rush</name>
+            </move>
+            <move type="egg">
+                <name>Dragonbreath</name>
+            </move>
+            <move type="egg">
+                <name>Haze</name>
+            </move>
+            <move type="egg">
+                <name>Light Screen</name>
+            </move>
+            <move type="egg">
+                <name>Mist</name>
+            </move>
+            <move type="egg">
+                <name>Supersonic</name>
+            </move>
+        </moves>
+    </pokemon>
+    </pokedex>

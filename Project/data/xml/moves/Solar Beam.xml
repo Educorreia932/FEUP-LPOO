@@ -1,0 +1,15 @@
+<pokedex>
+  <move>
+    <id>76</id>
+    <identifier>solar-beam</identifier>
+    <type>GRASS</type>
+    <power>120</power>
+    <pp>10</pp>
+    <accuracy>100</accuracy>
+    <priority>0</priority>
+    <target_id>10</target_id>
+    <damage_class_id>3</damage_class_id>
+    <effect_id>152</effect_id>
+    <effect_chance />
+  </move>
+  </pokedex>

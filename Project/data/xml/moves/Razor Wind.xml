@@ -1,0 +1,15 @@
+<pokedex>
+  <move>
+    <id>13</id>
+    <identifier>razor-wind</identifier>
+    <type>NORMAL</type>
+    <power>80</power>
+    <pp>10</pp>
+    <accuracy>100</accuracy>
+    <priority>0</priority>
+    <target_id>11</target_id>
+    <damage_class_id>3</damage_class_id>
+    <effect_id>40</effect_id>
+    <effect_chance />
+  </move>
+  </pokedex>

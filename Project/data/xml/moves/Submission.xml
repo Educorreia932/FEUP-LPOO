@@ -1,0 +1,15 @@
+<pokedex>
+  <move>
+    <id>66</id>
+    <identifier>submission</identifier>
+    <type>FIGHTING</type>
+    <power>80</power>
+    <pp>20</pp>
+    <accuracy>80</accuracy>
+    <priority>0</priority>
+    <target_id>10</target_id>
+    <damage_class_id>2</damage_class_id>
+    <effect_id>49</effect_id>
+    <effect_chance />
+  </move>
+  </pokedex>

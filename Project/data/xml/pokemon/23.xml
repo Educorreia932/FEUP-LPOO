@@ -1,0 +1,273 @@
+<pokedex>
+    <pokemon id="23">
+        <name>EKANS</name>
+        <type>Poison</type>
+        <ability>Intimidate</ability>
+        <exp>1000000</exp>
+        <stats>
+            <HP>35</HP>
+            <ATK>60</ATK>
+            <DEF>44</DEF>
+            <SPD>55</SPD>
+            <SAT>40</SAT>
+            <SDF>54</SDF>
+        </stats>
+        <evolutions>
+            <evolution id="23">
+                <name>Ekans</name>
+            </evolution>
+            <evolution id="24">
+                <name>Arbok</name>
+                <lvl>22</lvl>
+            </evolution>
+        </evolutions>
+        <egg-group>Field</egg-group>
+        <egg-group>Dragon</egg-group>
+        <species>Snake Pokemon</species>
+        <height>2</height>
+        <weight>6.9</weight>
+        <description>It sneaks through grass without making a sound and strikes unsuspecting prey from behind.</description>
+        <moves>
+            <move type="level-up">
+                <name>Wrap</name>
+                <lvl>1</lvl>
+            </move>
+            <move type="level-up">
+                <name>Leer</name>
+                <lvl>1</lvl>
+            </move>
+            <move type="level-up">
+                <name>Poison Sting</name>
+                <lvl>4</lvl>
+            </move>
+            <move type="level-up">
+                <name>Bite</name>
+                <lvl>9</lvl>
+            </move>
+            <move type="level-up">
+                <name>Glare</name>
+                <lvl>12</lvl>
+            </move>
+            <move type="level-up">
+                <name>Screech</name>
+                <lvl>17</lvl>
+            </move>
+            <move type="level-up">
+                <name>Acid</name>
+                <lvl>20</lvl>
+            </move>
+            <move type="level-up">
+                <name>Spit Up</name>
+                <lvl>25</lvl>
+            </move>
+            <move type="level-up">
+                <name>Swallow</name>
+                <lvl>25</lvl>
+            </move>
+            <move type="level-up">
+                <name>Stockpile</name>
+                <lvl>25</lvl>
+            </move>
+            <move type="level-up">
+                <name>Mud Bomb</name>
+                <lvl>28</lvl>
+            </move>
+            <move type="level-up">
+                <name>Gastro Acid</name>
+                <lvl>33</lvl>
+            </move>
+            <move type="level-up">
+                <name>Haze</name>
+                <lvl>36</lvl>
+            </move>
+            <move type="level-up">
+                <name>Gunk Shot</name>
+                <lvl>41</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Toxic</name>
+                <lvl>06</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Hidden Power</name>
+                <lvl>10</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Sunny Day</name>
+                <lvl>11</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Protect</name>
+                <lvl>17</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Rain Dance</name>
+                <lvl>18</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Giga Drain</name>
+                <lvl>19</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Frustration</name>
+                <lvl>21</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Iron Tail</name>
+                <lvl>23</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Earthquake</name>
+                <lvl>26</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Return</name>
+                <lvl>27</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Dig</name>
+                <lvl>28</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Double Team</name>
+                <lvl>32</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Sludge Bomb</name>
+                <lvl>36</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Rock Tomb</name>
+                <lvl>39</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Torment</name>
+                <lvl>41</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Facade</name>
+                <lvl>42</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Secret Power</name>
+                <lvl>43</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Rest</name>
+                <lvl>44</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Attract</name>
+                <lvl>45</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Thief</name>
+                <lvl>46</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Snatch</name>
+                <lvl>49</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Endure</name>
+                <lvl>58</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Payback</name>
+                <lvl>66</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Captivate</name>
+                <lvl>78</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Dark Pulse</name>
+                <lvl>79</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Rock Slide</name>
+                <lvl>80</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Sleep Talk</name>
+                <lvl>82</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Natural Gift</name>
+                <lvl>83</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Poison Jab</name>
+                <lvl>84</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Swagger</name>
+                <lvl>87</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Substitute</name>
+                <lvl>90</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>HM</machine>
+                <name>Strength</name>
+                <lvl>4</lvl>
+            </move>
+            <move type="egg">
+                <name>Beat Up</name>
+            </move>
+            <move type="egg">
+                <name>Disable</name>
+            </move>
+            <move type="egg">
+                <name>Poison Fang</name>
+            </move>
+            <move type="egg">
+                <name>Poison Tail</name>
+            </move>
+            <move type="egg">
+                <name>Pursuit</name>
+            </move>
+            <move type="egg">
+                <name>Scary Face</name>
+            </move>
+            <move type="egg">
+                <name>Slam</name>
+            </move>
+            <move type="egg">
+                <name>Spite</name>
+            </move>
+        </moves>
+    </pokemon>
+    </pokedex>

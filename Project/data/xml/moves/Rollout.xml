@@ -1,0 +1,15 @@
+<pokedex>
+  <move>
+    <id>205</id>
+    <identifier>rollout</identifier>
+    <type>ROCK</type>
+    <power>30</power>
+    <pp>20</pp>
+    <accuracy>90</accuracy>
+    <priority>0</priority>
+    <target_id>10</target_id>
+    <damage_class_id>2</damage_class_id>
+    <effect_id>118</effect_id>
+    <effect_chance />
+  </move>
+  </pokedex>

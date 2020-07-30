@@ -1,0 +1,15 @@
+<pokedex>
+  <move>
+    <id>296</id>
+    <identifier>mist-ball</identifier>
+    <type>PSYCHIC</type>
+    <power>70</power>
+    <pp>5</pp>
+    <accuracy>100</accuracy>
+    <priority>0</priority>
+    <target_id>10</target_id>
+    <damage_class_id>3</damage_class_id>
+    <effect_id>72</effect_id>
+    <effect_chance>50</effect_chance>
+  </move>
+  </pokedex>

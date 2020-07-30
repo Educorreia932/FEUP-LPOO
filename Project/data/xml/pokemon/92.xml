@@ -1,0 +1,308 @@
+<pokedex>
+    <pokemon id="92">
+        <name>GASTLY</name>
+        <type>Ghost</type>
+        <type>Poison</type>
+        <ability>Levitate</ability>
+        <exp>1059860</exp>
+        <stats>
+            <HP>30</HP>
+            <ATK>35</ATK>
+            <DEF>30</DEF>
+            <SPD>80</SPD>
+            <SAT>100</SAT>
+            <SDF>35</SDF>
+        </stats>
+        <evolutions>
+            <evolution id="92">
+                <name>Gastly</name>
+            </evolution>
+            <evolution id="93">
+                <name>Haunter</name>
+                <lvl>25</lvl>
+            </evolution>
+            <evolution id="94">
+                <name>Gengar</name>
+                <condition>Trade</condition>
+            </evolution>
+        </evolutions>
+        <egg-group>Amorphous</egg-group>
+        <species>Gas Pokemon</species>
+        <height>1.3</height>
+        <weight>0.1</weight>
+        <description>This Pokemon's body is 95% made up of gases, which are blown away by strong gusts of wind.</description>
+        <moves>
+            <move type="level-up">
+                <name>Hypnosis</name>
+                <lvl>1</lvl>
+            </move>
+            <move type="level-up">
+                <name>Lick</name>
+                <lvl>1</lvl>
+            </move>
+            <move type="level-up">
+                <name>Spite</name>
+                <lvl>5</lvl>
+            </move>
+            <move type="level-up">
+                <name>Mean Look</name>
+                <lvl>8</lvl>
+            </move>
+            <move type="level-up">
+                <name>Curse</name>
+                <lvl>12</lvl>
+            </move>
+            <move type="level-up">
+                <name>Night Shade</name>
+                <lvl>15</lvl>
+            </move>
+            <move type="level-up">
+                <name>Confuse Ray</name>
+                <lvl>19</lvl>
+            </move>
+            <move type="level-up">
+                <name>Sucker Punch</name>
+                <lvl>22</lvl>
+            </move>
+            <move type="level-up">
+                <name>Payback</name>
+                <lvl>26</lvl>
+            </move>
+            <move type="level-up">
+                <name>Shadow Ball</name>
+                <lvl>29</lvl>
+            </move>
+            <move type="level-up">
+                <name>Dream Eater</name>
+                <lvl>33</lvl>
+            </move>
+            <move type="level-up">
+                <name>Dark Pulse</name>
+                <lvl>36</lvl>
+            </move>
+            <move type="level-up">
+                <name>Destiny Bond</name>
+                <lvl>40</lvl>
+            </move>
+            <move type="level-up">
+                <name>Nightmare</name>
+                <lvl>43</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Toxic</name>
+                <lvl>06</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Hidden Power</name>
+                <lvl>10</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Sunny Day</name>
+                <lvl>11</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Taunt</name>
+                <lvl>12</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Protect</name>
+                <lvl>17</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Rain Dance</name>
+                <lvl>18</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Giga Drain</name>
+                <lvl>19</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Frustration</name>
+                <lvl>21</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Thunderbolt</name>
+                <lvl>24</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Return</name>
+                <lvl>27</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Psychic</name>
+                <lvl>29</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Shadow Ball</name>
+                <lvl>30</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Double Team</name>
+                <lvl>32</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Sludge Bomb</name>
+                <lvl>36</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Torment</name>
+                <lvl>41</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Facade</name>
+                <lvl>42</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Secret Power</name>
+                <lvl>43</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Rest</name>
+                <lvl>44</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Attract</name>
+                <lvl>45</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Thief</name>
+                <lvl>46</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Skill Swap</name>
+                <lvl>48</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Snatch</name>
+                <lvl>49</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Energy Ball</name>
+                <lvl>53</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Endure</name>
+                <lvl>58</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Will-o-wisp</name>
+                <lvl>61</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Embargo</name>
+                <lvl>63</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Explosion</name>
+                <lvl>64</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Payback</name>
+                <lvl>66</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Psych Up</name>
+                <lvl>77</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Captivate</name>
+                <lvl>78</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Dark Pulse</name>
+                <lvl>79</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Sleep Talk</name>
+                <lvl>82</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Natural Gift</name>
+                <lvl>83</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Dream Eater</name>
+                <lvl>85</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Swagger</name>
+                <lvl>87</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Substitute</name>
+                <lvl>90</lvl>
+            </move>
+            <move type="TM/HM">
+                <machine>TM</machine>
+                <name>Trick Room</name>
+                <lvl>92</lvl>
+            </move>
+            <move type="egg">
+                <name>Astonish</name>
+            </move>
+            <move type="egg">
+                <name>Explosion</name>
+            </move>
+            <move type="egg">
+                <name>Fire Punch</name>
+            </move>
+            <move type="egg">
+                <name>Grudge</name>
+            </move>
+            <move type="egg">
+                <name>Haze</name>
+            </move>
+            <move type="egg">
+                <name>Ice Punch</name>
+            </move>
+            <move type="egg">
+                <name>Perish Song</name>
+            </move>
+            <move type="egg">
+                <name>Psywave</name>
+            </move>
+            <move type="egg">
+                <name>Thunderpunch</name>
+            </move>
+            <move type="egg">
+                <name>Will-o-wisp</name>
+            </move>
+        </moves>
+    </pokemon>
+    </pokedex>
