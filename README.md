@@ -2,6 +2,8 @@
 
 ## MIEIC - 2nd year / 1st semester
 
+**Final Grade:** 18/20
+
 ## Exercises
 
 | Subject Matter              | Folder                                                                                         |
