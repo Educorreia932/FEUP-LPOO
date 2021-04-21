@@ -1,12 +1,11 @@
 package lpoo.pokemonascii.rules.state;
 
-import lpoo.pokemonascii.data.WorldModel;
 import lpoo.pokemonascii.data.Route6;
+import lpoo.pokemonascii.data.WorldModel;
 import lpoo.pokemonascii.gui.GameView;
 import lpoo.pokemonascii.gui.WorldView;
 import lpoo.pokemonascii.rules.WorldController;
 import org.xml.sax.SAXException;
-
 
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;

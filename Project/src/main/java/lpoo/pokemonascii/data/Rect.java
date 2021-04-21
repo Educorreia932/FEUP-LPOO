@@ -2,8 +2,6 @@ package lpoo.pokemonascii.data;
 
 import lpoo.pokemonascii.gui.Image;
 
-import java.util.Objects;
-
 public class Rect {
     private int width, height;
     private Position position;

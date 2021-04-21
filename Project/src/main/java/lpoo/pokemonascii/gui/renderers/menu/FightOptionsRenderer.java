@@ -8,10 +8,12 @@ import lpoo.pokemonascii.data.pokemon.PokemonMove;
 import lpoo.pokemonascii.gui.Sprite;
 import lpoo.pokemonascii.gui.renderers.text.TextRenderer;
 
+import java.io.File;
+
 public class FightOptionsRenderer extends OptionsMenuRenderer {
-    private OptionsMenuModel model;
-    private TextRenderer movePP;
-    private TextRenderer moveType;
+    private final OptionsMenuModel model;
+    private final TextRenderer movePP;
+    private final TextRenderer moveType;
 
     public FightOptionsRenderer(OptionsMenuModel options) {
         super(options, 30, 123, 115, 18);
@@ -37,7 +39,7 @@ public class FightOptionsRenderer extends OptionsMenuRenderer {
     private String getSelectedMovePP() {
         PokemonMove move = ((FightOption) model.getSelectedOption()).getMove();
 
-        return move.getCurrentPP() + "/" + move.getTotalPP();
+        return move.getCurrentPP() + File.separator  + move.getTotalPP();
     }
 
     private String getSelectedMoveType() {

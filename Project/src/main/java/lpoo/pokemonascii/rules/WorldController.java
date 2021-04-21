@@ -1,10 +1,10 @@
 package lpoo.pokemonascii.rules;
 
 import lpoo.pokemonascii.data.Player;
-import lpoo.pokemonascii.data.tile.PokemonTile;
 import lpoo.pokemonascii.data.Position;
 import lpoo.pokemonascii.data.WorldModel;
 import lpoo.pokemonascii.data.elements.CollidingElement;
+import lpoo.pokemonascii.data.tile.PokemonTile;
 import lpoo.pokemonascii.gui.WorldView;
 import lpoo.pokemonascii.rules.commands.ChangedStateCommand;
 import lpoo.pokemonascii.rules.commands.Command;

@@ -5,6 +5,8 @@ import lpoo.pokemonascii.data.Position;
 import lpoo.pokemonascii.gui.Sprite;
 import lpoo.pokemonascii.gui.renderers.Renderer;
 
+import java.io.File;
+
 import static lpoo.pokemonascii.gui.Sprite.drawSprite;
 
 public class CharRenderer implements Renderer {
@@ -15,25 +17,25 @@ public class CharRenderer implements Renderer {
         this.position = position;
 
         if (Character.isLowerCase(c))
-            sprite = new Sprite("font\\" + fontname + "\\lower_case\\" + c);
+            sprite = new Sprite("font" + File.separator + fontname + File.separator +
+                    "lower_case" + File.separator + c);
 
         else if (Character.isUpperCase(c))
-            sprite = new Sprite("font\\" + fontname + "\\upper_case\\" + c);
+            sprite = new Sprite("font" + File.separator + fontname + File.separator +
+                    "upper_case" + File.separator + c);
 
         else if (Character.isDigit(c))
-            sprite = new Sprite("font\\" + fontname + "\\numbers\\" + c);
+            sprite = new Sprite("font" + File.separator + fontname + File.separator +
+                    "numbers" + File.separator + c);
 
         else if (!Character.isAlphabetic(c)) {
             switch (c) {
-                case '/':
-                    sprite = new Sprite("font\\" + fontname + "\\symbols\\slash");
-                    break;
-                case ' ':
-                    sprite = new Sprite("font\\" + fontname + "\\symbols\\space");
-                    break;
-                default:
-                    sprite = new Sprite("font\\" + fontname + "\\symbols\\" + c);
-                    break;
+                case '/' -> sprite = new Sprite("font" + File.separator + fontname + File.separator +
+                        "symbols/slash");
+                case ' ' -> sprite = new Sprite("font" + File.separator + fontname + File.separator +
+                        "symbols/space");
+                default -> sprite = new Sprite("font" + File.separator + fontname + File.separator +
+                        "symbols" + File.separator + c);
             }
         }
     }

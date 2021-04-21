@@ -13,7 +13,7 @@ public class ExperienceBarRenderer extends BarRenderer {
         this.pokemon = pokemon;
         barWidth = 106;
 
-        sprite = new Sprite("bar\\experience_bar");
+        sprite = new Sprite("bar/experience_bar");
     }
 
     @Override

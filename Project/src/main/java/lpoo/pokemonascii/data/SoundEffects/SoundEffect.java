@@ -6,7 +6,7 @@ import java.io.IOException;
 
 public abstract class SoundEffect {
     private final String soundFile;
-    private static final String AUDIO_PATH = "data\\audio\\";
+    private static final String AUDIO_PATH = "data" + File.separator + "audio" + File.separator ;
     protected Clip clip;
     protected AudioInputStream in;
 
