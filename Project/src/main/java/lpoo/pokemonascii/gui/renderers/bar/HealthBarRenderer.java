@@ -5,6 +5,7 @@ import lpoo.pokemonascii.data.pokemon.Pokemon;
 import lpoo.pokemonascii.gui.Image;
 import lpoo.pokemonascii.gui.Sprite;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,7 +16,7 @@ public class HealthBarRenderer extends BarRenderer {
         LOW,
     }
 
-    private Pokemon pokemon;
+    private final Pokemon pokemon;
 
     public HealthBarRenderer(int x, int y, Pokemon pokemon) {
         super(x, y);
@@ -24,9 +25,9 @@ public class HealthBarRenderer extends BarRenderer {
 
         List<Image> images = new ArrayList<>();
 
-        images.add(new Image("bar\\green_life_bar"));
-        images.add(new Image("bar\\yellow_life_bar"));
-        images.add(new Image("bar\\red_life_bar"));
+        images.add(new Image("bar" + File.separator + "green_life_bar"));
+        images.add(new Image("bar" + File.separator + "yellow_life_bar"));
+        images.add(new Image("bar" + File.separator + "red_life_bar"));
 
         sprite = new Sprite(images);
     }

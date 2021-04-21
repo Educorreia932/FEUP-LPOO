@@ -4,12 +4,6 @@ import lpoo.pokemonascii.data.MainMenuModel;
 import lpoo.pokemonascii.gui.GameView;
 import lpoo.pokemonascii.gui.MainMenuView;
 import lpoo.pokemonascii.rules.MainMenuController;
-import org.xml.sax.SAXException;
-
-import javax.sound.sampled.LineUnavailableException;
-import javax.sound.sampled.UnsupportedAudioFileException;
-import javax.xml.parsers.ParserConfigurationException;
-import java.io.IOException;
 
 public class MainMenu implements State {
     private MainMenuView view;

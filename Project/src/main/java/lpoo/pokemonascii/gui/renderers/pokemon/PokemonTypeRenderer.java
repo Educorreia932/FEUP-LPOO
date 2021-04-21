@@ -6,13 +6,15 @@ import lpoo.pokemonascii.data.pokemon.PokemonType;
 import lpoo.pokemonascii.gui.Sprite;
 import lpoo.pokemonascii.gui.renderers.Renderer;
 
+import java.io.File;
+
 public class PokemonTypeRenderer implements Renderer {
     Position position;
     Sprite sprite;
 
     public PokemonTypeRenderer(int x, int y, PokemonType type) {
         position = new Position(x, y);
-        sprite = new Sprite("types\\" + type.getType().name().toLowerCase());
+        sprite = new Sprite("types" + File.separator + type.getType().name().toLowerCase());
     }
 
     @Override
@@ -21,6 +23,6 @@ public class PokemonTypeRenderer implements Renderer {
     }
 
     public void setType(PokemonType type) {
-        sprite = new Sprite("types\\" + type.getType().name().toLowerCase());
+        sprite = new Sprite("types" + File.separator + type.getType().name().toLowerCase());
     }
 }

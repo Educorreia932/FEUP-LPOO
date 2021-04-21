@@ -4,10 +4,7 @@ import lpoo.pokemonascii.data.options.Option;
 import lpoo.pokemonascii.data.options.OptionsMenuModel;
 import lpoo.pokemonascii.data.pokemon.Pokemon;
 import lpoo.pokemonascii.data.pokemon.PokemonMove;
-import org.xml.sax.SAXException;
 
-import javax.xml.parsers.ParserConfigurationException;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 

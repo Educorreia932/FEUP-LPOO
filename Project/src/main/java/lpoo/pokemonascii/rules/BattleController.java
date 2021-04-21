@@ -1,12 +1,14 @@
 package lpoo.pokemonascii.rules;
 
 import lpoo.pokemonascii.data.BattleModel;
+import lpoo.pokemonascii.data.SoundEffects.AttackSound;
 import lpoo.pokemonascii.data.SoundEffects.CatchSound;
-import lpoo.pokemonascii.data.SoundEffects.*;
+import lpoo.pokemonascii.data.SoundEffects.SelectSound;
+import lpoo.pokemonascii.data.SoundEffects.SoundEffect;
+import lpoo.pokemonascii.data.options.Option;
 import lpoo.pokemonascii.data.options.battle.BattleOptionsMenuModel;
 import lpoo.pokemonascii.data.options.fight.FightOption;
 import lpoo.pokemonascii.data.options.fight.FightOptionsMenuModel;
-import lpoo.pokemonascii.data.options.Option;
 import lpoo.pokemonascii.data.pokemon.Pokemon;
 import lpoo.pokemonascii.data.pokemon.PokemonMove;
 import lpoo.pokemonascii.data.pokemon.PokemonStats;
@@ -14,6 +16,7 @@ import lpoo.pokemonascii.gui.BattleView;
 import lpoo.pokemonascii.rules.commands.*;
 import lpoo.pokemonascii.rules.state.GameState;
 
+import java.util.List;
 import java.util.Random;
 
 public class BattleController implements Controller {
@@ -57,7 +60,9 @@ public class BattleController implements Controller {
 
             else {
                 Random rand = new Random();
-                command = new UsePokemonMoveCommand(this, battle.getAdversaryPokemon(), battle.getAdversaryPokemon().getMoves().get(rand.nextInt(4)));
+                List<PokemonMove> moves = battle.getAdversaryPokemon().getMoves();
+                int i = rand.nextInt(moves.size() - 1);
+                command = new UsePokemonMoveCommand(this, battle.getAdversaryPokemon(), moves.get(i));
                 changeTurn();
             }
 

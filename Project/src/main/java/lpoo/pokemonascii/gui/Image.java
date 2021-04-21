@@ -13,15 +13,15 @@ import java.io.File;
 import java.io.IOException;
 
 public class Image {
-    private static final String IMAGES_PATH = "data\\images\\";
+    private static final String IMAGES_PATH = "data" + File.separator + "images" + File.separator ;
 
-    private int width;
-    private int height;
-    private String[][] background_colors;
-    private String[][] foreground_colors;
-    private String[][] characters;
-    private final int X_WIDTH = 6;
-    private final int Y_WIDTH = 10;
+    private final int width;
+    private final int height;
+    private final String[][] background_colors;
+    private final String[][] foreground_colors;
+    private final String[][] characters;
+    private final static int X_WIDTH = 6;
+    private final static int Y_WIDTH = 10;
 
     public Image(String filename) {
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
@@ -39,13 +39,13 @@ public class Image {
         Document document = null;
 
         try {
+            assert builder != null;
             document = builder.parse(new File(IMAGES_PATH + filename + ".svg"));
-        }
-
-        catch (SAXException | IOException e) {
+        } catch (SAXException | IOException e) {
             e.printStackTrace();
         }
 
+        assert document != null;
         Element svg = document.getDocumentElement();
         this.width = Integer.parseInt(svg.getAttributes().getNamedItem("width").getNodeValue()) / X_WIDTH;
         this.height = Integer.parseInt(svg.getAttributes().getNamedItem("height").getNodeValue()) / Y_WIDTH;

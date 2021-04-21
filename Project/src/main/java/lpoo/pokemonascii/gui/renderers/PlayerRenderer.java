@@ -5,6 +5,7 @@ import lpoo.pokemonascii.data.Player;
 import lpoo.pokemonascii.gui.Image;
 import lpoo.pokemonascii.gui.Sprite;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -17,10 +18,10 @@ public class PlayerRenderer implements Renderer {
     public PlayerRenderer(Player player) {
         this.player = player;
 
-        Image playerFront = new Image("player\\red_front");
-        Image playerBack = new Image("player\\red_back");
-        Image playerRight = new Image("player\\red_right");
-        Image playerLeft = new Image("player\\red_left");
+        Image playerFront = new Image("player" + File.separator + "red_front");
+        Image playerBack = new Image("player" + File.separator + "red_back");
+        Image playerRight = new Image("player" + File.separator + "red_right");
+        Image playerLeft = new Image("player" + File.separator + "red_left");
 
         sprite = new Sprite(new ArrayList<>(Arrays.asList(playerFront, playerBack, playerRight, playerLeft)));
     }

@@ -1,7 +1,6 @@
 package lpoo.pokemonascii.rules.commands;
 
 import lpoo.pokemonascii.rules.BattleController;
-import lpoo.pokemonascii.rules.state.Battle;
 
 public class ChangePokemonCommand implements Command {
     private BattleController battle;

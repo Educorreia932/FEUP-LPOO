@@ -5,6 +5,8 @@ import lpoo.pokemonascii.data.Player;
 import lpoo.pokemonascii.data.Position;
 import lpoo.pokemonascii.gui.Sprite;
 
+import java.io.File;
+
 import static lpoo.pokemonascii.gui.Sprite.drawSprite;
 import static lpoo.pokemonascii.gui.Sprite.drawSpritePortion;
 
@@ -14,13 +16,13 @@ public class BackgroundRenderer implements Renderer {
     public boolean firstTime;
 
     public BackgroundRenderer(String filename, Player player) {
-        background = new Sprite("background\\" + filename);
+        background = new Sprite("background" + File.separator  + filename);
         this.player = player;
         this.firstTime = true;
     }
 
     public BackgroundRenderer(String filename) {
-        background = new Sprite("background\\" + filename);
+        background = new Sprite("background" + File.separator  + filename);
         this.firstTime = true;
     }
 

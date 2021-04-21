@@ -15,32 +15,33 @@ import lpoo.pokemonascii.rules.commands.summary.SummaryGoDownCommand;
 import lpoo.pokemonascii.rules.commands.summary.SummaryGoUpCommand;
 import lpoo.pokemonascii.rules.state.GameState;
 
+import java.io.File;
 import java.io.IOException;
 
 import static lpoo.pokemonascii.gui.WorldView.getPressedKey;
 
 public class PokemonSummaryView {
-    private PokemonSummaryModel model;
-    private Screen screen;
-    private Sprite background;
-    private Sprite info;
-    private Sprite selectedBar;
-    private TextGraphics graphics;
-    private TextRenderer pokemonLevel;
-    private TextRenderer pokemonName;
-    private TextRenderer pokedexNumber;
-    private TextRenderer pokemonSpecies;
-    private PokemonRenderer pokemon;
-    private PokemonTypeRenderer primaryType;
+    private final PokemonSummaryModel model;
+    private final Screen screen;
+    private final Sprite background;
+    private final Sprite info;
+    private final Sprite selectedBar;
+    private final TextGraphics graphics;
+    private final TextRenderer pokemonLevel;
+    private final TextRenderer pokemonName;
+    private final TextRenderer pokedexNumber;
+    private final TextRenderer pokemonSpecies;
+    private final PokemonRenderer pokemon;
+    private final PokemonTypeRenderer primaryType;
     private PokemonTypeRenderer secondaryType;
 
     public PokemonSummaryView(Screen screen, TextGraphics graphics, PokemonSummaryModel model) {
         this.screen = screen;
         this.graphics = graphics;
 
-        background = new Sprite("summary\\pokemon_background");
-        info = new Sprite("summary\\pokemon_info");
-        selectedBar = new Sprite("summary\\selected_bar");
+        background = new Sprite("summary" + File.separator + "pokemon_background");
+        info = new Sprite("summary" + File.separator + "pokemon_info");
+        selectedBar = new Sprite("summary" + File.separator + "selected_bar");
 
         pokemonLevel = new TextRenderer(10, 21, "Lv" + model.getPokemon().getLevel(), "battle");
         pokemonName = new TextRenderer(280, 38, model.getPokemon().getName(), "battle");
@@ -69,18 +70,14 @@ public class PokemonSummaryView {
         if (pressedKey == null)
             return new DoNothingCommand();
 
-        switch (pressedKey.getKeyType()) {
-            case ArrowUp:
-                return new SummaryGoUpCommand(summary);
-            case ArrowDown:
-                return new SummaryGoDownCommand(summary);
-            case Escape:
-                return new ChangedStateCommand(summary, GameState.Gamemode.WORLD);
-            case EOF:
-                return new ChangedStateCommand(summary, GameState.Gamemode.EXIT);
-        }
+        return switch (pressedKey.getKeyType()) {
+            case ArrowUp -> new SummaryGoUpCommand(summary);
+            case ArrowDown -> new SummaryGoDownCommand(summary);
+            case Escape -> new ChangedStateCommand(summary, GameState.Gamemode.WORLD);
+            case EOF -> new ChangedStateCommand(summary, GameState.Gamemode.EXIT);
+            default -> new DoNothingCommand();
+        };
 
-        return new DoNothingCommand();
     }
 
     public void draw() {

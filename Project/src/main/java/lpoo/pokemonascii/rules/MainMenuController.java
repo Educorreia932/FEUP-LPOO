@@ -1,6 +1,7 @@
 package lpoo.pokemonascii.rules;
 
-import lpoo.pokemonascii.data.SoundEffects.*;
+import lpoo.pokemonascii.data.SoundEffects.SelectSound;
+import lpoo.pokemonascii.data.SoundEffects.SoundEffect;
 import lpoo.pokemonascii.gui.MainMenuView;
 import lpoo.pokemonascii.rules.commands.Command;
 import lpoo.pokemonascii.rules.state.GameState;

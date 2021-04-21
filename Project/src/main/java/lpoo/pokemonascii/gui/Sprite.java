@@ -12,7 +12,7 @@ import java.util.List;
 public class Sprite {
     private final static String CHROMA_GREEN = "#55ff55";
 
-    private List<Image> images;
+    private final List<Image> images;
     private int current = 0;
 
     // TODO: Replace for a variadic function
