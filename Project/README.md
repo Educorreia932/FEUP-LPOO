@@ -1,9 +1,7 @@
 # Pokémon: A Sequel Coming In Inevitably 
 
-<img src="images/title.png" width="450" alt="Title screen"/>
-<img src="images/overworld.png" width="450" alt="Overworld"/>
-<img src="images/battle.png" width="450" alt="Battle Scene"/>
-<img src="images/info.png" width="450" alt="Pokémon Information Menu"/>
+<img src="images/title.png" width="450" alt="Title screen"/> <img src="images/overworld.png" width="450" alt="Overworld"/>
+<img src="images/battle.png" width="450" alt="Battle Scene"/> <img src="images/info.png" width="450" alt="Pokémon Information Menu"/>
 
 A *mock* version of the ***Pokémon*** series, more specific, the *Fire Red*/*Leaf Green* games from *Gameboy Advance*.  
 
