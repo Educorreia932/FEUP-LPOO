@@ -1,15 +1,7 @@
-# Laboratory of Object-Oriented Programming
+# ☕ Object Oriented Programming Laboratory
 
-## MIEIC - 2nd year / 1st semester
+## MIEIC - 2<sup>nd</sup> year / 2<sup>nd</sup> semester [🔗](https://sigarra.up.pt/feup/en/ucurr_geral.ficha_uc_view?pv_ocorrencia_id=436442)
 
-**Final Grade:** 18/20
+## Project [📂](Project/)
 
-## Exercises
-
-| Subject Matter              | Folder                                                                                         |
-|-----------------------------|------------------------------------------------------------------------------------------------|
-| Lanterna Library            | [hero](https://github.com/Educorreia932/LPOO/tree/master/Exercises/hero)                       |
-| Unity Tests                 | [numbers](https://github.com/Jumaruba/MIEIC_LPOO/tree/master/Class_04/numbers)                 |
-| SOLID Principles            | [area-calculator](https://github.com/Educorreia932/LPOO/tree/master/Exercises/area-calculator) |
-| Design Patterns             | [drink](https://github.com/Educorreia932/LPOO/tree/master/Exercises/drink)                     |
-| Code Smells and Refactoring | [refactoring](https://github.com/Educorreia932/LPOO/tree/master/Exercises/refactoring)         |
+The project, named **Pokémon ASCII**, consists in a *mock* version of the *Pokémon* series.
