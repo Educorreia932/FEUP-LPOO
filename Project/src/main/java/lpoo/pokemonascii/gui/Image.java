@@ -13,7 +13,7 @@ import java.io.File;
 import java.io.IOException;
 
 public class Image {
-    private static final String IMAGES_PATH = "data" + File.separator + "images" + File.separator ;
+    private static final String IMAGES_PATH = "data" + File.separator + "images" + File.separator;
 
     private final int width;
     private final int height;
@@ -41,11 +41,14 @@ public class Image {
         try {
             assert builder != null;
             document = builder.parse(new File(IMAGES_PATH + filename + ".svg"));
-        } catch (SAXException | IOException e) {
+        }
+        
+        catch (SAXException | IOException e) {
             e.printStackTrace();
         }
 
         assert document != null;
+
         Element svg = document.getDocumentElement();
         this.width = Integer.parseInt(svg.getAttributes().getNamedItem("width").getNodeValue()) / X_WIDTH;
         this.height = Integer.parseInt(svg.getAttributes().getNamedItem("height").getNodeValue()) / Y_WIDTH;

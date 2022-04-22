@@ -28,12 +28,8 @@ public class BattleMenuRenderer implements Renderer {
 
     public void setOptionsMenuRenderer(BattleController.OptionsMenu optionsMenu, BattleModel battle) {
         switch (optionsMenu) {
-            case BATTLE:
-                options = new BattleOptionsRenderer(battle.getOptions());
-                break;
-            case FIGHT:
-                options = new FightOptionsRenderer(battle.getOptions());
-                break;
+            case BATTLE -> options = new BattleOptionsRenderer(battle.getOptions());
+            case FIGHT -> options = new FightOptionsRenderer(battle.getOptions());
         }
     }
 }

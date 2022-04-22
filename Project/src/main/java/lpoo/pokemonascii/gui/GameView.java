@@ -17,7 +17,7 @@ public class GameView {
     private final TextGraphics graphics;
 
     public GameView(int width, int height) throws IOException {
-        Font font = new Font("Source Code Pro", Font.PLAIN, 4);
+        Font font = new Font("Consolas", Font.PLAIN, 4);
         AWTTerminalFontConfiguration cfg = new SwingTerminalFontConfiguration(true, AWTTerminalFontConfiguration.BoldMode.NOTHING, font);
 
         Terminal terminal = new DefaultTerminalFactory()

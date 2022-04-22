@@ -32,10 +32,9 @@ public class PokemonSpecies {
         builder = factory.newDocumentBuilder();
 
         // Load the input XML document, parse it and return an instance of the Document class.
-        Document document;
-
-        document = builder.parse(new File("data" + File.separator + "xml" + File.separator + "pokemon" +
-                File.separator + pokedexNumber + ".xml"));
+        File file = new File("data" + File.separator + "xml" + File.separator + "pokemon" +
+            File.separator + pokedexNumber + ".xml");
+        Document document = builder.parse(file);
 
         NodeList nodeList = document.getChildNodes();
 
@@ -87,7 +86,8 @@ public class PokemonSpecies {
                     if (nodeElement.getAttribute("type").equals("level-up")) {
                         try {
                             levelMoves.add(new PokemonMove(moveName));
-                        } catch (Exception ignored) {
+                        }
+                        catch (Exception ignored) {
                             // The correspondent file wasn't found
                             // This might be, because it was a move from another generation
                             // Or its name was spelled incorrectly

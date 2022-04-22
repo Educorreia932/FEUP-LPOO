@@ -9,17 +9,17 @@ import java.util.List;
 
 public class TextRenderer implements Renderer {
     List<CharRenderer> chars;
-    private Position position;
-    private String fontname;
+    private final Position position;
+    private final String fontname;
 
-    public TextRenderer(int x, int y, String s, String fontname) {
+    public TextRenderer(int x, int y, String text, String fontname) {
         this.position = new Position(x, y);
         this.fontname = fontname;
         chars = new ArrayList<>();
         Position charPosition = position;
 
-        for (int i = 0; i < s.length(); i++) {
-            char c = s.charAt(i);
+        for (int i = 0; i < text.length(); i++) {
+            char c = text.charAt(i);
             chars.add(new CharRenderer(c, charPosition, fontname));
             charPosition = charPosition.right(chars.get(i).getWidth() + 1);
         }

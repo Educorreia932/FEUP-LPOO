@@ -32,9 +32,9 @@ public class PokemonInfoRenderer implements Renderer {
                 sprite = new Sprite("adversary_pokemon_info");
                 position = new Position(20, 10);
                 pokemonName = new TextRenderer(position.getX() + 11, position.getY() + 5,
-                        pokemon.getName(), "battle");
+                    pokemon.getName(), "battle");
                 pokemonLevel = new TextRenderer(position.getX() + 103, position.getY() + 5,
-                        "Lv" + pokemon.getLevel(), "battle");
+                    "Lv" + pokemon.getLevel(), "battle");
                 healthBar = new HealthBarRenderer(position.getX() + 65, position.getY() + 17, pokemon);
                 experience = null; // TODO: Introduce Null object
             }
@@ -42,12 +42,12 @@ public class PokemonInfoRenderer implements Renderer {
                 sprite = new Sprite("trainer_pokemon_info");
                 position = new Position(215, 74);
                 pokemonName = new TextRenderer(position.getX() + 26, position.getY() + 5,
-                        pokemon.getName(), "battle");
+                    pokemon.getName(), "battle");
                 pokemonLevel = new TextRenderer(position.getX() + 119, position.getY() + 5,
-                        "Lv" + pokemon.getLevel(), "battle");
+                    "Lv" + pokemon.getLevel(), "battle");
                 pokemonHealth = new TextRenderer(position.getX() + 100, position.getY() + 22,
-                        pokemon.getCurrentHealth() + File.separator + pokemon.getStat(PokemonStats.Stat.HP),
-                        "battle");
+                    pokemon.getCurrentHealth() + "/" + pokemon.getStat(PokemonStats.Stat.HP),
+                    "battle");
                 healthBar = new HealthBarRenderer(position.getX() + 80, position.getY() + 17, pokemon);
                 experience = new ExperienceBarRenderer(position.getX() + 54, position.getY() + 33, pokemon);
             }
@@ -65,7 +65,7 @@ public class PokemonInfoRenderer implements Renderer {
             experience.draw(graphics);
 
         if (pokemonHealth != null) {
-            pokemonHealth.setText(pokemon.getCurrentHealth() + File.separator + pokemon.getStat(PokemonStats.Stat.HP));
+            pokemonHealth.setText(pokemon.getCurrentHealth() + "/" + pokemon.getStat(PokemonStats.Stat.HP));
             pokemonHealth.draw(graphics);
         }
     }

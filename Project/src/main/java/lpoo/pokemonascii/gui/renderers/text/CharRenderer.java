@@ -10,7 +10,7 @@ import java.io.File;
 import static lpoo.pokemonascii.gui.Sprite.drawSprite;
 
 public class CharRenderer implements Renderer {
-    private Position position;
+    private final Position position;
     private Sprite sprite;
 
     public CharRenderer(char c, Position position, String fontname) {

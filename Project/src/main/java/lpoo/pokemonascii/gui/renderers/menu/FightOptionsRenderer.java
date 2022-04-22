@@ -39,7 +39,7 @@ public class FightOptionsRenderer extends OptionsMenuRenderer {
     private String getSelectedMovePP() {
         PokemonMove move = ((FightOption) model.getSelectedOption()).getMove();
 
-        return move.getCurrentPP() + File.separator  + move.getTotalPP();
+        return move.getCurrentPP() + "/"  + move.getTotalPP();
     }
 
     private String getSelectedMoveType() {
